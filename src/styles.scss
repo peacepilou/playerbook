@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Karma:wght@300;400;500&family=Libre+Franklin:wght@400;500;600;700&family=Tangerine:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+}
+
+h1{
+    font-family: 'Tangerine', cursive;
+    font-size: 5em;
+}
+
+h2, h3, h4, button, input{
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+p, a{
+    font-family: 'Karma', serif;
+}
+
