@@ -1,0 +1,60 @@
+{
+    "user": [
+        {
+            "id": 1,
+            "name": "Jason",
+            "linkAvatar": "https://i.pinimg.com/564x/67/73/fa/6773faf063482c02a0cb8cdae4ef2074.jpg",
+            "country": "Va-labas",
+            "biography": "Enchantier, je m'appelle Teuse ! ",
+            "userBehaviorList": {
+                "isCasual": true,
+                "isProactive": false,
+                "isExtravert": true,
+                "isPro": false
+            },
+            "playerHabitList": {
+                "frequency": 3,
+                "isNocturnal": false,
+                "sessionDuration": 3,
+                "isHotBlooded": true,
+                "isLeader": false,
+                "pvpFriendly": false,
+                "pveFriendly": true
+            },
+            "gameList": [
+                {
+                    "id": 1,
+                    "name": "CraftofWorld",
+                    "url": "https://worldofwarcraft.com/fr-fr/",
+                    "userPseudo": "Sonja",
+                    "genreList": [
+                        {
+                            "id": 1,
+                            "name": "mmorpg"
+                        },
+                        {
+                            "id": 2,
+                            "name": "rpg"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "Lolilol",
+                    "url": "https://www.leagueoflegends.com/fr-fr/",
+                    "userPseudo": "Sonja",
+                    "genreList": [
+                        {
+                            "id": 1,
+                            "name": "Dota"
+                        },
+                        {
+                            "id": 2,
+                            "name": "pvp"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
