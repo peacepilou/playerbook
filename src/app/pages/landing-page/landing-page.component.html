@@ -1,1 +1,12 @@
-<p>landing-page works!</p>
+<div>
+    <app-landing-logo></app-landing-logo>
+
+    <h3>Envie de partager ?</h3>
+</div>
+
+<div class="landing-path-button">
+    <app-landing-path-button
+        *ngFor="let button of buttonList"
+        [getButton]="button"
+    ></app-landing-path-button>
+</div>
