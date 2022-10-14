@@ -1,0 +1,173 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "Jason",
+      "linkAvatar": "https://i.pinimg.com/564x/67/73/fa/6773faf063482c02a0cb8cdae4ef2074.jpg",
+      "country": "Va-labas",
+      "biography": "Enchantier, je m'appelle Teuse ! ",
+      "userBehaviorList": {
+        "isCasual": true,
+        "isProactive": false,
+        "isExtravert": true,
+        "isPro": false
+      },
+      "playerHabitList": {
+        "frequencyPerWeek": 3,
+        "isNocturnal": false,
+        "sessionDurationInHour": 3,
+        "isHotBlooded": true,
+        "isLeader": false,
+        "pvpFriendly": false,
+        "pveFriendly": true
+      },
+      "gameList": [
+        {
+          "id": 1,
+          "name": "CraftofWorld",
+          "url": "https://worldofwarcraft.com/fr-fr/",
+          "userPseudo": "Sonja",
+          "genreList": [
+            {
+              "id": 1,
+              "name": "mmorpg"
+            },
+            {
+              "id": 2,
+              "name": "rpg"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Lolilol",
+          "url": "https://www.leagueoflegends.com/fr-fr/",
+          "userPseudo": "Sonja",
+          "genreList": [
+            {
+              "id": 1,
+              "name": "Dota"
+            },
+            {
+              "id": 2,
+              "name": "pvp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Dylan",
+      "linkAvatar": "https://tc1464.files.wordpress.com/2016/11/398322559_small.jpg?w=400",
+      "country": "Tunning-land",
+      "biography": "Azy on est là wesh ",
+      "userBehaviorList": {
+        "isCasual": true,
+        "isProactive": false,
+        "isExtravert": true,
+        "isPro": false
+      },
+      "playerHabitList": {
+        "frequencyPerWeek": 6,
+        "isNocturnal": false,
+        "sessionDurationInHour": 6,
+        "isHotBlooded": true,
+        "isLeader": true,
+        "pvpFriendly": true,
+        "pveFriendly": true
+      },
+      "gameList": [
+        {
+          "id": 1,
+          "name": "Frotnit",
+          "url": "https://www.igogyneco.com/activites-medicales/pathologies-gynecologiques/col-de-luterus/quest-ce-quun-frottis-0",
+          "userPseudo": "DarkSasuke",
+          "genreList": [
+            {
+              "id": 1,
+              "name": "fps"
+            },
+            {
+              "id": 2,
+              "name": "pvp"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "CallofDuTea",
+          "url": "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/120106660_3425753437483885_436673693311924372_n.jpg?stp=dst-jpg_p180x540&_nc_cat=101&ccb=1-7&_nc_sid=a26aad&_nc_ohc=RcikBG7G4SUAX_rAhuO&_nc_ht=scontent-cdt1-1.xx&oh=00_AT-eFtXFuL_u6IbjnXhpKgqer-27a3VrPMkp7PWb6a2vSw&oe=636E2732",
+          "userPseudo": "DarkItachi",
+          "genreList": [
+            {
+              "id": 1,
+              "name": "fps"
+            },
+            {
+              "id": 2,
+              "name": "pvp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Kimberley",
+      "linkAvatar": "https://image-uniservice.linternaute.com/image/450/4/1224765231/9700842.jpg",
+      "country": "barbatie",
+      "biography": "Tire mon doigt.",
+      "userBehaviorList": {
+        "isCasual": true,
+        "isProactive": false,
+        "isExtravert": true,
+        "isPro": true,
+        "employer?": "Michelin"
+      },
+      "playerHabitList": {
+        "frequencyPerWeek": 1,
+        "isNocturnal": false,
+        "sessionDurationInHour": 1,
+        "isHotBlooded": true,
+        "isLeader": true,
+        "pvpFriendly": true,
+        "pveFriendly": true
+      },
+      "gameList": [
+        {
+          "id": 1,
+          "name": "CraftofWorld",
+          "url": "https://worldofwarcraft.com/fr-fr/",
+          "userPseudo": "HelloTrikie",
+          "genreList": [
+            {
+              "id": 1,
+              "name": "fps"
+            },
+            {
+              "id": 2,
+              "name": "pvp"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "CallofDuTea",
+          "url": "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/120106660_3425753437483885_436673693311924372_n.jpg?stp=dst-jpg_p180x540&_nc_cat=101&ccb=1-7&_nc_sid=a26aad&_nc_ohc=RcikBG7G4SUAX_rAhuO&_nc_ht=scontent-cdt1-1.xx&oh=00_AT-eFtXFuL_u6IbjnXhpKgqer-27a3VrPMkp7PWb6a2vSw&oe=636E2732",
+          "userPseudo": "DarkItachi",
+          "genreList": [
+            {
+              "id": 1,
+              "name": "fps"
+            },
+            {
+              "id": 2,
+              "name": "pvp"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
