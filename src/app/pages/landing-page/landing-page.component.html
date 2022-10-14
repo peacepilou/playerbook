@@ -14,3 +14,12 @@
         ></app-landing-path-button>
     </div>
 </div>
+
+<div class="square-container">
+    <div class="square" 
+    *ngFor="let square of squareList, let i = index"
+    [ngStyle]="{backgroundColor: i === 1 || i === 2 ? '#8738BB' : '', 
+    height: i === 2 || i === 3 ? '25vw' : '40vw' }"
+    >
+    </div>
+</div>
