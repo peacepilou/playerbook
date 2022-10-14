@@ -1,12 +1,16 @@
-<div>
-    <app-landing-logo></app-landing-logo>
+<div class="global-page">
+    <div class="logo">
+        <app-landing-logo></app-landing-logo>
+    </div>
 
-    <h3>Envie de partager ?</h3>
-</div>
+    <div class="info-text">
+    <app-site-description></app-site-description>
+    </div>
 
-<div class="landing-path-button">
-    <app-landing-path-button
-        *ngFor="let button of buttonList"
-        [getButton]="button"
-    ></app-landing-path-button>
+    <div class="landing-path-button">
+        <app-landing-path-button
+            *ngFor="let button of buttonList"
+            [getButton]="button"
+        ></app-landing-path-button>
+    </div>
 </div>

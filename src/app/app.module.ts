@@ -9,6 +9,7 @@ import { FormInscriptionComponent } from './pages/form-inscription/form-inscript
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { LandingLogoComponent } from './landing-page/landing-logo/landing-logo.component';
 import { LandingPathButtonComponent } from './landing-page/landing-path-button/landing-path-button.component';
+import { SiteDescriptionComponent } from './landing-page/site-description/site-description.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LandingPathButtonComponent } from './landing-page/landing-path-button/l
     FormInscriptionComponent,
     UserProfileComponent,
     LandingLogoComponent,
-    LandingPathButtonComponent
+    LandingPathButtonComponent,
+    SiteDescriptionComponent
   ],
   imports: [
     BrowserModule,

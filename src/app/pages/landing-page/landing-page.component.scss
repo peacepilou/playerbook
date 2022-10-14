@@ -3,3 +3,30 @@ div{
     flex-direction: column;
     align-items: center;
 }
+
+
+@media screen and (min-width : 600px) {
+
+    .global-page{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .logo{
+            color: red;
+            width: 50%;
+        }
+
+        .info-text{
+            color: red;
+            width: 50%;
+        }
+
+        .landing-path-button{
+            flex-direction: row;
+            justify-content: space-around;
+            color: red;
+            width: 100%;
+        }
+    }
+}

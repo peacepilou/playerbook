@@ -1,17 +1,37 @@
 div{
-    margin-top : 2em;
     margin-bottom : 2em;
     display : flex;
     flex-direction: column;
     align-items: center;
     width: fit-content;
-    border: 1px solid black;
 }
 
 p{
-    margin : 1em;
+    margin : 1em 1em 0em 1em;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 button{
-    
+    border: 2px solid #8738BB;
+    color: black;
+    font-size: 20px;
+    padding: 0.3em 0.8em 0.3em 0.8em;
+    font-weight: bold;
+    &:hover{
+        color : #8738BB;
+    }
+}
+
+.button-0{
+    p{
+        color: black;
+
+    }
+    button{
+        color : whitesmoke;
+        padding: 0.5em 1em 0.5em 1em;
+        background-color: #8738BB;
+        border-width: 0px;
+    }
 }
