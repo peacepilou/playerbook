@@ -23,33 +23,27 @@
       },
       "gameList": [
         {
-          "id": 1,
           "name": "CraftofWorld",
           "url": "https://worldofwarcraft.com/fr-fr/",
           "userPseudo": "Sonja",
           "genreList": [
             {
-              "id": 1,
               "name": "mmorpg"
             },
             {
-              "id": 2,
               "name": "rpg"
             }
           ]
         },
         {
-          "id": 2,
           "name": "Lolilol",
           "url": "https://www.leagueoflegends.com/fr-fr/",
           "userPseudo": "Sonja",
           "genreList": [
             {
-              "id": 1,
-              "name": "Dota"
+              "name": "dota"
             },
             {
-              "id": 2,
               "name": "pvp"
             }
           ]
@@ -79,33 +73,27 @@
       },
       "gameList": [
         {
-          "id": 1,
           "name": "Frotnit",
           "url": "https://www.igogyneco.com/activites-medicales/pathologies-gynecologiques/col-de-luterus/quest-ce-quun-frottis-0",
           "userPseudo": "DarkSasuke",
           "genreList": [
             {
-              "id": 1,
               "name": "fps"
             },
             {
-              "id": 2,
               "name": "pvp"
             }
           ]
         },
         {
-          "id": 2,
           "name": "CallofDuTea",
           "url": "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/120106660_3425753437483885_436673693311924372_n.jpg?stp=dst-jpg_p180x540&_nc_cat=101&ccb=1-7&_nc_sid=a26aad&_nc_ohc=RcikBG7G4SUAX_rAhuO&_nc_ht=scontent-cdt1-1.xx&oh=00_AT-eFtXFuL_u6IbjnXhpKgqer-27a3VrPMkp7PWb6a2vSw&oe=636E2732",
           "userPseudo": "DarkItachi",
           "genreList": [
             {
-              "id": 1,
               "name": "fps"
             },
             {
-              "id": 2,
               "name": "pvp"
             }
           ]
@@ -136,33 +124,27 @@
       },
       "gameList": [
         {
-          "id": 1,
           "name": "CraftofWorld",
           "url": "https://worldofwarcraft.com/fr-fr/",
           "userPseudo": "HelloTrikie",
           "genreList": [
             {
-              "id": 1,
               "name": "fps"
             },
             {
-              "id": 2,
               "name": "pvp"
             }
           ]
         },
         {
-          "id": 2,
           "name": "CallofDuTea",
           "url": "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/120106660_3425753437483885_436673693311924372_n.jpg?stp=dst-jpg_p180x540&_nc_cat=101&ccb=1-7&_nc_sid=a26aad&_nc_ohc=RcikBG7G4SUAX_rAhuO&_nc_ht=scontent-cdt1-1.xx&oh=00_AT-eFtXFuL_u6IbjnXhpKgqer-27a3VrPMkp7PWb6a2vSw&oe=636E2732",
           "userPseudo": "DarkItachi",
           "genreList": [
             {
-              "id": 1,
               "name": "fps"
             },
             {
-              "id": 2,
               "name": "pvp"
             }
           ]
