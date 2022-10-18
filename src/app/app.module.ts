@@ -8,6 +8,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { FormInscriptionComponent } from './pages/form-inscription/form-inscription.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
     LandingPageComponent,
     HomePageComponent,
     FormInscriptionComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
