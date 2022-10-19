@@ -9,6 +9,10 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { FormInscriptionComponent } from './pages/form-inscription/form-inscription.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SearchListComponent } from './component/search-list/search-list.component';
+import { UserListComponent } from './component/user-list/user-list.component';
+import { UserCardComponent } from './component/user-card/user-card.component';
+import { SearchbarComponent } from './component/searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomePageComponent,
     FormInscriptionComponent,
     UserProfileComponent,
-    NavbarComponent
+    NavbarComponent,
+    SearchListComponent,
+    UserListComponent,
+    UserCardComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,
