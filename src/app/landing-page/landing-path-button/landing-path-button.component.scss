@@ -1,3 +1,4 @@
+
 div{
     margin-bottom : 2em;
     display : flex;
@@ -9,7 +10,6 @@ p{
     margin : 1em 1em 0em 1em;
     font-size: 18px;
     font-weight: bold;
-    color: black;
 }
 
 button{
@@ -17,6 +17,7 @@ button{
     color: black;
     font-size: 20px;
     padding: 0.3em 0.8em 0.3em 0.8em;
+    max-width: 50%;
     font-weight: bold;
     &:hover{
         color : #8738BB;
@@ -24,14 +25,21 @@ button{
 }
 
 .button-1{
-    p{
-        color: black;
 
-    }
     button{
         color : whitesmoke;
         padding: 0.5em 1em 0.5em 1em;
         background-color: #8738BB;
         border-width: 0px;
+    }
+}
+
+@media screen and (min-width : 768px) {
+    p{
+        font-size: 22px;
+    }
+
+    button{
+        max-width: none;
     }
 }

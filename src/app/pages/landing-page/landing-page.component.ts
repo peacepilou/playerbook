@@ -13,8 +13,6 @@ export class LandingPageComponent implements OnInit {
     new LandingButton(1, `Tu as déjà un compte ?`, `Connexion`, `/home`)
   ];
 
-  squareList : any[] = ['','','','']
-
   constructor() { }
 
   ngOnInit(): void {

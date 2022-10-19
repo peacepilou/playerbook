@@ -1,8 +1,8 @@
 export class PlayerHabit{
     constructor(
-        public frequency: string,
+        public frequencyPerWeek: number,
         public isNocturnal: boolean,
-        public sessionDuration: string,
+        public sessionDurationInHour: number,
         public isHotBlooded: boolean,
         public isLeader: boolean,
         public pvpFriendly: boolean,

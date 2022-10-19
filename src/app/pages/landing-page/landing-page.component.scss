@@ -1,56 +1,39 @@
-.square-container{
-    display: none;
-}
-
 @media screen and (min-width : 768px) {
 
-    div{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .square-container{
+        div.global-page{
         display: flex;
         flex-wrap: wrap;
-        flex-direction: row;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        z-index: -1;
-    }
-
-    .square{
-        display: block;
-        width: 49vw;
-    }
-
-    .global-page{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        .logo{
-            width: 50%;
-        }
-
-        .info-text{
-            color: whitesmoke;
-            width: 50%;
-        }
-
-        .landing-path-button{
-            margin-top: 10vw;
-            flex-direction: row;
-            justify-content: space-around;
-            color: black;
-            width: 100%;
-            height: 50%;
-        }
-
-        p{
-            color: whitesmoke;
         }
         
-    }
+        div.logo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50vw;
+            min-height: 50vh;
+        }
+
+        div.info-text{
+            color: whitesmoke;
+            width: 50vw;
+            min-height: 50vh;
+        }
+
+        div.landing-path-button{
+            display: flex;
+            justify-content: space-around;
+            color: black;
+            width: 50vw;
+            min-height: 50vh;
+            align-items: center;
+        }
+
+        .button-0{
+            background-color: #8738BB;
+
+            p{
+                color: whitesmoke;
+            }
+        }
+   
 }

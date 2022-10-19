@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
@@ -10,6 +11,7 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { LandingLogoComponent } from './landing-page/landing-logo/landing-logo.component';
 import { LandingPathButtonComponent } from './landing-page/landing-path-button/landing-path-button.component';
 import { SiteDescriptionComponent } from './landing-page/site-description/site-description.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { SiteDescriptionComponent } from './landing-page/site-description/site-d
     UserProfileComponent,
     LandingLogoComponent,
     LandingPathButtonComponent,
-    SiteDescriptionComponent
+    SiteDescriptionComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

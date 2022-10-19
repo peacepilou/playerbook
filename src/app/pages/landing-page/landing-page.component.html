@@ -1,25 +1,15 @@
 <div class="global-page">
-    <div class="logo">
-        <app-landing-logo></app-landing-logo>
-    </div>
+    
+        <div class="logo">
+            <app-landing-logo></app-landing-logo>
+        </div>
 
-    <div class="info-text">
-    <app-site-description></app-site-description>
-    </div>
-
-    <div class="landing-path-button">
-        <app-landing-path-button
-            *ngFor="let button of buttonList"
-            [getButton]="button"
-        ></app-landing-path-button>
-    </div>
-</div>
-
-<div class="square-container">
-    <div class="square" 
-    *ngFor="let square of squareList, let i = index"
-    [ngStyle]="{backgroundColor: i === 1 || i === 2 ? '#8738BB' : '', 
-    height: i === 2 || i === 3 ? '25vw' : '40vw' }"
-    >
+        <div class="info-text">
+            <app-site-description></app-site-description>
+        </div>
+    
+    <div class="landing-path-button" *ngFor="let button of buttonList"
+    [ngClass]="{'button-0': button.id === 0}" >
+        <app-landing-path-button [getButton]="button"></app-landing-path-button>
     </div>
 </div>
