@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
@@ -12,6 +13,9 @@ import { LandingLogoComponent } from './components/landing-page/landing-logo/lan
 import { LandingPathButtonComponent } from './components/landing-page/landing-path-button/landing-path-button.component';
 import { SiteDescriptionComponent } from './components/landing-page/site-description/site-description.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { GlobalFormComponent } from './components/form/global-form/global-form.component';
+import { FirstFormComponent } from './components/form/first-form/first-form.component';
+import { SecondFormComponent } from './components/form/second-form/second-form.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +27,16 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     LandingLogoComponent,
     LandingPathButtonComponent,
     SiteDescriptionComponent,
-    NavbarComponent
+    NavbarComponent,
+    GlobalFormComponent,
+    FirstFormComponent,
+    SecondFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
