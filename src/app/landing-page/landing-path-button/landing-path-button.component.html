@@ -1,5 +1,5 @@
 <div [ngClass]="{'button-1' : getButton.id === 1}">
     <p>{{getButton.instruction}}</p>
-    <button 
+    <button [routerLink]="[getButton.path]"
     >{{getButton.buttonText}}</button>
 </div>
