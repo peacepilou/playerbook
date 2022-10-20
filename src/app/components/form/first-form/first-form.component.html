@@ -2,42 +2,22 @@
 
     <div>
         <label for="name">Nom :</label>
-        <input id="name" name="name" [(ngModel)]="name" #nameCheck="ngModel" required>
+        <input id="name" name="name" [(ngModel)]="firstFormResults.name" #nameCheck="ngModel" required>
+    </div>
+
+    <div>
+        <label for="linkAvatar">Lien vers l'avatar :</label>
+        <input id="linkAvatar" name="linkAvatar" [(ngModel)]="firstFormResults.linkAvatar" #linkAvatarCheck="ngModel" required>
     </div>
 
     <div>
         <label for="country">Pays :</label>
-        <input id="country" name="country" [(ngModel)]="country" #countryCheck="ngModel" required>
+        <input id="country" name="country" [(ngModel)]="firstFormResults.country" #countryCheck="ngModel" required>
     </div>
 
     <div>
         <label for="biography">Dis-nous en plus sur toi :</label>
-        <input id="biography" name="biography" [(ngModel)]="biography">
-    </div>
-
-    <div>
-        <label for="isCasual">Joueur occasionnel ?</label>
-        <input type="checkbox" id="isCasual"(change)="isCasual = !isCasual">
-    </div>
-
-    <div>
-        <label for="isProactive">Plutôt du genre proactif ?</label>
-        <input type="checkbox" id="isProactive"(change)="isProactive = !isProactive">
-    </div>
-
-    <div>
-        <label for="isExtravert">Plutôt extraverti ?</label>
-        <input type="checkbox" id="isExtravert"(change)="isExtravert = !isExtravert">
-    </div>
-
-    <div>
-        <label for="isPro">Tu serais pas pro, des fois ?</label>
-        <input type="checkbox" id="isPro" name="isPro"(change)="isPro = !isPro">
-    </div>
-
-    <div *ngIf="isPro === true">
-        <label for="employeer">Chez quelle équipe ?</label>
-        <input type="text" id="employeer" name="employeer" [(ngModel)]="employeer">
+        <input id="biography" name="biography" [(ngModel)]="firstFormResults.biography">
     </div>
 
     <button type="submit">Suivant</button>

@@ -1,5 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FirstFormResults } from 'src/models/first-form-results.model';
+import { Game } from 'src/models/game.model';
+import { Genre } from 'src/models/genre.model';
+import { PlayerHabit } from 'src/models/playerHabit.model';
+import { User } from 'src/models/user.model';
+import { UserBehavior } from 'src/models/userBehavior.model';
 
 @Component({
   selector: 'app-first-form',
@@ -9,19 +13,13 @@ import { FirstFormResults } from 'src/models/first-form-results.model';
 export class FirstFormComponent implements OnInit {
 
   @Output()
-  sendFirstForm : EventEmitter<FirstFormResults> = new EventEmitter;
+  sendFirstForm : EventEmitter<User> = new EventEmitter;
 
-  firstFormResults : FirstFormResults = new FirstFormResults('','','','',false,false,false,false);
-
-  name : string = '';
-  country : string = '';
-  biography : string = '';
-  employeer : string = '';
-
-  isCasual : boolean = false;
-  isProactive : boolean = false;
-  isExtravert : boolean = false;
-  isPro : boolean = false;
+  firstFormResults : User = new User(0,'','','','',
+  new UserBehavior(false, false, false, false, ''), 
+  new PlayerHabit(0, false, 0, false, false, false, false), 
+  [new Game('', '', '', [new Genre('')], '', 0, '', '', '')]
+  );
 
   constructor() { }
 
@@ -29,14 +27,6 @@ export class FirstFormComponent implements OnInit {
   }
   
   onSubmit(){
-    this.firstFormResults.name = this.name, 
-    this.firstFormResults.country = this.country,
-    this.firstFormResults.biography = this.biography,
-    this.firstFormResults.employeer = this.employeer,
-    this.firstFormResults.isCasual = this.isCasual,
-    this.firstFormResults.isProactive = this.isProactive,
-    this.firstFormResults.isExtravert = this.isExtravert,
-    this.firstFormResults.isPro = this.isPro
       
     this.sendFirstForm.emit(this.firstFormResults);
     

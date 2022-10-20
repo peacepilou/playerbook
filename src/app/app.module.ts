@@ -16,6 +16,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { GlobalFormComponent } from './components/form/global-form/global-form.component';
 import { FirstFormComponent } from './components/form/first-form/first-form.component';
 import { SecondFormComponent } from './components/form/second-form/second-form.component';
+import { ThirdFormComponent } from './components/form/third-form/third-form.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SecondFormComponent } from './components/form/second-form/second-form.c
     NavbarComponent,
     GlobalFormComponent,
     FirstFormComponent,
-    SecondFormComponent
+    SecondFormComponent,
+    ThirdFormComponent
   ],
   imports: [
     BrowserModule,

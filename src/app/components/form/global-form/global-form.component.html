@@ -1,5 +1,6 @@
-<app-first-form *ngIf="isFirstFormValid === false"
+<app-first-form *ngIf="isFirstFormValid === true"
 (sendFirstForm)="receiveFirstForm($event)" ></app-first-form>
-<app-second-form *ngIf="isFirstFormValid === true"
-
-></app-second-form>
+<app-second-form *ngIf="isSecondFormValid === true"
+(sendsecondForm)="receiveSecondForm($event)" ></app-second-form>
+<app-third-form *ngIf="isThirdFormValid === true"
+(sendthirdForm)="receiveThirdForm($event)" ></app-third-form>

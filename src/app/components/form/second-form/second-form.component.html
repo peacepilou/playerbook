@@ -1,37 +1,30 @@
 <form #secondForm="ngForm" (ngSubmit)="secondForm.valid && onSubmit()">
 
     <div>
-        <label for="frequency">Fréquence de jeu ?</label>
+        <label for="isCasual">Joueur occasionnel ?</label>
+        <input type="checkbox" id="isCasual" (change)="secondFormResults.isCasual = !secondFormResults.isCasual">
     </div>
 
     <div>
-        <label for="sessionDuration"></label>
+        <label for="isProactive">Plutôt proactif ?</label>
+        <input type="checkbox" id="isProactive" (change)="secondFormResults.isProactive = !secondFormResults.isProactive">
     </div>
 
     <div>
-        <label for="pveFriendly"></label>
+        <label for="isExtravert">Extraverti ?</label>
+        <input type="checkbox" id="isExtravert" (change)="secondFormResults.isExtravert = !secondFormResults.isExtravert">
     </div>
 
     <div>
-        <label for="pvpFriendly"></label>
+        <label for="isPro">Tu serais pas pro toi des fois ?</label>
+        <input type="checkbox" id="isPro" (change)="secondFormResults.isPro = !secondFormResults.isPro">
     </div>
 
-    <div>
-        <label for="isLeader"></label>
+    <div *ngIf="secondFormResults.isPro">
+        <label for="employer">Woah, dans quelle équipe ?</label>
+        <input id="employer" name="employer" [(ngModel)]="secondFormResults.employer" #employerCheck="ngModel" >
     </div>
 
-    <div>
-        <label for="isNocturnal"></label>
-    </div>
-
-    <div>
-        <label for="isHotBlooded"></label>
-    </div>
-
-    <div>
-        <label for="games"></label>
-    </div>
-    
     <button type="submit">Suivant</button>
 
 </form>

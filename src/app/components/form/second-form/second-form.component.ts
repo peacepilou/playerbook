@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { SecondFormResults } from 'src/models/second-form-results.model';
+import { UserBehavior } from 'src/models/userBehavior.model';
 
 @Component({
   selector: 'app-second-form',
@@ -10,7 +9,12 @@ import { SecondFormResults } from 'src/models/second-form-results.model';
 export class SecondFormComponent implements OnInit {
 
   @Output()
-  sendSecondForm : EventEmitter<SecondFormResults> = new EventEmitter;
+  sendsecondForm : EventEmitter<UserBehavior> = new EventEmitter;
+
+  secondFormResults : UserBehavior = new UserBehavior(
+    false, false, false, false, ''
+  );
+
 
   constructor() { }
 
@@ -18,7 +22,6 @@ export class SecondFormComponent implements OnInit {
   }
 
   onSubmit(){
-
+    this.sendsecondForm.emit(this.secondFormResults)
   }
-
 }
