@@ -11,7 +11,6 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 
-
 import { SearchListComponent } from './components/search-list/search-list.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
