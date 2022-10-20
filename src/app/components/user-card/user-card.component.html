@@ -1,1 +1,38 @@
-<p>hello</p>
+<div class="fr-card card">
+    <div class="fr-card--profile profile">
+      <div class="profile--header">
+        <img class="profile--image" src={{userCardChild.linkAvatar}} />
+          <div class="img-overlay"></div>
+        <div class="profile--title">
+          <h4>{{userCardChild.name}}</h4>
+        </div>
+        <div class="profile--status">
+          <span *ngIf="userCardChild.userBehaviorList.isCasual"> Joueur occasionnel </span>
+          <span *ngIf="!userCardChild.userBehaviorList.isCasual"> Joueur régulier </span>
+        </div>
+      </div>
+      <div class="profile--body">
+        <div class="description">
+          <div class="space-2"></div>
+          <ul class="list-unstyled description--details" >
+            <li>
+              <strong> Nombre de connexion :<br> ( par semaine ) </strong>
+              <span> {{userCardChild.playerHabitList.frequencyPerWeek}} </span>
+            </li>
+            <li>
+              <strong> Durée moyenne / session :<br> ( en heure ) </strong>
+              <span> {{userCardChild.playerHabitList.sessionDurationInHour}} </span>
+            </li>
+            <li>
+              <strong> Jeux enregistrés </strong>
+              <span> {{userCardChild.gameList.length}} </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="profile--footer">
+        <a href="#" class="c-button"> Détails </a>
+      </div>
+    </div>
+  </div>
+  
