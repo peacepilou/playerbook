@@ -1,0 +1,39 @@
+@media screen and (min-width : 768px) {
+
+        div.global-page{
+        display: flex;
+        flex-wrap: wrap;
+        }
+        
+        div.logo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50vw;
+            min-height: 50vh;
+        }
+
+        div.info-text{
+            color: whitesmoke;
+            width: 50vw;
+            min-height: 50vh;
+        }
+
+        div.landing-path-button{
+            display: flex;
+            justify-content: space-around;
+            color: black;
+            width: 50vw;
+            min-height: 50vh;
+            align-items: center;
+        }
+
+        .button-0{
+            background-color: #8738BB;
+
+            p{
+                color: whitesmoke;
+            }
+        }
+   
+}
