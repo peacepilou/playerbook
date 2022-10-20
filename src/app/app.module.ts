@@ -20,6 +20,8 @@ import { LandingLogoComponent } from './components/landing-page/landing-logo/lan
 import { LandingPathButtonComponent } from './components/landing-page/landing-path-button/landing-path-button.component';
 import { SiteDescriptionComponent } from './components/landing-page/site-description/site-description.component';
 
+import { Error404PageComponent } from './pages/error404-page/error404-page.component';
+import { Error404LogoComponent } from './components/error404-logo/error404-logo.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,10 @@ import { SiteDescriptionComponent } from './components/landing-page/site-descrip
     SearchbarComponent,
     LandingLogoComponent,
     LandingPathButtonComponent,
-    SiteDescriptionComponent
+    SiteDescriptionComponent,
+    Error404PageComponent,
+    Error404LogoComponent
+
   ],
   imports: [
     BrowserModule,

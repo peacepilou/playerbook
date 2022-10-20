@@ -1,1 +1,6 @@
-<p>user-list works!</p>
+<div class="list-users-container">
+    <app-user-card
+    *ngFor="let userCard of userList"
+    [userCardChild]="userCard"
+    ></app-user-card>
+</div>
