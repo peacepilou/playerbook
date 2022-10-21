@@ -12,6 +12,11 @@ import { LandingLogoComponent } from './components/landing-page/landing-logo/lan
 import { LandingPathButtonComponent } from './components/landing-page/landing-path-button/landing-path-button.component';
 import { SiteDescriptionComponent } from './components/landing-page/site-description/site-description.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import { UserBehaviorComponent } from './components/user-behavior/user-behavior.component';
+import { GameListComponent } from './components/game-list/game-list.component';
+import { GameDetailComponent } from './components/game-detail/game-detail.component';
+import { PlayerHabitComponent } from './components/player-habit/player-habit.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     LandingLogoComponent,
     LandingPathButtonComponent,
     SiteDescriptionComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserDetailComponent,
+    UserBehaviorComponent,
+    GameListComponent,
+    GameDetailComponent,
+    PlayerHabitComponent
   ],
   imports: [
     BrowserModule,
