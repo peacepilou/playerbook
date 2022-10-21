@@ -14,6 +14,7 @@ import { SiteDescriptionComponent } from './components/landing-page/site-descrip
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 import { Error404LogoComponent } from './components/error404-logo/error404-logo.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { Error404LogoComponent } from './components/error404-logo/error404-logo.
     SiteDescriptionComponent,
     NavbarComponent,
     Error404PageComponent,
-    Error404LogoComponent
+    Error404LogoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
