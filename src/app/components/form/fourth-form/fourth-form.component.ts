@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { GenreListService } from 'src/app/shared/genre-list.service';
 import { Game } from 'src/models/game.model';
 import { Genre } from 'src/models/genre.model';
 
@@ -16,16 +17,9 @@ export class FourthFormComponent implements OnInit {
   [], '', 0, '', '', '');
 
   gameList : Game[] = [];
-  genreList : Genre[] = [
-    new Genre('MMORPG'),
-    new Genre('RPG'),
-    new Genre('FPS'),
-    new Genre('Sandbox'),
-    new Genre('Sport'),
-    new Genre('Moba'),
-  ];
+  genreList : Genre[] = this.getGenreList.getGenreList();
 
-  constructor() { }
+  constructor(private getGenreList : GenreListService) { }
 
   ngOnInit(): void {
   }
