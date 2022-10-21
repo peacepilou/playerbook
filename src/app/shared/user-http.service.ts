@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserHttpService {
-  private baseUrl: User = 'http://localhost:3000/user';
+  private baseUrl: string = 'http://localhost:3000/user';
 
   private userId: number | undefined;
 
