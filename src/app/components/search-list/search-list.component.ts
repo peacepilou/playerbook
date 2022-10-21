@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchListComponent implements OnInit {
 
+  searchedContent: string = "";
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  catchSearchedContent(event: string): void {
+    this.searchedContent = event;
+    console.log( this.searchedContent)
   }
 
 }
