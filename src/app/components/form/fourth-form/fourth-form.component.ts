@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { GameHttpService } from 'src/app/shared/game-http.service';
 import { Game } from 'src/models/game.model';
 import { Genre } from 'src/models/genre.model';
 
@@ -11,28 +10,34 @@ import { Genre } from 'src/models/genre.model';
 export class FourthFormComponent implements OnInit {
 
   @Output()
-  sendFourthForm : EventEmitter<Game> = new EventEmitter;
-
-  gameList : Game[] = [];
-  gameListFiltered : Game[] = [];
-  searchBarContent : string = '';
+  sendFourthForm : EventEmitter<Game[]> = new EventEmitter;
 
   fourthFormResults : Game = new Game('', '', '', 
-  [new Genre('')], '', 0, '', '', '');
+  [], '', 0, '', '', '');
 
-  constructor(private gameApi : GameHttpService) { }
+  gameList : Game[] = [];
+  genreList : Genre[] = [
+    new Genre('MMORPG'),
+    new Genre('RPG'),
+    new Genre('FPS'),
+    new Genre('Sandbox'),
+    new Genre('Sport'),
+    new Genre('Moba'),
+  ];
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.gameApi.getGameList().subscribe(data => {
-      this.gameList = data;
-    })
-  }
-
-  searchGame() : void {
-    this.gameListFiltered = this.gameList.filter(game => game.name.toLowerCase().includes(this.searchBarContent.toLowerCase()));
-    
   }
 
   onSubmit() : void {
+    this.sendFourthForm.emit(this.gameList);
+  }
+
+  nextGame() : void {
+    this.gameList.push({...this.fourthFormResults});
+    console.log(this.fourthFormResults);
+    
+    console.log(this.gameList);
   }
 }

@@ -1,0 +1,16 @@
+.form-page{
+    height: 100vh;
+    background-color: #404040;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container{
+    background-color: whitesmoke;
+    border-radius: 25px;
+    padding: 3em;
+    max-width: 80%;
+    max-height: 80%;
+    margin: 1em;
+    box-shadow: 2px 2px 20px #202020;
+}

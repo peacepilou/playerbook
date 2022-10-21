@@ -47,7 +47,7 @@ import { FourthFormComponent } from './components/form/fourth-form/fourth-form.c
     ThirdFormComponent,
     Error404PageComponent,
     Error404LogoComponent,
-    FourthFormComponent
+    FourthFormComponent,
 
   ],
   imports: [

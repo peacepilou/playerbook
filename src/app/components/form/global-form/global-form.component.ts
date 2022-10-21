@@ -26,8 +26,7 @@ export class GlobalFormComponent implements OnInit {
     0, false, 0, false, false, false, false
   );
 
-  fourthFormResults : Game = new Game('', '', '', 
-  [new Genre('')], '', 0, '', '', '');
+  fourthFormResults : Game[] = [];
 
   isFirstFormValid : boolean = true;
   isSecondFormValid : boolean = false;
@@ -60,7 +59,7 @@ export class GlobalFormComponent implements OnInit {
     console.log(this.thirdFormResults);
   }
 
-  receiveFourthForm(event : Game) : void {
+  receiveFourthForm(event : Game[]) : void {
     this.fourthFormResults = event;
     console.log(this.fourthFormResults);
   }

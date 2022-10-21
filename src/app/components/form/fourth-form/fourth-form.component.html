@@ -1,13 +1,51 @@
-<form #fourthForm="ngForm" (ngSubmit)="fourthForm.valid && onSubmit()">
+<form #fourthForm="ngForm" (ngSubmit)="onSubmit()">
 
-    <label for="searchBar">Et toi, à quoi tu joues ?</label>
     <div>
-        <input type="text" id="searchBar" name="searchBar" [(ngModel)]="searchBarContent" (input)="searchGame()">
-        <div class="autoComplete" *ngIf="gameList.length !== gameListFiltered.length">
-            <div *ngFor="let game of gameListFiltered">
-                {{game.name}}
-            </div>
-        </div>
+        <label for="name">Et toi, à quoi tu joues ?</label>
+        <input type="text" name="name" id="name" [(ngModel)]="fourthFormResults.name" >
     </div>
+
+    <div *ngFor="let genre of genreList, let i = index">
+        <label for="genre">{{genreList[i].name}} </label>
+        <input type="checkbox" id="genre" (click)="fourthFormResults.genreList.push(genreList[i])">
+    </div>
+
+    <div>
+        <label for="game-url">Lien vers le site du jeu :</label>
+        <input type="text" name="game-url" id="game-url" [(ngModel)]="fourthFormResults.url" >
+    </div>
+
+    <div>
+        <label for="pseudo">C'est quoi ton blaze ?</label>
+        <input type="text" name="pseudo" id="pseudo" [(ngModel)]="fourthFormResults.userPseudo" >
+    </div>
+
+    <div>
+        <label for="guild">T'es dans une guilde ?</label>
+        <input type="text" name="guild" id="guild" [(ngModel)]="fourthFormResults.guild" >
+    </div>
+
+    <div>
+        <label for="level">Quel niveau ?</label>
+        <input type="text" name="level" id="level" [(ngModel)]="fourthFormResults.level" >
+    </div>
+
+    <div>
+        <label for="rank">Quel rang ?</label>
+        <input type="text" name="rank" id="rank" [(ngModel)]="fourthFormResults.rank" >
+    </div>
+
+    <div>
+        <label for="difficulty">Quelle difficulté ?</label>
+        <input type="text" name="difficulty" id="difficulty" [(ngModel)]="fourthFormResults.difficulty" >
+    </div>
+
+    <div>
+        <label for="server">Quel serveur ?</label>
+        <input type="text" name="server" id="server" [(ngModel)]="fourthFormResults.serverName" >
+    </div>
+
+    <button type="reset" (click)="nextGame()">Neeeext !</button>
     <button type="submit">Envoyer !</button>
+
 </form>
