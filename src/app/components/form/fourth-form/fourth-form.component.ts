@@ -29,7 +29,7 @@ export class FourthFormComponent implements OnInit {
   }
 
   searchGame() : void {
-    this.gameListFiltered = this.gameList.filter(game => game.name.includes(this.searchBarContent));
+    this.gameListFiltered = this.gameList.filter(game => game.name.toLowerCase().includes(this.searchBarContent.toLowerCase()));
     
   }
 
