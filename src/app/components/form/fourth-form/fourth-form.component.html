@@ -1,0 +1,13 @@
+<form #fourthForm="ngForm" (ngSubmit)="fourthForm.valid && onSubmit()">
+
+    <label for="searchBar">Et toi, à quoi tu joues ?</label>
+    <div>
+        <input type="text" id="searchBar" name="searchBar" [(ngModel)]="searchBarContent" (input)="searchGame()">
+        <div class="autoComplete" *ngIf="gameList.length !== gameListFiltered.length">
+            <div *ngFor="let game of gameListFiltered">
+                {{game.name}}
+            </div>
+        </div>
+    </div>
+    <button type="submit">Envoyer !</button>
+</form>

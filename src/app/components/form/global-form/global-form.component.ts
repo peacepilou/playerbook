@@ -26,9 +26,13 @@ export class GlobalFormComponent implements OnInit {
     0, false, 0, false, false, false, false
   );
 
+  fourthFormResults : Game = new Game('', '', '', 
+  [new Genre('')], '', 0, '', '', '');
+
   isFirstFormValid : boolean = true;
   isSecondFormValid : boolean = false;
   isThirdFormValid : boolean = false;
+  isFourthFormValid : boolean = false;
 
   constructor() { }
 
@@ -51,7 +55,14 @@ export class GlobalFormComponent implements OnInit {
 
   receiveThirdForm(event : PlayerHabit) : void {
     this.thirdFormResults = event;
+    this.isThirdFormValid = false;
+    this.isFourthFormValid = true;
     console.log(this.thirdFormResults);
+  }
+
+  receiveFourthForm(event : Game) : void {
+    this.fourthFormResults = event;
+    console.log(this.fourthFormResults);
   }
 
 }
