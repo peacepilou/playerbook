@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserHttpService } from 'src/app/shared/user-http.service';
+import { User } from 'src/models/user.model';
 
 @Component({
   selector: 'app-checkbox-filter-users',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckboxFilterUsersComponent implements OnInit {
 
-  constructor() { }
+  userList: User[] = [];
+
+  isPro: boolean = false;
+  isCasual: boolean = false;
+  isLeader: boolean = false;
+  isPvpFriendly: boolean = false;
+  isPveFriendly: boolean = false;
+  isNocturnal: boolean = false;
+  isProactive: boolean = false;
+  isExtravert: boolean = false;
+
+  constructor(private userApi: UserHttpService) { }
 
   ngOnInit(): void {
+    this.userApi.getUserList().subscribe((data) => {
+      this.userList = data;
+    });
   }
-
 }
