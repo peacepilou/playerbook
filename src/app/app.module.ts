@@ -16,6 +16,7 @@ import { SearchListComponent } from './components/search-list/search-list.compon
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { CheckboxFilterUsersComponent } from './components/checkbox-filter-users/checkbox-filter-users.component';
 
 import { LandingLogoComponent } from './components/landing-page/landing-logo/landing-logo.component';
 import { LandingPathButtonComponent } from './components/landing-page/landing-path-button/landing-path-button.component';
@@ -40,16 +41,11 @@ import { Error404LogoComponent } from './components/error404-logo/error404-logo.
     LandingPathButtonComponent,
     SiteDescriptionComponent,
     Error404PageComponent,
-    Error404LogoComponent
-
+    Error404LogoComponent,
+    CheckboxFilterUsersComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
