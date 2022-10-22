@@ -11,27 +11,43 @@ import { Genre } from 'src/models/genre.model';
 export class FourthFormComponent implements OnInit {
 
   @Output()
-  sendFourthForm : EventEmitter<Game[]> = new EventEmitter;
+  sendFourthForm: EventEmitter<Game[]> = new EventEmitter;
 
-  fourthFormResults : Game = new Game('', '', '', 
-  [], '', 0, '', '', '');
+  fourthFormResults: Game = new Game('', '', '',
+    [], '', 0, '', '', '');
 
-  gameList : Game[] = [];
-  genreList : Genre[] = this.getGenreList.getGenreList();
+  gameList: Game[] = [];
+  genreList: Genre[] = this.getGenreList.getGenreList();
 
-  constructor(private getGenreList : GenreListService) { }
+  constructor(private getGenreList: GenreListService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
   }
 
-  onSubmit() : void {
+  onSubmit(): void {
     this.sendFourthForm.emit(this.gameList);
   }
 
-  nextGame() : void {
-    this.gameList.push({...this.fourthFormResults});
-    console.log(this.fourthFormResults);
-    
+  nextGame(): void {
+    this.gameList.push({ ...this.fourthFormResults });
+    this.fourthFormResults.genreList = [];
     console.log(this.gameList);
   }
+
+  checkGenre(i: number) : void {
+    let actualGenre: Genre = this.genreList[i];
+
+    let positionOfGenreAlreadyIn : number = 
+    this.fourthFormResults.genreList.findIndex(genre => {
+      return genre === actualGenre;
+    });
+
+    if (positionOfGenreAlreadyIn === -1) {
+      this.fourthFormResults.genreList.push(actualGenre);
+    }else{
+      this.fourthFormResults.genreList.splice(positionOfGenreAlreadyIn, 1);
+    }
+
+  }
+
 }

@@ -1,6 +1,23 @@
-.autoComplete{
-    background-color: whitesmoke;
-    border: 1px solid black;
-    position: absolute;
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+button{
+    background-color: #8738BB;
+    color: whitesmoke;
+    border: none;
+    padding: 0.4em 1.5em 0.5em 1.5em;
+    box-shadow: 1px 1px 5px gray;
+}
+
+
+
+input{
+    width: 100%;
+}
+
+div{
+    margin-bottom: 1em;
+}
