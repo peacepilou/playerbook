@@ -1,5 +1,5 @@
 <div class="div-search">
     <app-searchbar (sendSearchedContent)="catchSearchedContent($event)"></app-searchbar>
 </div>
-<app-checkbox-filter-users></app-checkbox-filter-users>
+<app-checkbox-filter-users (sendValuesCheckbox)="catchValuesCheckbox($event)"></app-checkbox-filter-users>
 <app-user-list [searchedContentChild]="searchedContent"></app-user-list>
