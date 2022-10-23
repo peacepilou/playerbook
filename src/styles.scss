@@ -6,7 +6,16 @@
 }
 
 body{
-    background-color: whitesmoke;
+    background: -webkit-linear-gradient(
+    to top,
+    #ffffff,
+    #ece9e6
+  ); 
+  background: linear-gradient(
+    to top,
+    #ffffff,
+    #ece9e6
+  ); 
 }
 
 h1{
