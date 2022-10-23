@@ -18,4 +18,36 @@ export class CheckboxFilterUsersComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  toggleIsPro(): void {
+    this.isPro = !this.isPro;
+  }
+
+  toggleIsCasual(): void {
+    this.isCasual = !this.isCasual;
+  }
+
+  toggleIsLeadero(): void {
+    this.isLeader = !this.isLeader;
+  }
+
+  toggleIsPvpFriendly(): void {
+    this.isPvpFriendly = !this.isPvpFriendly;
+  }
+
+  toggleIsPveFriendly(): void {
+    this.isPveFriendly = !this.isPveFriendly;
+  }
+
+  toggleIsNocturnal(): void {
+    this.isNocturnal = !this.isNocturnal;
+  }
+
+  toggleIsProactive(): void {
+    this.isProactive = !this.isProactive;
+  }
+
+  toggleIsExtravert(): void {
+    this.isExtravert = !this.isExtravert;
+  }
 }
