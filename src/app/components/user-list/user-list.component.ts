@@ -11,6 +11,27 @@ export class UserListComponent implements OnInit {
   @Input()
   searchedContentChild: string = '';
 
+  @Input()
+  checkBoxValueChild: {
+    isPro: boolean;
+    isCasual: boolean;
+    isLeader: boolean;
+    isPvpFriendly: boolean;
+    isPveFriendly: boolean;
+    isNocturnal: boolean;
+    isProactive: boolean;
+    isExtravert: boolean;
+  } = {
+    isPro: false,
+    isCasual: false,
+    isLeader: false,
+    isPvpFriendly: false,
+    isPveFriendly: false,
+    isNocturnal: false,
+    isProactive: false,
+    isExtravert: false,
+  };
+
   userList: any[] = [];
 
   userListFiltered: User[] = [];
