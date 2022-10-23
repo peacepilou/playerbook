@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-checkbox-filter-users',
@@ -15,39 +15,32 @@ export class CheckboxFilterUsersComponent implements OnInit {
   isProactive: boolean = false;
   isExtravert: boolean = false;
 
+  @Output()
+  sendValuesCheckbox: EventEmitter<{
+    isPro: boolean;
+    isCasual: boolean;
+    isLeader: boolean;
+    isPvpFriendly: boolean;
+    isPveFriendly: boolean;
+    isNocturnal: boolean;
+    isProactive: boolean;
+    isExtravert: boolean;
+  }> = new EventEmitter();
+
   constructor() {}
 
   ngOnInit(): void {}
 
-  toggleIsPro(): void {
-    this.isPro = !this.isPro;
-  }
-
-  toggleIsCasual(): void {
-    this.isCasual = !this.isCasual;
-  }
-
-  toggleIsLeadero(): void {
-    this.isLeader = !this.isLeader;
-  }
-
-  toggleIsPvpFriendly(): void {
-    this.isPvpFriendly = !this.isPvpFriendly;
-  }
-
-  toggleIsPveFriendly(): void {
-    this.isPveFriendly = !this.isPveFriendly;
-  }
-
-  toggleIsNocturnal(): void {
-    this.isNocturnal = !this.isNocturnal;
-  }
-
-  toggleIsProactive(): void {
-    this.isProactive = !this.isProactive;
-  }
-
-  toggleIsExtravert(): void {
-    this.isExtravert = !this.isExtravert;
+  sendValuesCheckboxToParent(): void {
+    this.sendValuesCheckbox.emit({
+      isPro: this.isPro,
+      isCasual: this.isCasual,
+      isLeader: this.isLeader,
+      isPvpFriendly: this.isPvpFriendly,
+      isPveFriendly: this.isPveFriendly,
+      isNocturnal: this.isNocturnal,
+      isProactive: this.isProactive,
+      isExtravert: this.isExtravert,
+    });
   }
 }
