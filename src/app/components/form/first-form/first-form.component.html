@@ -1,6 +1,11 @@
 <form #firstForm="ngForm" class="form" (ngSubmit)="firstForm.valid && onSubmit()">
 
     <div>
+        <label for="id">Id :</label>
+        <input id="id" name="id" [(ngModel)]="firstFormResults.id" #idCheck="ngModel" minlength="1" required>
+    </div>
+
+    <div>
         <label for="name">Nom :</label>
         <input id="name" name="name" [(ngModel)]="firstFormResults.name" #nameCheck="ngModel" minlength="1" required>
     </div>
@@ -20,6 +25,6 @@
         <input id="biography" name="biography" [(ngModel)]="firstFormResults.biography">
     </div>
 
-    <button type="submit"[ngStyle]="{backgroundColor: !nameCheck.valid || !linkAvatarCheck.valid || !countryCheck.valid ? 'grey' : '' }">Suivant</button>
+    <button type="submit"[ngStyle]="{backgroundColor: !idCheck.valid || !nameCheck.valid || !linkAvatarCheck.valid || !countryCheck.valid ? 'grey' : '' }">Suivant</button>
 
 </form>
