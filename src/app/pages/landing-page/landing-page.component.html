@@ -1,0 +1,15 @@
+<div class="global-page">
+    
+        <div class="logo">
+            <app-landing-logo></app-landing-logo>
+        </div>
+
+        <div class="info-text">
+            <app-site-description></app-site-description>
+        </div>
+    
+    <div class="landing-path-button" *ngFor="let button of buttonList"
+    [ngClass]="{'button-0': button.id === 0}" >
+        <app-landing-path-button [getButton]="button"></app-landing-path-button>
+    </div>
+</div>

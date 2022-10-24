@@ -1,0 +1,10 @@
+<div class="search">
+  <input
+    (input)="sendSearchedContentToParent()"
+    type="text"
+    class="search__input"
+    placeholder="Recherche par pseudo ou par pays"
+    [(ngModel)]="searchedContent"
+  />
+  <div class="search__icon">🔍</div>
+</div>

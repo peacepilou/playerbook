@@ -1,0 +1,13 @@
+.list-users-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (min-width: 768px){
+    .list-users-container{
+        justify-content: flex-start;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+}
