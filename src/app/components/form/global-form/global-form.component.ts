@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserHttpService } from 'src/app/shared/user-http.service';
 import { Game } from 'src/models/game.model';
 import { Genre } from 'src/models/genre.model';
 import { PlayerHabit } from 'src/models/playerHabit.model';
@@ -32,8 +33,9 @@ export class GlobalFormComponent implements OnInit {
   isSecondFormValid : boolean = false;
   isThirdFormValid : boolean = false;
   isFourthFormValid : boolean = false;
+  isFormComplete : boolean = false;
 
-  constructor() { }
+  constructor(private userHttpS : UserHttpService) { }
 
   ngOnInit(): void {
   }
@@ -42,26 +44,40 @@ export class GlobalFormComponent implements OnInit {
     this.firstFormResults = event;
     this.isFirstFormValid = false;
     this.isSecondFormValid = true;
-    console.log(this.firstFormResults);
   }
 
   receiveSecondForm(event : UserBehavior) : void {
     this.secondFormResults = event;
     this.isSecondFormValid = false;
     this.isThirdFormValid = true;
-    console.log(this.secondFormResults);
   }
 
   receiveThirdForm(event : PlayerHabit) : void {
     this.thirdFormResults = event;
     this.isThirdFormValid = false;
     this.isFourthFormValid = true;
-    console.log(this.thirdFormResults);
   }
 
   receiveFourthForm(event : Game[]) : void {
     this.fourthFormResults = event;
-    console.log(this.fourthFormResults);
+    this.isFourthFormValid = false;
+    this.isFormComplete = true;
+
+  let globalFormResults : User = new User(
+    this.firstFormResults.id,
+    this.firstFormResults.name,
+    this.firstFormResults.linkAvatar,
+    this.firstFormResults.country,
+    this.firstFormResults.biography,
+    this.secondFormResults,
+    this.thirdFormResults, 
+    this.fourthFormResults
+  );
+
+  this.userHttpS.postNewUser(globalFormResults);
+
+  console.log(globalFormResults);
+    
   }
 
 }

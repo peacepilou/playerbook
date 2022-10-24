@@ -1,27 +1,27 @@
 <form #secondForm="ngForm" class="form" (ngSubmit)="secondForm.valid && onSubmit()">
 
     <div>
-        <label for="isCasual">Joueur occasionnel ?</label>
-        <input type="checkbox" id="isCasual" (change)="secondFormResults.isCasual = !secondFormResults.isCasual">
+        <label for="isCasual">Joueur occasionnel ? </label>
+        <input type="checkbox" class="checkbox" id="isCasual" (change)="secondFormResults.isCasual = !secondFormResults.isCasual">
     </div>
 
     <div>
-        <label for="isProactive">Plutôt proactif ?</label>
-        <input type="checkbox" id="isProactive" (change)="secondFormResults.isProactive = !secondFormResults.isProactive">
+        <label for="isProactive">Plutôt proactif ? </label>
+        <input type="checkbox" class="checkbox" id="isProactive" (change)="secondFormResults.isProactive = !secondFormResults.isProactive">
     </div>
 
     <div>
-        <label for="isExtravert">Extraverti ?</label>
-        <input type="checkbox" id="isExtravert" (change)="secondFormResults.isExtravert = !secondFormResults.isExtravert">
+        <label for="isExtravert">Extraverti ? </label>
+        <input type="checkbox" class="checkbox" id="isExtravert" (change)="secondFormResults.isExtravert = !secondFormResults.isExtravert">
     </div>
 
     <div>
-        <label for="isPro">Tu serais pas pro toi des fois ?</label>
-        <input type="checkbox" id="isPro" (change)="secondFormResults.isPro = !secondFormResults.isPro">
+        <label for="isPro">Joueur pro ? </label>
+        <input type="checkbox" class="checkbox" id="isPro" (change)="secondFormResults.isPro = !secondFormResults.isPro">
     </div>
 
     <div *ngIf="secondFormResults.isPro">
-        <label for="employer">Woah, dans quelle équipe ?</label>
+        <label for="employer">Woah, dans quelle équipe ? </label>
         <input id="employer" name="employer" [(ngModel)]="secondFormResults.employer" #employerCheck="ngModel" >
     </div>
 

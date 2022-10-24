@@ -1,6 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Game } from 'src/models/game.model';
+import { Genre } from 'src/models/genre.model';
+import { PlayerHabit } from 'src/models/playerHabit.model';
+import { User } from 'src/models/user.model';
+import { UserBehavior } from 'src/models/userBehavior.model';
 
 @Injectable({
   providedIn: 'root',
@@ -10,23 +15,31 @@ export class UserHttpService {
 
   private userId: number | undefined;
 
-  private body: any
+  private body: User = new User(0,'','','','',
+  new UserBehavior(false, false, false, false, ''), 
+  new PlayerHabit(0, false, 0, false, false, false, false), 
+  [new Game('', '', '', [new Genre('')], '', 0, '', '', '')]
+  );
 
   constructor(private userHttp: HttpClient) {}
 
-  getUserList(): Observable<any> {
-    return this.userHttp.get<any>(`${this.baseUrl}`);
+  postNewUser(body : User): Observable<User> {
+    return this.userHttp.post<User>(this.baseUrl, body);
   }
 
-  getUserById(): Observable<any> {
-    return this.userHttp.get<any>(`${this.baseUrl}/${this.userId}`);
+  getUserList(): Observable<User[]> {
+    return this.userHttp.get<User[]>(`${this.baseUrl}`);
   }
 
-  updateUserById(): Observable<any> {
-    return this.userHttp.put<any>(`${this.baseUrl}/${this.userId}`, this.body);
+  getUserById(): Observable<User> {
+    return this.userHttp.get<User>(`${this.baseUrl}/${this.userId}`);
   }
 
-  deleteUserById(): Observable<any> {
-    return this.userHttp.delete<any>(`${this.baseUrl}/${this.userId}`);
+  updateUserById(): Observable<User> {
+    return this.userHttp.put<User>(`${this.baseUrl}/${this.userId}`, this.body);
+  }
+
+  deleteUserById(): Observable<User> {
+    return this.userHttp.delete<User>(`${this.baseUrl}/${this.userId}`);
   }
 }

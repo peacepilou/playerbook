@@ -12,12 +12,14 @@ button{
     box-shadow: 1px 1px 5px gray;
 }
 
-
-
 input{
     width: 100%;
 }
 
 div{
     margin-bottom: 1em;
+}
+
+.checkbox{
+    max-width: fit-content;
 }

@@ -1,38 +1,38 @@
 <form #thirdForm="ngForm" class="form" (ngSubmit)="onSubmit()">
 
     <div>
-        <label for="frequency">Fréquence de jeu par semaine ?</label>
+        <label for="frequency">Fréquence de jeu par semaine ? </label>
         <input type="number" id="frequency" name="frequency" [(ngModel)]="thirdFormResults.frequencyPerWeek" #frequencyCheck="ngModel">
     </div>
 
     <div>
-        <label for="isNocturnal">Nocturne ?</label>
-        <input type="checkbox" id="isNocturnal" (change)="thirdFormResults.isNocturnal = !thirdFormResults.isNocturnal" >
-    </div>
-
-    <div>
-        <label for="sessionDuration">Combien d'heures de jeu par jour ?</label>
+        <label for="sessionDuration">Combien d'heures de jeu par jour ? </label>
         <input type="number" id="sessionDuration" name="sessionDuration" [(ngModel)]="thirdFormResults.sessionDurationInHour" #sessionDurationCheck="ngModel">
     </div>
 
     <div>
-        <label for="isHotBlooded">Calm down bruh</label>
-        <input type="checkbox" id="isHotBlooded" (change)="thirdFormResults.isHotBlooded = !thirdFormResults.isHotBlooded">
+        <label for="isNocturnal">Nocturne ? </label>
+        <input type="checkbox" class="checkbox" id="isNocturnal" (change)="thirdFormResults.isNocturnal = !thirdFormResults.isNocturnal" >
     </div>
 
     <div>
-        <label for="isLeader">C'est moi qui déciiide</label>
-        <input type="checkbox" id="isLeader" (change)="thirdFormResults.isLeader = !thirdFormResults.isLeader">
+        <label for="isHotBlooded">Plutôt sanguin ? </label>
+        <input type="checkbox" class="checkbox" id="isHotBlooded" (change)="thirdFormResults.isHotBlooded = !thirdFormResults.isHotBlooded">
     </div>
 
     <div>
-        <label for="pvpFriendly">Tu aimes taper tes potes ?</label>
-        <input type="checkbox" id="pvpFriendly" (change)="thirdFormResults.pvpFriendly = !thirdFormResults.pvpFriendly">
+        <label for="isLeader">Plutôt leader ? </label>
+        <input type="checkbox" class="checkbox" id="isLeader" (change)="thirdFormResults.isLeader = !thirdFormResults.isLeader">
     </div>
 
     <div>
-        <label for="pveFriendly">Tu aimes la pêche et la cueillete?</label>
-        <input type="checkbox" id="pveFriendly" (change)="thirdFormResults.pveFriendly = !thirdFormResults.pveFriendly">
+        <label for="pvpFriendly">Plutôt PVP ? </label>
+        <input type="checkbox" class="checkbox" id="pvpFriendly" (change)="thirdFormResults.pvpFriendly = !thirdFormResults.pvpFriendly">
+    </div>
+
+    <div>
+        <label for="pveFriendly">Plutôt PVE ? </label>
+        <input type="checkbox" class="checkbox" id="pveFriendly" (change)="thirdFormResults.pveFriendly = !thirdFormResults.pveFriendly">
     </div>
     
     <button type="submit">Suivant</button>
