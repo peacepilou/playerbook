@@ -24,6 +24,7 @@ import { SiteDescriptionComponent } from './components/landing-page/site-descrip
 
 import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 import { Error404LogoComponent } from './components/error404-logo/error404-logo.component';
+import { ScrollToTopComponent } from './utils/scroll-to-top/scroll-to-top.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,8 @@ import { Error404LogoComponent } from './components/error404-logo/error404-logo.
     Error404PageComponent,
     Error404LogoComponent,
     CheckboxFilterUsersComponent,
+    ScrollToTopComponent
+ 
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
