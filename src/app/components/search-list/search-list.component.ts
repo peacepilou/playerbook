@@ -8,26 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class SearchListComponent implements OnInit {
   searchedContent: string = '';
 
-  checkBoxValue: {
-    isPro: boolean;
-    isCasual: boolean;
-    isLeader: boolean;
-    isPvpFriendly: boolean;
-    isPveFriendly: boolean;
-    isNocturnal: boolean;
-    isProactive: boolean;
-    isExtravert: boolean;
-  } = {
-    isPro: false,
-    isCasual: false,
-    isLeader: false,
-    isPvpFriendly: false,
-    isPveFriendly: false,
-    isNocturnal: false,
-    isProactive: false,
-    isExtravert: false,
-  };
-
   constructor() {}
 
   ngOnInit(): void {}
@@ -36,17 +16,4 @@ export class SearchListComponent implements OnInit {
     this.searchedContent = event;
   }
 
-  catchValuesCheckbox(event: {
-    isPro: boolean;
-    isCasual: boolean;
-    isLeader: boolean;
-    isPvpFriendly: boolean;
-    isPveFriendly: boolean;
-    isNocturnal: boolean;
-    isProactive: boolean;
-    isExtravert: boolean;
-  }): void {
-    this.checkBoxValue = event;
-    console.log("valeur dans le parent", event)
-  }
 }

@@ -1,99 +1,11 @@
-<p class="text-alternative-search">ou recherche par filtre :</p>
-<div class="container-checkbox">
-  <div class="unitary-checkbox">
-    <p>Joueur professionnel</p>
-    <label class="switch">
-      <input
-        type="checkbox"
-        value="{{ isPro }}"
-        (change)="sendValuesCheckboxToParent()"
-        [(ngModel)]="isPro"
-      />
-      <span class="slider"></span>
-    </label>
-  </div>
-  <div class="unitary-checkbox">
-    <p>Joueur régulier</p>
-    <label class="switch">
-      <input
-        type="checkbox"
-        value="{{ isCasual }}"
-        (change)="sendValuesCheckboxToParent()"
-        [(ngModel)]="isCasual"
-      />
-      <span class="slider"></span>
-    </label>
-  </div>
-  <div class="unitary-checkbox">
-    <p>Leader d'équipe</p>
-    <label class="switch">
-      <input
-        type="checkbox"
-        value="{{ isLeader }}"
-        (change)="sendValuesCheckboxToParent()"
-        [(ngModel)]="isLeader"
-      />
-      <span class="slider"></span>
-    </label>
-  </div>
-  <div class="unitary-checkbox">
-    <p>PVP friendly</p>
-    <label class="switch">
-      <input
-        type="checkbox"
-        value="{{ isPvpFriendly }}"
-        (change)="sendValuesCheckboxToParent()"
-        [(ngModel)]="isPvpFriendly"
-      />
-      <span class="slider"></span>
-    </label>
-  </div>
-  <div class="unitary-checkbox">
-    <p>PVE friendly</p>
-    <label class="switch">
-      <input
-        type="checkbox"
-        value="{{ isPveFriendly }}"
-        (change)="sendValuesCheckboxToParent()"
-        [(ngModel)]="isPveFriendly"
-      />
-      <span class="slider"></span>
-    </label>
-  </div>
-  <div class="unitary-checkbox">
-    <p>Oiseau de nuit</p>
-    <label class="switch">
-      <input
-        type="checkbox"
-        value="{{ isNocturnal }}"
-        (change)="sendValuesCheckboxToParent()"
-        [(ngModel)]="isNocturnal"
-      />
-      <span class="slider"></span>
-    </label>
-  </div>
-  <div class="unitary-checkbox">
-    <p>Joueur pro-actif</p>
-    <label class="switch">
-      <input
-        type="checkbox"
-        value="{{ isProactive }}"
-        (change)="sendValuesCheckboxToParent()"
-        [(ngModel)]="isProactive"
-      />
-      <span class="slider"></span>
-    </label>
-  </div>
-  <div class="unitary-checkbox">
-    <p>Joueur extraverti</p>
-    <label class="switch">
-      <input
-        type="checkbox"
-        value="{{ isExtravert }}"
-        (change)="sendValuesCheckboxToParent()"
-        [(ngModel)]="isExtravert"
-      />
-      <span class="slider"></span>
-    </label>
-  </div>
+  <!-- Plus qu'un -->
+<div class="unitary-checkbox">
+  <p>{{checkbox.description}}</p>
+  <label class="switch">
+    <input
+      type="checkbox"
+      (change)="onChangeCheckbox()"
+    />
+    <span class="slider"></span>
+  </label>
 </div>
