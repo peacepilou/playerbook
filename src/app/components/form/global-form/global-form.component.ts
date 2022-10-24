@@ -74,7 +74,7 @@ export class GlobalFormComponent implements OnInit {
     this.fourthFormResults
   );
 
-  this.userHttpS.postNewUser(globalFormResults);
+  this.userHttpS.postNewUser(globalFormResults).subscribe();
 
   console.log(globalFormResults);
     

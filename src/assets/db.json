@@ -150,6 +150,49 @@
           ]
         }
       ]
+    },
+    {
+      "id": "45",
+      "name": "toxrill",
+      "linkAvatar": "https://static.wikia.nocookie.net/ageofempires/images/4/40/Warthog_portrait.png/revision/latest/top-crop/width/360/height/360?cb=20211001235013",
+      "country": "Fronce",
+      "biography": "",
+      "userBehavior": {
+        "isCasual": false,
+        "isProactive": true,
+        "isExtravert": true,
+        "isPro": false,
+        "employer": ""
+      },
+      "playerHabit": {
+        "frequencyPerWeek": 6,
+        "isNocturnal": true,
+        "sessionDurationInHour": 1,
+        "isHotBlooded": true,
+        "isLeader": false,
+        "pvpFriendly": true,
+        "pveFriendly": false
+      },
+      "gameList": [
+        {
+          "name": "mincrraft",
+          "url": "terrria.org",
+          "userPseudo": "Michel Drucker",
+          "genreList": [
+            {
+              "name": "RPG"
+            },
+            {
+              "name": "Sandbox"
+            }
+          ],
+          "guild": "",
+          "level": 0,
+          "rank": "",
+          "difficulty": "",
+          "serverName": ""
+        }
+      ]
     }
   ]
 }
