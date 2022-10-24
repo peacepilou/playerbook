@@ -2,19 +2,18 @@
 
 <p class="text-alternative-search">ou recherche par filtre :</p>
 <div class="container-checkbox">
-    <app-checkbox-filter-users
-        *ngFor="let checkbox of checkboxList"
-        [checkbox]="checkbox"
-        (emitCheckboxChange)="catchCheckboxChange($event)"
-    ></app-checkbox-filter-users>
+  <app-checkbox-filter-users
+    *ngFor="let checkbox of checkboxList"
+    [checkbox]="checkbox"
+    (emitCheckboxChange)="catchCheckboxChange($event)"
+  ></app-checkbox-filter-users>
 </div>
 
 <!-- FIN NOUVEAU -->
 
-
 <div class="list-users-container">
-    <app-user-card
+  <app-user-card
     *ngFor="let userCard of isOneElementTruthy ? userListFiltered : userList"
     [userCardChild]="userCard"
-    ></app-user-card>
+  ></app-user-card>
 </div>
