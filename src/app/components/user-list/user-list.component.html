@@ -1,6 +1,6 @@
 <div class="list-users-container">
     <app-user-card
-    *ngFor="let userCard of userList"
+    *ngFor="let userCard of userListFiltered.length > 0 ? userListFiltered : userList"
     [userCardChild]="userCard"
     ></app-user-card>
 </div>

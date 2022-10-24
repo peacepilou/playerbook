@@ -12,7 +12,7 @@ import { UserBehavior } from 'src/models/userBehavior.model';
 })
 export class UserCardComponent implements OnInit {
 
-  @Input() userCardChild:User = new User(0, "", "", "", "", new UserBehavior(true, true, true, true, ""), new PlayerHabit(0, true, 0, true, true, true, true), 
+  @Input() userCardChild: User = new User(0, "", "", "", "", new UserBehavior(true, true, true, true, ""), new PlayerHabit(0, true, 0, true, true, true, true), 
   [
     new Game("", "", "", [ new Genre("")], "", 0, "", "", "")
   ])
