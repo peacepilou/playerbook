@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { User } from 'src/models/user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -10,12 +11,16 @@ export class UserHttpService {
 
   private userId: number | undefined;
 
-  private body: User
+  private body: User | undefined
 
   constructor(private userHttp: HttpClient) {}
 
-  getUserList(): Observable<User> {
-    return this.userHttp.get<User>(`${this.baseUrl}`);
+  postUser(): Observable<User> {
+    return this.userHttp.post<User>(`${this.baseUrl}`, this.body);
+  }
+
+  getUserList(): Observable<User[]> {
+    return this.userHttp.get<User[]>(`${this.baseUrl}`);
   }
 
   getUserById(): Observable<User> {
