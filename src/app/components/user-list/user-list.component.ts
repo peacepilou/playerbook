@@ -39,6 +39,18 @@ export class UserListComponent implements OnInit {
   constructor(private userApi: UserHttpService) {}
 
   ngOnChanges(): void {
+    this.resultOnSearchbar();
+
+    console.log('valeurs dans userList', this.checkBoxValueChild);
+    
+  }
+
+  ngOnInit(): void {
+    this.userApi.getUserList().subscribe((data) => {
+      this.userList = data;
+    });
+  }
+  resultOnSearchbar(): void {
     this.userListFiltered = this.userList.filter(
       (user) =>
         user.name
@@ -53,9 +65,13 @@ export class UserListComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {
-    this.userApi.getUserList().subscribe((data) => {
-      this.userList = data;
-    });
+  resetListIfCheckboxFalse(): void { 
+    Object.values(this.checkBoxValueChild).every(e => e === false) === true
   }
+
+  // filterByCheckbox(): void {
+  //   this.userList.filter(
+  //     (user) => user.
+  //   )
+  // }
 }
