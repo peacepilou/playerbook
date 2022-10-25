@@ -29,10 +29,8 @@ export class UserProfileComponent implements OnInit {
       this.router.paramMap.subscribe((param: ParamMap) => {
         if(param.get("id")) {
           this.userId = parseInt(param.get("id") as string);
-          console.log("userId", this.userId);
           
           this.userFound = this.userList.find(userList => userList.id === this.userId); 
-          console.log("userFound", this.userFound);
         }
       })
     });
