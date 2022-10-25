@@ -6,24 +6,27 @@ onSubmit()">
 
     <div>
         <label for="name">Et toi, à quoi tu joues ?</label>
-        <input type="text" name="name" id="name" [(ngModel)]="fourthFormResults.name" #nameCheck="ngModel" minlength="1" required>
+        <input type="text" name="name" id="name" [(ngModel)]="fourthFormResults.name" #nameCheck="ngModel" minlength="1"
+            required>
     </div>
 
-    <ul>
-        <li *ngFor="let genre of genreList, let i = index">
+    <div class="checkbox-list">
+        <div class="checkbox-container" *ngFor="let genre of genreList, let i = index">
             <label for="genre">{{genreList[i].name}} </label>
             <input type="checkbox" class="checkbox" id="genre" (change)="checkGenre(i)">
-        </li>
-    </ul>
+        </div>
+    </div>
 
     <div>
         <label for="game-url">Lien vers le site du jeu : </label>
-        <input type="text" name="game-url" id="game-url" [(ngModel)]="fourthFormResults.url" #gameUrlCheck="ngModel" minlength="3" required>
+        <input type="text" name="game-url" id="game-url" [(ngModel)]="fourthFormResults.url" #gameUrlCheck="ngModel"
+            minlength="3" required>
     </div>
 
     <div>
         <label for="pseudo">C'est quoi ton pseudo ? </label>
-        <input type="text" name="pseudo" id="pseudo" [(ngModel)]="fourthFormResults.userPseudo" #pseudoCheck="ngModel" minlength="1" required>
+        <input type="text" name="pseudo" id="pseudo" [(ngModel)]="fourthFormResults.userPseudo" #pseudoCheck="ngModel"
+            minlength="1" required>
     </div>
 
     <div>
@@ -51,7 +54,10 @@ onSubmit()">
         <input type="text" name="server" id="server" [(ngModel)]="fourthFormResults.serverName">
     </div>
 
-    <button type="reset"  [ngStyle]="{backgroundColor: !fourthForm.valid ? 'grey' : '' }"(click)="nextGame()" [disabled]="!fourthForm.valid" >Ajouter jeu</button>
-    <button type="submit" [ngStyle]="{backgroundColor: nameCheck.valid || gameUrlCheck.valid || pseudoCheck.valid ? 'grey' : '' }" >Terminer !</button>
+    <button type="reset" [ngStyle]="{backgroundColor: !fourthForm.valid ? 'grey' : '' }" (click)="nextGame()"
+        [disabled]="!fourthForm.valid">Ajouter jeu</button>
+    <button type="submit"
+        [ngStyle]="{backgroundColor: nameCheck.valid || gameUrlCheck.valid || pseudoCheck.valid ? 'grey' : '' }">Terminer
+        !</button>
 
 </form>
