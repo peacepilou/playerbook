@@ -1,23 +1,23 @@
 <div class="user-detail-container">
   <div class="intro-user-detail-profil">
-    <img class="user-avatar-profile" src="{{ userModel.linkAvatar }}" alt="{{ userModel.name }}" />
+    <!-- <img class="user-avatar-profile" src={{ userFoundToChild.linkAvatar }} alt={{ userFoundToChild.name }} /> -->
     <div class="container-data-user">
-        <p>{{ userModel.name }}</p>
-        <p><span class="name-content">Localisation :</span> {{ userModel.country }}</p>
-        <p><span class="name-content">Présentation :</span> {{ userModel.biography }}</p>    
+        <p>{{ userFoundToChild?.name }}</p>
+        <p><span class="name-content">Localisation :</span> {{ userFoundToChild?.country }}</p>
+        <p><span class="name-content">Présentation :</span> {{ userFoundToChild?.biography }}</p>    
     </div>
     </div>
 
   <div class="second-container">
       <app-player-habit
-        [playerHabitToChild]="userModel.playerHabit"
+        [playerHabitToChild]="userFoundToChild?.playerHabit"
       ></app-player-habit>
     
       <app-user-behavior
-        [userBehaviorToChild]="userModel.userBehavior"
+        [userBehaviorToChild]="userFoundToChild?.userBehavior"
       ></app-user-behavior>
   </div>
 
-    <app-game-list [userGameListToChild]="userModel.gameList"></app-game-list>
-    
+    <app-game-list [userGameListToChild]="userFoundToChild?.gameList"></app-game-list>
+
 </div>
