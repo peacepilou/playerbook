@@ -1,12 +1,21 @@
-div.game-list {
+.container-game-list{
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
-    margin: 1em;
+    align-items: center;
+    margin: 0.5em 1em;
+    background-color: #f7d125;
+    border-top-left-radius: 1em;
+    border-top: 5px solid #8738bb;
+    border-left: 5px solid #8738bb;
 }
-
-@media screen and (min-width: 768px){
-    div.game-list {
-        flex-direction: row;
-    }
+h4{
+    margin: .5em 0;
+    text-indent: .8em;
+    letter-spacing: 0.1em;
+    font-size: 1.2em;
+    align-self: flex-start;
+}
+.game-list {
+    display: flex;
+    flex-direction: column;
 }

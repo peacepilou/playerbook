@@ -1,6 +1,9 @@
-<p>Ta liste de jeux</p>
-
-<div class="game-list">
-    <app-game-detail *ngFor="let game of userGameListToChild" [gameChild]="game"></app-game-detail>
+<div class="container-game-list">
+  <h4>Jeux enregistrés</h4>
+  <div class="game-list">
+    <app-game-detail
+      *ngFor="let game of userGameListToChild"
+      [gameChild]="game"
+    ></app-game-detail>
+  </div>
 </div>
-

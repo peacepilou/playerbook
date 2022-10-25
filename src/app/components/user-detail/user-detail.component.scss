@@ -1,45 +1,48 @@
-div.user-detail-container{
+.user-detail-container{
     display: flex;
-    border: 1px solid black;
     flex-direction: column;
-    margin: 1em;
 }
-
-div.second-container {
+.intro-user-detail-profil{
+    margin: 1.5em 1em .5em 1em;
     display: flex;
-    border: 1px solid black;
     flex-direction: column;
-    margin: 1em;
+    border-top-left-radius: 1em;
+    background-color: #f7d125;
+    border-top: 5px solid #8738bb;
+    border-left: 5px solid #8738bb;
+    padding-bottom: .5em;
+}
+.user-avatar-profile{
+    max-width: 90%;
+    position: relative;
+    bottom: 1em;
+    left: 1em;
+}
+.container-data-user p{
+    text-indent: .5em;
+    font-weight: 700;
+    font-size: large;
+}
+.container-data-user p:first-child{
+    font-size: 2em;
+}
+.name-content{
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
+.second-container {
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-
-
 }
 
 @media screen and (min-width: 768px){
-    div.second-container {
+    .intro-user-detail-profil{
         flex-direction: row;
     }
-}
-
-div.game-list {
-    display: flex;
-    border: 1px solid black;
-    margin: 1em;
-    justify-content: center;
-}
-
-
-
-div.player-habit {
-    display: flex;
-    border: 1px solid black;
-    margin: 1em;
-}
-
-div.user-behavior {
-    display: flex;
-    border: 1px solid black;
-    margin: 1em;
+    .second-container {
+        flex-direction: row;
+    }
 }
 
 
