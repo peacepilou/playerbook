@@ -1,0 +1,4 @@
+<div class="div-search">
+    <app-searchbar (sendSearchedContent)="catchSearchedContent($event)"></app-searchbar>
+</div>
+<app-user-list [searchedContentChild]="searchedContent"></app-user-list>
