@@ -26,6 +26,16 @@ import { Error404LogoComponent } from './components/error404-logo/error404-logo.
 import { FourthFormComponent } from './components/form/fourth-form/fourth-form.component';
 import { BackButtonComponent } from './components/form/back-button/back-button.component';
 
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import { UserBehaviorComponent } from './components/user-behavior/user-behavior.component';
+import { GameListComponent } from './components/game-list/game-list.component';
+import { GameDetailComponent } from './components/game-detail/game-detail.component';
+import { PlayerHabitComponent } from './components/player-habit/player-habit.component';
+
+
+import { ScrollToTopComponent } from './utils/scroll-to-top/scroll-to-top.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +60,16 @@ import { BackButtonComponent } from './components/form/back-button/back-button.c
     Error404LogoComponent,
     FourthFormComponent,
     BackButtonComponent,
+    UserDetailComponent,
+    UserBehaviorComponent,
+    GameListComponent,
+    GameDetailComponent,
+    PlayerHabitComponent,
+    Error404PageComponent,
+    Error404LogoComponent,
+    ScrollToTopComponent
 
+    
   ],
   imports: [
     BrowserModule,

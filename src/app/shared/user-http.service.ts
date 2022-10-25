@@ -21,8 +21,9 @@ export class UserHttpService {
   [new Game('', '', '', [new Genre('')], '', 0, '', '', '')]
   );
 
-  constructor(private userHttp: HttpClient) {}
 
+  constructor(private userHttp: HttpClient) {}
+  
   postNewUser(body : User): Observable<User> {
     return this.userHttp.post<User>(this.baseUrl, body);
   }
@@ -31,15 +32,15 @@ export class UserHttpService {
     return this.userHttp.get<User[]>(`${this.baseUrl}`);
   }
 
-  getUserById(): Observable<User> {
-    return this.userHttp.get<User>(`${this.baseUrl}/${this.userId}`);
+  getUserById(): Observable<any> {
+    return this.userHttp.get<any>(`${this.baseUrl}/${this.userId}`);
   }
 
-  updateUserById(): Observable<User> {
-    return this.userHttp.put<User>(`${this.baseUrl}/${this.userId}`, this.body);
+  updateUserById(): Observable<any> {
+    return this.userHttp.put<any>(`${this.baseUrl}/${this.userId}`, this.body);
   }
 
-  deleteUserById(): Observable<User> {
-    return this.userHttp.delete<User>(`${this.baseUrl}/${this.userId}`);
+  deleteUserById(): Observable<any> {
+    return this.userHttp.delete<any>(`${this.baseUrl}/${this.userId}`);
   }
 }
