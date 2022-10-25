@@ -1,18 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PlayerHabit } from 'src/models/playerHabit.model';
 
 @Component({
   selector: 'app-player-habit',
   templateUrl: './player-habit.component.html',
-  styleUrls: ['./player-habit.component.scss']
+  styleUrls: ['./player-habit.component.scss'],
 })
 export class PlayerHabitComponent implements OnInit {
+  @Input()
+  playerHabitToChild: PlayerHabit = new PlayerHabit(2, false, 3, true, true, true, true)
 
-  playerHabit: PlayerHabit = new PlayerHabit (0, false, 0, false, false, false, false,)
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -1,22 +1,24 @@
 
 <div class="user-detail-container">
 
-  <p>user-detail works!</p>
+  <div>
+    <p>{{userModel.name}}</p>
+    <img src={{userModel.linkAvatar}} alt={{userModel.name}}>
+    <p>Je joue en {{userModel.country}}</p>
+    <p>Présentation : {{userModel.biography}}</p>
+  </div>
 
     <div class="second-container">
-
         <div class="player-habit">
-             <app-player-habit></app-player-habit>
+             <app-player-habit [playerHabitToChild]="userModel.playerHabit"></app-player-habit>
         </div>
-
         <div class="user-behavior">
-            <app-user-behavior></app-user-behavior>
+            <app-user-behavior [userBehaviorToChild]="userModel.userBehavior"></app-user-behavior>
         </div>
-
     </div>
     
     <div class="game-list">
-          <app-game-list></app-game-list>
+          <app-game-list [userGameListToChild]="userModel.gameList"></app-game-list>
     </div>
         
 </div>

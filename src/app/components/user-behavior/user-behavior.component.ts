@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UserBehavior } from 'src/models/userBehavior.model';
 
 @Component({
@@ -8,7 +8,8 @@ import { UserBehavior } from 'src/models/userBehavior.model';
 })
 export class UserBehaviorComponent implements OnInit {
 
-  userBehavior: UserBehavior = new UserBehavior (false, false, false, false,"")
+  @Input()
+  userBehaviorToChild: UserBehavior = new UserBehavior(true, true, true, true, "Blizzard ESport")
 
   constructor() { }
 

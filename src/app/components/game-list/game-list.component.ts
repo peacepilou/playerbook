@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Game } from 'src/models/game.model';
 import { Genre } from 'src/models/genre.model';
 
@@ -10,18 +10,10 @@ import { Genre } from 'src/models/genre.model';
 })
 export class GameListComponent implements OnInit {
 
-
-
-  gameList: Game[] = [
-    new Game ("World of Warcraft","https://www.mamytwink.com/upload/news/2018/septembre/26/wow-classic-billet-virtuel-blizzcon-2018-wow.jpg",
-  "Jason", [ new Genre("Mmorpg")], "LesBG", 4, "", "easy", "CasualServ"),
-  new Game ("CallOfDuty","https://store-images.s-microsoft.com/image/apps.1926.67185831113154542.823e899c-d262-40a0-91f6-eee04bdc3713.ca4b2ff5-8dc9-4774-a5f1-4e379a72cbda?q=90&w=480&h=270",
-  "Jason", [ new Genre("Mmorpg")], "LesBG", 4, "", "easy", "CasualServ"),
-  new Game ("Lol","https://images.jeugeek.com/uploads/files/league-of-legends.jpg",
-  "Jason", [ new Genre("Mmorpg")], "LesBG", 4, "", "easy", "CasualServ")
-
-  
-
+  @Input()
+  userGameListToChild: Game[] = [
+    new Game("World of Warcraft", "https://worldofwarcraft.com/fr-fr/", "Elfy_the_bad_B", [ new Genre("MMORPG"), new Genre("PVP")], "Draenor", 160, "Leader", "Hard", "Bloom"),
+    new Game("Dofus", "https://www.dofus.com/fr/", "Elfy_queen_B", [ new Genre("MMORPG"), new Genre("PVP")], "Pandore MasterG", 50, "Leader", "Medium", "Pandore")
   ];
 
   constructor() { }
