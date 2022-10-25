@@ -1,7 +1,8 @@
-.form{
+form{
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 100%;
 }
 
 button{
@@ -12,14 +13,19 @@ button{
     box-shadow: 1px 1px 5px gray;
 }
 
-
-
 input{
     width: 100%;
 }
 
 div{
     margin-bottom: 1em;
+    width: 100%;
+}
+
+.checkbox-container{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
 }
 
 .checkbox{

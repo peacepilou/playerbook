@@ -18,6 +18,20 @@ input{
 
 div{
     margin-bottom: 1em;
+    width: 100%;
+}
+
+.checkbox-list{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+
+}
+
+.checkbox-container{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
 }
 
 .checkbox{
