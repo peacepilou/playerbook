@@ -1,14 +1,17 @@
     <div class="form-page">
         <div class="form-container">
-            <app-first-form *ngIf="isFirstFormValid === true"
+            <app-first-form *ngIf="formStep === 1"
             (sendFirstForm)="receiveFirstForm($event)" ></app-first-form>
-            <app-second-form *ngIf="isSecondFormValid === true"
+            <app-second-form *ngIf="formStep === 2"
             (sendsecondForm)="receiveSecondForm($event)" ></app-second-form>
-            <app-third-form *ngIf="isThirdFormValid === true"
+            <app-third-form *ngIf="formStep === 3"
             (sendthirdForm)="receiveThirdForm($event)" ></app-third-form>
-            <app-fourth-form *ngIf="isFourthFormValid === true"
+            <app-fourth-form *ngIf="formStep === 4"
             (sendFourthForm)="receiveFourthForm($event)" ></app-fourth-form>
-            <div *ngIf="isFormComplete">
+            <app-back-button *ngIf="formStep > 1 && formStep < 5"
+            (goBack)="goBack()"
+            ></app-back-button>
+            <div *ngIf="formStep === 5">
                 Le formulaire a bien été soumis, bienvenue !
             </div>
         </div>

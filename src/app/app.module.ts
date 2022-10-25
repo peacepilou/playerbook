@@ -24,6 +24,7 @@ import { ThirdFormComponent } from './components/form/third-form/third-form.comp
 import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 import { Error404LogoComponent } from './components/error404-logo/error404-logo.component';
 import { FourthFormComponent } from './components/form/fourth-form/fourth-form.component';
+import { BackButtonComponent } from './components/form/back-button/back-button.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { FourthFormComponent } from './components/form/fourth-form/fourth-form.c
     Error404PageComponent,
     Error404LogoComponent,
     FourthFormComponent,
+    BackButtonComponent,
 
   ],
   imports: [

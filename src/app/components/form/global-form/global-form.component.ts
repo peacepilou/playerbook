@@ -29,11 +29,7 @@ export class GlobalFormComponent implements OnInit {
 
   fourthFormResults : Game[] = [];
 
-  isFirstFormValid : boolean = true;
-  isSecondFormValid : boolean = false;
-  isThirdFormValid : boolean = false;
-  isFourthFormValid : boolean = false;
-  isFormComplete : boolean = false;
+  formStep : number = 1;
 
   constructor(private userHttpS : UserHttpService) { }
 
@@ -42,26 +38,22 @@ export class GlobalFormComponent implements OnInit {
 
   receiveFirstForm(event : User) : void {
     this.firstFormResults = event;
-    this.isFirstFormValid = false;
-    this.isSecondFormValid = true;
+    this.formStep += 1;
   }
 
   receiveSecondForm(event : UserBehavior) : void {
     this.secondFormResults = event;
-    this.isSecondFormValid = false;
-    this.isThirdFormValid = true;
+    this.formStep += 1;
   }
 
   receiveThirdForm(event : PlayerHabit) : void {
     this.thirdFormResults = event;
-    this.isThirdFormValid = false;
-    this.isFourthFormValid = true;
+    this.formStep += 1;
   }
 
   receiveFourthForm(event : Game[]) : void {
     this.fourthFormResults = event;
-    this.isFourthFormValid = false;
-    this.isFormComplete = true;
+    this.formStep += 1;
 
   let globalFormResults : User = new User(
     this.firstFormResults.id,
@@ -78,6 +70,10 @@ export class GlobalFormComponent implements OnInit {
 
   console.log(globalFormResults);
     
+  }
+
+  goBack(){
+    this.formStep -= 1;
   }
 
 }
