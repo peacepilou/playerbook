@@ -9,8 +9,8 @@ export class User{
         public linkAvatar: string,
         public country: string,
         public biography: string,
-        public userBehavior: UserBehavior,
-        public playerHabit: PlayerHabit,
+        public userBehaviorList: UserBehavior,
+        public playerHabitList: PlayerHabit,
         public gameList: Game[]
     ){}
 }

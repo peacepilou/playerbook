@@ -1,0 +1,25 @@
+<p>détails du jeu</p>
+<div class="container">
+
+    <div class="name">{{gameChild.name}}</div>
+
+    <img [src]="gameChild.url" alt="image de l'artiste">
+
+    <div class="userPseudo">{{gameChild.userPseudo}}</div>
+
+    <div class="genreList" *ngFor="let genre of gameChild.genreList">{{genre.name}}</div>
+
+    <div class="guild">{{gameChild.guild}}</div>
+
+    <div class="level">{{gameChild.level}}</div>
+
+    <div class="rank">{{gameChild.rank}}</div>
+
+    <div class="difficulty">{{gameChild.difficulty}}</div>
+
+    <div class="serverName">{{gameChild.serverName}}</div>   
+
+</div>
+
+
+

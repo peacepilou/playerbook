@@ -1,0 +1,48 @@
+div.user-detail-container{
+    display: flex;
+    border: 1px solid black;
+    flex-direction: column;
+    margin: 1em;
+}
+
+div.second-container {
+    display: flex;
+    border: 1px solid black;
+    flex-direction: column;
+    margin: 1em;
+    justify-content: space-between;
+
+
+}
+
+@media screen and (min-width: 768px){
+    div.second-container {
+        flex-direction: row;
+    }
+}
+
+div.game-list {
+    display: flex;
+    border: 1px solid black;
+    margin: 1em;
+    justify-content: center;
+}
+
+
+
+div.player-habit {
+    display: flex;
+    border: 1px solid black;
+    margin: 1em;
+}
+
+div.user-behavior {
+    display: flex;
+    border: 1px solid black;
+    margin: 1em;
+}
+
+
+
+
+
