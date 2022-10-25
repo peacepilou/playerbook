@@ -41,8 +41,8 @@ import { FooterComponent } from './components/footer/footer.component';
     LandingPathButtonComponent,
     SiteDescriptionComponent,
     Error404PageComponent,
-    Error404LogoComponent
-
+    Error404LogoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
