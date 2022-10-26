@@ -8,8 +8,8 @@
           <h4>{{userCardChild.name}}</h4>
         </div>
         <div class="profile--status">
-          <span *ngIf="userCardChild.userBehaviorList.isCasual"> Joueur occasionnel </span>
-          <span *ngIf="!userCardChild.userBehaviorList.isCasual"> Joueur régulier </span>
+          <span *ngIf="userCardChild.userBehavior.isCasual"> Joueur occasionnel </span>
+          <span *ngIf="!userCardChild.userBehavior.isCasual"> Joueur régulier </span>
         </div>
       </div>
       
@@ -19,11 +19,11 @@
           <ul class="list-unstyled description--details" >
             <li>
               <strong> Nombre de connexion :<br> ( par semaine ) </strong>
-              <span> {{userCardChild.playerHabitList.frequencyPerWeek}} </span>
+              <span> {{userCardChild.playerHabit.frequencyPerWeek}} </span>
             </li>
             <li>
               <strong> Durée moyenne / session :<br> ( en heure ) </strong>
-              <span> {{userCardChild.playerHabitList.sessionDurationInHour}} </span>
+              <span> {{userCardChild.playerHabit.sessionDurationInHour}} </span>
             </li>
             <li>
               <strong> Jeux enregistrés </strong>
@@ -34,7 +34,7 @@
       </div>
       
       <div class="profile--footer">
-        <a href="#" class="c-button"> Détails </a>
+        <a [routerLink]="['/user-profile/', userCardChild.id]" class="c-button"> Détails </a>
       </div>
     </div>
   </div>
