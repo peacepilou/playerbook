@@ -28,6 +28,10 @@ export class UserHttpService {
     return this.userHttp.post<User>(this.baseUrl, body);
   }
 
+  postUser(): Observable<User> {
+    return this.userHttp.post<User>(`${this.baseUrl}`, this.body);
+  }
+
   getUserList(): Observable<User[]> {
     return this.userHttp.get<User[]>(`${this.baseUrl}`);
   }
