@@ -13,6 +13,8 @@ import { SearchListComponent } from './components/search-list/search-list.compon
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { CheckboxFilterUsersComponent } from './components/checkbox-filter-users/checkbox-filter-users.component';
+
 import { LandingLogoComponent } from './components/landing-page/landing-logo/landing-logo.component';
 import { LandingPathButtonComponent } from './components/landing-page/landing-path-button/landing-path-button.component';
 import { SiteDescriptionComponent } from './components/landing-page/site-description/site-description.component';
@@ -59,6 +61,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ThirdFormComponent,
     Error404PageComponent,
     Error404LogoComponent,
+    CheckboxFilterUsersComponent,
     FourthFormComponent,
     BackButtonComponent,
     UserDetailComponent,
@@ -78,6 +81,6 @@ import { FooterComponent } from './components/footer/footer.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

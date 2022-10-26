@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Jason",
       "linkAvatar": "https://i.pinimg.com/564x/67/73/fa/6773faf063482c02a0cb8cdae4ef2074.jpg",
-      "country": "Va-labas",
+      "country": "France",
       "biography": "Enchantier, je m'appelle Teuse ! ",
       "userBehavior": {
         "isCasual": true,
@@ -54,7 +54,7 @@
       "id": 2,
       "name": "Dylan",
       "linkAvatar": "https://tc1464.files.wordpress.com/2016/11/398322559_small.jpg?w=400",
-      "country": "Tunning-land",
+      "country": "France",
       "biography": "Azy on est là wesh ",
       "userBehavior": {
         "isCasual": true,
@@ -140,6 +140,251 @@
           "rank": "Grand Ancien",
           "difficulty": "dur.",
           "serverName": "FR2"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Luke Skywalker",
+      "linkAvatar": "https://www.ecranlarge.com/media/cache/1600x1200/uploads/articles/000/921/876/star-wars-episode-iv-un-nouvel-espoir-la-guerre-des-etoiles-photo-mark-hamill-1006592-large.jpg",
+      "country": "Tatouine",
+      "biography": "Humain sensible à la Force",
+      "userBehavior": {
+        "isCasual": false,
+        "isProactive": true,
+        "isExtravert": false,
+        "isPro": true,
+        "employer": "Jedi"
+      },
+      "playerHabit": {
+        "frequencyPerWeek": 7,
+        "isNocturnal": true,
+        "sessionDurationInHour": 10,
+        "isHotBlooded": true,
+        "isLeader": false,
+        "pvpFriendly": true,
+        "pveFriendly": false
+      },
+      "gameList": [
+        {
+          "name": "Star Wars",
+          "url": "https://www.ea.com/fr-fr/games/starwars",
+          "userPseudo": "Jeune Padawan",
+          "genreList": [
+            {
+              "name": "MMORPG"
+            }
+          ],
+          "guild": "Jedi",
+          "level": "2",
+          "rank": "Padawan",
+          "difficulty": "Noob",
+          "serverName": ""
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "MasterCTheB",
+      "linkAvatar": "https://s.yimg.com/ny/api/res/1.2/9pW4OEdUTfmtE5t.Z9hT.A--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTY0MA--/https://s.yimg.com/uu/api/res/1.2/msfjXuI0jcGEPzscZIaH3A--~B/aD0yMDQ4O3c9MjA0ODthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/fr/article.bfmtv.com/40f2314178141bcba477092839a78496",
+      "country": "Suède",
+      "biography": "Queen bitch is a state of mind bb",
+      "userBehavior": {
+        "isCasual": true,
+        "isProactive": true,
+        "isExtravert": true,
+        "isPro": false,
+        "employer": ""
+      },
+      "playerHabit": {
+        "frequencyPerWeek": 2,
+        "isNocturnal": false,
+        "sessionDurationInHour": 3,
+        "isHotBlooded": true,
+        "isLeader": true,
+        "pvpFriendly": true,
+        "pveFriendly": true
+      },
+      "gameList": [
+        {
+          "name": "World of Warcraft",
+          "url": "https://worldofwarcraft.com/fr-fr/",
+          "userPseudo": "ElfyTheBadB",
+          "genreList": [
+            {
+              "name": "MMORPG"
+            },
+            {
+              "name": "RPG"
+            }
+          ],
+          "guild": "Impure",
+          "level": "180",
+          "rank": "",
+          "difficulty": "",
+          "serverName": "Draenor"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Mario",
+      "linkAvatar": "https://play-lh.googleusercontent.com/7Z4x3nLGglKbIDMafIPmdFUB9zpwu-k3HHbIJ1DeWz-4HCp9IFfCzk5r1JsmyiT85y1v",
+      "country": "Italie",
+      "biography": "Plombier moustachu cherche Pauline",
+      "userBehavior": {
+        "isCasual": true,
+        "isProactive": true,
+        "isExtravert": true,
+        "isPro": true,
+        "employer": "Nintendo"
+      },
+      "playerHabit": {
+        "frequencyPerWeek": 5,
+        "isNocturnal": false,
+        "sessionDurationInHour": 3,
+        "isHotBlooded": false,
+        "isLeader": true,
+        "pvpFriendly": true,
+        "pveFriendly": false
+      },
+      "gameList": [
+        {
+          "name": "Super Mario Bros",
+          "url": "https://supermario-game.com/fr",
+          "userPseudo": "HotPlumber",
+          "genreList": [
+            {
+              "name": "MMORPG"
+            },
+            {
+              "name": "RPG"
+            }
+          ],
+          "guild": "Bros",
+          "level": "20",
+          "rank": "",
+          "difficulty": "",
+          "serverName": ""
+        },
+        {
+          "name": "Mario Party",
+          "url": "https://www.nintendo.com/fr-ca/store/products/super-mario-party-switch/",
+          "userPseudo": "HotItalianPlumber",
+          "genreList": [
+            {
+              "name": "MMORPG"
+            },
+            {
+              "name": "RPG"
+            }
+          ],
+          "guild": "Bros",
+          "level": "20",
+          "rank": "",
+          "difficulty": "Hard",
+          "serverName": ""
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Desmond Miles",
+      "linkAvatar": "https://oyster.ignimgs.com/mediawiki/apis.ign.com/assassins-creed-3/a/ab/Zw-acb-2012-desmond-1.png",
+      "country": "USA",
+      "biography": "Freelance de génération en génération",
+      "userBehavior": {
+        "isCasual": true,
+        "isProactive": true,
+        "isExtravert": false,
+        "isPro": true,
+        "employer": "Confrérie des Assassins"
+      },
+      "playerHabit": {
+        "frequencyPerWeek": 7,
+        "isNocturnal": true,
+        "sessionDurationInHour": 2,
+        "isHotBlooded": true,
+        "isLeader": true,
+        "pvpFriendly": true,
+        "pveFriendly": false
+      },
+      "gameList": [
+        {
+          "name": "Assassins Creed II",
+          "url": "https://www.ubisoft.com/fr-fr/game/assassins-creed/assassins-creed-II",
+          "userPseudo": "Ezio",
+          "genreList": [
+            {
+              "name": "FPS"
+            },
+            {
+              "name": "Aventure"
+            }
+          ],
+          "guild": "DaVinci Team",
+          "level": "100",
+          "rank": "Assassin",
+          "difficulty": "Medium",
+          "serverName": ""
+        },
+        {
+          "name": "Assassin's Creed Syndicate",
+          "url": "https://www.ubisoft.com/fr-fr/game/assassins-creed/syndicate",
+          "userPseudo": "Jacob Frye",
+          "genreList": [
+            {
+              "name": "FPS"
+            },
+            {
+              "name": "Aventure"
+            }
+          ],
+          "guild": "",
+          "level": "50",
+          "rank": "Assassin",
+          "difficulty": "Medium",
+          "serverName": ""
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "TomFromLA",
+      "linkAvatar": "https://www.swashvillage.org/storage/img/images/tom-cruise-biography.jpg",
+      "country": "USA",
+      "biography": "26 et moins only bb",
+      "userBehavior": {
+        "isCasual": true,
+        "isProactive": true,
+        "isExtravert": false,
+        "isPro": true,
+        "employer": "Confrérie des Assassins"
+      },
+      "playerHabit": {
+        "frequencyPerWeek": 7,
+        "isNocturnal": true,
+        "sessionDurationInHour": 2,
+        "isHotBlooded": true,
+        "isLeader": true,
+        "pvpFriendly": true,
+        "pveFriendly": false
+      },
+      "gameList": [
+        {
+          "name": "Star Wars",
+          "url": "https://www.ea.com/fr-fr/games/starwars",
+          "userPseudo": "WilCage_Master",
+          "genreList": [
+            {
+              "name": "MMORPG"
+            }
+          ],
+          "guild": "",
+          "level": "80",
+          "rank": "Master",
+          "difficulty": "",
+          "serverName": ""
         }
       ]
     }
