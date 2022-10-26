@@ -99,6 +99,49 @@
           ]
         }
       ]
+    },
+    {
+      "id": "500",
+      "name": "Michel",
+      "linkAvatar": "https://cdn.programme-television.ladmedia.fr/var/premiere/storage/images/tele-7-jours/news-tv/pas-un-souvenir-imperissable-sur-le-plan-humain-michel-drucker-balance-sur-certaines-personnalites-qu-il-a-cotoye-4693162/101102802-1-fre-FR/Pas-un-souvenir-imperissable-sur-le-plan-humain-Michel-Drucker-balance-sur-certaines-personnalites-qu-il-a-cotoye.png",
+      "country": "Fronce",
+      "biography": "Je vous ai vus naître, je vous verrai mourir.",
+      "userBehavior": {
+        "isCasual": false,
+        "isProactive": true,
+        "isExtravert": true,
+        "isPro": true,
+        "employer": "France 2"
+      },
+      "playerHabit": {
+        "frequencyPerWeek": 1,
+        "isNocturnal": false,
+        "sessionDurationInHour": 12,
+        "isHotBlooded": false,
+        "isLeader": false,
+        "pvpFriendly": false,
+        "pveFriendly": true
+      },
+      "gameList": [
+        {
+          "name": "Vivement dimanche !",
+          "url": "france.2.fr",
+          "userPseudo": "Michou",
+          "genreList": [
+            {
+              "name": "MMORPG"
+            },
+            {
+              "name": "Sport"
+            }
+          ],
+          "guild": "France Television",
+          "level": "250",
+          "rank": "Grand Ancien",
+          "difficulty": "dur.",
+          "serverName": "FR2"
+        }
+      ]
     }
   ]
 }
