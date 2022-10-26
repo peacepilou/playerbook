@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserHttpService } from 'src/app/shared/user-http.service';
 import { Game } from 'src/models/game.model';
 import { Genre } from 'src/models/genre.model';
@@ -31,7 +32,10 @@ export class GlobalFormComponent implements OnInit {
 
   formStep : number = 1;
 
-  constructor(private userHttpS : UserHttpService) { }
+  constructor(
+    private userHttpS : UserHttpService,
+    private router : Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -66,9 +70,9 @@ export class GlobalFormComponent implements OnInit {
     this.fourthFormResults
   );
 
-  this.userHttpS.postNewUser(globalFormResults).subscribe();
-
-  console.log(globalFormResults);
+  this.userHttpS.postNewUser(globalFormResults).subscribe(() => {
+    this.router.navigateByUrl("/home")
+  });
     
   }
 

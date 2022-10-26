@@ -5,6 +5,7 @@
 }
 
 button{
+    cursor: pointer;
     background-color: #8738BB;
     color: whitesmoke;
     border: none;
@@ -40,6 +41,7 @@ div{
     --color-grey: #cccccc;
     --color-green: #e7d428;
     
+    margin: 5px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -89,4 +91,10 @@ div{
    
    .switch input[type="checkbox"]:checked:active + .slider::after {
     transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)));
+   }
+
+   .odd-background{
+    background-color: white;
+    box-shadow: 0 0 10px white;
+    border-radius: 1em;
    }

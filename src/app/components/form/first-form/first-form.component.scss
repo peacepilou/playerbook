@@ -5,6 +5,7 @@
 }
 
 button{
+    cursor: pointer;
     width: 100%;
     margin: 1em;
     background-color: #8738BB;
@@ -26,3 +27,8 @@ div{
     margin-bottom: 1em;
 }
 
+@media screen and (min-width: 768px) {
+    button{
+        width: fit-content;
+    }
+}

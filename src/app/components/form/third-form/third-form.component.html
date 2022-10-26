@@ -1,15 +1,23 @@
-<form #thirdForm="ngForm" class="form" (ngSubmit)="onSubmit()">
+<form #thirdForm="ngForm" class="form" (ngSubmit)="thirdForm.valid && onSubmit()">
 
     <div>
-        <label for="frequency">Fréquence de jeu par semaine ? </label>
+        <label for="frequency">Tu joues combien de jours par semaine ? </label>
         <input type="number" id="frequency" name="frequency" [(ngModel)]="thirdFormResults.frequencyPerWeek"
-            #frequencyCheck="ngModel">
+            #frequencyCheck="ngModel" required min="0" max="7">
+    </div>
+
+    <div *ngIf="thirdForm.submitted && frequencyCheck.errors">
+        <small>Votre temps de jeu hebdomadaire doit être compris entre 0 et 7 jours</small>
     </div>
 
     <div>
         <label for="sessionDuration">Combien d'heures de jeu par jour ? </label>
         <input type="number" id="sessionDuration" name="sessionDuration"
-            [(ngModel)]="thirdFormResults.sessionDurationInHour" #sessionDurationCheck="ngModel">
+            [(ngModel)]="thirdFormResults.sessionDurationInHour" #sessionDurationCheck="ngModel" required min="0" max="24">
+    </div>
+
+    <div *ngIf="thirdForm.submitted && sessionDurationCheck.errors">
+        <small>Votre temps de jeu quotidien doit être compris entre 0 et 24 heures. Pensez à votre santé !</small>
     </div>
 
     <div>

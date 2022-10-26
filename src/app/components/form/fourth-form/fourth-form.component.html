@@ -10,7 +10,7 @@ onSubmit()">
             required>
     </div>
 
-    <label class="switch" *ngFor="let genre of genreList, let i = index">
+    <label class="switch" [ngClass]="{'odd-background' : i % 2 === 0}" *ngFor="let genre of genreList, let i = index">
         <p>{{genreList[i].name}} </p>
         <input type="checkbox" class="checkbox" id="genre" (change)="checkGenre(i)">
 

@@ -152,45 +152,45 @@
       ]
     },
     {
-      "id": "45",
-      "name": "toxrill",
-      "linkAvatar": "https://static.wikia.nocookie.net/ageofempires/images/4/40/Warthog_portrait.png/revision/latest/top-crop/width/360/height/360?cb=20211001235013",
+      "id": "500",
+      "name": "Michel",
+      "linkAvatar": "https://cdn.programme-television.ladmedia.fr/var/premiere/storage/images/tele-7-jours/news-tv/pas-un-souvenir-imperissable-sur-le-plan-humain-michel-drucker-balance-sur-certaines-personnalites-qu-il-a-cotoye-4693162/101102802-1-fre-FR/Pas-un-souvenir-imperissable-sur-le-plan-humain-Michel-Drucker-balance-sur-certaines-personnalites-qu-il-a-cotoye.png",
       "country": "Fronce",
-      "biography": "",
+      "biography": "Je vous ai vus naître, je vous verrai mourir.",
       "userBehavior": {
         "isCasual": false,
         "isProactive": true,
         "isExtravert": true,
-        "isPro": false,
-        "employer": ""
+        "isPro": true,
+        "employer": "France 2"
       },
       "playerHabit": {
-        "frequencyPerWeek": 6,
-        "isNocturnal": true,
-        "sessionDurationInHour": 1,
-        "isHotBlooded": true,
+        "frequencyPerWeek": 1,
+        "isNocturnal": false,
+        "sessionDurationInHour": 12,
+        "isHotBlooded": false,
         "isLeader": false,
-        "pvpFriendly": true,
-        "pveFriendly": false
+        "pvpFriendly": false,
+        "pveFriendly": true
       },
       "gameList": [
         {
-          "name": "mincrraft",
-          "url": "terrria.org",
-          "userPseudo": "Michel Drucker",
+          "name": "Vivement dimanche !",
+          "url": "france.2.fr",
+          "userPseudo": "Michou",
           "genreList": [
             {
-              "name": "RPG"
+              "name": "MMORPG"
             },
             {
-              "name": "Sandbox"
+              "name": "Sport"
             }
           ],
-          "guild": "",
-          "level": 0,
-          "rank": "",
-          "difficulty": "",
-          "serverName": ""
+          "guild": "France Television",
+          "level": "250",
+          "rank": "Grand Ancien",
+          "difficulty": "dur.",
+          "serverName": "FR2"
         }
       ]
     }

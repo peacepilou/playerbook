@@ -5,19 +5,38 @@
         <input id="id" name="id" [(ngModel)]="firstFormResults.id" #idCheck="ngModel" minlength="1" required>
     </div>
 
+    <div *ngIf="firstForm.submitted && idCheck.errors">
+        <small>Vous devez spécifier un id valide</small>
+    </div>
+
     <div>
         <label for="name">Nom :</label>
         <input id="name" name="name" [(ngModel)]="firstFormResults.name" #nameCheck="ngModel" minlength="1" required>
+    </div>
+    
+    <div *ngIf="firstForm.submitted && nameCheck.errors">
+        <small *ngIf="nameCheck.errors['minlength']">Votre nom devrait comporter au moins un caractère</small>
+        <small *ngIf="nameCheck.errors['required']">Votre nom est requis</small>
     </div>
 
     <div>
         <label for="linkAvatar">Lien vers l'avatar :</label>
         <input id="linkAvatar" name="linkAvatar" [(ngModel)]="firstFormResults.linkAvatar" #linkAvatarCheck="ngModel" minlength="3" required>
     </div>
+    
+    <div *ngIf="firstForm.submitted && linkAvatarCheck.errors">
+        <small *ngIf="linkAvatarCheck.errors['minlength']">Le lien vers votre avatar doit contenir au moins 3 caractères</small>
+        <small *ngIf="linkAvatarCheck.errors['required']">Un lien vers votre avatar est requis</small>
+    </div>
 
     <div>
         <label for="country">Pays :</label>
         <input id="country" name="country" [(ngModel)]="firstFormResults.country" #countryCheck="ngModel" minlength="3" required>
+    </div>
+    
+    <div *ngIf="firstForm.submitted && countryCheck.errors">
+        <small *ngIf="countryCheck.errors['minlength']">Le nom de votre pays doit contenir au moins un caractère</small>
+        <small *ngIf="countryCheck.errors['required']">Veuillez spécifier votre pays de résidence steuplé</small>
     </div>
 
     <div>
