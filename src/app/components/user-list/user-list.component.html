@@ -1,6 +1,5 @@
-<!-- NOUVEAU -->
-
 <p class="text-alternative-search">ou recherche par filtre :</p>
+
 <div class="container-checkbox">
   <app-checkbox-filter-users
     *ngFor="let checkbox of checkboxList"
@@ -8,8 +7,6 @@
     (emitCheckboxChange)="catchCheckboxChange($event)"
   ></app-checkbox-filter-users>
 </div>
-
-<!-- FIN NOUVEAU -->
 
 <div class="list-users-container">
   <app-user-card

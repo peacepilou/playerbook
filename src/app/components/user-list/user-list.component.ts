@@ -30,7 +30,13 @@ export class UserListComponent implements OnInit {
     new Checkbox('Joueur extraverti', 'isExtravert', false, 'UserBehavior'),
   ];
 
+  change: boolean = false;
+
   constructor(private userApi: UserHttpService) {}
+
+  ngOnChanges(): void {
+    this.filterBySearchbar();
+  }
 
   ngOnInit(): void {
     this.userApi.getUserList().subscribe((data) => {
@@ -66,6 +72,27 @@ export class UserListComponent implements OnInit {
     });
     // Update the array we loop on in the template part.
     this.userListFiltered = updatedArr;
+  }
+
+  filterBySearchbar(): void {
+    if (this.searchedContentChild === '') {
+      this.isOneElementTruthy = false;
+    } else {
+      this.isOneElementTruthy = true;
+    }
+
+    this.userListFiltered = this.userList.filter(
+      (user) =>
+        user.name
+          .toLowerCase()
+          .includes(this.searchedContentChild.toLowerCase()) ||
+        user.country
+          .toLowerCase()
+          .includes(this.searchedContentChild.toLowerCase()) ||
+        user.gameList
+          .map((game: { userPseudo: string }) => game.userPseudo)
+          .includes(this.searchedContentChild.toLowerCase())
+    );
   }
 
   filterArr(checkbox: Checkbox, updatedArr: User[]): User[] {
