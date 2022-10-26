@@ -1,7 +1,7 @@
+
 .footer-contnair{
     width: 100%;
-    position: static;
-    bottom: 0;
+    bottom: 0%;
     box-shadow: 0px 4px 15px #404040;
     background-color: #404040;
 }
@@ -26,7 +26,8 @@
     list-style: none;
     font-size: 1.5em;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-content: center;
 }
 
@@ -47,6 +48,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 50%;
+}
+
+.github-link{
+    width: 100%;
 }
 
 a{
@@ -86,10 +92,17 @@ a{
         justify-content: space-around;
     }
     .footer-powered h2{
-        margin-right: 1em;
         font-size: .7em;
     }
     .list-faq p{
         font-size: 1.2em;
+    }    
+    .name-github-link{
+        justify-content: center;
+        width: auto;
+    }
+
+    .github-link{
+        width: auto;
     }
 }
