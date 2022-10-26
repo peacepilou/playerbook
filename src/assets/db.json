@@ -101,53 +101,45 @@
       ]
     },
     {
-      "id": 3,
-      "name": "Kimberley",
-      "linkAvatar": "https://image-uniservice.linternaute.com/image/450/4/1224765231/9700842.jpg",
-      "country": "Vatican",
-      "biography": "Tire mon doigt.",
+      "id": "500",
+      "name": "Michel",
+      "linkAvatar": "https://cdn.programme-television.ladmedia.fr/var/premiere/storage/images/tele-7-jours/news-tv/pas-un-souvenir-imperissable-sur-le-plan-humain-michel-drucker-balance-sur-certaines-personnalites-qu-il-a-cotoye-4693162/101102802-1-fre-FR/Pas-un-souvenir-imperissable-sur-le-plan-humain-Michel-Drucker-balance-sur-certaines-personnalites-qu-il-a-cotoye.png",
+      "country": "Fronce",
+      "biography": "Je vous ai vus naître, je vous verrai mourir.",
       "userBehavior": {
-        "isCasual": true,
-        "isProactive": false,
+        "isCasual": false,
+        "isProactive": true,
         "isExtravert": true,
         "isPro": true,
-        "employer?": "Michelin"
+        "employer": "France 2"
       },
       "playerHabit": {
         "frequencyPerWeek": 1,
         "isNocturnal": false,
-        "sessionDurationInHour": 1,
-        "isHotBlooded": true,
-        "isLeader": true,
-        "pvpFriendly": true,
+        "sessionDurationInHour": 12,
+        "isHotBlooded": false,
+        "isLeader": false,
+        "pvpFriendly": false,
         "pveFriendly": true
       },
       "gameList": [
         {
-          "name": "CraftofWorld",
-          "url": "https://worldofwarcraft.com/fr-fr/",
-          "userPseudo": "HelloTrikie",
+          "name": "Vivement dimanche !",
+          "url": "france.2.fr",
+          "userPseudo": "Michou",
           "genreList": [
             {
-              "name": "fps"
+              "name": "MMORPG"
             },
             {
-              "name": "pvp"
+              "name": "Sport"
             }
-          ]
-        },
-        {
-          "name": "CallofDuTea",
-          "url": "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/120106660_3425753437483885_436673693311924372_n.jpg?stp=dst-jpg_p180x540&_nc_cat=101&ccb=1-7&_nc_sid=a26aad&_nc_ohc=RcikBG7G4SUAX_rAhuO&_nc_ht=scontent-cdt1-1.xx&oh=00_AT-eFtXFuL_u6IbjnXhpKgqer-27a3VrPMkp7PWb6a2vSw&oe=636E2732",
-          "userPseudo": "DarkItachi",
-          "genreList": [
-            {
-              "name": "fps"
-            },
-            {
-              "name": "pvp"
-            }
-          ]
+          ],
+          "guild": "France Television",
+          "level": "250",
+          "rank": "Grand Ancien",
+          "difficulty": "dur.",
+          "serverName": "FR2"
         }
       ]
     }
