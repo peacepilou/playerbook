@@ -33,4 +33,10 @@
   <app-game-list
     [userGameListToChild]="userFoundToChild?.gameList"
   ></app-game-list>
+
+  <div class="div-button">
+    <button class="button-update">Modifier le profil</button>
+    <button class="button-delete">Supprimer le profil</button>
+    <button class="button-back-home" [routerLink]="['/home']">Retour</button>
+  </div>
 </div>
