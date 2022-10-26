@@ -1,23 +1,46 @@
 <div class="user-detail-container">
   <div class="intro-user-detail-profil">
+<<<<<<< HEAD
     <img class="user-avatar-profile" src={{ userFoundToChild.linkAvatar }} alt={{ userFoundToChild.name }} />
+=======
+    <img
+      class="user-avatar-profile"
+      src="{{ userFoundToChild?.linkAvatar }}"
+      alt="{{
+        userFoundToChild?.name
+        }}"
+    />
+>>>>>>> 3d6983b7efd5ee91bd1d31b1ca193b4c72fc9981
     <div class="container-data-user">
-        <p>{{ userFoundToChild?.name }}</p>
-        <p><span class="name-content">Localisation :</span> {{ userFoundToChild?.country }}</p>
-        <p><span class="name-content">Présentation :</span> {{ userFoundToChild?.biography }}</p>    
+      <p>{{ userFoundToChild?.name }}</p>
+      <p>
+        <span class="name-content">Localisation :</span>
+        {{ userFoundToChild?.country }}
+      </p>
+      <p>
+        <span class="name-content">Présentation :</span>
+        {{ userFoundToChild?.biography }}
+      </p>
     </div>
-    </div>
-
-  <div class="second-container">
-      <app-player-habit
-        [playerHabitToChild]="userFoundToChild?.playerHabit"
-      ></app-player-habit>
-    
-      <app-user-behavior
-        [userBehaviorToChild]="userFoundToChild?.userBehavior"
-      ></app-user-behavior>
   </div>
 
-    <app-game-list [userGameListToChild]="userFoundToChild?.gameList"></app-game-list>
+  <div class="second-container">
+    <app-player-habit
+      [playerHabitToChild]="userFoundToChild?.playerHabit"
+    ></app-player-habit>
 
+    <app-user-behavior
+      [userBehaviorToChild]="userFoundToChild?.userBehavior"
+    ></app-user-behavior>
+  </div>
+
+  <app-game-list
+    [userGameListToChild]="userFoundToChild?.gameList"
+  ></app-game-list>
+
+  <div class="div-button">
+    <button class="button-update">Modifier le profil</button>
+    <button class="button-delete">Supprimer le profil</button>
+    <button class="button-back-home" [routerLink]="['/home']">Retour</button>
+  </div>
 </div>

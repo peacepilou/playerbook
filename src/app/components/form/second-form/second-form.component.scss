@@ -6,6 +6,8 @@ form{
 }
 
 button{
+    width: 100%;
+    margin: 1em;
     background-color: #8738BB;
     color: whitesmoke;
     border: none;
@@ -15,22 +17,15 @@ button{
 
 input{
     width: 100%;
+    border-radius: 1em;
+    border: 1px solid gray;
+    padding: 0.2em;
 }
 
 div{
     margin-bottom: 1em;
     width: 100%;
 }
-
-.checkbox-container{
-    display: flex;
-    justify-content: space-between;
-    width: 60%;
-}
-
-// .checkbox{
-//     max-width: fit-content;
-// }
 
 .switch {
     --button-width: 2em;
@@ -41,6 +36,10 @@ div{
     --toggle-wider: 1em;
     --color-grey: #cccccc;
     --color-green: #e7d428;
+    
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
    }
    
    .slider {

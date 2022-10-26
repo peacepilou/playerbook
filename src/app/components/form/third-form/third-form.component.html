@@ -12,36 +12,49 @@
             [(ngModel)]="thirdFormResults.sessionDurationInHour" #sessionDurationCheck="ngModel">
     </div>
 
-    <div class="checkbox-list">
-        <div class="checkbox-container">
+    <div>
+        <label class="switch">
             <label for="isNocturnal">Nocturne ? </label>
             <input type="checkbox" class="checkbox" id="isNocturnal"
                 (change)="thirdFormResults.isNocturnal = !thirdFormResults.isNocturnal">
-        </div>
+            <span class="slider"></span>
+        </label>
+    </div>
 
-        <div class="checkbox-container">
+    <div>
+        <label class="switch">
             <label for="isHotBlooded">Plutôt sanguin ? </label>
             <input type="checkbox" class="checkbox" id="isHotBlooded"
                 (change)="thirdFormResults.isHotBlooded = !thirdFormResults.isHotBlooded">
-        </div>
+            <span class="slider"></span>
+        </label>
+    </div>
 
-        <div class="checkbox-container">
+    <div>
+        <label class="switch">
             <label for="isLeader">Plutôt leader ? </label>
             <input type="checkbox" class="checkbox" id="isLeader"
                 (change)="thirdFormResults.isLeader = !thirdFormResults.isLeader">
-        </div>
+            <span class="slider"></span>
+        </label>
+    </div>
 
-        <div class="checkbox-container">
+    <div>
+        <label class="switch">
             <label for="pvpFriendly">Plutôt PVP ? </label>
             <input type="checkbox" class="checkbox" id="pvpFriendly"
                 (change)="thirdFormResults.pvpFriendly = !thirdFormResults.pvpFriendly">
-        </div>
+            <span class="slider"></span>
+        </label>
+    </div>
 
-        <div class="checkbox-container">
+    <div>
+        <label class="switch">
             <label for="pveFriendly">Plutôt PVE ? </label>
             <input type="checkbox" class="checkbox" id="pveFriendly"
                 (change)="thirdFormResults.pveFriendly = !thirdFormResults.pveFriendly">
-        </div>
+            <span class="slider"></span>
+        </label>
     </div>
 
     <button type="submit">Suivant</button>

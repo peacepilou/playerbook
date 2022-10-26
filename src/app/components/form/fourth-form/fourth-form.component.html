@@ -10,12 +10,12 @@ onSubmit()">
             required>
     </div>
 
-    <div class="checkbox-list">
-        <div class="checkbox-container" *ngFor="let genre of genreList, let i = index">
-            <label for="genre">{{genreList[i].name}} </label>
-            <input type="checkbox" class="checkbox" id="genre" (change)="checkGenre(i)">
-        </div>
-    </div>
+    <label class="switch" *ngFor="let genre of genreList, let i = index">
+        <p>{{genreList[i].name}} </p>
+        <input type="checkbox" class="checkbox" id="genre" (change)="checkGenre(i)">
+
+        <span class="slider"></span>
+    </label>
 
     <div>
         <label for="game-url">Lien vers le site du jeu : </label>
@@ -54,10 +54,12 @@ onSubmit()">
         <input type="text" name="server" id="server" [(ngModel)]="fourthFormResults.serverName">
     </div>
 
-    <button type="reset" [ngStyle]="{backgroundColor: !fourthForm.valid ? 'grey' : '' }" (click)="nextGame()"
-        [disabled]="!fourthForm.valid">Ajouter jeu</button>
-    <button type="submit"
-        [ngStyle]="{backgroundColor: nameCheck.valid || gameUrlCheck.valid || pseudoCheck.valid ? 'grey' : '' }">Terminer
-        !</button>
+    <div class="buttonSet">
+        <button type="reset" [ngStyle]="{backgroundColor: !fourthForm.valid ? 'grey' : '' }" (click)="nextGame()"
+            [disabled]="!fourthForm.valid">Ajouter jeu</button>
+        <button type="submit"
+            [ngStyle]="{backgroundColor: nameCheck.valid || gameUrlCheck.valid || pseudoCheck.valid ? 'grey' : '' }">Terminer
+            !</button>
+    </div>
 
 </form>
