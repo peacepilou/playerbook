@@ -1,0 +1,32 @@
+.background{
+    background-color: #404040;
+    height: 100vh;
+}
+
+.form-page{
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container{
+    background-color: whitesmoke;
+    border-radius: 25px;
+    padding: 2em;
+    width: 70%;
+    margin: 1em;
+    box-shadow: 2px 2px 20px #202020;
+}
+
+.back-button{
+    display: flex;
+    justify-content: center;
+
+}
+
+@media screen and (min-width: 768px) {
+
+    .form-container{
+        width: 50%;
+    }
+}
