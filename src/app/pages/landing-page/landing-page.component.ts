@@ -10,7 +10,7 @@ export class LandingPageComponent implements OnInit {
 
   buttonList : LandingButton[] = [
     new LandingButton(0, `Alors, inscris-toi.`, `Je m'inscris`, `/inscription`),
-    new LandingButton(1, `Tu as déjà un compte ?`, `Connexion`, `/home`)
+    new LandingButton(1, `Tu veux voir qui est là ?`, `Entrer`, `/home`)
   ];
 
   constructor() { }

@@ -12,7 +12,8 @@
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.14);
 }
 .user-avatar-profile {
-  max-width: 90%;
+  max-width: 25em;
+  margin-right: 1em;
   position: relative;
   bottom: 1em;
   left: 1.5em;
@@ -97,6 +98,12 @@ button.button-back-home {
     flex-direction: row;
 
   }
+
+  .user-avatar-profile {
+    max-width: 25em;
+    min-width: 25em;
+
+  }  
 
   .container-data-user {
     margin: 1em;
