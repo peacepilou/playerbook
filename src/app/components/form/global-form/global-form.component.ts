@@ -59,20 +59,20 @@ export class GlobalFormComponent implements OnInit {
     this.fourthFormResults = event;
     this.formStep += 1;
 
-  let globalFormResults : User = new User(
-    this.firstFormResults.id,
-    this.firstFormResults.name,
-    this.firstFormResults.linkAvatar,
-    this.firstFormResults.country,
-    this.firstFormResults.biography,
-    this.secondFormResults,
-    this.thirdFormResults, 
-    this.fourthFormResults
-  );
+    let globalFormResults : User = new User(
+      this.firstFormResults.id,
+      this.firstFormResults.name,
+      this.firstFormResults.linkAvatar,
+      this.firstFormResults.country,
+      this.firstFormResults.biography,
+      this.secondFormResults,
+      this.thirdFormResults, 
+      this.fourthFormResults
+    );
 
-  this.userHttpS.postNewUser(globalFormResults).subscribe(() => {
-    this.router.navigateByUrl("/home")
-  });
+    this.userHttpS.postNewUser(globalFormResults).subscribe(() => {
+      this.router.navigateByUrl("/home")
+    });
     
   }
 

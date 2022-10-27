@@ -5,9 +5,6 @@
             <app-second-form *ngIf="formStep === 2" (sendsecondForm)="receiveSecondForm($event)"></app-second-form>
             <app-third-form *ngIf="formStep === 3" (sendthirdForm)="receiveThirdForm($event)"></app-third-form>
             <app-fourth-form *ngIf="formStep === 4" (sendFourthForm)="receiveFourthForm($event)"></app-fourth-form>
-            <div *ngIf="formStep === 5">
-                Oh-oh... Tu as bien lancé le json-server ?
-            </div>
         </div>
     </div>
     <div class="back-button">
