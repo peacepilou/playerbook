@@ -19,10 +19,12 @@
       {{ playerHabitToChild?.isHotBlooded }}.
     </p>  
 
-    <p *ngIf="playerHabitToChild?.isLeader" class="isLeader">
-      <span class="name-content">Âme de meneur : Oui</span> 
-    </p>
-   
+    <div class="isLeader">
+      <p class="name-content">Âme de meneur :
+        <p *ngIf="playerHabitToChild?.isLeader">Oui </p>
+        <p *ngIf="playerHabitToChild?.isLeader === false">Non </p>
+      </div> 
+    </div>
 
     <p class="pvpFriendly">
       <span class="name-content">Adepte du PVP :</span>
