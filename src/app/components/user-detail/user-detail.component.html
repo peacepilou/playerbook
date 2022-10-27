@@ -35,8 +35,12 @@
   ></app-game-list>
 
   <div class="div-button">
-    <button class="button-update">Modifier le profil</button>
-    <button class="button-delete">Supprimer le profil</button>
+    <button class="button-update">
+      <a [routerLink]="['/update-profile/', userFoundToChild?.id ]">
+        Modifier le profil
+      </a>
+    </button>
+    <button (click)="delete()" class="button-delete">Supprimer le profil</button>
     <button class="button-back-home" [routerLink]="['/home']">Retour</button>
   </div>
 </div>

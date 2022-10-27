@@ -11,6 +11,7 @@ const routes: Routes = [
   {path : "" , component : LandingPageComponent},
   {path : "home" , component : HomePageComponent},
   {path : "inscription" , component : FormInscriptionComponent},
+  {path : "update-profile/:id" , component : FormInscriptionComponent},
   {path : "user-profile/:id" , component : UserProfileComponent},
   {path : "faq" , component : Error404PageComponent},
   {path : "cgu" , component : Error404PageComponent},
