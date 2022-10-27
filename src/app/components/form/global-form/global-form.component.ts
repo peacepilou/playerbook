@@ -37,7 +37,7 @@ export class GlobalFormComponent implements OnInit {
     private router : Router
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
   }
 
   receiveFirstForm(event : User) : void {

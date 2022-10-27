@@ -1,45 +1,48 @@
 <form #secondForm="ngForm" (ngSubmit)="secondForm.valid && onSubmit()">
 
-    <div>
-        <label class="switch">
-            <label for="isCasual">Joueur occasionnel ? </label>
-            <input type="checkbox" class="checkbox" id="isCasual"
-                (change)="secondFormResults.isCasual = !secondFormResults.isCasual">
-            <span class="slider"></span>
-        </label>
+    <div class="inputs">
+        <div>
+            <label class="switch">
+                <label for="isCasual">Joueur occasionnel ? </label>
+                <input type="checkbox" class="checkbox" id="isCasual"
+                    (change)="secondFormResults.isCasual = !secondFormResults.isCasual">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div>
+            <label class="switch">
+                <label for="isProactive">Plutôt proactif ? </label>
+                <input type="checkbox" class="checkbox" id="isProactive"
+                    (change)="secondFormResults.isProactive = !secondFormResults.isProactive">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div>
+            <label class="switch">
+                <label for="isExtravert">Extraverti ? </label>
+                <input type="checkbox" class="checkbox" id="isExtravert"
+                    (change)="secondFormResults.isExtravert = !secondFormResults.isExtravert">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div>
+            <label class="switch">
+                <label for="isPro">Joueur pro ? </label>
+                <input type="checkbox" class="checkbox" id="isPro"
+                    (change)="secondFormResults.isPro = !secondFormResults.isPro">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div *ngIf="secondFormResults.isPro">
+            <label for="employer">Woah, dans quelle équipe ? </label>
+            <input id="employer" name="employer" [(ngModel)]="secondFormResults.employer" #employerCheck="ngModel">
+        </div>
     </div>
 
-    <div>
-        <label class="switch">
-            <label for="isProactive">Plutôt proactif ? </label>
-            <input type="checkbox" class="checkbox" id="isProactive"
-                (change)="secondFormResults.isProactive = !secondFormResults.isProactive">
-            <span class="slider"></span>
-        </label>
-    </div>
-
-    <div>
-        <label class="switch">
-            <label for="isExtravert">Extraverti ? </label>
-            <input type="checkbox" class="checkbox" id="isExtravert"
-                (change)="secondFormResults.isExtravert = !secondFormResults.isExtravert">
-            <span class="slider"></span>
-        </label>
-    </div>
-
-    <div>
-        <label class="switch">
-            <label for="isPro">Joueur pro ? </label>
-            <input type="checkbox" class="checkbox" id="isPro"
-                (change)="secondFormResults.isPro = !secondFormResults.isPro">
-            <span class="slider"></span>
-        </label>
-    </div>
-
-    <div *ngIf="secondFormResults.isPro">
-        <label for="employer">Woah, dans quelle équipe ? </label>
-        <input id="employer" name="employer" [(ngModel)]="secondFormResults.employer" #employerCheck="ngModel">
-    </div>
 
     <button type="submit">Suivant</button>
 

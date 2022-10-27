@@ -6,11 +6,11 @@
 
 button{
     cursor: pointer;
-    background-color: #8738BB;
-    color: whitesmoke;
-    border: none;
-    padding: 0.4em 1.5em 0.5em 1.5em;
-    box-shadow: 1px 1px 5px gray;
+    margin: -2em;
+    padding: 1em 2em 1em 2em;
+    font-size: 0.9em;
+    border-radius: 2em;
+    border: 3px solid #8738BB;
 }
 
 .buttonSet{
@@ -24,6 +24,10 @@ input{
     border-radius: 1em;
     border: 1px solid gray;
     padding: 0.2em;
+}
+
+.inputs{
+    height: 75vh;
 }
 
 div{

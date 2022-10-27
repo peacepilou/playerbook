@@ -4,7 +4,7 @@
 }
 
 .form-page{
-    height: 95vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
 }
@@ -18,10 +18,16 @@
     box-shadow: 2px 2px 20px #202020;
 }
 
-.back-button{
+.back-buttons{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.buttons-container{
     display: flex;
     justify-content: center;
-
 }
 
 @media screen and (min-width: 768px) {
