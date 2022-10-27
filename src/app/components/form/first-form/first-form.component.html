@@ -5,9 +5,9 @@
         <input type="number" id="id" name="id" [(ngModel)]="dataToChild.id" #idCheck="ngModel" minlength="1" required>
     </div>
 
-    <div *ngIf="firstForm.submitted && idCheck.errors">
-        <small>Vous devez spécifier un id valide</small>
-    </div>
+        <div *ngIf="firstForm.submitted && idCheck.errors">
+            <small>Vous devez spécifier un id valide</small>
+        </div>
 
     <div>
         <label for="name">Nom :</label>
@@ -44,6 +44,7 @@
         <input id="biography" name="biography" [(ngModel)]="dataToChild.biography">
     </div>
 
-    <button type="submit"[ngStyle]="{backgroundColor: !idCheck.valid || !nameCheck.valid || !linkAvatarCheck.valid || !countryCheck.valid ? 'grey' : '' }">Suivant</button>
+    <button type="submit"
+        [ngStyle]="{backgroundColor: !idCheck.valid || !nameCheck.valid || !linkAvatarCheck.valid || !countryCheck.valid ? 'grey' : '' }">Suivant</button>
 
 </form>

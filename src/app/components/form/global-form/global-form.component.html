@@ -5,13 +5,13 @@
             <app-second-form *ngIf="formStep === 2" [dataToChild]="firstFormResults.userBehavior" (sendsecondForm)="receiveSecondForm($event)"></app-second-form>
             <app-third-form *ngIf="formStep === 3" [dataToChild]="firstFormResults.playerHabit" (sendthirdForm)="receiveThirdForm($event)"></app-third-form>
             <app-fourth-form *ngIf="formStep === 4" (sendFourthForm)="receiveFourthForm($event)"></app-fourth-form>
-            <div *ngIf="formStep === 5">
-                Le formulaire a bien été soumis, bienvenue !
-            </div>
         </div>
     </div>
-    <div class="back-button">
-        <app-back-button *ngIf="formStep > 1 && formStep < 5" (goBack)="goBack()">
-        </app-back-button>
+    <div class="buttons-container">
+        <div class="back-buttons">
+            <app-back-button *ngIf="formStep > 1 && formStep < 5" (goBack)="goBack()">
+            </app-back-button>
+            <app-back-home-button></app-back-home-button>
+        </div>
     </div>
 </div>

@@ -6,9 +6,9 @@
             #frequencyCheck="ngModel" required min="0" max="7">
     </div>
 
-    <div *ngIf="thirdForm.submitted && frequencyCheck.errors">
-        <small>Votre temps de jeu hebdomadaire doit être compris entre 0 et 7 jours</small>
-    </div>
+        <div *ngIf="thirdForm.submitted && frequencyCheck.errors">
+            <small>Votre temps de jeu hebdomadaire doit être compris entre 0 et 7 jours</small>
+        </div>
 
     <div>
         <label for="sessionDuration">Combien d'heures de jeu par jour ? </label>
@@ -16,9 +16,9 @@
             [(ngModel)]="dataToChild.sessionDurationInHour" #sessionDurationCheck="ngModel" required min="0" max="24">
     </div>
 
-    <div *ngIf="thirdForm.submitted && sessionDurationCheck.errors">
-        <small>Votre temps de jeu quotidien doit être compris entre 0 et 24 heures. Pensez à votre santé !</small>
-    </div>
+        <div *ngIf="thirdForm.submitted && sessionDurationCheck.errors">
+            <small>Votre temps de jeu quotidien doit être compris entre 0 et 24 heures. Pensez à votre santé !</small>
+        </div>
 
     <div>
         <label class="switch">

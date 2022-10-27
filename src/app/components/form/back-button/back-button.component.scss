@@ -1,11 +1,8 @@
 button{
     cursor: pointer;
-    border-radius: 1em;
-    border: 2px solid #8738BB;
-    color: black;
-    padding: 0.3em 0.8em 0.3em 0.8em;
-    font-weight: bold;
-    &:hover{
-        color : #8738BB;
-    }
+    margin: 1em;
+    padding: 1em 2em 1em 2em;
+    font-size: 0.9em;
+    border-radius: 2em;
+    border: 3px solid #8738BB;
 }
