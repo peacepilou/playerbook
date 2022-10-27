@@ -3,8 +3,8 @@
     <div>
         <label class="switch">
             <label for="isCasual">Joueur occasionnel ? </label>
-            <input type="checkbox" class="checkbox" id="isCasual"
-                (change)="dataToChild.isCasual = !dataToChild.isCasual">
+            <input type="checkbox" name="checkbox" class="checkbox" id="isCasual"
+            [(ngModel)]="dataToChild.isCasual">
             <span class="slider"></span>
         </label>
     </div>
@@ -12,8 +12,8 @@
     <div>
         <label class="switch">
             <label for="isProactive">Plutôt proactif ? </label>
-            <input type="checkbox" class="checkbox" id="isProactive"
-                (change)="dataToChild.isProactive = !dataToChild.isProactive">
+            <input type="checkbox" name="checkbox" class="checkbox" id="isProactive" [checked]="dataToChild.isProactive" 
+            [(ngModel)]="dataToChild.isProactive">
             <span class="slider"></span>
         </label>
     </div>
@@ -21,8 +21,8 @@
     <div>
         <label class="switch">
             <label for="isExtravert">Extraverti ? </label>
-            <input type="checkbox" class="checkbox" id="isExtravert"
-                (change)="dataToChild.isExtravert = !dataToChild.isExtravert">
+            <input type="checkbox" name="checkbox" class="checkbox" id="isExtravert"
+            [(ngModel)]="dataToChild.isExtravert">
             <span class="slider"></span>
         </label>
     </div>
@@ -30,8 +30,8 @@
     <div>
         <label class="switch">
             <label for="isPro">Joueur pro ? </label>
-            <input type="checkbox" class="checkbox" id="isPro"
-                (change)="dataToChild.isPro = !dataToChild.isPro">
+            <input type="checkbox" name="checkbox" class="checkbox" id="isPro"
+            [(ngModel)]="dataToChild.isPro">
             <span class="slider"></span>
         </label>
     </div>

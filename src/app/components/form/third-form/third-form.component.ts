@@ -25,4 +25,12 @@ export class ThirdFormComponent implements OnInit {
     this.sendthirdForm.emit(this.dataToChild);
   }
 
+  checkValue(): void {
+    console.log(this.dataToChild.isNocturnal);
+  }
+
+  checkValuePVP(): void {
+    console.log(this.dataToChild.pvpFriendly)
+  }
+
 }
