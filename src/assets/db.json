@@ -1,55 +1,54 @@
 {
-  "user": [
-    {
-      "id": 1,
-      "name": "Jason",
-      "linkAvatar": "https://i.pinimg.com/564x/67/73/fa/6773faf063482c02a0cb8cdae4ef2074.jpg",
-      "country": "France",
-      "biography": "Enchantier, je m'appelle Teuse ! ",
-      "userBehavior": {
-        "isCasual": true,
-        "isProactive": false,
-        "isExtravert": true,
-        "isPro": false
-      },
-      "playerHabit": {
-        "frequencyPerWeek": 3,
-        "isNocturnal": false,
-        "sessionDurationInHour": 3,
-        "isHotBlooded": true,
-        "isLeader": false,
-        "pvpFriendly": false,
-        "pveFriendly": true
-      },
-      "gameList": [
-        {
-          "name": "CraftofWorld",
-          "url": "https://worldofwarcraft.com/fr-fr/",
-          "userPseudo": "Sonja",
-          "genreList": [
-            {
-              "name": "mmorpg"
-            },
-            {
-              "name": "rpg"
-            }
-          ]
-        },
-        {
-          "name": "Lolilol",
-          "url": "https://www.leagueoflegends.com/fr-fr/",
-          "userPseudo": "Sonja",
-          "genreList": [
-            {
-              "name": "dota"
-            },
-            {
-              "name": "pvp"
-            }
-          ]
-        }
-      ]
+  "user": [{
+    "id": 1,
+    "name": "Jason",
+    "linkAvatar": "https://i.pinimg.com/564x/67/73/fa/6773faf063482c02a0cb8cdae4ef2074.jpg",
+    "country": "Va-labas",
+    "biography": "Enchantier, je m'appelle Teuse ! ",
+    "userBehavior": {
+      "isCasual": true,
+      "isProactive": false,
+      "isExtravert": true,
+      "isPro": false
     },
+    "playerHabit": {
+      "frequencyPerWeek": 3,
+      "isNocturnal": false,
+      "sessionDurationInHour": 3,
+      "isHotBlooded": true,
+      "isLeader": false,
+      "pvpFriendly": false,
+      "pveFriendly": true
+    },
+    "gameList": [
+      {
+        "name": "CraftofWorld",
+        "url": "https://worldofwarcraft.com/fr-fr/",
+        "userPseudo": "Sonja",
+        "genreList": [
+          {
+            "name": "mmorpg"
+          },
+          {
+            "name": "rpg"
+          }
+        ]
+      },
+      {
+        "name": "Lolilol",
+        "url": "https://www.leagueoflegends.com/fr-fr/",
+        "userPseudo": "Sonja",
+        "genreList": [
+          {
+            "name": "dota"
+          },
+          {
+            "name": "pvp"
+          }
+        ]
+      }
+    ]
+  },
     {
       "id": 2,
       "name": "Dylan",
