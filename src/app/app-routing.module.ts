@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Error404PageComponent } from './pages/error404-page/error404-page.component';
+import { FaqPageComponent } from './pages/faq-page/faq-page.component';
 import { FormInscriptionComponent } from './pages/form-inscription/form-inscription.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
@@ -13,10 +14,9 @@ const routes: Routes = [
   {path : "inscription" , component : FormInscriptionComponent},
   {path : "update-profile/:id" , component : FormInscriptionComponent},
   {path : "user-profile/:id" , component : UserProfileComponent},
-  {path : "faq" , component : Error404PageComponent},
+  {path : "faq" , component : FaqPageComponent},
   {path : "cgu" , component : Error404PageComponent},
   {path : "contact" , component : Error404PageComponent},
-
   {path : "**" , component : Error404PageComponent}
 ];
 
