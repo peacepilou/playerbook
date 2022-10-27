@@ -37,6 +37,7 @@ import { PlayerHabitComponent } from './components/player-habit/player-habit.com
 
 import { ScrollToTopComponent } from './utils/scroll-to-top/scroll-to-top.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FaqPageComponent } from './pages/faq-page/faq-page.component';
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { FooterComponent } from './components/footer/footer.component';
     Error404PageComponent,
     Error404LogoComponent,
     ScrollToTopComponent,
-    FooterComponent
+    FooterComponent,
+    FaqPageComponent
   ],
   imports: [
     BrowserModule,
