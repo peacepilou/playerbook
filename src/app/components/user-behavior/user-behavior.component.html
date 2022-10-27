@@ -17,7 +17,7 @@
       <span class="name-content">Professionnel : </span>
       {{ userBehaviorToChild?.isPro }}.
     </p>
-    <p class="employer">
+    <p *ngIf="userBehaviorToChild?.isPro" class="employer">
       <span class="name-content">Team : </span>
       {{ userBehaviorToChild?.employer }}.
     </p>
