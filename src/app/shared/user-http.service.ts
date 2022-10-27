@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Game } from 'src/models/game.model';
 import { Genre } from 'src/models/genre.model';
@@ -40,8 +41,8 @@ export class UserHttpService {
     return this.userHttp.get<User>(`${this.baseUrl}/${this.userId}`);
   }
 
-  updateUserById(): Observable<User> {
-    return this.userHttp.put<User>(`${this.baseUrl}/${this.userId}`, this.body);
+  updateUserById(body : User, userId: number): Observable<User> {
+    return this.userHttp.put<User>(`${this.baseUrl}/${userId}`, body);
   }
 
   deleteUserById(userId: number | undefined): Observable<User> {
