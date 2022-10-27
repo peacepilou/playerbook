@@ -2,7 +2,7 @@
 
     <div>
         <label for="frequency">Tu joues combien de jours par semaine ? </label>
-        <input type="number" id="frequency" name="frequency" [(ngModel)]="thirdFormResults.frequencyPerWeek"
+        <input type="number" id="frequency" name="frequency" [(ngModel)]="dataToChild.frequencyPerWeek"
             #frequencyCheck="ngModel" required min="0" max="7">
     </div>
 
@@ -13,7 +13,7 @@
     <div>
         <label for="sessionDuration">Combien d'heures de jeu par jour ? </label>
         <input type="number" id="sessionDuration" name="sessionDuration"
-            [(ngModel)]="thirdFormResults.sessionDurationInHour" #sessionDurationCheck="ngModel" required min="0" max="24">
+            [(ngModel)]="dataToChild.sessionDurationInHour" #sessionDurationCheck="ngModel" required min="0" max="24">
     </div>
 
     <div *ngIf="thirdForm.submitted && sessionDurationCheck.errors">
@@ -23,8 +23,8 @@
     <div>
         <label class="switch">
             <label for="isNocturnal">Nocturne ? </label>
-            <input type="checkbox" class="checkbox" id="isNocturnal"
-                (change)="thirdFormResults.isNocturnal = !thirdFormResults.isNocturnal">
+            <input type="checkbox" name="isNocturnal" class="checkbox" id="isNocturnal" (change)="checkValue()"
+            [(ngModel)]="dataToChild.isNocturnal" [checked]="dataToChild.isNocturnal">
             <span class="slider"></span>
         </label>
     </div>
@@ -32,8 +32,8 @@
     <div>
         <label class="switch">
             <label for="isHotBlooded">Plutôt sanguin ? </label>
-            <input type="checkbox" class="checkbox" id="isHotBlooded"
-                (change)="thirdFormResults.isHotBlooded = !thirdFormResults.isHotBlooded">
+            <input type="checkbox" name="isHotBlooded" class="checkbox" id="isHotBlooded" [checked]="dataToChild.isHotBlooded"
+            [(ngModel)]="dataToChild.isHotBlooded">
             <span class="slider"></span>
         </label>
     </div>
@@ -41,8 +41,8 @@
     <div>
         <label class="switch">
             <label for="isLeader">Plutôt leader ? </label>
-            <input type="checkbox" class="checkbox" id="isLeader"
-                (change)="thirdFormResults.isLeader = !thirdFormResults.isLeader">
+            <input type="checkbox" name="isLeader" class="checkbox" id="isLeader" [checked]="dataToChild.isLeader"
+            [(ngModel)]="dataToChild.isLeader">
             <span class="slider"></span>
         </label>
     </div>
@@ -50,8 +50,8 @@
     <div>
         <label class="switch">
             <label for="pvpFriendly">Plutôt PVP ? </label>
-            <input type="checkbox" class="checkbox" id="pvpFriendly"
-                (change)="thirdFormResults.pvpFriendly = !thirdFormResults.pvpFriendly">
+            <input type="checkbox" name="pvpFriendly" class="checkbox" id="pvpFriendly" [checked]="dataToChild.pvpFriendly"
+            [(ngModel)]="dataToChild.pvpFriendly">
             <span class="slider"></span>
         </label>
     </div>
@@ -59,8 +59,8 @@
     <div>
         <label class="switch">
             <label for="pveFriendly">Plutôt PVE ? </label>
-            <input type="checkbox" class="checkbox" id="pveFriendly"
-                (change)="thirdFormResults.pveFriendly = !thirdFormResults.pveFriendly">
+            <input type="checkbox" name="pveFriendly" class="checkbox" id="pveFriendly" [checked]="dataToChild.pveFriendly" (change)="checkValuePVP()"
+            [(ngModel)]="dataToChild.pveFriendly">
             <span class="slider"></span>
         </label>
     </div>

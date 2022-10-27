@@ -3,8 +3,8 @@
   background-color: #8738bb;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
   margin-bottom: 0.3em;
-
 }
+
 // menu burger
 
 #menu__toggle {
@@ -146,3 +146,38 @@
     transform-origin: bottom left;
   }
 }
+
+.hover-suricat-introduction {
+  display: none;
+}
+.hover-introduction:hover{
+      .hover-suricat-introduction {
+        display: flex;
+        justify-content: center;
+      }
+  }
+  
+.hover-suricat-accueil {
+  display: none;
+}
+.hover-accueil:hover{
+      .hover-suricat-accueil {
+        display: flex;
+        justify-content: center;
+      }
+  }
+  
+.hover-suricat-inscription {
+  display: none;
+}
+.hover-inscription:hover{
+      .hover-suricat-inscription {
+        display: flex;
+        justify-content: center;
+      }
+  }
+
+  .img-hover {
+    max-width: 30px;
+    max-height: auto;  
+  }
