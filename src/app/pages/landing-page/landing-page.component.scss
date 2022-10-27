@@ -1,30 +1,34 @@
 @media screen and (min-width : 768px) {
-
+*{
+    min-width: 100vh;
+}
         div.global-page{
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        height: 100vh;
         }
         
         div.logo{
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 50vw;
-            min-height: 50vh;
+            width: 40vw;
+            min-height: 40%;
         }
 
         div.info-text{
             color: whitesmoke;
-            width: 50vw;
-            min-height: 50vh;
+            width: 40vw;
+            min-height: 40%;
         }
 
         div.landing-path-button{
             display: flex;
             justify-content: space-around;
             color: black;
-            width: 50vw;
-            min-height: 50vh;
+            width: 40vw;
+            min-height: 40%;
             align-items: center;
         }
 

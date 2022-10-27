@@ -24,8 +24,16 @@
     <h2 class="title-app">Playerbook</h2>
   </div>
   <div class="list-navigation">
-    <a [routerLink]="['/']">Introduction</a>
-    <a [routerLink]="['/home']">Accueil</a>
-    <a [routerLink]="['/inscription']">Inscription</a>
+    <a class="hover-introduction" [routerLink]="['/']">
+      <div class="hover-suricat-introduction"><img src="../../assets/pictures/PlayerBook-Logo-mini.png" class="img-hover" /></div>Introduction
+    </a>
+
+    <a class="hover-accueil" [routerLink]="['/home']">
+      <div class="hover-suricat-accueil"><img src="../../assets/pictures/PlayerBook-Logo-mini.png" class="img-hover" /></div>Accueil
+    </a>
+
+    <a class="hover-inscription" [routerLink]="['/inscription']">
+      <div class="hover-suricat-inscription"><img src="../../assets/pictures/PlayerBook-Logo-mini.png" class="img-hover" /></div>Inscription
+    </a>
   </div>
 </div>
