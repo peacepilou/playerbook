@@ -37,8 +37,8 @@ export class UserHttpService {
     return this.userHttp.get<User[]>(`${this.baseUrl}`);
   }
 
-  getUserById(): Observable<User> {
-    return this.userHttp.get<User>(`${this.baseUrl}/${this.userId}`);
+  getUserById(userId: number | undefined): Observable<User> {
+    return this.userHttp.get<User>(`${this.baseUrl}/${userId}`);
   }
 
   updateUserById(body : User, userId: number): Observable<User> {

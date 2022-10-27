@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PlayerHabit } from 'src/models/playerHabit.model';
 
 @Component({
@@ -11,7 +11,8 @@ export class ThirdFormComponent implements OnInit {
   @Output()
   sendthirdForm : EventEmitter<PlayerHabit> = new EventEmitter;
 
-  thirdFormResults : PlayerHabit = new PlayerHabit(
+@Input()
+  dataToChild : PlayerHabit = new PlayerHabit(
     0, false, 0, false, false, false, false
   );
 
@@ -21,7 +22,7 @@ export class ThirdFormComponent implements OnInit {
   }
 
   onSubmit(){
-    this.sendthirdForm.emit(this.thirdFormResults);
+    this.sendthirdForm.emit(this.dataToChild);
   }
 
 }

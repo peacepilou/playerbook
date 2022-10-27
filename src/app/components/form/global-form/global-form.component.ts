@@ -56,7 +56,9 @@ export class GlobalFormComponent implements OnInit {
         this.userId = parseInt(param.get("id") as string);
       }
       return this.userId
-    })
+    });
+    this.userHttpS.getUserById(this.userId).subscribe(data => this.firstFormResults = data);
+
   }
 
   receiveFirstForm(event: User): void {

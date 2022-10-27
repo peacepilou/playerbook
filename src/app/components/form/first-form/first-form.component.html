@@ -2,7 +2,7 @@
 
     <div>
         <label for="id">Id :</label>
-        <input type="number" id="id" name="id" [(ngModel)]="firstFormResults.id" #idCheck="ngModel" minlength="1" required>
+        <input type="number" id="id" name="id" [(ngModel)]="dataToChild.id" #idCheck="ngModel" minlength="1" required>
     </div>
 
     <div *ngIf="firstForm.submitted && idCheck.errors">
@@ -11,7 +11,7 @@
 
     <div>
         <label for="name">Nom :</label>
-        <input id="name" name="name" [(ngModel)]="firstFormResults.name" #nameCheck="ngModel" minlength="1" required>
+        <input id="name" name="name" [(ngModel)]="dataToChild.name" #nameCheck="ngModel" minlength="1" required>
     </div>
     
     <div *ngIf="firstForm.submitted && nameCheck.errors">
@@ -21,7 +21,7 @@
 
     <div>
         <label for="linkAvatar">Lien vers l'avatar :</label>
-        <input id="linkAvatar" name="linkAvatar" [(ngModel)]="firstFormResults.linkAvatar" #linkAvatarCheck="ngModel" minlength="3" required>
+        <input id="linkAvatar" name="linkAvatar" [(ngModel)]="dataToChild.linkAvatar" #linkAvatarCheck="ngModel" minlength="3" required>
     </div>
     
     <div *ngIf="firstForm.submitted && linkAvatarCheck.errors">
@@ -31,7 +31,7 @@
 
     <div>
         <label for="country">Pays :</label>
-        <input id="country" name="country" [(ngModel)]="firstFormResults.country" #countryCheck="ngModel" minlength="3" required>
+        <input id="country" name="country" [(ngModel)]="dataToChild.country" #countryCheck="ngModel" minlength="3" required>
     </div>
     
     <div *ngIf="firstForm.submitted && countryCheck.errors">
@@ -41,7 +41,7 @@
 
     <div>
         <label for="biography">Dis-nous en plus sur toi :</label>
-        <input id="biography" name="biography" [(ngModel)]="firstFormResults.biography">
+        <input id="biography" name="biography" [(ngModel)]="dataToChild.biography">
     </div>
 
     <button type="submit"[ngStyle]="{backgroundColor: !idCheck.valid || !nameCheck.valid || !linkAvatarCheck.valid || !countryCheck.valid ? 'grey' : '' }">Suivant</button>

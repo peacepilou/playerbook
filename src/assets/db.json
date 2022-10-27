@@ -350,7 +350,7 @@
       "name": "TomFromLA",
       "linkAvatar": "https://www.swashvillage.org/storage/img/images/tom-cruise-biography.jpg",
       "country": "USA",
-      "biography": "26 et moins only bb",
+      "biography": "Tu connais la scientologie ?",
       "userBehavior": {
         "isCasual": true,
         "isProactive": true,
@@ -369,17 +369,20 @@
       },
       "gameList": [
         {
-          "name": "Star Wars",
-          "url": "https://www.ea.com/fr-fr/games/starwars",
-          "userPseudo": "WilCage_Master",
+          "name": "World of Tanks",
+          "url": "https://worldoftanks.eu/fr/",
+          "userPseudo": "TommyTheTank",
           "genreList": [
             {
               "name": "MMORPG"
+            },
+            {
+              "name": "FPS"
             }
           ],
-          "guild": "",
-          "level": "80",
-          "rank": "Master",
+          "guild": "Scientologuild",
+          "level": "60",
+          "rank": "",
           "difficulty": "",
           "serverName": ""
         }

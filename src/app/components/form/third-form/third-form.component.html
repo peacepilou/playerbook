@@ -2,7 +2,7 @@
 
     <div>
         <label for="frequency">Tu joues combien de jours par semaine ? </label>
-        <input type="number" id="frequency" name="frequency" [(ngModel)]="thirdFormResults.frequencyPerWeek"
+        <input type="number" id="frequency" name="frequency" [(ngModel)]="dataToChild.frequencyPerWeek"
             #frequencyCheck="ngModel" required min="0" max="7">
     </div>
 
@@ -13,7 +13,7 @@
     <div>
         <label for="sessionDuration">Combien d'heures de jeu par jour ? </label>
         <input type="number" id="sessionDuration" name="sessionDuration"
-            [(ngModel)]="thirdFormResults.sessionDurationInHour" #sessionDurationCheck="ngModel" required min="0" max="24">
+            [(ngModel)]="dataToChild.sessionDurationInHour" #sessionDurationCheck="ngModel" required min="0" max="24">
     </div>
 
     <div *ngIf="thirdForm.submitted && sessionDurationCheck.errors">
@@ -24,7 +24,7 @@
         <label class="switch">
             <label for="isNocturnal">Nocturne ? </label>
             <input type="checkbox" class="checkbox" id="isNocturnal"
-                (change)="thirdFormResults.isNocturnal = !thirdFormResults.isNocturnal">
+                (change)="dataToChild.isNocturnal = !dataToChild.isNocturnal">
             <span class="slider"></span>
         </label>
     </div>
@@ -33,7 +33,7 @@
         <label class="switch">
             <label for="isHotBlooded">Plutôt sanguin ? </label>
             <input type="checkbox" class="checkbox" id="isHotBlooded"
-                (change)="thirdFormResults.isHotBlooded = !thirdFormResults.isHotBlooded">
+                (change)="dataToChild.isHotBlooded = !dataToChild.isHotBlooded">
             <span class="slider"></span>
         </label>
     </div>
@@ -42,7 +42,7 @@
         <label class="switch">
             <label for="isLeader">Plutôt leader ? </label>
             <input type="checkbox" class="checkbox" id="isLeader"
-                (change)="thirdFormResults.isLeader = !thirdFormResults.isLeader">
+                (change)="dataToChild.isLeader = !dataToChild.isLeader">
             <span class="slider"></span>
         </label>
     </div>
@@ -51,7 +51,7 @@
         <label class="switch">
             <label for="pvpFriendly">Plutôt PVP ? </label>
             <input type="checkbox" class="checkbox" id="pvpFriendly"
-                (change)="thirdFormResults.pvpFriendly = !thirdFormResults.pvpFriendly">
+                (change)="dataToChild.pvpFriendly = !dataToChild.pvpFriendly">
             <span class="slider"></span>
         </label>
     </div>
@@ -60,7 +60,7 @@
         <label class="switch">
             <label for="pveFriendly">Plutôt PVE ? </label>
             <input type="checkbox" class="checkbox" id="pveFriendly"
-                (change)="thirdFormResults.pveFriendly = !thirdFormResults.pveFriendly">
+                (change)="dataToChild.pveFriendly = !dataToChild.pveFriendly">
             <span class="slider"></span>
         </label>
     </div>

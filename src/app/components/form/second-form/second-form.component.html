@@ -4,7 +4,7 @@
         <label class="switch">
             <label for="isCasual">Joueur occasionnel ? </label>
             <input type="checkbox" class="checkbox" id="isCasual"
-                (change)="secondFormResults.isCasual = !secondFormResults.isCasual">
+                (change)="dataToChild.isCasual = !dataToChild.isCasual">
             <span class="slider"></span>
         </label>
     </div>
@@ -13,7 +13,7 @@
         <label class="switch">
             <label for="isProactive">Plutôt proactif ? </label>
             <input type="checkbox" class="checkbox" id="isProactive"
-                (change)="secondFormResults.isProactive = !secondFormResults.isProactive">
+                (change)="dataToChild.isProactive = !dataToChild.isProactive">
             <span class="slider"></span>
         </label>
     </div>
@@ -22,7 +22,7 @@
         <label class="switch">
             <label for="isExtravert">Extraverti ? </label>
             <input type="checkbox" class="checkbox" id="isExtravert"
-                (change)="secondFormResults.isExtravert = !secondFormResults.isExtravert">
+                (change)="dataToChild.isExtravert = !dataToChild.isExtravert">
             <span class="slider"></span>
         </label>
     </div>
@@ -31,14 +31,14 @@
         <label class="switch">
             <label for="isPro">Joueur pro ? </label>
             <input type="checkbox" class="checkbox" id="isPro"
-                (change)="secondFormResults.isPro = !secondFormResults.isPro">
+                (change)="dataToChild.isPro = !dataToChild.isPro">
             <span class="slider"></span>
         </label>
     </div>
 
-    <div *ngIf="secondFormResults.isPro">
+    <div *ngIf="dataToChild.isPro">
         <label for="employer">Woah, dans quelle équipe ? </label>
-        <input id="employer" name="employer" [(ngModel)]="secondFormResults.employer" #employerCheck="ngModel">
+        <input id="employer" name="employer" [(ngModel)]="dataToChild.employer" #employerCheck="ngModel">
     </div>
 
     <button type="submit">Suivant</button>
