@@ -6,33 +6,46 @@
       <span class="name-content">Connexion :</span>
       {{ playerHabitToChild?.frequencyPerWeek }} fois par semaine.
     </p>
+
     <p class="isNocturnal">
-      <span class="name-content">Joueur nocturne :</span>
-      {{ playerHabitToChild?.isNocturnal }}.
+      <span class="name-content">Joueur nocturne :
+        <span *ngIf="playerHabitToChild?.isNocturnal">Oui </span>
+        <span *ngIf="playerHabitToChild?.isNocturnal === false">Non </span>
+      </span>   
     </p>
+    
     <p class="sessionDurationInHour">
       <span class="name-content">Durée moyenne des sessions :</span>
       {{ playerHabitToChild?.sessionDurationInHour }} heure(s) environ.
     </p>
-    <p class="isHotBlooded">
-      <span class="name-content">Plutôt nerveux :</span>
-      {{ playerHabitToChild?.isHotBlooded }}.
-    </p>  
 
-    <div class="isLeader">
-      <p class="name-content">Âme de meneur :
-        <p *ngIf="playerHabitToChild?.isLeader">Oui </p>
-        <p *ngIf="playerHabitToChild?.isLeader === false">Non </p>
-      </div> 
-    </div>
+    <p class="isHotBlooded">
+      <span class="name-content">Plutôt nerveux :
+        <span *ngIf="playerHabitToChild?.isHotBlooded">Oui </span>
+        <span *ngIf="playerHabitToChild?.isHotBlooded === false">Non </span>
+      </span>   
+    </p> 
+
+    <p class="isLeader">
+      <span class="name-content">Âme de meneur :
+        <span *ngIf="playerHabitToChild?.isLeader">Oui </span>
+        <span *ngIf="playerHabitToChild?.isLeader === false">Non </span>
+      </span>   
+    </p>
 
     <p class="pvpFriendly">
-      <span class="name-content">Adepte du PVP :</span>
-      {{ playerHabitToChild?.pvpFriendly }}.
+      <span class="name-content">Adepte du PVP :
+        <span *ngIf="playerHabitToChild?.pvpFriendly">Oui </span>
+        <span *ngIf="playerHabitToChild?.pvpFriendly === false">Non </span>
+      </span>   
     </p>
+
     <p class="pveFriendly">
-      <span class="name-content">Adepte du PVE :</span>
-      {{ playerHabitToChild?.pveFriendly }}.
+      <span class="name-content">Adepte du PVE :
+        <span *ngIf="playerHabitToChild?.pveFriendly">Oui </span>
+        <span *ngIf="playerHabitToChild?.pveFriendly === false">Non </span>
+      </span>   
     </p>
+
   </div>
 </div>

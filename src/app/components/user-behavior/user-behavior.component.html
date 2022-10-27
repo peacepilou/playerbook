@@ -1,22 +1,35 @@
 <div class="user-behavior">
   <h4>Comportement</h4>
   <div class="container">
+
     <p class="isCasual">
-      <span class="name-content">Chill : </span>
-      {{ userBehaviorToChild?.isCasual }}.
+      <span class="name-content">Chill :
+        <span *ngIf="userBehaviorToChild?.isCasual">Oui </span>
+        <span *ngIf="userBehaviorToChild?.isCasual === false">Non </span>
+      </span>   
     </p>
+
     <p class="isProactive">
-      <span class="name-content">Pro-actif : </span>
-      {{ userBehaviorToChild?.isProactive }}.
+      <span class="name-content">Pro-actif :
+        <span *ngIf="userBehaviorToChild?.isProactive">Oui </span>
+        <span *ngIf="userBehaviorToChild?.isProactive === false">Non </span>
+      </span>   
     </p>
+
     <p class="isExtravert">
-      <span class="name-content">Extraverti(e) : </span>
-      {{ userBehaviorToChild?.isExtravert }}.
+      <span class="name-content">Extraverti(e) :
+        <span *ngIf="userBehaviorToChild?.isExtravert">Oui </span>
+        <span *ngIf="userBehaviorToChild?.isExtravert === false">Non </span>
+      </span>   
     </p>
+
     <p class="isPro">
-      <span class="name-content">Professionnel : </span>
-      {{ userBehaviorToChild?.isPro }}.
+      <span class="name-content">Professionnel :
+        <span *ngIf="userBehaviorToChild?.isPro">Oui </span>
+        <span *ngIf="userBehaviorToChild?.isPro === false">Non </span>
+      </span>   
     </p>
+
     <p *ngIf="userBehaviorToChild?.isPro" class="employer">
       <span class="name-content">Team : </span>
       {{ userBehaviorToChild?.employer }}.
