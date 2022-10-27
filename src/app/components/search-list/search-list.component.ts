@@ -15,4 +15,5 @@ export class SearchListComponent implements OnInit {
   catchSearchedContent(event: string): void {
     this.searchedContent = event;
   }
+
 }
