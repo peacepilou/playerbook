@@ -2,7 +2,7 @@
 
     <div>
         <label for="id">Id :</label>
-        <input id="id" name="id" [(ngModel)]="firstFormResults.id" #idCheck="ngModel" minlength="1" required>
+        <input type="number" id="id" name="id" [(ngModel)]="firstFormResults.id" #idCheck="ngModel" minlength="1" required>
     </div>
 
     <div *ngIf="firstForm.submitted && idCheck.errors">
