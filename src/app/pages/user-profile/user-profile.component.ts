@@ -31,6 +31,7 @@ export class UserProfileComponent implements OnInit {
           this.userId = parseInt(param.get("id") as string);
           
           this.userFound = this.userList.find(userList => userList.id === this.userId); 
+          
         }
       })
     });

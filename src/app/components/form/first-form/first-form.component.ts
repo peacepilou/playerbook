@@ -15,6 +15,8 @@ export class FirstFormComponent implements OnInit {
   @Output()
   sendFirstForm : EventEmitter<User> = new EventEmitter;
 
+  userId : number = 0;
+
   firstFormResults : User = new User(0,'','','','',
   new UserBehavior(false, false, false, false, ''), 
   new PlayerHabit(0, false, 0, false, false, false, false), 
