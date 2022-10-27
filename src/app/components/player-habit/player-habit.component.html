@@ -8,7 +8,7 @@
     </p>
     <p class="isNocturnal">
       <span class="name-content">Joueur nocturne :</span>
-      {{ playerHabitToChild?.isNocturnal }}
+      {{ playerHabitToChild?.isNocturnal }}.
     </p>
     <p class="sessionDurationInHour">
       <span class="name-content">Durée moyenne des sessions :</span>
@@ -17,11 +17,13 @@
     <p class="isHotBlooded">
       <span class="name-content">Plutôt nerveux :</span>
       {{ playerHabitToChild?.isHotBlooded }}.
+    </p>  
+
+    <p *ngIf="playerHabitToChild?.isLeader" class="isLeader">
+      <span class="name-content">Âme de meneur : Oui</span> 
     </p>
-    <p class="isLeader">
-      <span class="name-content"></span>Âme de meneur :
-      {{ playerHabitToChild?.isLeader }}.
-    </p>
+   
+
     <p class="pvpFriendly">
       <span class="name-content">Adepte du PVP :</span>
       {{ playerHabitToChild?.pvpFriendly }}.
