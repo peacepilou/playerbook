@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { GenreListService } from 'src/app/shared/genre-list.service';
 import { Game } from 'src/models/game.model';
 import { Genre } from 'src/models/genre.model';
