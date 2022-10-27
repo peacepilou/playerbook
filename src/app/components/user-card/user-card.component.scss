@@ -4,9 +4,9 @@
   margin: 2em;
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
-
+  box-shadow: 0 5px 10px #333333;
   &:hover {
-    box-shadow: 0 10px 20px #442097;
+    box-shadow: 0 5px 10px #ffe46b;
     transition: all 0.3s ease-in-out;
   }
 }
