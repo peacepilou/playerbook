@@ -1,7 +1,5 @@
 <div class="user-detail-container">
   <div class="intro-user-detail-profil">
-    <img class="user-avatar-profile" src={{ userFoundToChild.linkAvatar }} alt={{ userFoundToChild.name }} />
-=======
     <img
       class="user-avatar-profile"
       src="{{ userFoundToChild?.linkAvatar }}"
@@ -37,10 +35,10 @@
   ></app-game-list>
 
   <div class="div-button">
-    <div class="div-button-update-delete">
-       <button class="button-update">Modifier le profil</button>
-       <button (click)="delete()" class="button-delete">Supprimer le profil</button>
-    </div> 
+    <div class="button-update-delete">
+      <button class="button-update">Modifier le profil</button>
+      <button class="button-delete">Supprimer le profil</button>
+    </div>
     <button class="button-back-home" [routerLink]="['/home']">Retour</button>
   </div>
 </div>
