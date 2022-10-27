@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { UserHttpService } from 'src/app/shared/user-http.service';
 import { Game } from 'src/models/game.model';
 import { Genre } from 'src/models/genre.model';
 import { PlayerHabit } from 'src/models/playerHabit.model';
@@ -48,13 +46,7 @@ export class UserDetailComponent implements OnInit {
     ]
   );
 
-  constructor(private userApi: UserHttpService, private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {}
-
-  delete(): void {
-    this.userApi.deleteUserById(this.userFoundToChild?.id).subscribe(() => {
-      this.router.navigateByUrl("/home");
-    });
-  }
 }

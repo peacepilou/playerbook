@@ -101,7 +101,7 @@
       ]
     },
     {
-      "id": "500",
+      "id": 500,
       "name": "Michel",
       "linkAvatar": "https://cdn.programme-television.ladmedia.fr/var/premiere/storage/images/tele-7-jours/news-tv/pas-un-souvenir-imperissable-sur-le-plan-humain-michel-drucker-balance-sur-certaines-personnalites-qu-il-a-cotoye-4693162/101102802-1-fre-FR/Pas-un-souvenir-imperissable-sur-le-plan-humain-Michel-Drucker-balance-sur-certaines-personnalites-qu-il-a-cotoye.png",
       "country": "Fronce",
@@ -144,7 +144,7 @@
       ]
     },
     {
-      "id": "10",
+      "id": 10,
       "name": "Luke Skywalker",
       "linkAvatar": "https://www.ecranlarge.com/media/cache/1600x1200/uploads/articles/000/921/876/star-wars-episode-iv-un-nouvel-espoir-la-guerre-des-etoiles-photo-mark-hamill-1006592-large.jpg",
       "country": "Tatouine",
@@ -184,7 +184,7 @@
       ]
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "MasterCTheB",
       "linkAvatar": "https://s.yimg.com/ny/api/res/1.2/9pW4OEdUTfmtE5t.Z9hT.A--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTY0MA--/https://s.yimg.com/uu/api/res/1.2/msfjXuI0jcGEPzscZIaH3A--~B/aD0yMDQ4O3c9MjA0ODthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/fr/article.bfmtv.com/40f2314178141bcba477092839a78496",
       "country": "Suède",
@@ -227,7 +227,7 @@
       ]
     },
     {
-      "id": "5",
+      "id": 5,
       "name": "Mario",
       "linkAvatar": "https://play-lh.googleusercontent.com/7Z4x3nLGglKbIDMafIPmdFUB9zpwu-k3HHbIJ1DeWz-4HCp9IFfCzk5r1JsmyiT85y1v",
       "country": "Italie",
@@ -288,7 +288,7 @@
       ]
     },
     {
-      "id": "6",
+      "id": 6,
       "name": "Desmond Miles",
       "linkAvatar": "https://oyster.ignimgs.com/mediawiki/apis.ign.com/assassins-creed-3/a/ab/Zw-acb-2012-desmond-1.png",
       "country": "USA",
@@ -349,7 +349,7 @@
       ]
     },
     {
-      "id": "7",
+      "id": 7,
       "name": "TomFromLA",
       "linkAvatar": "https://www.swashvillage.org/storage/img/images/tom-cruise-biography.jpg",
       "country": "USA",
