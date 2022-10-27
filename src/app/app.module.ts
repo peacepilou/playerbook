@@ -37,6 +37,7 @@ import { PlayerHabitComponent } from './components/player-habit/player-habit.com
 
 import { ScrollToTopComponent } from './utils/scroll-to-top/scroll-to-top.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FaqPageComponent } from './pages/faq-page/faq-page.component';
 import { BackHomeButtonComponent } from './utils/back-home-button/back-home-button.component';
 
 
@@ -74,6 +75,7 @@ import { BackHomeButtonComponent } from './utils/back-home-button/back-home-butt
     Error404LogoComponent,
     ScrollToTopComponent,
     FooterComponent,
+    FaqPageComponent,
     BackHomeButtonComponent
   ],
   imports: [
