@@ -11,7 +11,7 @@
   }
 }
 .img-overlay {
-    border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background: rgb(2, 0, 36);
   background: linear-gradient(
@@ -36,7 +36,6 @@
 .profile {
   &--header {
     position: relative;
-    
   }
   &--image {
     background-size: cover;
@@ -45,7 +44,7 @@
     height: 300px;
     max-height: 200px;
     border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+    border-top-right-radius: 10px;
   }
   &--title {
     position: absolute;
@@ -67,7 +66,7 @@
     bottom: -20px;
     right: 0;
     color: #fff;
-    font-family: 'Libre Franklin', sans-serif;
+    font-family: "Libre Franklin", sans-serif;
 
     span {
       width: 100%;
@@ -116,7 +115,7 @@
       color: #fff;
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
-      font-family: 'Libre Franklin', sans-serif;
+      font-family: "Libre Franklin", sans-serif;
     }
   }
 }

@@ -51,7 +51,6 @@
 .button-update-delete {
   display: flex;
   flex-direction: row;
-
 }
 
 button.button-update {
@@ -61,6 +60,7 @@ button.button-update {
   border-radius: 2em;
   background-color: #8738bb;
   color: white;
+  cursor: pointer;
 }
 .button-update a{
   text-decoration: none;
@@ -79,6 +79,7 @@ button.button-delete {
   border-radius: 2em;
   background-color: #8738bb;
   color: white;
+  cursor: pointer;
 }
 
 button.button-delete:hover {

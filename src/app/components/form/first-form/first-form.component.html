@@ -1,49 +1,52 @@
 <form #firstForm="ngForm" class="form" (ngSubmit)="firstForm.valid && onSubmit()">
-
     <div>
-        <label for="id">Id :</label>
-        <input type="number" id="id" name="id" [(ngModel)]="dataToChild.id" #idCheck="ngModel" minlength="1" required>
-    </div>
-
-        <div *ngIf="firstForm.submitted && idCheck.errors">
-            <small>Vous devez spécifier un id valide</small>
+        <div>
+            <label for="id">Id :</label>
+            <input type="number" id="id" name="id" [(ngModel)]="dataToChild.id" #idCheck="ngModel" minlength="1" required>
         </div>
-
-    <div>
-        <label for="name">Nom :</label>
-        <input id="name" name="name" [(ngModel)]="dataToChild.name" #nameCheck="ngModel" minlength="1" required>
-    </div>
     
-    <div *ngIf="firstForm.submitted && nameCheck.errors">
-        <small *ngIf="nameCheck.errors['minlength']">Votre nom devrait comporter au moins un caractère</small>
-        <small *ngIf="nameCheck.errors['required']">Votre nom est requis</small>
-    </div>
-
-    <div>
-        <label for="linkAvatar">Lien vers l'avatar :</label>
-        <input id="linkAvatar" name="linkAvatar" [(ngModel)]="dataToChild.linkAvatar" #linkAvatarCheck="ngModel" minlength="3" required>
-    </div>
+            <div *ngIf="firstForm.submitted && idCheck.errors">
+                <small>Vous devez spécifier un id valide</small>
+            </div>
     
-    <div *ngIf="firstForm.submitted && linkAvatarCheck.errors">
-        <small *ngIf="linkAvatarCheck.errors['minlength']">Le lien vers votre avatar doit contenir au moins 3 caractères</small>
-        <small *ngIf="linkAvatarCheck.errors['required']">Un lien vers votre avatar est requis</small>
-    </div>
-
-    <div>
-        <label for="country">Pays :</label>
-        <input id="country" name="country" [(ngModel)]="dataToChild.country" #countryCheck="ngModel" minlength="3" required>
-    </div>
+        <div>
+            <label for="name">Nom :</label>
+            <input id="name" name="name" [(ngModel)]="dataToChild.name" #nameCheck="ngModel" minlength="1" required>
+        </div>
+        
+        <div *ngIf="firstForm.submitted && nameCheck.errors">
+            <small *ngIf="nameCheck.errors['minlength']">Votre nom devrait comporter au moins un caractère</small>
+            <small *ngIf="nameCheck.errors['required']">Votre nom est requis</small>
+        </div>
     
-    <div *ngIf="firstForm.submitted && countryCheck.errors">
-        <small *ngIf="countryCheck.errors['minlength']">Le nom de votre pays doit contenir au moins un caractère</small>
-        <small *ngIf="countryCheck.errors['required']">Veuillez spécifier votre pays de résidence steuplé</small>
+        <div>
+            <label for="linkAvatar">Lien vers l'avatar :</label>
+            <input id="linkAvatar" name="linkAvatar" [(ngModel)]="dataToChild.linkAvatar" #linkAvatarCheck="ngModel" minlength="3" required>
+        </div>
+        
+        <div *ngIf="firstForm.submitted && linkAvatarCheck.errors">
+            <small *ngIf="linkAvatarCheck.errors['minlength']">Le lien vers votre avatar doit contenir au moins 3 caractères</small>
+            <small *ngIf="linkAvatarCheck.errors['required']">Un lien vers votre avatar est requis</small>
+        </div>
+    
+        <div>
+            <label for="country">Pays :</label>
+            <input id="country" name="country" [(ngModel)]="dataToChild.country" #countryCheck="ngModel" minlength="3" required>
+        </div>
+        
+        <div *ngIf="firstForm.submitted && countryCheck.errors">
+            <small *ngIf="countryCheck.errors['minlength']">Le nom de votre pays doit contenir au moins un caractère</small>
+            <small *ngIf="countryCheck.errors['required']">Veuillez spécifier votre pays de résidence steuplé</small>
+        </div>
+    
+        <div>
+            <label for="biography">Dis-nous en plus sur toi :</label>
+            <input id="biography" name="biography" [(ngModel)]="dataToChild.biography">
+        </div>
+    
     </div>
 
-    <div>
-        <label for="biography">Dis-nous en plus sur toi :</label>
-        <input id="biography" name="biography" [(ngModel)]="dataToChild.biography">
-    </div>
-
+    
     <button type="submit"
         [ngStyle]="{backgroundColor: !idCheck.valid || !nameCheck.valid || !linkAvatarCheck.valid || !countryCheck.valid ? 'grey' : '' }">Suivant</button>
 

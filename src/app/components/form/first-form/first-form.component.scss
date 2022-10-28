@@ -1,36 +1,41 @@
-.form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90%;
 }
 
-button{
-    cursor: pointer;
-    margin: -2em;
-    padding: 1em 2em 1em 2em;
-    font-size: 0.9em;
-    border-radius: 2em;
-    border: 3px solid #8738BB;
+button {
+  cursor: pointer;
+  padding: 1em 2em 1em 2em;
+  font-size: 0.9em;
+  border-radius: 2em;
+  border: 3px solid #8738bb;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px #ab85c5;
+  }
 }
 
-input{
-    width: 100%;
-    border-radius: 1em;
-    border: 1px solid gray;
-    padding: 0.2em;
+input {
+  width: 100%;
+  border-radius: 1em;
+  border: 1px solid hsla(276, 36%, 65%, 0.4);
+  padding: 0.2em;
 }
 
-.inputs{
-    height: 75vh;
+.inputs {
+  height: 75vh;
 }
 
-div{
-    width: 100%;
-    margin-bottom: 1em;
+div {
+  width: 100%;
+  margin-bottom: 1em;
 }
 
 @media screen and (min-width: 768px) {
-    button{
-        width: fit-content;
-    }
+  button {
+    width: fit-content;
+  }
 }

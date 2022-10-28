@@ -1,10 +1,10 @@
 .background{
     background-color: #404040;
-    height: 100vh;
+    min-height: 100vh;
+    padding-bottom: 1em;
 }
 
 .form-page{
-    height: 90vh;
     display: flex;
     justify-content: center;
 }
@@ -16,13 +16,13 @@
     width: 70%;
     margin: 1em;
     box-shadow: 2px 2px 20px #202020;
+    min-height: 75vh;
 }
 
 .back-buttons{
     width: 50%;
     display: flex;
     justify-content: space-evenly;
-
 }
 
 .buttons-container{
@@ -31,7 +31,6 @@
 }
 
 @media screen and (min-width: 768px) {
-
     .form-container{
         width: 50%;
     }

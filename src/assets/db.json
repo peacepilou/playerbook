@@ -457,6 +457,126 @@
           "serverName": "Greece"
         }
       ]
+    },
+    {
+      "id": 67,
+      "name": "Raphy(Stolet)",
+      "linkAvatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRacA02CG6I6jRsdG_Q2G8q0CcmBGtQqLgPyq7z_wCvMa1ynMpuD3fsfTQmw4O9CHkLdRE&usqp=CAU",
+      "country": "France",
+      "biography": "Sujet au priapisme. Mais pas toujours.",
+      "userBehavior": {
+        "isCasual": false,
+        "isProactive": true,
+        "isExtravert": true,
+        "isPro": false,
+        "employer": ""
+      },
+      "playerHabit": {
+        "frequencyPerWeek": 6,
+        "isNocturnal": false,
+        "sessionDurationInHour": 3,
+        "isHotBlooded": true,
+        "isLeader": true,
+        "pvpFriendly": true,
+        "pveFriendly": false
+      },
+      "gameList": [
+        {
+          "name": "Call of Duty",
+          "url": "https://www.callofduty.com/fr",
+          "userPseudo": "RaphDu37",
+          "genreList": [
+            {
+              "name": "FPS"
+            }
+          ],
+          "guild": "Les Tous Durs du 37",
+          "level": 0,
+          "rank": "",
+          "difficulty": "Légendaire",
+          "serverName": ""
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "name": "MichouMick",
+      "linkAvatar": "https://www.digitalcorner-wavestone.com/wp-content/uploads/2015/07/Michelin-thumbnail-2.jpg",
+      "country": "France",
+      "biography": "J'aime rouler la nuit.",
+      "userBehavior": {
+        "isCasual": true,
+        "isProactive": false,
+        "isExtravert": false,
+        "isPro": true,
+        "employer": "Michelin"
+      },
+      "playerHabit": {
+        "frequencyPerWeek": 7,
+        "isNocturnal": true,
+        "sessionDurationInHour": 2,
+        "isHotBlooded": true,
+        "isLeader": true,
+        "pvpFriendly": true,
+        "pveFriendly": true
+      },
+      "gameList": [
+        {
+          "name": "Gran Turismo 7",
+          "url": "https://www.gran-turismo.com/fr/products/gt7/",
+          "userPseudo": "Mike",
+          "genreList": [
+            {
+              "name": "Sport"
+            }
+          ],
+          "guild": "",
+          "level": "55",
+          "rank": "Whealer en chef",
+          "difficulty": "",
+          "serverName": ""
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "MichouWhealer",
+      "linkAvatar": "https://www.digitalcorner-wavestone.com/wp-content/uploads/2015/07/Michelin-thumbnail-2.jpg",
+      "country": "France",
+      "biography": "Vous avez vu ma belle voiture ?",
+      "userBehavior": {
+        "isCasual": false,
+        "isProactive": false,
+        "isExtravert": true,
+        "isPro": true,
+        "employer": "Michelin Pro"
+      },
+      "playerHabit": {
+        "frequencyPerWeek": 6,
+        "isNocturnal": false,
+        "sessionDurationInHour": 2,
+        "isHotBlooded": true,
+        "isLeader": false,
+        "pvpFriendly": true,
+        "pveFriendly": false
+      },
+      "gameList": [
+        {
+          "name": "Gran Turismo",
+          "url": "https://www.gran-turismo.com/fr/products/gt7/",
+          "userPseudo": "BigMich",
+          "genreList": [
+            {
+              "name": "Sport"
+            }
+          ],
+          "guild": "MichTeam",
+          "level": "55",
+          "rank": "Boss",
+          "difficulty": "",
+          "serverName": ""
+        }
+      ]
     }
   ]
 }
