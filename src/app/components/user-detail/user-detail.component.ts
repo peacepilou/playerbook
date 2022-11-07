@@ -14,47 +14,21 @@ import { UserBehavior } from 'src/models/userBehavior.model';
 })
 export class UserDetailComponent implements OnInit {
   @Input()
-  userFoundToChild: User | undefined= new User(
-    0,
-    'Clem',
-    'https://www.zupimages.net/up/22/43/gx9p.png',
-    'Suisse',
-    'Barbie bitch bébé',
-    new UserBehavior(true, true, true, true, 'Blizzard ESport'),
+  userFoundToChild: User | undefined = new User(0, '', '', '', '',
+    new UserBehavior(true, true, true, true, ''),
     new PlayerHabit(2, false, 3, true, true, true, true),
-    [
-      new Game(
-        'World of Warcraft',
-        'https://worldofwarcraft.com/fr-fr/',
-        'Elfy_the_bad_B',
-        [new Genre('MMORPG'), new Genre('PVP')],
-        'Draenor',
-        160,
-        'Leader',
-        'Hard',
-        'Bloom'
-      ),
-      new Game(
-        'Dofus',
-        'https://www.dofus.com/fr/',
-        'Elfy_queen_B',
-        [new Genre('MMORPG'), new Genre('PVP')],
-        'Pandore MasterG',
-        50,
-        'Leader',
-        'Medium',
-        'Pandore'
-      ),
-    ]
+    [new Game('', '', '', [new Genre(''), new Genre('')], '', 0, '', '', '')]
   );
 
-  constructor(private userApi: UserHttpService, private router: Router) {}
+  constructor(private userApi: UserHttpService, private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   delete(): void {
-    this.userApi.deleteUserById(this.userFoundToChild?.id).subscribe(() => {
-      this.router.navigateByUrl("/home");
-    });
+    if (confirm("Etes vous sur de vouloir supprimer votre profil ? ")) {
+      this.userApi.deleteUserById(this.userFoundToChild?.id)
+      .subscribe(() => { this.router.navigateByUrl("/home"); })
+    }
+
   }
 }
