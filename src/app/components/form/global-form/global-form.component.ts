@@ -44,8 +44,6 @@ export class GlobalFormComponent implements OnInit {
     false
   );
 
-  fourthFormResults: Game[] = [];
-
   formStep: number = 1;
 
   constructor(private userHttpS: UserHttpService, private route: Router, private router: ActivatedRoute) {}
@@ -74,11 +72,6 @@ export class GlobalFormComponent implements OnInit {
   receiveThirdForm(event: PlayerHabit): void {
     this.thirdFormResults = event;
     this.formStep += 1;
-  }
-
-  receiveFourthForm(event: Game[]): void {
-    this.fourthFormResults = event;
-    this.formStep += 1;
 
     let globalFormResults: User = new User(
       this.firstFormResults.id,
@@ -88,7 +81,7 @@ export class GlobalFormComponent implements OnInit {
       this.firstFormResults.biography,
       this.secondFormResults,
       this.thirdFormResults,
-      this.fourthFormResults
+      []
     );
 
     if(this.userId){
@@ -98,6 +91,7 @@ export class GlobalFormComponent implements OnInit {
     } else {
       this.userHttpS.postNewUser(globalFormResults).subscribe(() => {
         this.route.navigateByUrl('/home');
+        
       });
     }
   }
