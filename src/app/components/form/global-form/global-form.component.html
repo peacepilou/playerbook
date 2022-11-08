@@ -4,7 +4,6 @@
             <app-first-form [dataToChild]="firstFormResults" *ngIf="formStep === 1" (sendFirstForm)="receiveFirstForm($event)"></app-first-form>
             <app-second-form *ngIf="formStep === 2" [dataToChild]="firstFormResults.userBehavior" (sendsecondForm)="receiveSecondForm($event)"></app-second-form>
             <app-third-form *ngIf="formStep === 3" [dataToChild]="firstFormResults.playerHabit" (sendthirdForm)="receiveThirdForm($event)"></app-third-form>
-            <app-fourth-form *ngIf="formStep === 4" (sendFourthForm)="receiveFourthForm($event)"></app-fourth-form>
         </div>
     </div>
     <div class="buttons-container">

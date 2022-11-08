@@ -1,9 +1,8 @@
-<div class="container-game-list">
+<div class="container-game-list" *ngIf="userGameListToChild">
   <h4>Jeux enregistrés</h4>
   <div class="game-list">
     <app-game-detail
-      *ngFor="let game of userGameListToChild"
-      [gameChild]="game"
+     [gameChild]="userGameListToChild"
     ></app-game-detail>
   </div>
 </div>

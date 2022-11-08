@@ -89,8 +89,8 @@ export class UserListComponent implements OnInit {
         user.country
           .toLowerCase()
           .includes(this.searchedContentChild.toLowerCase()) ||
-        user.gameList
-          .map((game: { userPseudo: string }) => game.userPseudo)
+        user.userGameInfoList
+          .map((info: { userPseudo: string }) => info.userPseudo)
           .includes(this.searchedContentChild.toLowerCase())
     );
   }

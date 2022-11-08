@@ -35,15 +35,15 @@
 
     <p class="pvpFriendly">
       <span class="name-content">Adepte du PVP :
-        <span *ngIf="playerHabitToChild?.pvpFriendly">Oui </span>
-        <span *ngIf="playerHabitToChild?.pvpFriendly === false">Non </span>
+        <span *ngIf="playerHabitToChild?.isPVP">Oui </span>
+        <span *ngIf="playerHabitToChild?.isPVP === false">Non </span>
       </span>   
     </p>
 
     <p class="pveFriendly">
       <span class="name-content">Adepte du PVE :
-        <span *ngIf="playerHabitToChild?.pveFriendly">Oui </span>
-        <span *ngIf="playerHabitToChild?.pveFriendly === false">Non </span>
+        <span *ngIf="playerHabitToChild?.isPVE">Oui </span>
+        <span *ngIf="playerHabitToChild?.isPVE === false">Non </span>
       </span>   
     </p>
 

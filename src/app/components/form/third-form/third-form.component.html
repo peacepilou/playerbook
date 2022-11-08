@@ -23,7 +23,7 @@
     <div>
         <label class="switch">
             <label for="isNocturnal">Nocturne ? </label>
-            <input type="checkbox" name="isNocturnal" class="checkbox" id="isNocturnal" (change)="checkValue()"
+            <input type="checkbox" name="isNocturnal" class="checkbox" id="isNocturnal"
             [(ngModel)]="dataToChild.isNocturnal" [checked]="dataToChild.isNocturnal">
             <span class="slider"></span>
         </label>
@@ -50,8 +50,8 @@
     <div>
         <label class="switch">
             <label for="pvpFriendly">Plutôt PVP ? </label>
-            <input type="checkbox" name="pvpFriendly" class="checkbox" id="pvpFriendly" [checked]="dataToChild.pvpFriendly"
-            [(ngModel)]="dataToChild.pvpFriendly">
+            <input type="checkbox" name="pvpFriendly" class="checkbox" id="pvpFriendly" [checked]="dataToChild.isPVP"
+            [(ngModel)]="dataToChild.isPVP">
             <span class="slider"></span>
         </label>
     </div>
@@ -59,8 +59,8 @@
     <div>
         <label class="switch">
             <label for="pveFriendly">Plutôt PVE ? </label>
-            <input type="checkbox" name="pveFriendly" class="checkbox" id="pveFriendly" [checked]="dataToChild.pveFriendly" (change)="checkValuePVP()"
-            [(ngModel)]="dataToChild.pveFriendly">
+            <input type="checkbox" name="pveFriendly" class="checkbox" id="pveFriendly" [checked]="dataToChild.isPVE" 
+            [(ngModel)]="dataToChild.isPVE">
             <span class="slider"></span>
         </label>
     </div>

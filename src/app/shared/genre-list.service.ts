@@ -7,12 +7,12 @@ import { Genre } from 'src/models/genre.model';
 export class GenreListService {
 
   genreList : Genre[] = [
-    new Genre('MMORPG'),
-    new Genre('RPG'),
-    new Genre('FPS'),
-    new Genre('Sandbox'),
-    new Genre('Sport'),
-    new Genre('Moba')
+    new Genre(0, 'MMORPG', []),
+    new Genre(1, 'RPG', []),
+    new Genre(2, 'FPS', []),
+    new Genre(3, 'Sandbox', []),
+    new Genre(4, 'Sport', []),
+    new Genre(5, 'Moba', [])
   ];
 
   constructor() { }
