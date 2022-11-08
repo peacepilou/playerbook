@@ -25,7 +25,6 @@ import { SecondFormComponent } from './components/form/second-form/second-form.c
 import { ThirdFormComponent } from './components/form/third-form/third-form.component';
 import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 import { Error404LogoComponent } from './components/error404-logo/error404-logo.component';
-import { FourthFormComponent } from './components/form/fourth-form/fourth-form.component';
 import { BackButtonComponent } from './components/form/back-button/back-button.component';
 
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
@@ -64,7 +63,6 @@ import { BackHomeButtonComponent } from './utils/back-home-button/back-home-butt
     Error404PageComponent,
     Error404LogoComponent,
     CheckboxFilterUsersComponent,
-    FourthFormComponent,
     BackButtonComponent,
     UserDetailComponent,
     UserBehaviorComponent,
