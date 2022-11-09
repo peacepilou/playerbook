@@ -9,7 +9,7 @@ import { UserBehavior } from 'src/models/userBehavior.model';
   providedIn: 'root',
 })
 export class UserHttpService {
-  private baseUrl: string = 'http://localhost:3000/user';
+  private baseUrl: string = 'http://localhost:8080';
 
   private userId: number | undefined;
 
