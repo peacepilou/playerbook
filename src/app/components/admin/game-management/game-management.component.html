@@ -1,1 +1,34 @@
-<p>game-management works!</p>
+<div class="newGameFormContainer">
+    <div class="newGameForm" *ngIf="isNewGameFormActive">
+        <div class="crossFlex">
+            <img class="closeFormWindow" src="../../../../assets/pictures/cross.png"
+                (click)="isNewGameFormActive = false">
+        </div>
+        <form #newGameForm="ngForm" (ngSubmit)="newGameForm.valid && submitGame()">
+
+            <label for="name">Nom du jeu :</label>
+            <input type="text" name="name" [(ngModel)]="newGame.name">
+
+            <label for="photoUrl">Lien vers la miniature :</label>
+            <input type="text" name="photoUrl" [(ngModel)]="newGame.photoUrl">
+
+            <label for="gameUrl">Lien vers le site officiel :</label>
+            <input type="text" name="gameUrl" [(ngModel)]="newGame.gameUrl">
+
+            <div class="genreForm">
+                <label for="genre">Genre(s) :</label>
+                <input type="text" name="genre" [(ngModel)]="newGenre.name">
+                <span class="addGenreButton" (click)="pushGenreInList()">Ajouter</span>
+            </div>
+            <div>
+                <div *ngFor="let genre of newGame.genreList">
+                    <p class="addedGenre">{{genre.name}}</p>
+                </div>
+            </div>
+
+            <button type="reset" (click)="refreshGame()">Réinitialiser</button>
+            <button type="submit">Envoyer</button>
+
+        </form>
+    </div>
+</div>

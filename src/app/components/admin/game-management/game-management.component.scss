@@ -1,0 +1,57 @@
+.newGameFormContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.newGameForm{
+    position: absolute;
+    top: 12%;
+    width: 90%;
+    height: 50%;
+    background-color: whitesmoke;
+    border: 1px solid black;
+}
+
+.crossFlex{
+    display: flex;
+    justify-content: right;
+}
+
+.closeFormWindow{
+    width: 20px;
+    height: 20px;
+}
+
+.addGenreButton{
+    border: 1px solid black;
+}
+
+.addGenreButton:hover{
+    cursor: pointer;
+}
+
+.addedGenre{
+    border: 1px solid black;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+input{
+    width: 50%;
+}
+
+.genreForm{
+    margin: 1em;
+}
+
+@media screen and (min-width : 768px) {
+    .newGameForm{
+        width: 25%;
+}
+
+}

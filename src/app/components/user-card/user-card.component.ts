@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Game } from 'src/models/game.model';
-import { Genre } from 'src/models/genre.model';
 import { PlayerHabit } from 'src/models/playerHabit.model';
 import { User } from 'src/models/user.model';
 import { UserBehavior } from 'src/models/userBehavior.model';

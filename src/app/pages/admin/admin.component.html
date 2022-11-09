@@ -1,1 +1,8 @@
-<p>admin works!</p>
+<app-navbar></app-navbar>
+<app-game-management-button
+(isNewGameFormActive)="getGameButtonInput($event)"
+></app-game-management-button>
+<app-game-management
+[isNewGameFormActive]="isGameFormButtonPushed"
+></app-game-management>
+<app-footer></app-footer>
