@@ -38,6 +38,7 @@ import { ScrollToTopComponent } from './utils/scroll-to-top/scroll-to-top.compon
 import { FooterComponent } from './components/footer/footer.component';
 import { FaqPageComponent } from './pages/faq-page/faq-page.component';
 import { BackHomeButtonComponent } from './utils/back-home-button/back-home-button.component';
+import { UserGameInfoFormComponent } from './components/user-game-info-form/user-game-info-form.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { BackHomeButtonComponent } from './utils/back-home-button/back-home-butt
     ScrollToTopComponent,
     FooterComponent,
     FaqPageComponent,
-    BackHomeButtonComponent
+    BackHomeButtonComponent,
+    UserGameInfoFormComponent
   ],
   imports: [
     BrowserModule,

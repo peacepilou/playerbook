@@ -1,0 +1,36 @@
+<form #userGameInfoForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label for="pseudo">C'est quoi ton blaze ?</label>
+        <input type="text" name="pseudo" id="pseudo" [(ngModel)]="userGameInfo.userPseudo" >
+    </div>
+
+    <div>
+        <label for="guild">T'es dans une guilde ?</label>
+        <input type="text" name="guild" id="guild" [(ngModel)]="userGameInfo.guild" >
+    </div>
+
+    <div>
+        <label for="level">Quel niveau ?</label>
+        <input type="text" name="level" id="level" [(ngModel)]="userGameInfo.level" >
+    </div>
+
+    <div>
+        <label for="rank">Quel rang ?</label>
+        <input type="text" name="rank" id="rank" [(ngModel)]="userGameInfo.rank" >
+    </div>
+
+    <div>
+        <label for="difficulty">Quelle difficulté ?</label>
+        <input type="text" name="difficulty" id="difficulty" [(ngModel)]="userGameInfo.difficulty" >
+    </div>
+
+    <div>
+        <label for="server">Quel serveur ?</label>
+        <input type="text" name="server" id="server" [(ngModel)]="userGameInfo.serverName" >
+    </div>
+
+    <button type="reset" (click)="nextGame()">Next !</button>
+    <button type="submit">Envoyer !</button>
+
+</form>
