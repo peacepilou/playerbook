@@ -12,6 +12,9 @@
       <li>
         <a class="menu__item" [routerLink]="['/inscription']">Inscription</a>
       </li>
+      <li>
+        <a class="menu__item" [routerLink]="['/admin']">Administration</a>
+      </li>
     </ul>
   </div>
   <div class="block-intro">
@@ -25,15 +28,43 @@
   </div>
   <div class="list-navigation">
     <a class="hover-introduction" [routerLink]="['/']">
-      <div class="hover-suricat-introduction"><img src="../../assets/pictures/PlayerBook-Logo-mini.png" class="img-hover" /></div>Introduction
+      <div class="hover-suricat-introduction">
+        <img
+          src="../../assets/pictures/PlayerBook-Logo-mini.png"
+          class="img-hover"
+        />
+      </div>
+      Introduction
     </a>
 
     <a class="hover-accueil" [routerLink]="['/home']">
-      <div class="hover-suricat-accueil"><img src="../../assets/pictures/PlayerBook-Logo-mini.png" class="img-hover" /></div>Accueil
+      <div class="hover-suricat-accueil">
+        <img
+          src="../../assets/pictures/PlayerBook-Logo-mini.png"
+          class="img-hover"
+        />
+      </div>
+      Accueil
     </a>
 
     <a class="hover-inscription" [routerLink]="['/inscription']">
-      <div class="hover-suricat-inscription"><img src="../../assets/pictures/PlayerBook-Logo-mini.png" class="img-hover" /></div>Inscription
+      <div class="hover-suricat-inscription">
+        <img
+          src="../../assets/pictures/PlayerBook-Logo-mini.png"
+          class="img-hover"
+        />
+      </div>
+      Inscription
+    </a>
+
+    <a class="hover-inscription" [routerLink]="['/admin']">
+      <div class="hover-suricat-inscription">
+        <img
+          src="../../assets/pictures/PlayerBook-Logo-mini.png"
+          class="img-hover"
+        />
+      </div>
+      Administration
     </a>
   </div>
 </div>
