@@ -2,7 +2,7 @@
     <div class="newGameForm" *ngIf="isNewGameFormActive">
         <div class="crossFlex">
             <img class="closeFormWindow" src="../../../../assets/pictures/cross.png"
-                (click)="isNewGameFormActive = false">
+                (click)="closeWindow()">
         </div>
         <form #newGameForm="ngForm" (ngSubmit)="newGameForm.valid && submitGame()">
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { GameHttpService } from 'src/app/shared/game-http.service';
 import { Game } from 'src/models/game.model';
 import { Genre } from 'src/models/genre.model';
@@ -11,6 +11,8 @@ import { Genre } from 'src/models/genre.model';
 export class GameManagementComponent implements OnInit {
 
   
+  @Output()
+  deactivateForm : EventEmitter<boolean> = new EventEmitter;
   @Input()
   isNewGameFormActive: boolean = false;
   newGame: Game = new Game(0, '', '', '', [], []);
@@ -19,10 +21,6 @@ export class GameManagementComponent implements OnInit {
   genreList: Genre[] = [];
 
   constructor(private gameHttpS: GameHttpService) { }
-
-  ngOnChanges(changes: SimpleChanges) {
-    console.log("yay");
-  }
 
   ngOnInit(): void {
     this.gameHttpS.getGameList().subscribe((data) => {
@@ -51,7 +49,15 @@ export class GameManagementComponent implements OnInit {
   submitGame() {
     this.gameList.push({ ...this.newGame });
     this.refreshGame();
+    this.refreshGenre();
     console.log(this.gameList);
+  }
+
+  closeWindow(){
+    this.isNewGameFormActive = false;
+    this.deactivateForm.emit(this.isNewGameFormActive)
+    this.refreshGame();
+    this.refreshGenre();
   }
 
 }

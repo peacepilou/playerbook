@@ -21,9 +21,9 @@ export class GameManagementButtonComponent implements OnInit {
     this.isNewGameFormActive.emit(this.buttonPushed);
   }
 
-  pushButton(){
+  public pushButton(){
     this.buttonPushed = true;
-    this.sendIsNewGameFormActive();
+    this.sendIsNewGameFormActive();    
   }
 
 }

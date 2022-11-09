@@ -14,9 +14,13 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  getGameButtonInput(event : boolean) : void{
+  activateForm(event : boolean) : void{
     this.isGameFormButtonPushed = event;
-    console.log(this.isGameFormButtonPushed);
+    
+  }
+
+  deactivateForm(event : boolean){
+    this.isGameFormButtonPushed = event;
   }
 
 }
