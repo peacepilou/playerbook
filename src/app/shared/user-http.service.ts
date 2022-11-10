@@ -9,13 +9,14 @@ import { UserBehavior } from 'src/models/userBehavior.model';
   providedIn: 'root',
 })
 export class UserHttpService {
-  private baseUrl: string = 'http://localhost:8080';
-
-  private optionRequete = {
+  
+  private httpOptions = {
     headers: new HttpHeaders({
       'Access-Control-Allow-Origin': '*',
     }),
   };
+
+  private baseUrl: string = 'http://localhost:8080';
 
   private userId: number | undefined;
 
@@ -42,7 +43,7 @@ export class UserHttpService {
   }
 
   getUserList(): Observable<User[]> {
-    return this.userHttp.get<User[]>(`${this.baseUrl}`, this.optionRequete);
+    return this.userHttp.get<User[]>(`${this.baseUrl}`, this.httpOptions);
   }
 
   getUserById(userId: number | undefined): Observable<User> {
