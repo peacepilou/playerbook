@@ -4,7 +4,7 @@
         <label class="switch">
             <label for="isCasual">Joueur occasionnel ? </label>
             <input type="checkbox" name="isCasual" class="checkbox" id="isCasual"
-            [(ngModel)]="dataToChild.isCasual">
+            [(ngModel)]="dataToChild.casual">
             <span class="slider"></span>
         </label>
     </div>
@@ -12,8 +12,8 @@
     <div>
         <label class="switch">
             <label for="isProactive">Plutôt proactif ? </label>
-            <input type="checkbox" name="isProactive" class="checkbox" id="isProactive" [checked]="dataToChild.isProactive" 
-            [(ngModel)]="dataToChild.isProactive">
+            <input type="checkbox" name="isProactive" class="checkbox" id="isProactive" [checked]="dataToChild.proactive" 
+            [(ngModel)]="dataToChild.proactive">
             <span class="slider"></span>
         </label>
     </div>
@@ -22,7 +22,7 @@
         <label class="switch">
             <label for="isExtravert">Extraverti ? </label>
             <input type="checkbox" name="isExtravert" class="checkbox" id="isExtravert"
-            [(ngModel)]="dataToChild.isExtravert">
+            [(ngModel)]="dataToChild.extravert">
             <span class="slider"></span>
         </label>
     </div>
@@ -31,14 +31,14 @@
         <label class="switch">
             <label for="isPro">Joueur pro ? </label>
             <input type="checkbox" name="isPro" class="checkbox" id="isPro"
-            [(ngModel)]="dataToChild.isPro">
+            [(ngModel)]="dataToChild.pro">
             <span class="slider"></span>
         </label>
     </div>
 
-    <div *ngIf="dataToChild.isPro">
+    <div *ngIf="dataToChild.pro">
         <label for="employer">Woah, dans quelle équipe ? </label>
-        <input id="employer" name="employer" [(ngModel)]="dataToChild.employer" #employerCheck="ngModel">
+        <input id="employer" name="employer" [(ngModel)]="dataToChild.employeer" #employerCheck="ngModel">
     </div>
 
     <button type="submit">Suivant</button>

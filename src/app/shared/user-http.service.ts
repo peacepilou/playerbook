@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PlayerHabit } from 'src/models/playerHabit.model';
@@ -9,14 +9,10 @@ import { UserBehavior } from 'src/models/userBehavior.model';
   providedIn: 'root',
 })
 export class UserHttpService {
-  
-  private httpOptions = {
-    headers: new HttpHeaders({
-      'Access-Control-Allow-Origin': '*',
-    }),
-  };
 
   private baseUrl: string = 'http://localhost:8080';
+
+  private userRoad: string = '/api/user'
 
   private userId: number | undefined;
 
@@ -43,7 +39,7 @@ export class UserHttpService {
   }
 
   getUserList(): Observable<User[]> {
-    return this.userHttp.get<User[]>(`${this.baseUrl}`, this.httpOptions);
+    return this.userHttp.get<User[]>(`${this.baseUrl}${this.userRoad}`);
   }
 
   getUserById(userId: number | undefined): Observable<User> {
