@@ -11,7 +11,7 @@ export class User{
         public country: string,
         public biography: string,
         public userBehavior: UserBehavior,
-        public playerHabit: PlayerHabit,
+        public playerHabits: PlayerHabit,
         public gameList: Game[],
         public userGameInfoList : UserGameInfo[]
     ){}

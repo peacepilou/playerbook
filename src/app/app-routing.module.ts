@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './pages/admin/admin.component';
 import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 import { FaqPageComponent } from './pages/faq-page/faq-page.component';
 import { FormInscriptionComponent } from './pages/form-inscription/form-inscription.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path : "inscription" , component : FormInscriptionComponent},
   {path : "update-profile/:id" , component : FormInscriptionComponent},
   {path : "user-profile/:id" , component : UserProfileComponent},
+  {path : "admin", component : AdminComponent},
   {path : "faq" , component : FaqPageComponent},
   {path : "cgu" , component : Error404PageComponent},
   {path : "contact" , component : Error404PageComponent},
