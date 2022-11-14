@@ -23,7 +23,7 @@ export class ThirdFormComponent implements OnInit {
 
   onSubmit(){
     this.sendthirdForm.emit(this.dataToChild);
-    
+    console.log("data 3e form", this.dataToChild);  
   }
 
 }

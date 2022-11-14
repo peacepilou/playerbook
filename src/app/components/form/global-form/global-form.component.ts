@@ -89,6 +89,7 @@ export class GlobalFormComponent implements OnInit {
     } else {
       this.userHttpS.postNewUser(globalFormResults).subscribe(() => {
         this.route.navigateByUrl('/home');
+        console.log("data global form", globalFormResults);
       });
     }
   }

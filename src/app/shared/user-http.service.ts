@@ -14,8 +14,6 @@ export class UserHttpService {
 
   private userRoad: string = '/api/user'
 
-  private userId: number | undefined;
-
   private body: User = new User(
     0,
     '',
@@ -31,11 +29,7 @@ export class UserHttpService {
   constructor(private userHttp: HttpClient) {}
 
   postNewUser(body: User): Observable<User> {
-    return this.userHttp.post<User>(this.baseUrl, body);
-  }
-
-  postUser(): Observable<User> {
-    return this.userHttp.post<User>(`${this.baseUrl}`, this.body);
+    return this.userHttp.post<User>(`${this.baseUrl}${this.userRoad}/add`, body);
   }
 
   getUserList(): Observable<User[]> {
@@ -43,14 +37,14 @@ export class UserHttpService {
   }
 
   getUserById(userId: number | undefined): Observable<User> {
-    return this.userHttp.get<User>(`${this.baseUrl}/${userId}`);
+    return this.userHttp.get<User>(`${this.baseUrl}${this.userRoad}/${userId}`);
   }
 
   updateUserById(body: User, userId: number): Observable<User> {
-    return this.userHttp.put<User>(`${this.baseUrl}/${userId}`, body);
+    return this.userHttp.put<User>(`${this.baseUrl}${this.userRoad}/${userId}`, body);
   }
 
   deleteUserById(userId: number | undefined): Observable<User> {
-    return this.userHttp.delete<User>(`${this.baseUrl}/${userId}`);
+    return this.userHttp.delete<User>(`${this.baseUrl}${this.userRoad}/${userId}`);
   }
 }
