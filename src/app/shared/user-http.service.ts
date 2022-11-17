@@ -9,7 +9,7 @@ import { UserBehavior } from 'src/models/userBehavior.model';
   providedIn: 'root',
 })
 export class UserHttpService {
-  private baseUrl: string = 'http://localhost:8080';
+  private baseUrl: string = 'http://localhost:3000/user';
 
   private userId: number | undefined;
 
@@ -24,7 +24,7 @@ export class UserHttpService {
   constructor(private userHttp: HttpClient) {}
   
   postNewUser(body : User): Observable<User> {
-    return this.userHttp.post<User>(this.baseUrl, body);
+    return this.userHttp.post<User>(`${this.baseUrl}/api/user/all`, body);
   }
 
   postUser(): Observable<User> {
@@ -32,18 +32,18 @@ export class UserHttpService {
   }
 
   getUserList(): Observable<User[]> {
-    return this.userHttp.get<User[]>(`${this.baseUrl}`);
+    return this.userHttp.get<User[]>(`${this.baseUrl}/api/user/all`);
   }
 
   getUserById(userId: number | undefined): Observable<User> {
-    return this.userHttp.get<User>(`${this.baseUrl}/${userId}`);
+    return this.userHttp.get<User>(`${this.baseUrl}/api/user/${userId}`);
   }
 
   updateUserById(body : User, userId: number): Observable<User> {
-    return this.userHttp.put<User>(`${this.baseUrl}/${userId}`, body);
+    return this.userHttp.put<User>(`${this.baseUrl}/api/user/${userId}`, body);
   }
 
   deleteUserById(userId: number | undefined): Observable<User> {
-    return this.userHttp.delete<User>(`${this.baseUrl}/${userId}`);
+    return this.userHttp.delete<User>(`${this.baseUrl}/api/user/${userId}`);
   }
 }

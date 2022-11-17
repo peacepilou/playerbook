@@ -13,7 +13,6 @@ import { UserGameInfo } from 'src/models/userGameInfo.model';
   styleUrls: ['./game-list.component.scss']
 })
 export class GameListComponent implements OnInit {
-
   @Input()
   userGameListToChild: User = new User(0, '', '', '', '',
   new UserBehavior(0, true, true, true, true, ''),
@@ -22,9 +21,21 @@ export class GameListComponent implements OnInit {
   [new UserGameInfo(0, "", "", 0, "", "", "")]
 );
 
+ isAddGameFormVisible: boolean = false;
+
+ userGameInfoResult : UserGameInfo = new UserGameInfo (0,'', '', 0, '', '', '');
+
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  toggleEditButton(): void {
+    this.isAddGameFormVisible = !this.isAddGameFormVisible;
+  }
+
+  receiveUserGameInfoForm(event : UserGameInfo) : void {
+    this.userGameInfoResult = event;
   }
 
 }

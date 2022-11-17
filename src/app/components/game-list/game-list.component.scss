@@ -8,7 +8,7 @@
     box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.14);
 }
 h4{
-    margin: 1em 0.5em;
+    margin: 1em 0.5em 0em 0.5em;
     text-indent: .8em;
     letter-spacing: 0.1em;
     font-size: 1.2em;
@@ -22,12 +22,28 @@ h4{
     padding: 1em;
 }
 
+.button-add-game {
+  width: 15em;
+  height: 20em;
+  margin: 2em;
+  border-radius: 2em;
+  background-color: #8738bb;
+  color: white;
+  cursor: pointer;
+}
+
+button.button-add-game:hover {
+    transform: scale(1.1);
+    transition: transform .1s;    
+}
+
+
 @media screen and (min-width: 768px) {
     .game-list {
       display: flex;
       width: 100%;
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: center;
       
     }
 

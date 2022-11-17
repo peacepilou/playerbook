@@ -15,20 +15,28 @@ export class UserGameInfoFormComponent implements OnInit {
 
   userGameInfoList : UserGameInfo[] = [];
 
+  isAddGameFormVisible: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onSubmit() : void {
-    this.sendUserGameInfoForm.emit(this.userGameInfo);
+  toggleEditButton(): void {
+    this.isAddGameFormVisible = !this.isAddGameFormVisible;
   }
 
+
+  onSubmit() : void {
+    this.sendUserGameInfoForm.emit(this.userGameInfo);
+  
+  }
   nextGame() : void {
     this.userGameInfoList.push({...this.userGameInfo});
     console.log(this.userGameInfo);
+  }
 
 
 
-}
+
 }

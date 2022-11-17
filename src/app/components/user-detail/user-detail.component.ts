@@ -22,17 +22,12 @@ export class UserDetailComponent implements OnInit {
   [new UserGameInfo(0, "", "", 0, "", "", "")]
 );
 
-  isAddGameFormVisible: boolean = false;
-
-  userGameInfoResult : UserGameInfo = new UserGameInfo (0,'', '', 0, '', '', '');
 
   constructor(private userApi: UserHttpService, private router: Router) { }
 
   ngOnInit(): void { }
 
-  receiveUserGameInfoForm(event : UserGameInfo) : void {
-    this.userGameInfoResult = event;
-  }
+
 
 
   delete(): void {

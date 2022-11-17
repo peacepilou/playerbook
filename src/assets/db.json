@@ -1,3 +1,31 @@
 {
-  "user": []
+  "user": [
+    {
+      "id": 1,
+      "name": "sfgdg",
+      "linkAvatar": "sdfsf",
+      "country": "sdfsfsd",
+      "biography": "sdfsf",
+      "userBehavior": {
+        "id": 0,
+        "isCasual": false,
+        "isProactive": false,
+        "isExtravert": false,
+        "isPro": false,
+        "employer": ""
+      },
+      "playerHabit": {
+        "id": 0,
+        "frequencyPerWeek": 0,
+        "sessionDurationInHour": 0,
+        "isNocturnal": false,
+        "isHotBlooded": false,
+        "isLeader": false,
+        "isPVP": false,
+        "isPVE": false
+      },
+      "gameList": [],
+      "userGameInfoList": []
+    }
+  ]
 }

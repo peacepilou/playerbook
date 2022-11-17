@@ -1,8 +1,10 @@
 <div class="container-game-list" *ngIf="userGameListToChild">
   <h4>Jeux enregistrés</h4>
   <div class="game-list">
-    <app-game-detail
-     [gameChild]="userGameListToChild"
-    ></app-game-detail>
+    <button (click)="toggleEditButton()" class="button-add-game">ajouter un jeu</button>
+    <app-game-detail [gameChild]="userGameListToChild"></app-game-detail>
   </div>
 </div>
+
+<app-user-game-info-form *ngIf="isAddGameFormVisible" (sendUserGameInfoForm)="receiveUserGameInfoForm($event)">
+</app-user-game-info-form>
