@@ -6,7 +6,7 @@ export class UserGameInfo{
         public userPseudo : string,
         public guild?: string,
         public level?: number,
-        public rank?: string,
+        public pilouRank?: string,
         public difficulty?: string,
         public serverName?: string
     ){}

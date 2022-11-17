@@ -39,6 +39,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FaqPageComponent } from './pages/faq-page/faq-page.component';
 import { BackHomeButtonComponent } from './utils/back-home-button/back-home-button.component';
 import { UserGameInfoFormComponent } from './components/user-game-info-form/user-game-info-form.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { StatsComponent } from './components/admin/stats/stats.component';
+import { UserManagementComponent } from './components/admin/user-management/user-management.component';
 
 
 @NgModule({
@@ -76,7 +79,11 @@ import { UserGameInfoFormComponent } from './components/user-game-info-form/user
     FooterComponent,
     FaqPageComponent,
     BackHomeButtonComponent,
-    UserGameInfoFormComponent
+    UserGameInfoFormComponent,
+    AdminComponent,
+    StatsComponent,
+    UserManagementComponent,
+    
   ],
   imports: [
     BrowserModule,

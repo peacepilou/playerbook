@@ -101,7 +101,7 @@ export class UserListComponent implements OnInit {
 
     return updatedArr.filter((user) =>
       checkbox.category === 'PlayerHabit'
-        ? user.playerHabit[propreyToFind as keyof PlayerHabit] ===
+        ? user.playerHabits[propreyToFind as keyof PlayerHabit] ===
           checkbox.isActive
         : user.userBehavior[propreyToFind as keyof UserBehavior] ===
           checkbox.isActive

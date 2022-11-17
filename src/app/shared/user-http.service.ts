@@ -9,41 +9,44 @@ import { UserBehavior } from 'src/models/userBehavior.model';
   providedIn: 'root',
 })
 export class UserHttpService {
-  private baseUrl: string = 'http://localhost:3000/user';
+
+  private baseUrl: string = 'http://localhost:8080';
+
+  private userRoad: string = '/api/user'
 
   private userId: number | undefined;
 
-  private body: User = new User(0, '', '', '', '',
-  new UserBehavior(0, false, false, false, false, ''),
-  new PlayerHabit(0, 0, 0, false, false, false, false, false),
-  [],
-  []
-);
-
+  private body: User = new User(
+    0,
+    '',
+    '',
+    '',
+    '',
+    new UserBehavior(0, false, false, false, false, ''),
+    new PlayerHabit(0, 0, 0, false, false, false, false, false),
+    [],
+    []
+  );
 
   constructor(private userHttp: HttpClient) {}
-  
-  postNewUser(body : User): Observable<User> {
-    return this.userHttp.post<User>(`${this.baseUrl}/api/user/all`, body);
-  }
 
-  postUser(): Observable<User> {
-    return this.userHttp.post<User>(`${this.baseUrl}`, this.body);
+  postNewUser(body: User): Observable<User> {
+    return this.userHttp.post<User>(`${this.baseUrl}${this.userRoad}`, this.body);
   }
 
   getUserList(): Observable<User[]> {
-    return this.userHttp.get<User[]>(`${this.baseUrl}/api/user/all`);
+    return this.userHttp.get<User[]>(`${this.baseUrl}${this.userRoad}`);
   }
 
   getUserById(userId: number | undefined): Observable<User> {
-    return this.userHttp.get<User>(`${this.baseUrl}/api/user/${userId}`);
+    return this.userHttp.get<User>(`${this.baseUrl}${this.userRoad}/${userId}`);
   }
 
   updateUserById(body : User, userId: number): Observable<User> {
-    return this.userHttp.put<User>(`${this.baseUrl}/api/user/${userId}`, body);
+    return this.userHttp.put<User>(`${this.baseUrl}${this.userRoad}/${userId}`, body);
   }
 
   deleteUserById(userId: number | undefined): Observable<User> {
-    return this.userHttp.delete<User>(`${this.baseUrl}/api/user/${userId}`);
+    return this.userHttp.delete<User>(`${this.baseUrl}${this.userRoad}/${userId}`);
   }
 }
