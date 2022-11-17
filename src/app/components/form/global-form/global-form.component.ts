@@ -13,15 +13,14 @@ import { UserBehavior } from 'src/models/userBehavior.model';
 export class GlobalFormComponent implements OnInit {
   userId: number = 0;
 
-  firstFormResults: User = new User(0, '', '', '', '',
-  new UserBehavior(0, false, false, false, false, ''),
-  new PlayerHabit(0, 0, 0, false, false, false, false, false),
+  firstFormResults: User = new User('', '', '', '',
+  new UserBehavior( false, false, false, false, ''),
+  new PlayerHabit(0, 0, false, false, false, false, false),
   [],
   []
 );
 
   secondFormResults: UserBehavior = new UserBehavior(
-    0,
     false,
     false,
     false,
@@ -30,7 +29,6 @@ export class GlobalFormComponent implements OnInit {
   );
 
   thirdFormResults: PlayerHabit = new PlayerHabit(
-    0,
     0,
     0,
     false,
@@ -47,11 +45,14 @@ export class GlobalFormComponent implements OnInit {
   ngOnInit(): void {
     this.router.paramMap.subscribe((param: ParamMap) => {
       if(param.get("id")) {
+        console.log("toto");
+    
         this.userId = parseInt(param.get("id") as string);
+        this.userHttpS.getUserById(this.userId).subscribe(data => this.firstFormResults = data);
       }
-      return this.userId
+      // return this.userId
     });
-    this.userHttpS.getUserById(this.userId).subscribe(data => this.firstFormResults = data);
+    // this.userHttpS.getUserById(this.userId).subscribe(data => this.firstFormResults = data);
 
   }
 
@@ -70,7 +71,6 @@ export class GlobalFormComponent implements OnInit {
     this.formStep += 1;
 
     let globalFormResults: User = new User(
-      this.firstFormResults.id,
       this.firstFormResults.name,
       this.firstFormResults.linkAvatar,
       this.firstFormResults.country,
@@ -83,12 +83,16 @@ export class GlobalFormComponent implements OnInit {
     
 
     if(this.userId){
+      console.log("PUT data global form1", globalFormResults);
       this.userHttpS.updateUserById(globalFormResults, this.userId).subscribe(() => {
         this.route.navigateByUrl(`/user-profile/${this.userId}`)
+        console.log("PUT data global form2", globalFormResults);
       })
     } else {
+      console.log("data global form1", globalFormResults);
       this.userHttpS.postNewUser(globalFormResults).subscribe(() => {
         this.route.navigateByUrl('/home');
+        console.log("data global form2", globalFormResults);
       });
     }
   }

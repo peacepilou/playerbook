@@ -9,41 +9,42 @@ import { UserBehavior } from 'src/models/userBehavior.model';
   providedIn: 'root',
 })
 export class UserHttpService {
+
   private baseUrl: string = 'http://localhost:8080';
 
-  private userId: number | undefined;
+  private userRoad: string = '/api/user'
 
-  private body: User = new User(0, '', '', '', '',
-  new UserBehavior(0, false, false, false, false, ''),
-  new PlayerHabit(0, 0, 0, false, false, false, false, false),
-  [],
-  []
-);
-
+  private body: User = new User(
+    '',
+    '',
+    '',
+    '',
+    new UserBehavior(false, false, false, false, ''),
+    new PlayerHabit(0, 0, false, false, false, false, false),
+    [],
+    []
+  );
 
   constructor(private userHttp: HttpClient) {}
-  
-  postNewUser(body : User): Observable<User> {
-    return this.userHttp.post<User>(this.baseUrl, body);
-  }
 
-  postUser(): Observable<User> {
-    return this.userHttp.post<User>(`${this.baseUrl}`, this.body);
+  postNewUser(body: User): Observable<User> {
+    // return this.userHttp.post<User>(`${this.baseUrl}${this.userRoad}/add`, body);
+    return this.userHttp.post<User>("http://localhost:8080/api/user/add", body);
   }
 
   getUserList(): Observable<User[]> {
-    return this.userHttp.get<User[]>(`${this.baseUrl}`);
+    return this.userHttp.get<User[]>(`${this.baseUrl}${this.userRoad}`);
   }
 
   getUserById(userId: number | undefined): Observable<User> {
-    return this.userHttp.get<User>(`${this.baseUrl}/${userId}`);
+    return this.userHttp.get<User>(`${this.baseUrl}${this.userRoad}/${userId}`);
   }
 
-  updateUserById(body : User, userId: number): Observable<User> {
-    return this.userHttp.put<User>(`${this.baseUrl}/${userId}`, body);
+  updateUserById(body: User, userId: number): Observable<User> {
+    return this.userHttp.put<User>(`${this.baseUrl}${this.userRoad}/${userId}`, body);
   }
 
   deleteUserById(userId: number | undefined): Observable<User> {
-    return this.userHttp.delete<User>(`${this.baseUrl}/${userId}`);
+    return this.userHttp.delete<User>(`${this.baseUrl}${this.userRoad}/${userId}`);
   }
 }

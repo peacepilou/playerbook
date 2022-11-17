@@ -15,8 +15,8 @@ export class GameManagementComponent implements OnInit {
   deactivateForm : EventEmitter<boolean> = new EventEmitter;
   @Input()
   isNewGameFormActive: boolean = false;
-  newGame: Game = new Game(0, '', '', '', [], []);
-  newGenre: Genre = new Genre(0, '', []);
+  newGame: Game = new Game('', '', '', [], [], 0);
+  newGenre: Genre = new Genre('', [], 0);
   gameList: Game[] = [];
   genreList: Genre[] = [];
 
@@ -32,11 +32,11 @@ export class GameManagementComponent implements OnInit {
   }
 
   refreshGame() {
-    this.newGame = new Game(0, '', '', '', [], []);
+    this.newGame = new Game('', '', '', [], [], 0);
   }
 
   refreshGenre() {
-    this.newGenre = new Genre(0, '', []);
+    this.newGenre = new Genre('', [], 0);
   }
 
   pushGenreInList() {
