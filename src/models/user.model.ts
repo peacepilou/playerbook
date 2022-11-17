@@ -5,7 +5,7 @@ import { UserGameInfo } from "./userGameInfo.model";
 
 export class User{
     constructor(
-        public id: number,
+        
         public name: string,
         public linkAvatar: string,
         public country: string,
@@ -13,6 +13,7 @@ export class User{
         public userBehavior: UserBehavior,
         public playerHabits: PlayerHabit,
         public gameList: Game[],
-        public userGameInfoList : UserGameInfo[]
+        public userGameInfoList : UserGameInfo[],
+        public id?: number
     ){}
 }
