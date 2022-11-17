@@ -9,7 +9,7 @@ import { UserBehavior } from 'src/models/userBehavior.model';
 export class UserBehaviorComponent implements OnInit {
 
   @Input()
-  userBehaviorToChild: UserBehavior | undefined= new UserBehavior(0, true, true, true, true, "Blizzard ESport")
+  userBehaviorToChild: UserBehavior | undefined= new UserBehavior(true, true, true, true, "Blizzard ESport")
 
   constructor() { }
 

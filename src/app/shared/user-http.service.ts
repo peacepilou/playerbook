@@ -15,13 +15,12 @@ export class UserHttpService {
   private userRoad: string = '/api/user'
 
   private body: User = new User(
-    0,
     '',
     '',
     '',
     '',
-    new UserBehavior(0, false, false, false, false, ''),
-    new PlayerHabit(0, 0, 0, false, false, false, false, false),
+    new UserBehavior(false, false, false, false, ''),
+    new PlayerHabit(0, 0, false, false, false, false, false),
     [],
     []
   );
@@ -29,7 +28,8 @@ export class UserHttpService {
   constructor(private userHttp: HttpClient) {}
 
   postNewUser(body: User): Observable<User> {
-    return this.userHttp.post<User>(`${this.baseUrl}${this.userRoad}/add`, body);
+    // return this.userHttp.post<User>(`${this.baseUrl}${this.userRoad}/add`, body);
+    return this.userHttp.post<User>("http://localhost:8080/api/user/add", body);
   }
 
   getUserList(): Observable<User[]> {

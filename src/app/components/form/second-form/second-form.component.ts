@@ -13,7 +13,7 @@ export class SecondFormComponent implements OnInit {
 
   @Input()
   dataToChild : UserBehavior = new UserBehavior(
-    0, false, false, false, false, ''
+    false, false, false, false, ''
   );
 
 
