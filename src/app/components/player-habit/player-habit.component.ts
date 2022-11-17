@@ -8,7 +8,7 @@ import { PlayerHabit } from 'src/models/playerHabit.model';
 })
 export class PlayerHabitComponent implements OnInit {
   @Input()
-  playerHabitToChild: PlayerHabit | undefined = new PlayerHabit(0, 2, 3, false, true, true, true, true)
+  playerHabitToChild: PlayerHabit | undefined = new PlayerHabit(2, 3, false, true, true, true, true)
 
   constructor() {}
 
