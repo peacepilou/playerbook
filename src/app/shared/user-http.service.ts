@@ -31,7 +31,7 @@ export class UserHttpService {
   constructor(private userHttp: HttpClient) {}
 
   postNewUser(body: User): Observable<User> {
-    return this.userHttp.post<User>(`${this.baseUrl}${this.userRoad}`, this.body);
+    return this.userHttp.post<User>(`${this.baseUrl}${this.userRoad}/add` , body);
   }
 
   getUserList(): Observable<User[]> {
