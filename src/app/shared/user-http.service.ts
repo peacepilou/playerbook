@@ -28,8 +28,7 @@ export class UserHttpService {
   constructor(private userHttp: HttpClient) {}
 
   postNewUser(body: User): Observable<User> {
-    // return this.userHttp.post<User>(`${this.baseUrl}${this.userRoad}/add`, body);
-    return this.userHttp.post<User>("http://localhost:8080/api/user/add", body);
+    return this.userHttp.post<User>(`${this.baseUrl}${this.userRoad}/add`, body);
   }
 
   getUserList(): Observable<User[]> {

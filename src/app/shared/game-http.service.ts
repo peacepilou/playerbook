@@ -2,22 +2,22 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Game } from 'src/models/game.model';
-import { Genre } from 'src/models/genre.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameHttpService {
 
-  sourceUrl : string = "http://localhost:8080"
+  sourceUrl : string = "http://localhost:8080/"
+  pathUrl : string = "api/game"
 
   constructor(private gameHttp : HttpClient) { }
 
   getGameList() : Observable<Game[]> {
-    return this.gameHttp.get<Game[]>(`${this.sourceUrl}/gameList`);
+    return this.gameHttp.get<Game[]>(`${this.sourceUrl}${this.pathUrl}`);
   }
 
-  getGenreList() : Observable<Genre[]> {
-    return this.gameHttp.get<Genre[]>(`${this.sourceUrl}/game/genreList`);
+  addNewGame(game : Game) : Observable<Game>{
+    return this.gameHttp.post<Game>(`${this.sourceUrl}${this.pathUrl}/add`, game);
   }
 }
