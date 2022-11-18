@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
+  isGameFormButtonPushed : boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+  
+  activateForm(event : boolean) : void{
+    this.isGameFormButtonPushed = event;
+    
+  }
+
+  deactivateForm(event : boolean){
+    this.isGameFormButtonPushed = event;
   }
 
 }
