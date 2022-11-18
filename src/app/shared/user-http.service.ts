@@ -14,17 +14,6 @@ export class UserHttpService {
 
   private userRoad: string = '/api/user'
 
-  private body: User = new User(
-    '',
-    '',
-    '',
-    '',
-    new UserBehavior(false, false, false, false, ''),
-    new PlayerHabit(0, 0, false, false, false, false, false),
-    [],
-    []
-  );
-
   constructor(private userHttp: HttpClient) {}
 
   postNewUser(body: User): Observable<User> {
