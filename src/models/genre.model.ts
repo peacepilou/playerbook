@@ -5,6 +5,6 @@ export class Genre{
         
         public name: string,
         public gameList : Game[],
-        public id : number
+        public id? : number
     ) {}
 }

@@ -1,10 +1,20 @@
-<div *ngIf="isAddGameFormVisible" class="form">
+<div class="form">
     
     <div class="form-container">
 
-         <rb><button (click)="toggleEditButton()" class="close">x</button></rb>
+         <rb><button (click)="closeInfoForm()" class="close">x</button></rb>
          
-        <form #userGameInfoForm="ngForm" (ngSubmit)="onSubmit()">
+        <form #userGameInfoForm="ngForm" (ngSubmit)="postUserGameInfo()">
+
+            <div>
+                <select gameList="gameList">
+                    <option>Choisis un jeu</option>
+                    <option *ngFor="let game of gameList">
+                        {{game.name}}
+                        <!-- {{game.photoUrl}} -->
+                    </option>
+                  </select>
+            </div>
 
             <div>
                 <label for="pseudo">C'est quoi ton blaze ?</label>

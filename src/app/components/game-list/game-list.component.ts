@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Game } from 'src/models/game.model';
-import { Genre } from 'src/models/genre.model';
 import { PlayerHabit } from 'src/models/playerHabit.model';
 import { User } from 'src/models/user.model';
 import { UserBehavior } from 'src/models/userBehavior.model';
@@ -23,19 +21,20 @@ export class GameListComponent implements OnInit {
 
  isAddGameFormVisible: boolean = false;
 
- userGameInfoResult : UserGameInfo = new UserGameInfo (0,'', '', 0, '', '', '');
+ userGameInfoResult : UserGameInfo = new UserGameInfo ('', '', 0, '', '', '',0);
 
 
   constructor() { }
 
   ngOnInit(): void {}
 
-  toggleEditButton(): void {
+  addGame(): void {
     this.isAddGameFormVisible = !this.isAddGameFormVisible;
   }
 
   receiveUserGameInfoForm(event : UserGameInfo) : void {
     this.userGameInfoResult = event;
+    this.isAddGameFormVisible = !this.isAddGameFormVisible;
   }
 
 }

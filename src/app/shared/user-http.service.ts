@@ -1,9 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PlayerHabit } from 'src/models/playerHabit.model';
 import { User } from 'src/models/user.model';
-import { UserBehavior } from 'src/models/userBehavior.model';
 
 @Injectable({
   providedIn: 'root',
@@ -13,17 +11,6 @@ export class UserHttpService {
   private baseUrl: string = 'http://localhost:8080';
 
   private userRoad: string = '/api/user'
-
-  private body: User = new User(
-    '',
-    '',
-    '',
-    '',
-    new UserBehavior(false, false, false, false, ''),
-    new PlayerHabit(0, 0, false, false, false, false, false),
-    [],
-    []
-  );
 
   constructor(private userHttp: HttpClient) {}
 

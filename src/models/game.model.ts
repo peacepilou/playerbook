@@ -9,6 +9,6 @@ export class Game{
         public gameUrl : string,
         public genreList : Genre[],
         public userList : User[],
-        public id : number
+        public id? : number
     ){}
 }
