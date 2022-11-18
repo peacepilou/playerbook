@@ -1,31 +1,3 @@
 {
-  "user": [
-    {
-      "id": 1,
-      "name": "Michel",
-      "linkAvatar": "https://cdn.programme-television.ladmedia.fr/var/premiere/storage/images/tele-7-jours/news-tv/pas-un-souvenir-imperissable-sur-le-plan-humain-michel-drucker-balance-sur-certaines-personnalites-qu-il-a-cotoye-4693162/101102802-1-fre-FR/Pas-un-souvenir-imperissable-sur-le-plan-humain-Michel-Drucker-balance-sur-certaines-personnalites-qu-il-a-cotoye.png",
-      "country": "Fronce",
-      "biography": "Je vous ai vus naître, je vous verrai mourir ...",
-      "userBehavior": {
-        "id": 0,
-        "isCasual": false,
-        "isProactive": false,
-        "isExtravert": true,
-        "isPro": true,
-        "employer": "France Télévisions"
-      },
-      "playerHabit": {
-        "id": 0,
-        "frequencyPerWeek": 1,
-        "sessionDurationInHour": 5,
-        "isNocturnal": false,
-        "isHotBlooded": false,
-        "isLeader": true,
-        "isPVP": false,
-        "isPVE": true
-      },
-      "gameList": [],
-      "userGameInfoList": []
-    }
-  ]
+  "user": []
 }
