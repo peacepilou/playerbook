@@ -2,7 +2,7 @@
     <div>
         <div>
             <label for="name">Nom :</label>
-            <input id="name" name="name" [(ngModel)]="dataToChild.name" #nameCheck="ngModel" minlength="1" required>
+            <input id="name" name="name" [(ngModel)]="dataToChild.username" #nameCheck="ngModel" minlength="1" required>
         </div>
         
         <div *ngIf="firstForm.submitted && nameCheck.errors">

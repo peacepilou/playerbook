@@ -15,7 +15,7 @@ import { UserGameInfo } from 'src/models/userGameInfo.model';
 export class GameListComponent implements OnInit {
 
   @Input()
-  userGameListToChild: User = new User('', '', '', '',
+  userGameListToChild: User = new User('', '', '', '', '',
   new UserBehavior(true, true, true, true, ''),
   new PlayerHabit(2, 3, false, true, true, true, true),
   [],

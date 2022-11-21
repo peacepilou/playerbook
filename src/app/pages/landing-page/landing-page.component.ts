@@ -9,10 +9,10 @@ import { LandingButton } from 'src/models/landing-button.model';
 export class LandingPageComponent implements OnInit {
 
   buttonList : LandingButton[] = [
-    new LandingButton(0, `Alors, inscris-toi.`, `Je m'inscris`, `/inscription`),
+    new LandingButton(0, `Pas encore inscrit ?`, `Je m'inscris`, `/inscription`),
     new LandingButton(1, `Tu veux voir qui est là ?`, `Entrer`, `/home`)
   ];
-
+  
   constructor() { }
 
   ngOnInit(): void {

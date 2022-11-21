@@ -6,7 +6,8 @@ import { UserGameInfo } from "./userGameInfo.model";
 export class User{
     constructor(
         
-        public name: string,
+        public username: string,
+        public password: string,
         public linkAvatar: string,
         public country: string,
         public biography: string,

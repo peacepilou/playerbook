@@ -16,7 +16,7 @@ import { UserGameInfo } from 'src/models/userGameInfo.model';
 export class UserProfileComponent implements OnInit {
   userId: number = 0;
   userList: User[] = [];
-  userFound: User = new User('', '', '', '',
+  userFound: User = new User('', '', '', '', '',
   new UserBehavior(true, true, true, true, ''),
   new PlayerHabit(2, 3, false, true, true, true, true),
   [],

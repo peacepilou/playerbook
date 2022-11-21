@@ -1,9 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PlayerHabit } from 'src/models/playerHabit.model';
 import { User } from 'src/models/user.model';
-import { UserBehavior } from 'src/models/userBehavior.model';
 
 @Injectable({
   providedIn: 'root',

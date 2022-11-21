@@ -83,7 +83,7 @@ export class UserListComponent implements OnInit {
 
     this.userListFiltered = this.userList.filter(
       (user) =>
-        user.name
+        user.username
           .toLowerCase()
           .includes(this.searchedContentChild.toLowerCase()) ||
         user.country

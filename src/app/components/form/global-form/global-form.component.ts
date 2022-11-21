@@ -13,7 +13,7 @@ import { UserBehavior } from 'src/models/userBehavior.model';
 export class GlobalFormComponent implements OnInit {
   userId: number = 0;
 
-  firstFormResults: User = new User('', '', '', '',
+  firstFormResults: User = new User('', '', '', '', '',
   new UserBehavior( false, false, false, false, ''),
   new PlayerHabit(0, 0, false, false, false, false, false),
   [],
@@ -71,7 +71,8 @@ export class GlobalFormComponent implements OnInit {
     this.formStep += 1;
 
     let globalFormResults: User = new User(
-      this.firstFormResults.name,
+      this.firstFormResults.username, 
+      '',
       this.firstFormResults.linkAvatar,
       this.firstFormResults.country,
       this.firstFormResults.biography,
