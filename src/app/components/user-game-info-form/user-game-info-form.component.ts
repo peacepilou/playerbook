@@ -28,13 +28,11 @@ export class UserGameInfoFormComponent implements OnInit {
 
   constructor(private httpGameS : GameListService, 
               private httpUserGameInfoS : UserGameInfoService,
-              private route: Router,
-              private router: ActivatedRoute) { }
+              ) { }
 
   ngOnInit(): void {
     this.httpGameS.getGameList().subscribe((data) => {
       this.gameList = data;
-      
      });
   }
 
@@ -49,20 +47,10 @@ export class UserGameInfoFormComponent implements OnInit {
     console.log(this.userGameInfo);
   }
 
-  getIdFromUrl() : void {
-    this.router.paramMap.subscribe((param: ParamMap) => {
-      if(param.get("id")) {
-        this.userId = parseInt(param.get("id") as string);
-      }
-    })
-  }
 
   postUserGameInfo() : void {
-    console.log(this.userGameInfo);
-    
-    this.getIdFromUrl();
     this.httpUserGameInfoS.postNewUserGameInfo(this.userGameInfo).subscribe(() => {
-      this. closeInfoForm();
+      this.closeInfoForm();
     })
   }
 

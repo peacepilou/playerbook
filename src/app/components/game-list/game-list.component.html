@@ -1,8 +1,8 @@
 <div class="container-game-list" *ngIf="userGameListToChild">
   <h4>Jeux enregistrés</h4>
   <div class="game-list">
+     <app-game-detail [gameChild]="userGameListToChild"></app-game-detail>
     <button (click)="addGame()" class="button-add-game">ajouter un jeu</button>
-    <app-game-detail [gameChild]="userGameListToChild"></app-game-detail>
   </div>
 </div>
 
