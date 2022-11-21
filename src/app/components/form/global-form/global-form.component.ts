@@ -77,21 +77,18 @@ export class GlobalFormComponent implements OnInit {
       this.secondFormResults,
       this.thirdFormResults,
       [],
-      []
+      [],
+      this.firstFormResults.id,
     );
     
 
     if(this.userId){
-      console.log("PUT data global form1", globalFormResults);
       this.userHttpS.updateUserById(globalFormResults, this.userId).subscribe(() => {
         this.route.navigateByUrl(`/user-profile/${this.userId}`)
-        console.log("PUT data global form2", globalFormResults);
       })
     } else {
-      console.log("data global form1", globalFormResults);
       this.userHttpS.postNewUser(globalFormResults).subscribe(() => {
         this.route.navigateByUrl('/home');
-        console.log("data global form2", globalFormResults);
       });
     }
   }

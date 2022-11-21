@@ -42,6 +42,8 @@ import { UserGameInfoFormComponent } from './components/user-game-info-form/user
 import { AdminComponent } from './pages/admin/admin.component';
 import { StatsComponent } from './components/admin/stats/stats.component';
 import { UserManagementComponent } from './components/admin/user-management/user-management.component';
+import { GameManagementComponent } from './components/admin/game-management/game-management.component';
+import { GameManagementButtonComponent } from './components/admin/game-management-button/game-management-button.component';
 
 
 @NgModule({
@@ -83,7 +85,8 @@ import { UserManagementComponent } from './components/admin/user-management/user
     AdminComponent,
     StatsComponent,
     UserManagementComponent,
-    
+    GameManagementComponent,
+    GameManagementButtonComponent
   ],
   imports: [
     BrowserModule,
