@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConnexionFormComponent implements OnInit {
 
+  user : string = '';
   password : string = '';
-  passwordConfirm : string = '';
 
   constructor() { }
 
@@ -16,8 +16,6 @@ export class ConnexionFormComponent implements OnInit {
   }
 
   submitPassword(){
-    if(this.password === this.passwordConfirm){
-      //🤷
-    }
+    //🤷
   }
 }
