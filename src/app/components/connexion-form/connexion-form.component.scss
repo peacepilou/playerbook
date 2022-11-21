@@ -1,4 +1,5 @@
 form{
+    margin-top: 7em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,6 +24,7 @@ label{
 }
 
 button{
+    width: 150px;
     font-size: 20px;
     padding : 0.5em;
     border : 1px solid var(--superViolet);
@@ -30,4 +32,12 @@ button{
     color: var(--superViolet);
     font-weight: bold;
     cursor: pointer;
+}
+
+@media screen and (min-width : 768px) {
+
+    form{
+        margin : 0em;
+    }
+
 }

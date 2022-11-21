@@ -1,5 +1,5 @@
 div{
-    background-color: #8738BB;
+    background-color: var(--superViolet);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,12 +15,9 @@ div{
 
 .h2-description{
     text-align: center;
-    margin-top: 1em;
-    padding-top: 1em;
-    background-color: whitesmoke;
     color: black;
     width: 100%;
-    padding-bottom: 40px;
+    margin-bottom: -3em;
 }
 
 @media screen and (min-width : 768px) {

@@ -1,5 +1,9 @@
+body{
+    min-height: 100%;
+}
+
 app-landing-path-button{
-    margin-bottom: 2em;
+    padding: 100px 100px;
 }
 
 .connexion-container{
@@ -12,6 +16,10 @@ p{
     text-align: center;
     font-size: 18px;
     font-weight: bold;
+}
+
+.margin-bottom{
+    height: 100px;
 }
 
 @media screen and (min-width : 768px) {
@@ -53,5 +61,14 @@ p{
         p{
             color: whitesmoke;
         }
+    }
+
+    app-landing-path-button{
+        margin-top: 50px;
+        padding: 0 0 0 0;
+    }
+
+    .margin-bottom{
+        display: none;
     }
 }
