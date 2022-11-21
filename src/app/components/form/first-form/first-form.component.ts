@@ -22,6 +22,8 @@ export class FirstFormComponent implements OnInit {
   []
 );
 
+passwordConfirmation : string = '';
+
   constructor() { }
 
   ngOnInit(): void {
