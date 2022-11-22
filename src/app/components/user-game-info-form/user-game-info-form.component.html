@@ -2,16 +2,17 @@
 
     <div class="form-container">
 
-         <rb><button (click)="closeInfoForm()" class="close">x</button></rb>
+         <rb>
+            <img (click)="closeInfoForm()" class="close" src="../../../../assets/pictures/cross.png">
+            </rb>
          
-        <form #userGameInfoForm="ngForm" (ngSubmit)="postUserGameInfo()">
+        <form #userGameInfoForm="ngForm" (ngSubmit)="postUserGameInfo()" >
 
             <div>
                 <select gameList="gameList">
                     <option>Choisis un jeu</option>
-                    <option *ngFor="let game of gameList">
+                    <option *ngFor="let game of gameList" ngModel [ngModelOptions]="{name: 'user'}">
                         {{game.name}}
-                        <!-- {{game.photoUrl}} -->
                     </option>
                   </select>
             </div>
@@ -46,6 +47,7 @@
                 <input type="text" name="server" id="server" [(ngModel)]="userGameInfo.serverName">
             </div>
             <button class="submit" type="submit">Envoyer !</button>
+            
         </form>
          
     </div>

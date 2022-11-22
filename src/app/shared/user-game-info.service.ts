@@ -18,4 +18,14 @@ export class UserGameInfoService {
   postNewUserGameInfo(body: UserGameInfo): Observable<UserGameInfo> {
     return this.usergameinfoHttp.post<UserGameInfo>(`${this.baseUrl}${this.usergameinfoRoad}/add`, body);
   }
+
+  getUserGameInfoList(): Observable<UserGameInfo[]> {
+    return this.usergameinfoHttp.get<UserGameInfo[]>(`${this.baseUrl}${this.usergameinfoRoad}`);
+  }
+
+  deleteUserGameInfoById(id: number | undefined): Observable<UserGameInfo> {
+    return this.usergameinfoHttp.delete<UserGameInfo>(`${this.baseUrl}${this.usergameinfoRoad}/${id}`);
+  }
+
+
 }

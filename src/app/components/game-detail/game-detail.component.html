@@ -1,3 +1,13 @@
-<div>
-   COUCOUILLE !
+<div class="game-detail-card">
+
+   <div class="game-info">
+      <p>Ton pseudo : {{gameInfoChild.userPseudo}}</p>
+      <p>Ta guilde : {{gameInfoChild.guild}}</p>
+      <p>Ton niveau{{gameInfoChild.level}}</p>
+      <p>Ton rang : {{gameInfoChild.pilouRank}}</p>
+      <p>Difficulté : {{gameInfoChild.difficulty}}</p>
+      <p>Ton serveur{{gameInfoChild.serverName}}</p>
+   </div>
+
+   <button (click)="delete()" class="button-delete">Supprimer le jeu</button>
 </div>

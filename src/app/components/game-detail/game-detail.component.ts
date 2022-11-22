@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { PlayerHabit } from 'src/models/playerHabit.model';
-import { User } from 'src/models/user.model';
-import { UserBehavior } from 'src/models/userBehavior.model';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { UserGameInfo } from 'src/models/userGameInfo.model';
+import { UserGameInfoService } from 'src/app/shared/user-game-info.service';
+
 
 @Component({
   selector: 'app-game-detail',
@@ -10,16 +10,22 @@ import { UserBehavior } from 'src/models/userBehavior.model';
 })
 export class GameDetailComponent implements OnInit {
 
-  @Input() gameChild: User = new User('', '', '', '',
-  new UserBehavior(true, true, true, true, ''),
-  new PlayerHabit(2, 3, false, true, true, true, true),
-  [],
-  []
-);
+  @Output()
+  sendGameInfoChild: EventEmitter<number> = new EventEmitter();
 
-  constructor() { }
+  @Input() gameInfoChild: UserGameInfo  = new UserGameInfo ('', '', 0, '', '', '',0)
+
+  constructor(private httpUserGameInfoS : UserGameInfoService) { }
 
   ngOnInit(): void {
+  }
+
+  delete(): void {
+    if (confirm("Êtes-vous sûr de vouloir ce jeu ? ")) {
+      this.httpUserGameInfoS.deleteUserGameInfoById(this.gameInfoChild.id)
+      .subscribe(() => {this.sendGameInfoChild.emit(this.gameInfoChild.id)})
+      
+    }
   }
 
 }

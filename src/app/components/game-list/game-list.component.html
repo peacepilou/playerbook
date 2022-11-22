@@ -1,11 +1,11 @@
-<div class="container-game-list" *ngIf="userGameListToChild">
+<div class="container-game-list">
   <h4>Jeux enregistrés</h4>
   <div class="game-list">
-     <app-game-detail [gameChild]="userGameListToChild"></app-game-detail>
-    <button (click)="addGame()" class="button-add-game">ajouter un jeu</button>
+    <img (click)="addGame()" class="button-add-game" src="../../../../assets/pictures/icons8-plus-2-mathématique-48.png">
+    <app-game-detail *ngFor="let userGameInfo of userGameInfoList" [gameInfoChild]="userGameInfo" (sendGameInfoChild)="catchGameInfoContent($event)">
+    </app-game-detail>
   </div>
 </div>
 
-<app-user-game-info-form 
-  *ngIf="isAddGameFormVisible" (sendUserGameInfoForm)="receiveUserGameInfoForm($event)">
+<app-user-game-info-form *ngIf="isAddGameFormVisible" (sendUserGameInfoForm)="receiveUserGameInfoForm($event)">
 </app-user-game-info-form>

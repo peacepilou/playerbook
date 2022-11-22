@@ -3,7 +3,6 @@ import { GameListService } from 'src/app/shared/game-list.service';
 import { UserGameInfoService } from 'src/app/shared/user-game-info.service';
 import { Game } from 'src/models/game.model';
 import { UserGameInfo } from 'src/models/userGameInfo.model';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 
 @Component({
@@ -27,15 +26,13 @@ export class UserGameInfoFormComponent implements OnInit {
   isAddGameFormVisible: boolean = true;
 
   constructor(private httpGameS : GameListService, 
-              private httpUserGameInfoS : UserGameInfoService,
-              ) { }
+              private httpUserGameInfoS : UserGameInfoService,) {}
 
   ngOnInit(): void {
     this.httpGameS.getGameList().subscribe((data) => {
       this.gameList = data;
      });
   }
-
 
   closeInfoForm(): void {
     this.sendUserGameInfoForm.emit(this.userGameInfo);
@@ -47,17 +44,14 @@ export class UserGameInfoFormComponent implements OnInit {
     console.log(this.userGameInfo);
   }
 
-
   postUserGameInfo() : void {
+    console.log(this.userGameInfo)
     this.httpUserGameInfoS.postNewUserGameInfo(this.userGameInfo).subscribe(() => {
       this.closeInfoForm();
     })
   }
 
-
-
-
-
+  
 
 
 }

@@ -24,14 +24,10 @@ export class UserDetailComponent implements OnInit {
 
   ngOnInit(): void { }
 
-
-
-
   delete(): void {
     if (confirm("Êtes-vous sûr de vouloir supprimer votre profil ? ")) {
       this.userApi.deleteUserById(this.userFoundToChild?.id)
       .subscribe(() => { this.router.navigateByUrl("/home"); })
     }
-
   }
 }
