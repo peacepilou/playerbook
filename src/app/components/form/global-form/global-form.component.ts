@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { UserHttpService } from 'src/app/shared/user-http.service';
 import { PlayerHabit } from 'src/models/playerHabit.model';
-import { User } from 'src/models/user.model';
+import { AppUser } from 'src/models/appUser.model';
 import { UserBehavior } from 'src/models/userBehavior.model';
 
 @Component({
@@ -13,7 +13,7 @@ import { UserBehavior } from 'src/models/userBehavior.model';
 export class GlobalFormComponent implements OnInit {
   userId: number = 0;
 
-  firstFormResults: User = new User('', '', '', '', '',
+  firstFormResults: AppUser = new AppUser('', '', '', '', '',
   new UserBehavior( false, false, false, false, ''),
   new PlayerHabit(0, 0, false, false, false, false, false),
   [],
@@ -56,7 +56,7 @@ export class GlobalFormComponent implements OnInit {
 
   }
 
-  receiveFirstForm(event: User): void {
+  receiveFirstForm(event: AppUser): void {
     this.firstFormResults = event;
     this.formStep += 1;
   }
@@ -70,7 +70,7 @@ export class GlobalFormComponent implements OnInit {
     this.thirdFormResults = event;
     this.formStep += 1;
 
-    let globalFormResults: User = new User(
+    let globalFormResults: AppUser = new AppUser(
       this.firstFormResults.username, 
       '',
       this.firstFormResults.linkAvatar,
@@ -78,6 +78,7 @@ export class GlobalFormComponent implements OnInit {
       this.firstFormResults.biography,
       this.secondFormResults,
       this.thirdFormResults,
+      [],
       [],
       [],
       this.firstFormResults.id,

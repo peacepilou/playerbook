@@ -4,7 +4,7 @@ import { Checkbox } from 'src/models/checkbox.model';
 import { PlayerHabit } from 'src/models/playerHabit.model';
 import { UserBehavior } from 'src/models/userBehavior.model';
 
-import { User } from 'src/models/user.model';
+import { AppUser } from 'src/models/appUser.model';
 
 @Component({
   selector: 'app-user-list',
@@ -15,8 +15,8 @@ export class UserListComponent implements OnInit {
   @Input()
   searchedContentChild: string = '';
 
-  userList: User[] = [];
-  userListFiltered: User[] = [];
+  userList: AppUser[] = [];
+  userListFiltered: AppUser[] = [];
   isOneElementTruthy: boolean = false;
 
   checkboxList: Checkbox[] = [
@@ -63,7 +63,7 @@ export class UserListComponent implements OnInit {
 
   filterByCheckbox(): void {
     // By default, the array we want to filter is full by the user list.
-    let updatedArr: User[] = [...this.userList];
+    let updatedArr: AppUser[] = [...this.userList];
     // Create an array containing only active checkboxes.
     const checkboxArrToCheck = this.checkboxList.filter((c) => c.isActive);
     // Iterate through this array in order to keep and track users who are matching with activated checkboxes.
@@ -95,7 +95,7 @@ export class UserListComponent implements OnInit {
     );
   }
 
-  filterArr(checkbox: Checkbox, updatedArr: User[]): User[] {
+  filterArr(checkbox: Checkbox, updatedArr: AppUser[]): AppUser[] {
     // Check the property we need to find in each user object. Depends on the checkbox.
     const propreyToFind = checkbox.userProperty;
 
