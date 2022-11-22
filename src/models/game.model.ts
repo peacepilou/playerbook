@@ -1,5 +1,5 @@
 import { Genre } from "./genre.model";
-import { User } from "./user.model";
+import { AppUser } from "./appUser.model";
 
 export class Game{
     constructor(
@@ -8,7 +8,7 @@ export class Game{
         public photoUrl: string,
         public gameUrl : string,
         public genreList : Genre[],
-        public userList : User[],
+        public userList : AppUser[],
         public id : number
     ){}
 }

@@ -4,7 +4,7 @@ import { UserHttpService } from 'src/app/shared/user-http.service';
 import { Game } from 'src/models/game.model';
 import { Genre } from 'src/models/genre.model';
 import { PlayerHabit } from 'src/models/playerHabit.model';
-import { User } from 'src/models/user.model';
+import { AppUser } from 'src/models/appUser.model';
 import { UserBehavior } from 'src/models/userBehavior.model';
 import { UserGameInfo } from 'src/models/userGameInfo.model';
 
@@ -15,8 +15,8 @@ import { UserGameInfo } from 'src/models/userGameInfo.model';
 })
 export class UserProfileComponent implements OnInit {
   userId: number = 0;
-  userList: User[] = [];
-  userFound: User = new User('', '', '', '',
+  userList: AppUser[] = [];
+  userFound: AppUser = new AppUser('', '', '', '', '',
   new UserBehavior(true, true, true, true, ''),
   new PlayerHabit(2, 3, false, true, true, true, true),
   [],
