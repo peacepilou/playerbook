@@ -25,11 +25,17 @@ export class AuthGuard implements CanActivate {
     console.log('auth guard');
 
     const token = localStorage.getItem('tokenId');
+
+    const wait = (num: number) =>
+      new Promise((res, rej) => {
+        setTimeout(() => res(num), num * 1000);
+      });
+
     if (token) {
       return true;
     } else {
+      wait(3).then(() => this.router.navigateByUrl('/'));
       return false;
-      
     }
   }
 }
