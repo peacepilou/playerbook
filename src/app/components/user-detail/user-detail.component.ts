@@ -21,11 +21,38 @@ export class UserDetailComponent implements OnInit {
     []
   );
 
-  decodedJwtToken: string = '';
+  jwtTokenDecoded :string  | null= ""
+
+  isOwner : boolean = false;
 
   constructor(private userApi: UserHttpService, private router: Router) { }
 
-  ngOnInit(): void { }
+  ngOnChanges(){
+    this.checkUser();
+
+  }
+  
+  ngOnInit(): void {
+    this.readToken();
+   }
+
+  readToken(): void {
+    const token = localStorage.getItem("tokenId") as string;
+    this.jwtTokenDecoded = jwt_decode(token);    
+  }
+
+  checkUser(){
+    console.log("username 1", this.userFoundToChild.username);
+
+    if(this.jwtTokenDecoded){
+      this.userFoundToChild.username.toString() === 
+      this.jwtTokenDecoded?.sub.toString() ? 
+      this.isOwner = true : false;
+      console.log("username", this.userFoundToChild.username);
+      console.log("jwtdecoded", this.jwtTokenDecoded?.sub.toString());
+      
+    }
+  }
 
   delete(): void {
     if (confirm("Êtes-vous sûr de vouloir supprimer votre profil ? ")) {

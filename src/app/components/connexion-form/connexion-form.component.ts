@@ -13,7 +13,6 @@ export class ConnexionFormComponent implements OnInit {
   password : string = '';
 
   jwtToken : string = '';
-  decodedToken : string = '';
 
   constructor(
     private authS : AuthService,
@@ -29,6 +28,8 @@ export class ConnexionFormComponent implements OnInit {
       this.httpRoutes.navigateByUrl('/home');
       this.jwtToken = jwt.access_token;
       localStorage.setItem("tokenId", jwt.access_token);
+      console.log();
+      
     })
   }
 }
