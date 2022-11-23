@@ -1,3 +1,4 @@
+import jwt_decode from "jwt-decode";
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/auth.service';
@@ -13,6 +14,7 @@ export class ConnexionFormComponent implements OnInit {
   password : string = '';
 
   jwtToken : string = '';
+  decodedToken : string = '';
 
   constructor(
     private authS : AuthService,
@@ -24,10 +26,13 @@ export class ConnexionFormComponent implements OnInit {
   submitPassword(){
     this.authS.authentication(this.user, this.password)
     .subscribe((jwt) => {
+      localStorage.clear();
       this.httpRoutes.navigateByUrl('/home');
       this.jwtToken = jwt.access_token;
       localStorage.setItem("tokenId", jwt.access_token);
-      console.log("test de l'atob", JSON.parse(atob(this.jwtToken))); 
+      this.decodedToken = jwt_decode(this.jwtToken);
+      console.log(this.decodedToken);
+      
     })
   }
 }
