@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
@@ -45,6 +45,7 @@ import { UserManagementComponent } from './components/admin/user-management/user
 import { GameManagementComponent } from './components/admin/game-management/game-management.component';
 import { GameManagementButtonComponent } from './components/admin/game-management-button/game-management-button.component';
 import { ConnexionFormComponent } from './components/connexion-form/connexion-form.component';
+import { AuthInterceptor } from './core/auth.interceptor';
 
 
 @NgModule({
@@ -96,7 +97,13 @@ import { ConnexionFormComponent } from './components/connexion-form/connexion-fo
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+     multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
