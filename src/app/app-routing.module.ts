@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './core/auth.guard';
 import { AdminComponent } from './pages/admin/admin.component';
 import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 import { FaqPageComponent } from './pages/faq-page/faq-page.component';
@@ -14,8 +15,8 @@ const routes: Routes = [
   {path : "home" , component : HomePageComponent},
   {path : "inscription" , component : FormInscriptionComponent},
   {path : "update-profile/:id" , component : FormInscriptionComponent},
-  {path : "user-profile/:id" , component : UserProfileComponent},
-  {path : "admin", component : AdminComponent},
+  {path : "user-profile/:id" , component : UserProfileComponent, canActivate: [AuthGuard]},
+  {path : "admin", component : AdminComponent, canActivate: [AuthGuard]},
   {path : "faq" , component : FaqPageComponent},
   {path : "cgu" , component : Error404PageComponent},
   {path : "contact" , component : Error404PageComponent},
