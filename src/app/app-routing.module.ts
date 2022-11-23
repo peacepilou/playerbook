@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/auth.guard';
 import { AdminComponent } from './pages/admin/admin.component';
+import { Error401PageComponent } from './pages/error401-page/error401-page.component';
 import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 import { FaqPageComponent } from './pages/faq-page/faq-page.component';
 import { FormInscriptionComponent } from './pages/form-inscription/form-inscription.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path : "faq" , component : FaqPageComponent},
   {path : "cgu" , component : Error404PageComponent},
   {path : "contact" , component : Error404PageComponent},
+  {path : "bad-request" , component : Error401PageComponent},
   {path : "**" , component : Error404PageComponent}
 ];
 

@@ -45,6 +45,7 @@ import { GameManagementComponent } from './components/admin/game-management/game
 import { GameManagementButtonComponent } from './components/admin/game-management-button/game-management-button.component';
 import { ConnexionFormComponent } from './components/connexion-form/connexion-form.component';
 import { AuthInterceptor } from './core/auth.interceptor';
+import { Error401PageComponent } from './pages/error401-page/error401-page.component';
 
 
 @NgModule({
@@ -87,7 +88,8 @@ import { AuthInterceptor } from './core/auth.interceptor';
     UserManagementComponent,
     GameManagementComponent,
     GameManagementButtonComponent,
-    ConnexionFormComponent
+    ConnexionFormComponent,
+    Error401PageComponent
   ],
   imports: [
     BrowserModule,

@@ -34,6 +34,7 @@ export class AuthGuard implements CanActivate {
     if (token) {
       return true;
     } else {
+      this.router.navigateByUrl('/bad-request');
       wait(3).then(() => this.router.navigateByUrl('/'));
       return false;
     }
