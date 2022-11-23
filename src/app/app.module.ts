@@ -44,6 +44,7 @@ import { StatsComponent } from './components/admin/stats/stats.component';
 import { UserManagementComponent } from './components/admin/user-management/user-management.component';
 import { GameManagementComponent } from './components/admin/game-management/game-management.component';
 import { GameManagementButtonComponent } from './components/admin/game-management-button/game-management-button.component';
+import { ConnexionFormComponent } from './components/connexion-form/connexion-form.component';
 
 
 @NgModule({
@@ -86,7 +87,8 @@ import { GameManagementButtonComponent } from './components/admin/game-managemen
     StatsComponent,
     UserManagementComponent,
     GameManagementComponent,
-    GameManagementButtonComponent
+    GameManagementButtonComponent,
+    ConnexionFormComponent
   ],
   imports: [
     BrowserModule,
