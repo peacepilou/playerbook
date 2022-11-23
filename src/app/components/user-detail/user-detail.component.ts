@@ -1,3 +1,5 @@
+import jwt_decode from "jwt-decode";
+
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserHttpService } from 'src/app/shared/user-http.service';
@@ -12,12 +14,14 @@ import { UserBehavior } from 'src/models/userBehavior.model';
 })
 export class UserDetailComponent implements OnInit {
   @Input()
-  userFoundToChild: AppUser = new AppUser( '', '', '', '', '',
-  new UserBehavior(true, true, true, true, ''),
-  new PlayerHabit(2, 3, false, true, true, true, true),
-  [],
-  []
-);
+  userFoundToChild: AppUser = new AppUser('', '', '', '', '',
+    new UserBehavior(true, true, true, true, ''),
+    new PlayerHabit(2, 3, false, true, true, true, true),
+    [],
+    []
+  );
+
+  decodedJwtToken: string = '';
 
   constructor(private userApi: UserHttpService, private router: Router) { }
 
@@ -26,7 +30,7 @@ export class UserDetailComponent implements OnInit {
   delete(): void {
     if (confirm("Êtes-vous sûr de vouloir supprimer votre profil ? ")) {
       this.userApi.deleteUserById(this.userFoundToChild?.id)
-      .subscribe(() => { this.router.navigateByUrl("/home"); })
+        .subscribe(() => { this.router.navigateByUrl("/home"); })
     }
 
   }

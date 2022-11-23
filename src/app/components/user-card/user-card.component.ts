@@ -1,3 +1,5 @@
+import jwt_decode from "jwt-decode";
+
 import { Component, Input, OnInit } from '@angular/core';
 import { PlayerHabit } from 'src/models/playerHabit.model';
 import { AppUser } from 'src/models/appUser.model';
@@ -16,6 +18,8 @@ export class UserCardComponent implements OnInit {
   [],
   []
 );
+
+tokenId = localStorage.getItem("tokenId");
 
   constructor() { }
 
