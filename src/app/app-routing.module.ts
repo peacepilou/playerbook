@@ -16,7 +16,7 @@ const routes: Routes = [
   {path : "inscription" , component : FormInscriptionComponent},
   {path : "update-profile/:id" , component : FormInscriptionComponent},
   {path : "user-profile/:id" , component : UserProfileComponent, canActivate: [AuthGuard]},
-  {path : "admin", component : AdminComponent, canActivate: [AuthGuard]},
+  {path : "admin", component : AdminComponent},
   {path : "faq" , component : FaqPageComponent},
   {path : "cgu" , component : Error404PageComponent},
   {path : "contact" , component : Error404PageComponent},

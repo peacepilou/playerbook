@@ -39,6 +39,7 @@ export class UserDetailComponent implements OnInit {
   readToken(): void {
     const token = localStorage.getItem("tokenId") as string;
     this.jwtTokenDecoded = jwt_decode(token);    
+    // this.jwtTokenDecoded = localStorage.setItem("tokenWUsername", this.jwtTokenDecoded?.sub.toString())
   }
 
   checkUser(){
