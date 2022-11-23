@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
@@ -11,15 +12,22 @@ export class ConnexionFormComponent implements OnInit {
   user : string = '';
   password : string = '';
 
-  constructor(private authS : AuthService) { }
+  jwtToken : string = '';
+
+  constructor(
+    private authS : AuthService,
+    private httpRoutes : Router) { }
 
   ngOnInit(): void {
   }
 
   submitPassword(){
     this.authS.authentication(this.user, this.password)
-    .subscribe(() => {
-      console.log("Si ceci s'affiche, c'est plutôt bon signe !");
+    .subscribe((jwt) => {
+      this.httpRoutes.navigateByUrl('/home');
+      this.jwtToken = jwt.access_token;
+      localStorage.setItem("tokenId", jwt.access_token);
+      console.log("test de l'atob", JSON.parse(atob(this.jwtToken))); 
     })
   }
 }

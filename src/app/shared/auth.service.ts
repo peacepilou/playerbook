@@ -13,11 +13,11 @@ export class AuthService {
   constructor(private userHttp: HttpClient) { }
 
 
-  authentication(username : string, password : string) : Observable<AppUser>{
-    const userInfo : HttpParams = 
+  authentication(username : string, password : string) : Observable<any>{
+    const userLogs : HttpParams = 
     new HttpParams()
     .set("username", username)
     .set("password", password)
-    return this.userHttp.post<AppUser>(`${this.baseUrl}/login`, userInfo);
+    return this.userHttp.post<any>(`${this.baseUrl}/login`, userLogs);
   }
 }

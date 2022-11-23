@@ -72,7 +72,7 @@ export class GlobalFormComponent implements OnInit {
 
     let globalFormResults: AppUser = new AppUser(
       this.firstFormResults.username, 
-      '',
+      this.firstFormResults.password,
       this.firstFormResults.linkAvatar,
       this.firstFormResults.country,
       this.firstFormResults.biography,
