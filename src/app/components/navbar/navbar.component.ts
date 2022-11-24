@@ -22,15 +22,19 @@ export class NavbarComponent implements OnInit {
 
   readToken(): void {
     const token = localStorage.getItem('tokenId') as string;
-    this.jwtTokenDecoded = jwt_decode(token);
+    if (token) {
+      this.jwtTokenDecoded = jwt_decode(token);
+    } 
   }
 
   checkAdmin() {
-    const adminFound = this.jwtTokenDecoded.roles.find((role) => {      
-      return role === "ROLE_ADMIN";
-    });    
-    if (adminFound) {
-      this.isAdmin = true;
-    }
+    if (this.jwtTokenDecoded.roles) {
+      const adminFound = this.jwtTokenDecoded.roles.find((role) => {
+        return role === 'ROLE_ADMIN';
+      });
+      if (adminFound) {
+        this.isAdmin = true;
+      }
+    } 
   }
 }

@@ -15,7 +15,6 @@ import { Token } from 'src/models/token.model';
   providedIn: 'root',
 })
 export class AdminGuard implements CanActivate {
-
   constructor(private router: Router) {}
 
   canActivate(
@@ -26,22 +25,26 @@ export class AdminGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-
     const token = localStorage.getItem('tokenId') as string;
-    
-    const jwtTokenDecoded: Token = jwt_decode(token);
-
-    const adminFound = jwtTokenDecoded.roles.find((role) => {
-      return role === 'ROLE_ADMIN';
-    });
 
     const wait = (num: number) =>
       new Promise((res, rej) => {
         setTimeout(() => res(num), num * 1000);
       });
+    if (token) {
+      const jwtTokenDecoded: Token = jwt_decode(token);
 
-    if (adminFound) {
-      return true;
+      const adminFound = jwtTokenDecoded.roles.find((role) => {
+        return role === 'ROLE_ADMIN';
+      });
+
+      if (adminFound) {
+        return true;
+      } else {
+        wait(1).then(() => this.router.navigateByUrl('/bad-request'));
+        wait(3).then(() => this.router.navigateByUrl('/'));
+        return false;
+      }
     } else {
       wait(1).then(() => this.router.navigateByUrl('/bad-request'));
       wait(3).then(() => this.router.navigateByUrl('/'));
