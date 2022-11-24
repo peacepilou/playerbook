@@ -24,7 +24,6 @@ export class AuthInterceptor implements HttpInterceptor {
       });
 
       return next.handle(cloned).pipe(
-        tap(() => console.log('yoooooo')),
         catchError((err: HttpErrorResponse) => {
           if (err.status === 401) {
             // UNAUTHORIZED
