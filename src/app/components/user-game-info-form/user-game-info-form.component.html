@@ -9,7 +9,7 @@
         <form #userGameInfoForm="ngForm" (ngSubmit)="postUserGameInfo()" >
 
             <div>
-                <select [(ngModel)]="userGameInfo.game">
+                <select name="game-name" [(ngModel)]="userGameInfo.game">
                     <option>Choisis un jeu</option>
                     <option *ngFor="let game of gameList" [ngValue]="game">
                         {{game.name}}

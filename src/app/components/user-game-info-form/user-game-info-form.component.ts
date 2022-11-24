@@ -47,6 +47,8 @@ export class UserGameInfoFormComponent implements OnInit {
 
   postUserGameInfo() : void {
     console.log(this.userGameInfo)
+    let gIcloned = {...this.userGameInfo};
+    delete gIcloned.id;
     this.httpUserGameInfoS.postNewUserGameInfo(this.userGameInfo).subscribe(() => {
       this.closeInfoForm();
     })
