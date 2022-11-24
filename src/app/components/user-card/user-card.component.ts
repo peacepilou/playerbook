@@ -17,6 +17,8 @@ export class UserCardComponent implements OnInit {
   []
 );
 
+tokenId = localStorage.getItem("tokenId");
+
   constructor() { }
 
   ngOnInit(): void {
