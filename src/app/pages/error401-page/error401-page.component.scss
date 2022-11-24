@@ -1,22 +1,66 @@
-.page-401{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.page-401 {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.img-character{
-    margin: 1em;
-    width: 20em;
+.img-character {
+  margin: 1em;
+  width: 20em;
 }
 
-p{
-    text-align: center;
-    font-size: 2em;
-    font-variant: small-caps;
+p {
+  text-align: center;
+  font-size: 2em;
+  font-variant: small-caps;
 }
 
-.p-oops{
-    margin: .5em;
+.p-oops {
+  margin: 0.5em;
 }
+
+#html-spinner{
+    margin-top: 1.5em;
+    width:40px;
+    height:40px;
+    border:4px solid #8738BB;
+    border-top:4px solid white;
+    border-radius:50%;
+  }
+
+  #html-spinner{
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1.2s;
+    -webkit-animation-name: rotate;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    
+    -moz-transition-property: -moz-transform;
+    -moz-animation-name: rotate; 
+    -moz-animation-duration: 1.2s; 
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    
+    transition-property: transform;
+    animation-name: rotate; 
+    animation-duration: 1.2s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  @-webkit-keyframes rotate {
+      from {-webkit-transform: rotate(0deg);}
+      to {-webkit-transform: rotate(360deg);}
+  }
+  
+  @-moz-keyframes rotate {
+      from {-moz-transform: rotate(0deg);}
+      to {-moz-transform: rotate(360deg);}
+  }
+  
+  @keyframes rotate {
+      from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
+  }
