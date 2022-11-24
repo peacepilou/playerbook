@@ -25,6 +25,7 @@ export class UserDetailComponent implements OnInit {
 
   isOwner : boolean = false;
 
+
   constructor(private userApi: UserHttpService, private router: Router) { }
 
   ngOnChanges(){
@@ -53,6 +54,5 @@ export class UserDetailComponent implements OnInit {
       this.userApi.deleteUserById(this.userFoundToChild?.id)
         .subscribe(() => { this.router.navigateByUrl("/home"); })
     }
-
   }
 }

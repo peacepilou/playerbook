@@ -3,7 +3,6 @@ import { AppUser } from "./appUser.model";
 
 export class Game{
     constructor(
-        
         public name: string,
         public photoUrl: string,
         public gameUrl : string,

@@ -50,10 +50,11 @@ export class GameManagementComponent implements OnInit {
 
   submitGame() {
     this.gameHttpS.addNewGame({...this.newGame}).subscribe(() => {
-    })
-    this.refreshGame();
-    this.refreshGenre();
-    this.closeWindow();
+      this.refreshGame();
+      this.refreshGenre();
+      this.closeWindow();
+    });
+   
   }
 
   closeWindow() {

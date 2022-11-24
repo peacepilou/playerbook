@@ -38,6 +38,7 @@ import { ScrollToTopComponent } from './utils/scroll-to-top/scroll-to-top.compon
 import { FooterComponent } from './components/footer/footer.component';
 import { FaqPageComponent } from './pages/faq-page/faq-page.component';
 import { BackHomeButtonComponent } from './utils/back-home-button/back-home-button.component';
+import { UserGameInfoFormComponent } from './components/user-game-info-form/user-game-info-form.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { StatsComponent } from './components/admin/stats/stats.component';
 import { UserManagementComponent } from './components/admin/user-management/user-management.component';
@@ -83,6 +84,7 @@ import { Error401PageComponent } from './pages/error401-page/error401-page.compo
     FooterComponent,
     FaqPageComponent,
     BackHomeButtonComponent,
+    UserGameInfoFormComponent,
     AdminComponent,
     StatsComponent,
     UserManagementComponent,

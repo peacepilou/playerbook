@@ -1,35 +1,66 @@
-.container-game-list{
+.container-game-list {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0.5em 1em 1.5em 1em;
+    margin: 0.5em 1em 0.5em 1em;
+    padding: 0.5em 1em 0.5em 1em;
     background-color: rgba(84, 194, 228, 0.4);
     border-radius: 2em;
     box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.14);
 }
-h4{
-    margin: 1em 0.5em;
+
+h4 {
+    margin: 1em 0em 0em 0em;
     text-indent: .8em;
     letter-spacing: 0.1em;
     font-size: 1.2em;
     align-self: flex-start;
 }
+
 .game-list {
     display: flex;
     width: 100%;
     flex-direction: column;
-    align-items: center;
     padding: 1em;
+    align-items: center;
+
+
 }
+
+app-game-detail {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.button-add-game {
+    width: 50px;
+    height: 50px;
+    margin: 2em;
+    border-radius: 5px;
+    background-size: cover;
+    cursor: pointer;
+
+
+}
+
+.button-add-game:hover {
+    transform: scale(1.1);
+    transition: transform .1s;
+}
+
 
 @media screen and (min-width: 768px) {
     .game-list {
-      display: flex;
-      width: 100%;
-      flex-direction: row;
-      justify-content: space-evenly;
-      
+        display: flex;
+        width: 90%;
+        flex-direction: row;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+
     }
 
 
-}    
+
+
+}

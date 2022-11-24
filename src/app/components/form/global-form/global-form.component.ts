@@ -45,7 +45,6 @@ export class GlobalFormComponent implements OnInit {
   ngOnInit(): void {
     this.router.paramMap.subscribe((param: ParamMap) => {
       if(param.get("id")) {
-        console.log("toto");
     
         this.userId = parseInt(param.get("id") as string);
         this.userHttpS.getUserById(this.userId).subscribe(data => this.firstFormResults = data);
