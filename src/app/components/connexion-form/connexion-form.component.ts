@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/auth.service';
+import { HotToastService } from '@ngneat/hot-toast';
 
 @Component({
   selector: 'app-connexion-form',
@@ -16,7 +17,8 @@ export class ConnexionFormComponent implements OnInit {
 
   constructor(
     private authS : AuthService,
-    private httpRoutes : Router) { }
+    private httpRoutes : Router,
+    private toast: HotToastService) { }
 
   ngOnInit(): void {
   }
@@ -26,8 +28,20 @@ export class ConnexionFormComponent implements OnInit {
     .subscribe((jwt) => {
       localStorage.clear();
       this.httpRoutes.navigateByUrl('/home');
+      this.showToast();
       this.jwtToken = jwt.access_token;
       localStorage.setItem("tokenId", jwt.access_token);           
     })
   }
+
+  showToast() {
+    this.toast.success('Connexion réussie !', {
+      position: 'bottom-right',
+      dismissible: true,
+      style: {
+        border: '1px solid #8738BB'
+      }
+    });
+  }
+
 }
