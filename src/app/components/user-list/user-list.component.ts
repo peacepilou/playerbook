@@ -20,22 +20,24 @@ export class UserListComponent implements OnInit {
   isOneElementTruthy: boolean = false;
 
   checkboxList: Checkbox[] = [
-    new Checkbox('Joueur professionnel', 'isPro', false, 'UserBehavior'),
-    new Checkbox('Joueur régulier', 'isCasual', false, 'UserBehavior'),
-    new Checkbox("Leader d'équipe", 'isLeader', false, 'PlayerHabit'),
-    new Checkbox('PVP friendly', 'pvpFriendly', false, 'PlayerHabit'),
-    new Checkbox('PVE friendly', 'pveFriendly', false, 'PlayerHabit'),
-    new Checkbox('Oiseau de nuit', 'isNocturnal', false, 'PlayerHabit'),
-    new Checkbox('Joueur pro-actif', 'isProactive', false, 'UserBehavior'),
-    new Checkbox('Joueur extraverti', 'isExtravert', false, 'UserBehavior'),
+    new Checkbox('Joueur professionnel', 'pro', false, 'UserBehavior'),
+    new Checkbox('Joueur régulier', 'casual', false, 'UserBehavior'),
+    new Checkbox("Leader d'équipe", 'leader', false, 'PlayerHabit'),
+    new Checkbox('PVP friendly', 'pvp', false, 'PlayerHabit'),
+    new Checkbox('PVE friendly', 'pve', false, 'PlayerHabit'),
+    new Checkbox('Oiseau de nuit', 'nocturnal', false, 'PlayerHabit'),
+    new Checkbox('Joueur pro-actif', 'proactive', false, 'UserBehavior'),
+    new Checkbox('Joueur extraverti', 'extravert', false, 'UserBehavior'),
   ];
 
   change: boolean = false;
 
-  constructor(private userApi: UserHttpService) {}
+  constructor(private userApi: UserHttpService) { }
 
   ngOnChanges(): void {
     this.filterBySearchbar();
+    console.log(this.userList);
+    
   }
 
   ngOnInit(): void {
@@ -66,9 +68,11 @@ export class UserListComponent implements OnInit {
     let updatedArr: AppUser[] = [...this.userList];
     // Create an array containing only active checkboxes.
     const checkboxArrToCheck = this.checkboxList.filter((c) => c.isActive);
+
     // Iterate through this array in order to keep and track users who are matching with activated checkboxes.
     checkboxArrToCheck.forEach((checkbox) => {
       updatedArr = [...this.filterArr(checkbox, updatedArr)];
+      
     });
     // Update the array we loop on in the template part.
     this.userListFiltered = updatedArr;
@@ -82,16 +86,18 @@ export class UserListComponent implements OnInit {
     }
 
     this.userListFiltered = this.userList.filter(
-      (user) =>
-        user.username
+      (user) => {
+        return user.username
           .toLowerCase()
           .includes(this.searchedContentChild.toLowerCase()) ||
-        user.country
-          .toLowerCase()
-          .includes(this.searchedContentChild.toLowerCase()) ||
-        user.userGameInfoList
-          .map((info: { userPseudo: string }) => info.userPseudo)
-          .includes(this.searchedContentChild.toLowerCase())
+          user.country
+            .toLowerCase()
+            .includes(this.searchedContentChild.toLowerCase()) 
+          //   ||
+          // user.userGameInfoList
+          //   .map((info: { userPseudo: string }) => info.userPseudo)
+          //   .includes(this.searchedContentChild.toLowerCase())
+      }
     );
   }
 
@@ -102,9 +108,9 @@ export class UserListComponent implements OnInit {
     return updatedArr.filter((user) =>
       checkbox.category === 'PlayerHabit'
         ? user.playerHabits[propreyToFind as keyof PlayerHabit] ===
-          checkbox.isActive
+        checkbox.isActive
         : user.userBehavior[propreyToFind as keyof UserBehavior] ===
-          checkbox.isActive
+        checkbox.isActive
     );
   }
 }
