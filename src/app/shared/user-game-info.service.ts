@@ -27,5 +27,8 @@ export class UserGameInfoService {
     return this.usergameinfoHttp.delete<UserGameInfo>(`${this.baseUrl}${this.usergameinfoRoad}/${id}`);
   }
 
+  PutUserGameInfo(id: number | undefined, body: UserGameInfo): Observable<UserGameInfo> {
+    return this .usergameinfoHttp.put<UserGameInfo>(`${this.baseUrl}${this.usergameinfoRoad}/${id}`, body);
+  }
 
 }
