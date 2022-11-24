@@ -4,6 +4,7 @@ import { AppUser } from 'src/models/appUser.model';
 import { UserBehavior } from 'src/models/userBehavior.model';
 import { UserGameInfo } from 'src/models/userGameInfo.model';
 import { UserGameInfoService } from 'src/app/shared/user-game-info.service';
+import { Game } from 'src/models/game.model';
 
 @Component({
   selector: 'app-game-list',
@@ -22,7 +23,7 @@ export class GameListComponent implements OnInit {
 
   isAddGameFormVisible: boolean = false;
 
-  userGameInfoResult: UserGameInfo = new UserGameInfo('', '', 0, '', '', '', 0);
+  userGameInfoResult: UserGameInfo = new UserGameInfo(new Game ('', '', '', [], [], 0), '', '', 0, '', '', '', 0);
 
   userGameInfoList: UserGameInfo[] = [];
 

@@ -2,6 +2,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UserGameInfo } from 'src/models/userGameInfo.model';
 import { UserGameInfoService } from 'src/app/shared/user-game-info.service';
+import { Game } from 'src/models/game.model';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class GameDetailComponent implements OnInit {
   @Output()
   sendGameInfoChild: EventEmitter<number> = new EventEmitter();
 
-  @Input() gameInfoChild: UserGameInfo  = new UserGameInfo ('', '', 0, '', '', '',0)
+  @Input() gameInfoChild: UserGameInfo  = new UserGameInfo (new Game ('', '', '', [], [], 0), '', '', 0, '', '', '',0)
 
   constructor(private httpUserGameInfoS : UserGameInfoService) { }
 

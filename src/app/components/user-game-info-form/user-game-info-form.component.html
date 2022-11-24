@@ -9,9 +9,9 @@
         <form #userGameInfoForm="ngForm" (ngSubmit)="postUserGameInfo()" >
 
             <div>
-                <select gameList="gameList">
+                <select [(ngModel)]="userGameInfo.game">
                     <option>Choisis un jeu</option>
-                    <option *ngFor="let game of gameList" ngModel [ngModelOptions]="{name: 'user'}">
+                    <option *ngFor="let game of gameList" [ngValue]="game">
                         {{game.name}}
                     </option>
                   </select>

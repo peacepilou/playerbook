@@ -17,7 +17,8 @@ export class UserGameInfoFormComponent implements OnInit {
   @Output()
   sendUserGameInfoForm : EventEmitter<UserGameInfo> = new EventEmitter;
 
-  userGameInfo : UserGameInfo = new UserGameInfo ('', '', 0, '', '', '',0);
+  userGameInfo : UserGameInfo = new UserGameInfo (
+    new Game ('', '', '', [], [], 0) ,'', '', 0, '', '', '',0);
 
   userGameInfoList : UserGameInfo[] = [];
 
