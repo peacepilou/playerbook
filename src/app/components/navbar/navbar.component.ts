@@ -13,11 +13,21 @@ export class NavbarComponent implements OnInit {
 
   isAdmin: boolean = false;
 
+  userLogged: boolean = false;
+
   constructor() {}
 
   ngOnInit(): void {
     this.readToken();
     this.checkAdmin();
+    this.isLogged()
+  }
+
+  isLogged(): void{
+    const token = localStorage.getItem('tokenId') as string;
+    if (token){
+      this.userLogged = true;
+    }
   }
 
   readToken(): void {
