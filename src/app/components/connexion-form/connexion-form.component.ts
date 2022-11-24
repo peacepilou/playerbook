@@ -27,7 +27,10 @@ export class ConnexionFormComponent implements OnInit {
       localStorage.clear();
       this.httpRoutes.navigateByUrl('/home');
       this.jwtToken = jwt.access_token;
-      localStorage.setItem("tokenId", jwt.access_token);      
+      localStorage.setItem("tokenId", jwt.access_token); 
+      
+      console.log("jwtToken", this.jwtToken);
+           
     })
   }
 }
