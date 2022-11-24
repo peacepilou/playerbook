@@ -30,7 +30,6 @@ export class UserDetailComponent implements OnInit {
 
   ngOnChanges(){
     this.checkUser();
-
   }
   
   ngOnInit(): void {
@@ -40,19 +39,13 @@ export class UserDetailComponent implements OnInit {
   readToken(): void {
     const token = localStorage.getItem("tokenId") as string;
     this.jwtTokenDecoded = jwt_decode(token);    
-    // this.jwtTokenDecoded = localStorage.setItem("tokenWUsername", this.jwtTokenDecoded?.sub.toString())
   }
 
   checkUser(){
-    console.log("username 1", this.userFoundToChild.username);
-
     if(this.jwtTokenDecoded){
       this.userFoundToChild.username.toString() === 
       this.jwtTokenDecoded?.sub.toString() ? 
       this.isOwner = true : false;
-      console.log("username", this.userFoundToChild.username);
-      console.log("jwtdecoded", this.jwtTokenDecoded?.sub.toString());
-      
     }
   }
 
