@@ -1,12 +1,8 @@
 <div class="user-detail-container">
   <div class="intro-user-detail-profil">
-    <img
-      class="user-avatar-profile"
-      src="{{ userFoundToChild.linkAvatar }}"
-      alt="{{
+    <img class="user-avatar-profile" src="{{ userFoundToChild.linkAvatar }}" alt="{{
         userFoundToChild.username
-        }}"
-    />
+        }}" />
     <div class="container-data-user">
       <p>{{ userFoundToChild.username }}</p>
       <p>
@@ -21,21 +17,15 @@
   </div>
 
   <div class="second-container">
-    <app-player-habit
-      [playerHabitToChild]="userFoundToChild.playerHabits"
-    ></app-player-habit>
+    <app-player-habit [playerHabitToChild]="userFoundToChild.playerHabits"></app-player-habit>
 
-    <app-user-behavior
-      [userBehaviorToChild]="userFoundToChild.userBehavior"
-    ></app-user-behavior>
+    <app-user-behavior [userBehaviorToChild]="userFoundToChild.userBehavior"></app-user-behavior>
   </div>
 
-  <app-game-list
-    [userGameListToChild]="userFoundToChild"
-  ></app-game-list>
+  <app-game-list [userGameListToChild]="userFoundToChild"></app-game-list>
 
   <div class="div-button">
-    <div class="button-update-delete">
+    <div *ngIf="isOwner" class="button-update-delete">
       <button class="button-update">
         <a [routerLink]="['/update-profile/', userFoundToChild.id ]">
           Modifier le profil

@@ -12,7 +12,7 @@
       <li>
         <a class="menu__item" [routerLink]="['/inscription']">Inscription</a>
       </li>
-      <li>
+      <li *ngIf="isAdmin">
         <a class="menu__item" [routerLink]="['/admin']">Administration</a>
       </li>
     </ul>
@@ -57,7 +57,7 @@
       Inscription
     </a>
 
-    <a class="hover-inscription" [routerLink]="['/admin']">
+    <a *ngIf="isAdmin" class="hover-inscription" [routerLink]="['/admin']">
       <div class="hover-suricat-inscription">
         <img
           src="../../assets/pictures/PlayerBook-Logo-mini.png"

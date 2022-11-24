@@ -34,7 +34,8 @@
       </div>
       
       <div class="profile--footer">
-        <a [routerLink]="['/user-profile/', userCardChild.id]" class="c-button"> Détails </a>
+        <a *ngIf="tokenId" [routerLink]="['/user-profile/', userCardChild.id]" class="c-button"> Détails </a>
+        <a *ngIf="!tokenId" [routerLink]="['/inscription']" class="c-button"> Détails </a>
       </div>
     </div>
   </div>
