@@ -37,9 +37,10 @@ export class ConnexionFormComponent implements OnInit {
   showToast() {
     this.toast.success('Connexion réussie !', {
       position: 'bottom-right',
-      dismissible: true,
       style: {
-        border: '1px solid #8738BB'
+        border: '1px solid #8738BB',
+        color: '#FFFFFF',
+        background: "#8738BB"
       }
     });
   }

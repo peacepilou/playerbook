@@ -22,9 +22,10 @@ export class LogoutButtonComponent implements OnInit {
     localStorage.clear();
     this.toast.success('Vous êtes déconnecté.', {
       position: 'bottom-right',
-      dismissible: true,
       style: {
-        border: '1px solid #8738BB'
+        border: '1px solid #8738BB',
+        color: '#FFFFFF',
+        background: "#8738BB"
       }
     });
   }
