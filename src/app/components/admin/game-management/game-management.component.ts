@@ -11,10 +11,9 @@ import { Genre } from 'src/models/genre.model';
 export class GameManagementComponent implements OnInit {
 
 
-  @Output()
-  deactivateForm: EventEmitter<boolean> = new EventEmitter;
-  @Input()
-  isNewGameFormActive: boolean = false;
+  @Output() deactivateForm: EventEmitter<boolean> = new EventEmitter;
+  @Input() isNewGameFormActive: boolean = false;
+
   newGame: Game = new Game('', '', '', [], [], 0);
   newGenre: Genre = new Genre('', []);
   genreList: Genre[] = [];
@@ -22,8 +21,7 @@ export class GameManagementComponent implements OnInit {
 
   constructor(private gameHttpS: GameHttpService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   refreshGame() {
     this.newGame = new Game('', '', '', [], [], 0);
@@ -49,7 +47,9 @@ export class GameManagementComponent implements OnInit {
   }
 
   submitGame() {
-    this.gameHttpS.addNewGame({...this.newGame}).subscribe(() => {
+    const gameNoId = {...this.newGame}; // copy the main object
+    delete gameNoId.id; // delete id from copied Object
+    this.gameHttpS.addNewGame(gameNoId).subscribe(() => {
       this.refreshGame();
       this.refreshGenre();
       this.closeWindow();

@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, Input, SimpleChanges, OnChanges } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input, OnChanges } from '@angular/core';
 import { GameListService } from 'src/app/shared/game-list.service';
 import { UserGameInfoService } from 'src/app/shared/user-game-info.service';
 import { Game } from 'src/models/game.model';
@@ -14,36 +14,31 @@ export class UserGameInfoFormComponent implements OnInit, OnChanges {
 
   userId: number = 0;
 
-  @Output()
-  sendUserGameInfoForm : EventEmitter<UserGameInfo> = new EventEmitter;
+  @Output() sendUserGameInfoForm : EventEmitter<UserGameInfo> = new EventEmitter;
 
-  @Input() gameToUpdateChild: UserGameInfo  = new UserGameInfo (new Game ('', '', '', [], [], 0), '', '', 0, '', '', '',0)
+  @Input() gameToUpdateChild: UserGameInfo = new UserGameInfo('', '', 0, '', '', '', 0, new Game('', '', '', [], [], 0));
 
-  userGameInfo : UserGameInfo = new UserGameInfo (
-    new Game ('', '', '', [], [], 0) ,'', '', 0, '', '', '',0);
-
+  userGameInfo: UserGameInfo = new UserGameInfo('', '', 0, '', '', '', 0, new Game('', '', '', [], [], 0));
   userGameInfoList : UserGameInfo[] = [];
 
   gameList: Game[] = []
-
+  
   isAddGameFormVisible: boolean = true;
 
-  constructor(private httpGameS : GameListService, 
-              private httpUserGameInfoS : UserGameInfoService,) {}
+  constructor(
+    private httpGameS : GameListService, 
+    private httpUserGameInfoS : UserGameInfoService
+  ) {}
 
   ngOnInit(): void {
-    console.log("coucou");
-    
     this.httpGameS.getGameList().subscribe((data) => {
       this.gameList = data;
+      console.log(this.gameList);
      });
-     console.log(this.gameList);
-     
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(): void {
     this.userGameInfo = this.gameToUpdateChild;
-    
   }
 
   closeInfoForm(): void {
@@ -53,19 +48,46 @@ export class UserGameInfoFormComponent implements OnInit, OnChanges {
 
   nextGame() : void {
     this.userGameInfoList.push({...this.userGameInfo});
-    console.log(this.userGameInfo);
   }
 
   sendUserGameInfo() : void {
-    
     if(this.userGameInfo.id){
-      this.httpUserGameInfoS.putUserGameInfoById(this.userGameInfo.id, this.userGameInfo).subscribe(() => {
-        this.closeInfoForm();
-      })
+      // Fully working!
+      this.update();
     } else {
-      this.httpUserGameInfoS.postNewUserGameInfo(this.userGameInfo).subscribe(() => {
-        this.closeInfoForm();
-      })
+      // Working BUT you can't create TWO userGameInfo objects with the SAME Game object id. 
+      // I don't know why yet but it's friday night and I've just succeed in debuging the current PUT request 😈😈😈
+      this.post();
     }
   }
+
+  update(): void {
+    const objectToUpdate: UserGameInfo = this.copyUserGameInfoObjectAndDeleteUselessKeys(this.userGameInfo);
+    this.httpUserGameInfoS.putUserGameInfoById(this.userGameInfo.id as number, objectToUpdate).subscribe(() => {
+      this.closeInfoForm();
+    })
+  }
+
+  post(): void {
+    // We will post the UserInfo object without the Game object. So in order to still do so, we get the id of the Game we want to bind to this UserInfo
+    // We will pass this id as a URL paramter in our Backend. 
+    // Our backend will get it with the @Path variable
+    // Then, with the UserInfoService, we will retrieve the matching Game object with this precise id
+    // And we will use UserInfo.setGame(GameRetrievedFromDatabaseThanksToTheIdPassedByURLParameter)
+    // It's currently changed and working in the backend to match with the frontend
+    // I also had to slightly change the UserGameInfo model in order to bind the Game object as a optionnal parameter.
+    const gameIdToFindInDB = this.userGameInfo.game ? this.userGameInfo.game.id : 0; 
+    const objectToPost: UserGameInfo = this.copyUserGameInfoObjectAndDeleteUselessKeys(this.userGameInfo);
+    this.httpUserGameInfoS.postNewUserGameInfo(objectToPost, gameIdToFindInDB as number).subscribe((d) => {
+      this.closeInfoForm();
+    })
+  }
+  
+  copyUserGameInfoObjectAndDeleteUselessKeys(userGameInfo: UserGameInfo): UserGameInfo {
+    const userGameInfoCopy = {...userGameInfo}; // Not alterate the main object currently displayed in the form
+    delete userGameInfoCopy.game; // Because it's the root of the problem
+    delete userGameInfoCopy.id; // Because it's self handled by the backend
+    return userGameInfoCopy; // Because we love functionnal approach
+  }
+
 }
