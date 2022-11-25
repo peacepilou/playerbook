@@ -1,10 +1,10 @@
+import jwt_decode from "jwt-decode";
+
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserHttpService } from 'src/app/shared/user-http.service';
-import { Game } from 'src/models/game.model';
-import { Genre } from 'src/models/genre.model';
 import { PlayerHabit } from 'src/models/playerHabit.model';
-import { User } from 'src/models/user.model';
+import { AppUser } from 'src/models/appUser.model';
 import { UserBehavior } from 'src/models/userBehavior.model';
 
 @Component({
@@ -14,47 +14,45 @@ import { UserBehavior } from 'src/models/userBehavior.model';
 })
 export class UserDetailComponent implements OnInit {
   @Input()
-  userFoundToChild: User | undefined= new User(
-    0,
-    'Clem',
-    'https://www.zupimages.net/up/22/43/gx9p.png',
-    'Suisse',
-    'Barbie bitch bébé',
-    new UserBehavior(true, true, true, true, 'Blizzard ESport'),
-    new PlayerHabit(2, false, 3, true, true, true, true),
-    [
-      new Game(
-        'World of Warcraft',
-        'https://worldofwarcraft.com/fr-fr/',
-        'Elfy_the_bad_B',
-        [new Genre('MMORPG'), new Genre('PVP')],
-        'Draenor',
-        160,
-        'Leader',
-        'Hard',
-        'Bloom'
-      ),
-      new Game(
-        'Dofus',
-        'https://www.dofus.com/fr/',
-        'Elfy_queen_B',
-        [new Genre('MMORPG'), new Genre('PVP')],
-        'Pandore MasterG',
-        50,
-        'Leader',
-        'Medium',
-        'Pandore'
-      ),
-    ]
+  userFoundToChild: AppUser = new AppUser('', '', '', '', '',
+    new UserBehavior(true, true, true, true, ''),
+    new PlayerHabit(2, 3, false, true, true, true, true),
+    [],
+    []
   );
 
-  constructor(private userApi: UserHttpService, private router: Router) {}
+  jwtTokenDecoded :string  | null= ""
 
-  ngOnInit(): void {}
+  isOwner : boolean = false;
+
+
+  constructor(private userApi: UserHttpService, private router: Router) { }
+
+  ngOnChanges(){
+    this.checkUser();
+  }
+  
+  ngOnInit(): void {
+    this.readToken();
+   }
+
+  readToken(): void {
+    const token = localStorage.getItem("tokenId") as string;
+    this.jwtTokenDecoded = jwt_decode(token);    
+  }
+
+  checkUser(){
+    if(this.jwtTokenDecoded){
+      this.userFoundToChild.username.toString() === 
+      this.jwtTokenDecoded?.sub.toString() ? 
+      this.isOwner = true : false;
+    }
+  }
 
   delete(): void {
-    this.userApi.deleteUserById(this.userFoundToChild?.id).subscribe(() => {
-      this.router.navigateByUrl("/home");
-    });
+    if (confirm("Êtes-vous sûr de vouloir supprimer votre profil ? ")) {
+      this.userApi.deleteUserById(this.userFoundToChild?.id)
+        .subscribe(() => { this.router.navigateByUrl("/home"); })
+    }
   }
 }

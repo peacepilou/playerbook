@@ -4,8 +4,9 @@ import { UserHttpService } from 'src/app/shared/user-http.service';
 import { Game } from 'src/models/game.model';
 import { Genre } from 'src/models/genre.model';
 import { PlayerHabit } from 'src/models/playerHabit.model';
-import { User } from 'src/models/user.model';
+import { AppUser } from 'src/models/appUser.model';
 import { UserBehavior } from 'src/models/userBehavior.model';
+import { UserGameInfo } from 'src/models/userGameInfo.model';
 
 @Component({
   selector: 'app-user-profile',
@@ -14,11 +15,13 @@ import { UserBehavior } from 'src/models/userBehavior.model';
 })
 export class UserProfileComponent implements OnInit {
   userId: number = 0;
-  userList: User[] = [];
-  userFound: User| undefined = new User(0, "", "", "", "", new UserBehavior(true, true, true, true, ""), new PlayerHabit(0, true, 0, true, true, true, true), 
-  [
-    new Game("", "", "", [ new Genre("")], "", 0, "", "", "")
-  ])
+  userList: AppUser[] = [];
+  userFound: AppUser = new AppUser('', '', '', '', '',
+  new UserBehavior(true, true, true, true, ''),
+  new PlayerHabit(2, 3, false, true, true, true, true),
+  [],
+  []
+);
 
   constructor(private userApi: UserHttpService, private router: ActivatedRoute) {}
 
@@ -30,8 +33,10 @@ export class UserProfileComponent implements OnInit {
         if(param.get("id")) {
           this.userId = parseInt(param.get("id") as string);
           
-          this.userFound = this.userList.find(userList => userList.id === this.userId); 
-          
+         const userFound = this.userList.find(userList => userList.id === this.userId); 
+          if (userFound){
+            this.userFound = userFound;
+          }
         }
       })
     });

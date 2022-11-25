@@ -1,11 +1,13 @@
 export class PlayerHabit{
     constructor(
+  
         public frequencyPerWeek: number,
-        public isNocturnal: boolean,
-        public sessionDurationInHour: number,
-        public isHotBlooded: boolean,
-        public isLeader: boolean,
-        public pvpFriendly: boolean,
-        public pveFriendly: boolean
+        public sessionInHours: number,
+        public nocturnal: boolean,
+        public hotBlooded: boolean,
+        public leader: boolean,
+        public pve: boolean,
+        public pvp: boolean,
+        public id? : number,
     ){}
 }

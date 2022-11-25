@@ -1,15 +1,50 @@
 import { Component, OnInit } from '@angular/core';
+import jwt_decode from 'jwt-decode';
+
+import { Token } from 'src/models/token.model';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+  jwtTokenDecoded: Token = new Token(0, '', [], '');
 
-  constructor() { }
+  isAdmin: boolean = false;
+
+  userLogged: boolean = false;
+
+  constructor() {}
 
   ngOnInit(): void {
+    this.readToken();
+    this.checkAdmin();
+    this.isLogged()
   }
 
+  isLogged(): void{
+    const token = localStorage.getItem('tokenId') as string;
+    if (token){
+      this.userLogged = true;
+    }
+  }
+
+  readToken(): void {
+    const token = localStorage.getItem('tokenId') as string;
+    if (token) {
+      this.jwtTokenDecoded = jwt_decode(token);
+    } 
+  }
+
+  checkAdmin() {
+    if (this.jwtTokenDecoded.roles) {
+      const adminFound = this.jwtTokenDecoded.roles.find((role) => {
+        return role === 'ROLE_ADMIN';
+      });
+      if (adminFound) {
+        this.isAdmin = true;
+      }
+    } 
+  }
 }

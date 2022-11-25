@@ -5,11 +5,11 @@
         <img class="profile--image" src={{userCardChild.linkAvatar}} />
           <div class="img-overlay"></div>
         <div class="profile--title">
-          <h4>{{userCardChild.name}}</h4>
+          <h4>{{userCardChild.username}}</h4>
         </div>
         <div class="profile--status">
-          <span *ngIf="userCardChild.userBehavior.isCasual"> Joueur occasionnel </span>
-          <span *ngIf="!userCardChild.userBehavior.isCasual"> Joueur régulier </span>
+          <span *ngIf="userCardChild.userBehavior.casual"> Joueur occasionnel </span>
+          <span *ngIf="!userCardChild.userBehavior.casual"> Joueur régulier </span>
         </div>
       </div>
       
@@ -19,11 +19,11 @@
           <ul class="list-unstyled description--details" >
             <li>
               <strong> Nombre de connexion :<br> ( par semaine ) </strong>
-              <span> {{userCardChild.playerHabit.frequencyPerWeek}} </span>
+              <span> {{userCardChild.playerHabits.frequencyPerWeek}} </span>
             </li>
             <li>
               <strong> Durée moyenne / session :<br> ( en heure ) </strong>
-              <span> {{userCardChild.playerHabit.sessionDurationInHour}} </span>
+              <span> {{userCardChild.playerHabits.sessionInHours}} </span>
             </li>
             <li>
               <strong> Jeux enregistrés </strong>
@@ -34,7 +34,8 @@
       </div>
       
       <div class="profile--footer">
-        <a [routerLink]="['/user-profile/', userCardChild.id]" class="c-button"> Détails </a>
+        <a *ngIf="tokenId" [routerLink]="['/user-profile/', userCardChild.id]" class="c-button"> Détails </a>
+        <a *ngIf="!tokenId" [routerLink]="['/inscription']" class="c-button"> Détails </a>
       </div>
     </div>
   </div>

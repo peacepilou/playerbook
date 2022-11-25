@@ -9,41 +9,41 @@
 
     <p class="isNocturnal">
       <span class="name-content">Joueur nocturne :
-        <span *ngIf="playerHabitToChild?.isNocturnal">Oui </span>
-        <span *ngIf="playerHabitToChild?.isNocturnal === false">Non </span>
+        <span *ngIf="playerHabitToChild?.nocturnal">Oui </span>
+        <span *ngIf="playerHabitToChild?.nocturnal === false">Non </span>
       </span>   
     </p>
     
     <p class="sessionDurationInHour">
       <span class="name-content">Durée moyenne des sessions :</span>
-      {{ playerHabitToChild?.sessionDurationInHour }} heure(s) environ.
+      {{ playerHabitToChild?.sessionInHours }} heure(s) environ.
     </p>
 
     <p class="isHotBlooded">
       <span class="name-content">Plutôt nerveux :
-        <span *ngIf="playerHabitToChild?.isHotBlooded">Oui </span>
-        <span *ngIf="playerHabitToChild?.isHotBlooded === false">Non </span>
+        <span *ngIf="playerHabitToChild?.hotBlooded">Oui </span>
+        <span *ngIf="playerHabitToChild?.hotBlooded === false">Non </span>
       </span>   
     </p> 
 
     <p class="isLeader">
       <span class="name-content">Âme de meneur :
-        <span *ngIf="playerHabitToChild?.isLeader">Oui </span>
-        <span *ngIf="playerHabitToChild?.isLeader === false">Non </span>
+        <span *ngIf="playerHabitToChild?.leader">Oui </span>
+        <span *ngIf="playerHabitToChild?.leader === false">Non </span>
       </span>   
     </p>
 
     <p class="pvpFriendly">
       <span class="name-content">Adepte du PVP :
-        <span *ngIf="playerHabitToChild?.pvpFriendly">Oui </span>
-        <span *ngIf="playerHabitToChild?.pvpFriendly === false">Non </span>
+        <span *ngIf="playerHabitToChild?.pvp">Oui </span>
+        <span *ngIf="playerHabitToChild?.pvp === false">Non </span>
       </span>   
     </p>
 
     <p class="pveFriendly">
       <span class="name-content">Adepte du PVE :
-        <span *ngIf="playerHabitToChild?.pveFriendly">Oui </span>
-        <span *ngIf="playerHabitToChild?.pveFriendly === false">Non </span>
+        <span *ngIf="playerHabitToChild?.pve">Oui </span>
+        <span *ngIf="playerHabitToChild?.pve === false">Non </span>
       </span>   
     </p>
 

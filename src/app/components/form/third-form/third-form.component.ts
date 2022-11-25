@@ -13,7 +13,7 @@ export class ThirdFormComponent implements OnInit {
 
 @Input()
   dataToChild : PlayerHabit = new PlayerHabit(
-    0, false, 0, false, false, false, false
+    0, 0, false, false, false, false, false
   );
 
   constructor() { }
@@ -23,14 +23,6 @@ export class ThirdFormComponent implements OnInit {
 
   onSubmit(){
     this.sendthirdForm.emit(this.dataToChild);
-  }
-
-  checkValue(): void {
-    console.log(this.dataToChild.isNocturnal);
-  }
-
-  checkValuePVP(): void {
-    console.log(this.dataToChild.pvpFriendly)
   }
 
 }

@@ -13,7 +13,7 @@
     <div>
         <label for="sessionDuration">Combien d'heures de jeu par jour ? </label>
         <input type="number" id="sessionDuration" name="sessionDuration"
-            [(ngModel)]="dataToChild.sessionDurationInHour" #sessionDurationCheck="ngModel" required min="0" max="24">
+            [(ngModel)]="dataToChild.sessionInHours" #sessionDurationCheck="ngModel" required min="0" max="24">
     </div>
 
         <div *ngIf="thirdForm.submitted && sessionDurationCheck.errors">
@@ -23,8 +23,8 @@
     <div>
         <label class="switch">
             <label for="isNocturnal">Nocturne ? </label>
-            <input type="checkbox" name="isNocturnal" class="checkbox" id="isNocturnal" (change)="checkValue()"
-            [(ngModel)]="dataToChild.isNocturnal" [checked]="dataToChild.isNocturnal">
+            <input type="checkbox" name="isNocturnal" class="checkbox" id="isNocturnal"
+            [(ngModel)]="dataToChild.nocturnal" [checked]="dataToChild.nocturnal">
             <span class="slider"></span>
         </label>
     </div>
@@ -32,8 +32,8 @@
     <div>
         <label class="switch">
             <label for="isHotBlooded">Plutôt sanguin ? </label>
-            <input type="checkbox" name="isHotBlooded" class="checkbox" id="isHotBlooded" [checked]="dataToChild.isHotBlooded"
-            [(ngModel)]="dataToChild.isHotBlooded">
+            <input type="checkbox" name="isHotBlooded" class="checkbox" id="isHotBlooded" [checked]="dataToChild.hotBlooded"
+            [(ngModel)]="dataToChild.hotBlooded">
             <span class="slider"></span>
         </label>
     </div>
@@ -41,8 +41,8 @@
     <div>
         <label class="switch">
             <label for="isLeader">Plutôt leader ? </label>
-            <input type="checkbox" name="isLeader" class="checkbox" id="isLeader" [checked]="dataToChild.isLeader"
-            [(ngModel)]="dataToChild.isLeader">
+            <input type="checkbox" name="isLeader" class="checkbox" id="isLeader" [checked]="dataToChild.leader"
+            [(ngModel)]="dataToChild.leader">
             <span class="slider"></span>
         </label>
     </div>
@@ -50,8 +50,8 @@
     <div>
         <label class="switch">
             <label for="pvpFriendly">Plutôt PVP ? </label>
-            <input type="checkbox" name="pvpFriendly" class="checkbox" id="pvpFriendly" [checked]="dataToChild.pvpFriendly"
-            [(ngModel)]="dataToChild.pvpFriendly">
+            <input type="checkbox" name="pvpFriendly" class="checkbox" id="pvpFriendly" [checked]="dataToChild.pvp"
+            [(ngModel)]="dataToChild.pvp">
             <span class="slider"></span>
         </label>
     </div>
@@ -59,8 +59,8 @@
     <div>
         <label class="switch">
             <label for="pveFriendly">Plutôt PVE ? </label>
-            <input type="checkbox" name="pveFriendly" class="checkbox" id="pveFriendly" [checked]="dataToChild.pveFriendly" (change)="checkValuePVP()"
-            [(ngModel)]="dataToChild.pveFriendly">
+            <input type="checkbox" name="pveFriendly" class="checkbox" id="pveFriendly" [checked]="dataToChild.pve" 
+            [(ngModel)]="dataToChild.pve">
             <span class="slider"></span>
         </label>
     </div>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
@@ -25,7 +25,6 @@ import { SecondFormComponent } from './components/form/second-form/second-form.c
 import { ThirdFormComponent } from './components/form/third-form/third-form.component';
 import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 import { Error404LogoComponent } from './components/error404-logo/error404-logo.component';
-import { FourthFormComponent } from './components/form/fourth-form/fourth-form.component';
 import { BackButtonComponent } from './components/form/back-button/back-button.component';
 
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
@@ -39,6 +38,17 @@ import { ScrollToTopComponent } from './utils/scroll-to-top/scroll-to-top.compon
 import { FooterComponent } from './components/footer/footer.component';
 import { FaqPageComponent } from './pages/faq-page/faq-page.component';
 import { BackHomeButtonComponent } from './utils/back-home-button/back-home-button.component';
+import { UserGameInfoFormComponent } from './components/user-game-info-form/user-game-info-form.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { StatsComponent } from './components/admin/stats/stats.component';
+import { UserManagementComponent } from './components/admin/user-management/user-management.component';
+import { GameManagementComponent } from './components/admin/game-management/game-management.component';
+import { GameManagementButtonComponent } from './components/admin/game-management-button/game-management-button.component';
+import { ConnexionFormComponent } from './components/connexion-form/connexion-form.component';
+import { AuthInterceptor } from './core/auth.interceptor';
+import { Error401PageComponent } from './pages/error401-page/error401-page.component';
+import { LogoutButtonComponent } from './utils/logout-button/logout-button.component';
+import { LogoutPurpleButtonComponent } from './utils/logout-purple-button/logout-purple-button.component';
 
 
 @NgModule({
@@ -64,7 +74,6 @@ import { BackHomeButtonComponent } from './utils/back-home-button/back-home-butt
     Error404PageComponent,
     Error404LogoComponent,
     CheckboxFilterUsersComponent,
-    FourthFormComponent,
     BackButtonComponent,
     UserDetailComponent,
     UserBehaviorComponent,
@@ -76,7 +85,17 @@ import { BackHomeButtonComponent } from './utils/back-home-button/back-home-butt
     ScrollToTopComponent,
     FooterComponent,
     FaqPageComponent,
-    BackHomeButtonComponent
+    BackHomeButtonComponent,
+    UserGameInfoFormComponent,
+    AdminComponent,
+    StatsComponent,
+    UserManagementComponent,
+    GameManagementComponent,
+    GameManagementButtonComponent,
+    ConnexionFormComponent,
+    Error401PageComponent,
+    LogoutButtonComponent,
+    LogoutPurpleButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -84,7 +103,13 @@ import { BackHomeButtonComponent } from './utils/back-home-button/back-home-butt
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+     multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,27 +1,14 @@
-<div class="game-card">
-    <a href={{gameChild.url}} target="_blank">
-        <h2>{{gameChild.name}}</h2>
-    </a>
-    <p>Catégorie(s) :</p>
-    <div class="list-category-game">
-        <li class="genreList" *ngFor="let genre of gameChild.genreList">{{genre.name}}</li>
-    </div>
-    
-    <div class="etiquet-pseudo">
-        <p>@ {{gameChild.userPseudo}}</p>
-        <div></div>
-    </div>
-    <div class="information-list">
-        <ul>
-            <li>Niveau : <span>{{gameChild.level}}</span></li>
-            <li>Serveur : <span>{{gameChild.serverName}}</span></li>
-            <li>Guilde : <span>{{gameChild.guild}}</span></li>
-            <li>Rang : <span>{{gameChild.rank}}</span></li>
-            <li>Difficulté : <span>{{gameChild.difficulty}}</span></li>
-        </ul>
-    </div>
+<div class="game-detail-card">
 
+   <div class="game-info">
+      <img [src]="gameInfoChild.game.photoUrl"/>
+      <p>Ton pseudo : {{gameInfoChild.userPseudo}}</p>
+      <p>Ta guilde : {{gameInfoChild.guild}}</p>
+      <p>Ton niveau{{gameInfoChild.level}}</p>
+      <p>Ton rang : {{gameInfoChild.pilouRank}}</p>
+      <p>Difficulté : {{gameInfoChild.difficulty}}</p>
+      <p>Ton serveur : {{gameInfoChild.serverName}}</p>
+   </div>
+
+   <button (click)="delete()" class="button-delete">Supprimer le jeu</button>
 </div>
-
-
-

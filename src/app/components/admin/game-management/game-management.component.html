@@ -1,0 +1,62 @@
+<div class="newGameFormContainer">
+    <div class="newGameForm" *ngIf="isNewGameFormActive">
+        <div class="crossFlex">
+            <img class="closeFormWindow" src="../../../../assets/pictures/cross.png"
+                (click)="closeWindow()">
+        </div>
+        <form #newGameForm="ngForm" (ngSubmit)="newGameForm.valid &&
+        newGame.genreList.length > 0 && submitGame()">
+
+            <h3>Ajout d'un nouveau jeu :</h3>
+
+            <label for="name">Nom du jeu :</label>
+            <input type="text" id="name" name="name" [(ngModel)]="newGame.name" #nameError="ngModel" minlength="3" maxlength="50" required>
+
+            <div *ngIf="newGameForm.submitted && nameError.errors">
+                <small *ngIf="nameError.errors['required']">Le nom du jeu devrait être renseigné</small>
+                <small *ngIf="nameError.errors['minlength']">Le nom du jeu devrait contenir au moins 3 caractères</small>
+                <small *ngIf="nameError.errors['maxlength']">Le nom du jeu ne devrait pas contenir plus de 50 caractères</small>
+            </div>
+            
+            <label for="photoUrl">Lien vers la miniature :</label>
+            <input type="text" id="photoUrl" name="photoUrl" [(ngModel)]="newGame.photoUrl" #photoUrlError="ngModel" minlength="3" maxlength="150" required>
+
+            <div *ngIf="newGameForm.submitted && photoUrlError.errors">
+                <small *ngIf="photoUrlError.errors['required']">Le lien vers l'image devrait être renseigné</small>
+                <small *ngIf="photoUrlError.errors['minlength']">Le lien vers l'image devrait contenir au moins 3 caractères</small>
+                <small *ngIf="photoUrlError.errors['maxlength']">Le lien vers l'image ne devrait pas contenir plus de 150 caractères</small>
+            </div>
+
+            <label for="gameUrl">Lien vers le site officiel :</label>
+            <input type="text" id="gameUrl" name="gameUrl" [(ngModel)]="newGame.gameUrl" #gameUrlError="ngModel" minlength="3" maxlength="150" required>
+
+            <div *ngIf="newGameForm.submitted && gameUrlError.errors">
+                <small *ngIf="gameUrlError.errors['required']">Le lien vers le site du jeu devrait être renseigné</small>
+                <small *ngIf="gameUrlError.errors['minlength']">Le lien vers le site du jeu devrait contenir au moins 3 caractères</small>
+                <small *ngIf="gameUrlError.errors['maxlength']">Le lien vers le site du jeu ne devrait pas contenir plus de 150 caractères</small>
+            </div>
+
+            <label for="genre">Genre(s) :</label>
+            <div class="genreForm">
+                <input type="text" id="genre" name="genre" [(ngModel)]="newGenre.name">
+                <img src="../../../../assets/pictures/icons8-plus-2-mathématique-48.png" class="addGenreButton" (click)="pushGenreInGenreList()"/>
+            </div>
+            <div class="duplicateError" *ngIf="isDuplicate === true" >
+                <p>Attention biquet, tu as déjà renseigné ce genre pour ce jeu !</p>
+            </div>
+            <div class="genre-list">
+                <div *ngFor="let genre of newGame.genreList">
+                    <p class="addedGenre">{{genre.name}}</p>
+                </div>
+            </div>
+            
+            <button class="submit-button" type="submit" [ngStyle]="{backgroundColor :
+                !nameError.valid || 
+                !photoUrlError.valid ||
+                !gameUrlError.valid ? 'grey' : 'var(--superViolet)'
+            }">Envoyer</button>
+            <button class="reset-button" type="reset" (click)="refreshGame()">Réinitialiser</button>
+
+        </form>
+    </div>
+</div>

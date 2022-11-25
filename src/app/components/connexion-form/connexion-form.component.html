@@ -1,0 +1,26 @@
+
+<form #connexionForm="ngForm" (ngSubmit)="connexionForm.valid && submitPassword()" >
+
+    <label for="user">Utilisateur :</label>
+    <input type="text" id="user" name="user" 
+    [(ngModel)]="user" #userError="ngModel" minlength="3" maxlength="50" required>
+
+    <div *ngIf="connexionForm.submitted && userError.errors">
+        <small *ngIf="userError.errors['required']">Un nom d'utilisateur doit être renseigné</small>
+        <small *ngIf="userError.errors['minlength']">Le nom d'utilisateur devrait contenir au moins 3 caractères</small>
+        <small *ngIf="userError.errors['maxlength']">Le nom d'utilisateur ne devrait pas contenir plus de 50 caractères</small>
+    </div>
+
+    <label for="name">Mot de passe :</label>
+    <input type="password" id="name" name="name" 
+    [(ngModel)]="password" #passwordError="ngModel" minlength="3" maxlength="50" required>
+
+    <div *ngIf="connexionForm.submitted && passwordError.errors">
+        <small *ngIf="passwordError.errors['required']">Un mot de passe doit être renseigné</small>
+        <small *ngIf="passwordError.errors['minlength']">Le mot de passe devrait contenir au moins 3 caractères</small>
+        <small *ngIf="passwordError.errors['maxlength']">Le mot de passe ne devrait pas contenir plus de 50 caractères</small>
+    </div>
+
+    <button type="submit">Connexion</button>
+
+</form>
