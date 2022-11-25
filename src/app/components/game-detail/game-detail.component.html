@@ -4,14 +4,14 @@
       <img class="thumbnail" [src]="gameInfoChild.game.photoUrl" />
       <p>{{gameInfoChild.userPseudo}}</p>
       <p>Ta guilde : {{gameInfoChild.guild}}</p>
-      <p>Ton niveau{{gameInfoChild.level}}</p>
+      <p>Ton niveau : {{gameInfoChild.level}}</p>
       <p>Ton rang : {{gameInfoChild.pilouRank}}</p>
       <p>Difficulté : {{gameInfoChild.difficulty}}</p>
       <p>Ton serveur : {{gameInfoChild.serverName}}</p>
    </div>
 
    <div class="update-delete">
-      <button class="button-update"> Modifier le jeu</button>
+      <button (click)="put()" class="button-update"> Modifier le jeu</button>
       <button (click)="delete()" class="button-delete">Supprimer le jeu</button>
    </div>
 

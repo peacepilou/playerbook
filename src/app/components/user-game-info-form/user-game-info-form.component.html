@@ -6,7 +6,7 @@
             <img (click)="closeInfoForm()" class="close" src="../../../../assets/pictures/cross.png">
             </rb>
          
-        <form #userGameInfoForm="ngForm" (ngSubmit)="postUserGameInfo()" >
+        <form #userGameInfoForm="ngForm" (ngSubmit)="sendUserGameInfo()" >
 
             <div>
                 <select name="game-name" [(ngModel)]="userGameInfo.game">

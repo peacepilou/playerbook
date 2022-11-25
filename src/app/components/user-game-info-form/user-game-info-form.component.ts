@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input, SimpleChanges, OnChanges } from '@angular/core';
 import { GameListService } from 'src/app/shared/game-list.service';
 import { UserGameInfoService } from 'src/app/shared/user-game-info.service';
 import { Game } from 'src/models/game.model';
@@ -10,12 +10,14 @@ import { UserGameInfo } from 'src/models/userGameInfo.model';
   templateUrl: './user-game-info-form.component.html',
   styleUrls: ['./user-game-info-form.component.scss']
 })
-export class UserGameInfoFormComponent implements OnInit {
+export class UserGameInfoFormComponent implements OnInit, OnChanges {
 
   userId: number = 0;
 
   @Output()
   sendUserGameInfoForm : EventEmitter<UserGameInfo> = new EventEmitter;
+
+  @Input() gameToUpdateChild: UserGameInfo  = new UserGameInfo (new Game ('', '', '', [], [], 0), '', '', 0, '', '', '',0)
 
   userGameInfo : UserGameInfo = new UserGameInfo (
     new Game ('', '', '', [], [], 0) ,'', '', 0, '', '', '',0);
@@ -30,9 +32,18 @@ export class UserGameInfoFormComponent implements OnInit {
               private httpUserGameInfoS : UserGameInfoService,) {}
 
   ngOnInit(): void {
+    console.log("coucou");
+    
     this.httpGameS.getGameList().subscribe((data) => {
       this.gameList = data;
      });
+     console.log(this.gameList);
+     
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.userGameInfo = this.gameToUpdateChild;
+    
   }
 
   closeInfoForm(): void {
@@ -45,16 +56,16 @@ export class UserGameInfoFormComponent implements OnInit {
     console.log(this.userGameInfo);
   }
 
-  postUserGameInfo() : void {
-    console.log(this.userGameInfo)
-    let gIcloned = {...this.userGameInfo};
-    delete gIcloned.id;
-    this.httpUserGameInfoS.postNewUserGameInfo(this.userGameInfo).subscribe(() => {
-      this.closeInfoForm();
-    })
+  sendUserGameInfo() : void {
+    
+    if(this.userGameInfo.id){
+      this.httpUserGameInfoS.putUserGameInfoById(this.userGameInfo.id, this.userGameInfo).subscribe(() => {
+        this.closeInfoForm();
+      })
+    } else {
+      this.httpUserGameInfoS.postNewUserGameInfo(this.userGameInfo).subscribe(() => {
+        this.closeInfoForm();
+      })
+    }
   }
-
-  
-
-
 }
