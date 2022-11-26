@@ -46,6 +46,7 @@ export class GameManagementComponent implements OnInit {
       this.isDuplicate = true;
       }
     }
+    this.addGenreToast();
     this.refreshGenre();    
   }
 
@@ -54,7 +55,7 @@ export class GameManagementComponent implements OnInit {
       this.refreshGame();
       this.refreshGenre();
       this.closeWindow();
-      this.showToast()
+      this.addGameToast()
     });
    
   }
@@ -66,13 +67,23 @@ export class GameManagementComponent implements OnInit {
     this.refreshGenre();
   }
 
-  showToast() {
+  addGameToast() {
     this.toast.success('Nouveau jeu ajouté dans la base de donnée !', {
       position: 'bottom-right',
       style: {
         border: '1px solid #8738BB',
         color: '#FFFFFF',
         background: "#8738BB"
+      }
+    });
+  }
+
+  addGenreToast(): void {
+    this.toast.success('Genre ajouté. Un autre ou tu valides ?', {
+      style: {
+        border: '1px solid #FFFFFF',
+        color: '#8738BB',
+        background: "#FFFFFF"
       }
     });
   }

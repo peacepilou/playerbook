@@ -4,6 +4,7 @@ import { UserHttpService } from 'src/app/shared/user-http.service';
 import { PlayerHabit } from 'src/models/playerHabit.model';
 import { AppUser } from 'src/models/appUser.model';
 import { UserBehavior } from 'src/models/userBehavior.model';
+import { HotToastService } from '@ngneat/hot-toast';
 
 @Component({
   selector: 'app-global-form',
@@ -40,7 +41,7 @@ export class GlobalFormComponent implements OnInit {
 
   formStep: number = 1;
 
-  constructor(private userHttpS: UserHttpService, private route: Router, private router: ActivatedRoute) {}
+  constructor(private userHttpS: UserHttpService, private route: Router, private router: ActivatedRoute, private toast: HotToastService) {}
 
   ngOnInit(): void {
     this.router.paramMap.subscribe((param: ParamMap) => {
@@ -86,10 +87,12 @@ export class GlobalFormComponent implements OnInit {
 
     if(this.userId){
       this.userHttpS.updateUserById(globalFormResults, this.userId).subscribe(() => {
+        this.updateProfileToast();
         this.route.navigateByUrl(`/user-profile/${this.userId}`)
       })
     } else {
       this.userHttpS.postNewUser(globalFormResults).subscribe(() => {
+        this.registerToast();
         this.route.navigateByUrl('/home');
       });
     }
@@ -97,5 +100,27 @@ export class GlobalFormComponent implements OnInit {
 
   goBack() {
     this.formStep -= 1;
+  }
+
+  registerToast(): void {
+    this.toast.success('Profil créé avec succès. Tu peux maintenant te connecter !', {
+      position: 'bottom-right',
+      style: {
+        border: '1px solid #8738BB',
+        color: '#FFFFFF',
+        background: "#8738BB"
+      }
+    });
+  }
+
+  updateProfileToast(): void {
+    this.toast.success('Profil modifié avec succès.', {
+      position: 'bottom-right',
+      style: {
+        border: '1px solid #8738BB',
+        color: '#FFFFFF',
+        background: "#8738BB"
+      }
+    });
   }
 }
