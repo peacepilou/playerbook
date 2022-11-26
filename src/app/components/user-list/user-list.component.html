@@ -13,7 +13,7 @@
     *ngFor="let userCard of 
     isOneCheckboxTruthy && isSearchbarTruthy ? mergedLists : 
     isOneCheckboxTruthy && !isSearchbarTruthy ? userListFilteredByCheckbox : 
-    !isOneCheckboxTruthy && isSearchbarTruthy ? userListFiltered : 
+    !isOneCheckboxTruthy && isSearchbarTruthy ? userListFilteredBySearchbar : 
     userList"
     [userCardChild]="userCard"
   ></app-user-card>

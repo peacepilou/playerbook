@@ -16,7 +16,7 @@ export class UserListComponent implements OnInit {
   searchedContentChild: string = '';
 
   userList: AppUser[] = [];
-  userListFiltered: AppUser[] = [];
+  userListFilteredBySearchbar: AppUser[] = [];
   userListFilteredByCheckbox: AppUser[] = [];
   mergedLists: AppUser[] = [];
 
@@ -25,7 +25,7 @@ export class UserListComponent implements OnInit {
 
   checkboxList: Checkbox[] = [
     new Checkbox('Joueur professionnel', 'pro', false, 'UserBehavior'),
-    new Checkbox('Joueur régulier', 'casual', false, 'UserBehavior'),
+    new Checkbox('Joueur occasionnel', 'casual', false, 'UserBehavior'),
     new Checkbox("Leader d'équipe", 'leader', false, 'PlayerHabit'),
     new Checkbox('PVP friendly', 'pvp', false, 'PlayerHabit'),
     new Checkbox('PVE friendly', 'pve', false, 'PlayerHabit'),
@@ -81,8 +81,8 @@ export class UserListComponent implements OnInit {
     } else {
       this.isSearchbarTruthy = true;
     }
-
-    this.userListFiltered = this.userList.filter(
+    
+    this.userListFilteredBySearchbar = this.userList.filter(
       (user) => {
         return user.username
           .toLowerCase()
@@ -90,10 +90,10 @@ export class UserListComponent implements OnInit {
           user.country
             .toLowerCase()
             .includes(this.searchedContentChild.toLowerCase())
-          ||
-        user.userGameInfoList
-          .map((info: { userPseudo: string }) => info.userPseudo)
-          .includes(this.searchedContentChild.toLowerCase())
+        //   || user.userGameInfoList.filter(userGameInfo => 
+        //    userGameInfo.userPseudo.toLowerCase()
+        //   .includes(this.searchedContentChild.toLowerCase())
+        // )
       }
     );
     this.mergeFilteredLists();
@@ -116,7 +116,7 @@ export class UserListComponent implements OnInit {
       this.mergedLists = [];
       for (let i = 0; i < this.userListFilteredByCheckbox.length; i++) {
         const matchFound: AppUser | undefined =
-          this.userListFiltered.find(data => {
+          this.userListFilteredBySearchbar.find(data => {
             return this.userListFilteredByCheckbox[i].username === data.username;
           })
         if (matchFound) {
