@@ -22,7 +22,6 @@ export class UserListComponent implements OnInit {
 
   isOneCheckboxTruthy: boolean = false;
   isSearchbarTruthy: boolean = false;
-  isOneElementTruthy: boolean = false;
 
   checkboxList: Checkbox[] = [
     new Checkbox('Joueur professionnel', 'pro', false, 'UserBehavior'),
@@ -41,7 +40,6 @@ export class UserListComponent implements OnInit {
 
   ngOnChanges(): void {
     this.filterBySearchbar();
-    this.mergeFilteredLists();
   }
 
   ngOnInit(): void {
@@ -50,50 +48,31 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  // Output listenner
   catchCheckboxChange(checkbox: Checkbox): void {
     this.updateMatchingCheckbox(checkbox);
-    // Track the changes : when no checkbox is checked (at the beginning or after multiple combinations). Linked to HTML line 19
-    this.checkboxList.find((c) => c.isActive) ? this.isOneCheckboxTruthy = true : false;  
   }
 
-  // updateMatchingCheckbox(checkbox: Checkbox): void {
-  //   const checkboxFound = this.checkboxList.find(
-  //     (c) => c.description === checkbox.description
-  //   );
-  //   if (checkboxFound) {
-  //     checkboxFound.isActive = checkbox.isActive;
-  //     this.filterByCheckbox();
-  //   }
-  // }
-
   updateMatchingCheckbox(checkbox: Checkbox): void {
-    for (let i = 0; i < this.checkboxList.length; i++) {
-      const checkboxFound = this.checkboxList.find(checkbox => {
-        return checkbox.description === this.checkboxList[i].description;
-      });
-      if (checkboxFound) {
-        this.checkboxList[i].isActive = checkbox.isActive;
+    this.checkboxList.map(checkboxInList => {
+      if (checkbox.description === checkboxInList.description) {
+        checkboxInList.isActive = checkbox.isActive;
       }
-    }
+      this.checkboxList.find((c) => c.isActive) ?
+        this.isOneCheckboxTruthy = true :
+        this.isOneCheckboxTruthy = false;
+    })
     this.filterByCheckbox();
   }
 
   filterByCheckbox(): void {
-    // By default, the array we want to filter is full by the user list.
     let updatedArr: AppUser[] = [...this.userList];
-    // Create an array containing only active checkboxes.
     const checkboxArrToCheck = this.checkboxList.filter((c) => c.isActive);
 
-    // Iterate through this array in order to keep and track users who are matching with activated checkboxes.
     checkboxArrToCheck.forEach((checkbox) => {
       updatedArr = [...this.filterArr(checkbox, updatedArr)];
-
     });
-    // Update the array we loop on in the template part.
     this.userListFilteredByCheckbox = updatedArr;
     this.mergeFilteredLists();
-
   }
 
   filterBySearchbar(): void {
@@ -111,16 +90,16 @@ export class UserListComponent implements OnInit {
           user.country
             .toLowerCase()
             .includes(this.searchedContentChild.toLowerCase())
-        //   ||
-        // user.userGameInfoList
-        //   .map((info: { userPseudo: string }) => info.userPseudo)
-        //   .includes(this.searchedContentChild.toLowerCase())
+          ||
+        user.userGameInfoList
+          .map((info: { userPseudo: string }) => info.userPseudo)
+          .includes(this.searchedContentChild.toLowerCase())
       }
     );
+    this.mergeFilteredLists();
   }
 
   filterArr(checkbox: Checkbox, updatedArr: AppUser[]): AppUser[] {
-    // Check the property we need to find in each user object. Depends on the checkbox.
     const propreyToFind = checkbox.userProperty;
 
     return updatedArr.filter((user) =>
@@ -132,39 +111,18 @@ export class UserListComponent implements OnInit {
     );
   }
 
-  checkIfOneElementTruthy() {
-    if (this.isOneCheckboxTruthy || this.isSearchbarTruthy) {
-      this.isOneElementTruthy = true;
-    } else {
-      this.isOneElementTruthy = false;
-    }
-  }
-
   mergeFilteredLists() {
     if (this.isOneCheckboxTruthy && this.isSearchbarTruthy) {
       this.mergedLists = [];
-      for (let i = 0; i < this.userListFiltered.length; i++) {
+      for (let i = 0; i < this.userListFilteredByCheckbox.length; i++) {
         const matchFound: AppUser | undefined =
-          this.userListFilteredByCheckbox.find(match => {
-            return this.userListFiltered[i] === match;
+          this.userListFiltered.find(data => {
+            return this.userListFilteredByCheckbox[i].username === data.username;
           })
         if (matchFound) {
           this.mergedLists.push(matchFound);
         }
       }
-    } else if (!this.isOneCheckboxTruthy) {
-      this.mergedLists = this.userListFiltered;
-    } else {
-      this.mergedLists = this.userListFilteredByCheckbox
     }
-    this.checkIfOneElementTruthy();
-
-
-    console.log("checkbox status :", this.isOneCheckboxTruthy);
-    // console.log("searchbar status :", this.isSearchbarTruthy);
-    // console.log("isOneElementTruthy", this.isOneElementTruthy);
-    // console.log("test list by checkbox", this.userListFilteredByCheckbox);
-    // console.log("test list by searchbar", this.userListFiltered);
-    // console.log("test mergedList", this.mergedLists);
   }
 }
