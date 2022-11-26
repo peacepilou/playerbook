@@ -1,4 +1,3 @@
-
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UserGameInfo } from 'src/models/userGameInfo.model';
 import { UserGameInfoService } from 'src/app/shared/user-game-info.service';
@@ -30,7 +29,7 @@ export class GameDetailComponent implements OnInit {
   }
 
   deleteGameToast() {
-    this.toast.success('Nouveau jeu ajouté dans ton profil !', {
+    this.toast.success('Jeu supprimé de ton profil !', {
       position: 'bottom-right',
       style: {
         border: '1px solid #8738BB',
