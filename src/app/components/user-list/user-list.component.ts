@@ -54,17 +54,29 @@ export class UserListComponent implements OnInit {
   catchCheckboxChange(checkbox: Checkbox): void {
     this.updateMatchingCheckbox(checkbox);
     // Track the changes : when no checkbox is checked (at the beginning or after multiple combinations). Linked to HTML line 19
-    this.isOneCheckboxTruthy = !this.checkboxList.every((c) => !c.isActive);
+    this.checkboxList.find((c) => c.isActive) ? this.isOneCheckboxTruthy = true : false;  
   }
 
+  // updateMatchingCheckbox(checkbox: Checkbox): void {
+  //   const checkboxFound = this.checkboxList.find(
+  //     (c) => c.description === checkbox.description
+  //   );
+  //   if (checkboxFound) {
+  //     checkboxFound.isActive = checkbox.isActive;
+  //     this.filterByCheckbox();
+  //   }
+  // }
+
   updateMatchingCheckbox(checkbox: Checkbox): void {
-    const checkboxFound = this.checkboxList.find(
-      (c) => c.description === checkbox.description
-    );
-    if (checkboxFound) {
-      checkboxFound.isActive = checkbox.isActive;
-      this.filterByCheckbox();
+    for (let i = 0; i < this.checkboxList.length; i++) {
+      const checkboxFound = this.checkboxList.find(checkbox => {
+        return checkbox.description === this.checkboxList[i].description;
+      });
+      if (checkboxFound) {
+        this.checkboxList[i].isActive = checkbox.isActive;
+      }
     }
+    this.filterByCheckbox();
   }
 
   filterByCheckbox(): void {
@@ -120,7 +132,7 @@ export class UserListComponent implements OnInit {
     );
   }
 
-  checkIfTrue() {
+  checkIfOneElementTruthy() {
     if (this.isOneCheckboxTruthy || this.isSearchbarTruthy) {
       this.isOneElementTruthy = true;
     } else {
@@ -145,14 +157,14 @@ export class UserListComponent implements OnInit {
     } else {
       this.mergedLists = this.userListFilteredByCheckbox
     }
-    this.checkIfTrue();
+    this.checkIfOneElementTruthy();
 
 
-    console.log("checkbox status :", this.isOneElementTruthy);
-    console.log("searchbar status :", this.isOneElementTruthy);
-    console.log("isOneElementTruthy", this.isOneElementTruthy);
-    console.log("test list by checkbox", this.userListFilteredByCheckbox);
-    console.log("test list by searchbar", this.userListFiltered);
-    console.log("test mergedList", this.mergedLists);
+    console.log("checkbox status :", this.isOneCheckboxTruthy);
+    // console.log("searchbar status :", this.isSearchbarTruthy);
+    // console.log("isOneElementTruthy", this.isOneElementTruthy);
+    // console.log("test list by checkbox", this.userListFilteredByCheckbox);
+    // console.log("test list by searchbar", this.userListFiltered);
+    // console.log("test mergedList", this.mergedLists);
   }
 }
