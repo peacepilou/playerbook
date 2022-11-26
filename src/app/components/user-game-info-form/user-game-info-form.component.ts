@@ -3,7 +3,7 @@ import { GameListService } from 'src/app/shared/game-list.service';
 import { UserGameInfoService } from 'src/app/shared/user-game-info.service';
 import { Game } from 'src/models/game.model';
 import { UserGameInfo } from 'src/models/userGameInfo.model';
-
+import { HotToastService } from '@ngneat/hot-toast';
 
 @Component({
   selector: 'app-user-game-info-form',
@@ -27,7 +27,8 @@ export class UserGameInfoFormComponent implements OnInit {
   isAddGameFormVisible: boolean = true;
 
   constructor(private httpGameS : GameListService, 
-              private httpUserGameInfoS : UserGameInfoService,) {}
+              private httpUserGameInfoS : UserGameInfoService, 
+              private toast: HotToastService) {}
 
   ngOnInit(): void {
     this.httpGameS.getGameList().subscribe((data) => {
@@ -42,19 +43,25 @@ export class UserGameInfoFormComponent implements OnInit {
 
   nextGame() : void {
     this.userGameInfoList.push({...this.userGameInfo});
-    console.log(this.userGameInfo);
   }
 
   postUserGameInfo() : void {
-    console.log(this.userGameInfo)
     let gIcloned = {...this.userGameInfo};
     delete gIcloned.id;
     this.httpUserGameInfoS.postNewUserGameInfo(this.userGameInfo).subscribe(() => {
       this.closeInfoForm();
+      this.addGameToast()
     })
   }
 
-  
-
-
+  addGameToast() {
+    this.toast.success('Nouveau jeu ajouté dans ton profil !', {
+      position: 'bottom-right',
+      style: {
+        border: '1px solid #8738BB',
+        color: '#FFFFFF',
+        background: "#8738BB"
+      }
+    });
+  }
 }
