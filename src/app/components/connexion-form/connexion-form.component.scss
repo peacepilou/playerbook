@@ -16,6 +16,12 @@ input{
     width: 80%;
     height: 2.5em;
     padding-left: 1em;
+    border-radius: 9px;
+    border: 1px solid var(--superViolet);
+    &:focus{
+        background-color: white;
+        box-shadow: 2px 2px 5px #202020;
+    }
 }
 
 label{

@@ -3,26 +3,40 @@ form {
   flex-direction: column;
   align-items: center;
   min-width: 100%;
+  p {
+    font-size: larger;
+  }
+}
+
+.intro-form {
+  margin-bottom: 1.5em;
 }
 
 button {
   cursor: pointer;
-  padding: 1em 2em 1em 2em;
+  padding: 1em 2em;
   font-size: 0.9em;
-  border-radius: 2em;
-  border: 3px solid #8738bb;
-  transition: all 0.3s ease-in-out;
+  border-radius: 9px;
+  border: 2px solid #8738bb;
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
   &:hover {
-    transition: all 0.3s ease-in-out;
+    transform: translateY(-0.33em);
     box-shadow: 0 2px 5px #ab85c5;
   }
 }
 
 input {
   width: 100%;
-  border-radius: 1em;
-  border: 1px solid hsla(276, 36%, 65%, 0.4);
-  padding: 0.2em;
+  height: 2em;
+  border-radius: 9px;
+  border: 2px solid hsla(276, 36%, 65%, 0.7);
+  padding-left: 1em;
+  background-color: whitesmoke;
+  &:focus {
+    background-color: white;
+    box-shadow: 2px 2px 5px #202020;
+  }
 }
 
 .inputs {
