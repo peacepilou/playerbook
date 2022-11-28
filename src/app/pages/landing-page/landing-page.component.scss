@@ -2,16 +2,6 @@ body{
     min-height: 100%;
 }
 
-// app-landing-path-button{
-//     padding: 100px 100px;
-// }
-
-// .connexion-container{
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-// }
-
 .inscription-container{
     display: flex;
     flex-direction: column;
@@ -66,7 +56,6 @@ button{
 
     div.info-text{
         color: whitesmoke;
-        // height: 50%;
         margin: 1em;
     }
 
@@ -90,5 +79,4 @@ button{
         flex-direction: column;
         justify-content: space-evenly;
     }
-
 }

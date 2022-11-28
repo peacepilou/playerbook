@@ -36,17 +36,15 @@ button{
         display: contents;
         margin: 0%;
     }
+    
     div{
         display: flex;
         align-items: center;
         min-height: 100%;
         justify-content: center;
-        // margin-inline: 2em;
-        // margin-bottom: 1em;
         border-radius: 9px;  
-        // background-color: rgba(135, 56, 187, 0.3);
-        // background-color: transparent;
     }
+
     .p-description{
         font-size: 22px;
         margin-inline: 1em;

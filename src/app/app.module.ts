@@ -16,7 +16,6 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { CheckboxFilterUsersComponent } from './components/checkbox-filter-users/checkbox-filter-users.component';
 
 import { LandingLogoComponent } from './components/landing-page/landing-logo/landing-logo.component';
-import { LandingPathButtonComponent } from './components/landing-page/landing-path-button/landing-path-button.component';
 import { SiteDescriptionComponent } from './components/landing-page/site-description/site-description.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { GlobalFormComponent } from './components/form/global-form/global-form.component';
@@ -65,7 +64,6 @@ import { HotToastModule } from '@ngneat/hot-toast';
     UserCardComponent,
     SearchbarComponent,
     LandingLogoComponent,
-    LandingPathButtonComponent,
     SiteDescriptionComponent,
     NavbarComponent,
     GlobalFormComponent,
