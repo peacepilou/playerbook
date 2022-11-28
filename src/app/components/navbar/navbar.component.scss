@@ -88,10 +88,17 @@
 @media screen and (max-width: 767.9px) {
   .navbar-container {
     justify-content: space-between;
+    align-items: end;
+    padding-bottom: 1em;
   }
   .title-app,
   .list-navigation {
     display: none;
+  }
+  .logo-gamepad{
+    max-width: 50px;
+    height: auto;
+    margin-right: 1em;
   }
 }
 
@@ -109,18 +116,20 @@
   .logo-gamepad {
     height: 5em;
     width: 5em;
+    margin: 1em;
   }
   .title-app {
-    color: whitesmoke;
+    color: #8738bb;
     padding-bottom: 0.5em;
   }
   .list-navigation {
     display: flex;
     align-items: flex-end;
+    margin-inline: 2em;
     padding-bottom: 1em;
     letter-spacing: 2px;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .list-navigation a {
     color: whitesmoke;
@@ -178,6 +187,7 @@
   }
 
   .img-hover {
-    max-width: 30px;
+    margin: .5em .5em 1em .5em;
+    max-width: 40px;
     max-height: auto;  
   }
