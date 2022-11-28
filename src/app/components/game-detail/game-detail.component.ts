@@ -13,8 +13,10 @@ export class GameDetailComponent implements OnInit {
 
   @Output()
   sendGameInfoChild: EventEmitter<number> = new EventEmitter();
+  @Output() 
+  sendGameToUpdate: EventEmitter<UserGameInfo> = new EventEmitter();
 
-  @Input() gameInfoChild: UserGameInfo  = new UserGameInfo (new Game ('', '', '', [], [], 0), '', '', 0, '', '', '',0)
+  @Input() gameInfoChild: UserGameInfo  = new UserGameInfo('', '', 0, '', '', '', 0, new Game('', '', '', [], [], 0));
 
   constructor(private httpUserGameInfoS : UserGameInfoService, private toast: HotToastService) { }
 
@@ -28,6 +30,13 @@ export class GameDetailComponent implements OnInit {
     }
   }
 
+  put(): void {
+
+    this.sendGameToUpdate.emit(this.gameInfoChild)
+  }
+
+    // this.httpUserGameInfoS.putUserGameInfoById(this.gameInfoChild.id, this.gameInfoChild)
+    // .subscribe(()=> {this.sendGameInfoChild.emit(this.gameInfoChild.id)})
   deleteGameToast() {
     this.toast.success('Jeu supprimé de ton profil !', {
       position: 'bottom-right',

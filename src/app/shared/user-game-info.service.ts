@@ -11,21 +11,24 @@ export class UserGameInfoService {
 
   private baseUrl: string = 'http://localhost:8080';
 
-  private usergameinfoRoad: string = '/api/usergameinfo'
+  private userGameInfoUrl: string = '/api/usergameinfo'
 
-  constructor(private usergameinfoHttp: HttpClient) {}
+  constructor(private userGameInfoHttp: HttpClient) {}
 
-  postNewUserGameInfo(body: UserGameInfo): Observable<UserGameInfo> {
-    return this.usergameinfoHttp.post<UserGameInfo>(`${this.baseUrl}${this.usergameinfoRoad}/add`, body);
+  postNewUserGameInfo(body: UserGameInfo, id: number): Observable<UserGameInfo> {
+    return this.userGameInfoHttp.post<UserGameInfo>(`${this.baseUrl}${this.userGameInfoUrl}/add/${id}`, body);
   }
 
   getUserGameInfoList(): Observable<UserGameInfo[]> {
-    return this.usergameinfoHttp.get<UserGameInfo[]>(`${this.baseUrl}${this.usergameinfoRoad}`);
+    return this.userGameInfoHttp.get<UserGameInfo[]>(`${this.baseUrl}${this.userGameInfoUrl}`);
   }
 
   deleteUserGameInfoById(id: number | undefined): Observable<UserGameInfo> {
-    return this.usergameinfoHttp.delete<UserGameInfo>(`${this.baseUrl}${this.usergameinfoRoad}/${id}`);
+    return this.userGameInfoHttp.delete<UserGameInfo>(`${this.baseUrl}${this.userGameInfoUrl}/${id}`);
   }
 
+  putUserGameInfoById(id: number, body: UserGameInfo): Observable<UserGameInfo> {
+    return this.userGameInfoHttp.put<UserGameInfo>(`${this.baseUrl}${this.userGameInfoUrl}/${id}`, body);
+  }
 
 }

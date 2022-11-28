@@ -20,14 +20,13 @@ export class GameListComponent implements OnInit {
     [], ''
   );
 
-
   isAddGameFormVisible: boolean = false;
 
-  userGameInfoResult: UserGameInfo = new UserGameInfo(new Game('', '', '', [], [], 0), '', '', 0, '', '', '', 0);
+  userGameInfoResult: UserGameInfo = new UserGameInfo('', '', 0, '', '', '', 0, new Game('', '', '', [], [], 0));
 
   userGameInfoList: UserGameInfo[] = [];
 
-
+  gameToUpdate: UserGameInfo = new UserGameInfo('', '', 0, '', '', '', 0, new Game('', '', '', [], [], 0));
 
   constructor(private httpUserGameInfoS: UserGameInfoService) { }
 
@@ -54,6 +53,10 @@ export class GameListComponent implements OnInit {
     this.userGameInfoList = this.userGameInfoList.filter(userGameInfo => userGameInfo.id !== id)
   }
 
-
+  catchGameToUpdate(gameToUpdateFromChild: UserGameInfo): void {
+    console.log(gameToUpdateFromChild);
+    this.addGame();
+    this.gameToUpdate = gameToUpdateFromChild;
+  }  
 
 }
