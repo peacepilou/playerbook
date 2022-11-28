@@ -5,10 +5,17 @@
   <img (click)="addGame()" class="button-add-game" src="../../../../assets/pictures/icons8-plus-2-mathématique-48.png">
 
   <div class="game-list">
-    <app-game-detail *ngFor="let userGameInfo of userGameInfoList" [gameInfoChild]="userGameInfo" (sendGameInfoChild)="catchGameInfoContent($event)">
+    <app-game-detail 
+    *ngFor="let userGameInfo of userGameInfoList" 
+    [gameInfoChild]="userGameInfo" 
+    (sendGameInfoChild)="catchGameInfoContent($event)"
+    (sendGameToUpdate)="catchGameToUpdate($event)">
     </app-game-detail>
   </div>
 </div>
 
-<app-user-game-info-form *ngIf="isAddGameFormVisible" (sendUserGameInfoForm)="receiveUserGameInfoForm($event)">
+<app-user-game-info-form 
+*ngIf="isAddGameFormVisible" 
+[gameToUpdateChild]="gameToUpdate"
+(sendUserGameInfoForm)="receiveUserGameInfoForm($event)">
 </app-user-game-info-form>

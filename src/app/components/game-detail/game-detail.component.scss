@@ -1,6 +1,7 @@
 .game-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
 }
 
@@ -24,6 +25,20 @@
   transition: transform .1s;    
 }
 
-.button-delete{
+.thumbnail {
+  width: 10em;
+}
+
+.update-delete {
+  display: flex;
+  justify-content: center;
+}
+
+.button-update {
+  margin: 1px;
+}
+
+.button-delete {
+  margin: 1px;
   cursor: pointer;
 }
