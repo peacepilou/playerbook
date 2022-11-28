@@ -2,11 +2,11 @@
 
     <div class="form-container">
 
-         <rb>
-            <img (click)="closeInfoForm()" class="close" src="../../../../assets/pictures/cross.png">
-            </rb>
-         
-        <form #userGameInfoForm="ngForm" (ngSubmit)="sendUserGameInfo()" >
+        <rb>
+            <img (click)="closeInfoForm()" class="close" src="/assets/pictures/cross.png">
+        </rb>
+
+        <form #userGameInfoForm="ngForm" (ngSubmit)="sendUserGameInfo()">
 
             <div>
                 <select name="game-name" [(ngModel)]="userGameInfo.game">
@@ -14,7 +14,7 @@
                     <option *ngFor="let game of gameList" [ngValue]="game">
                         {{game.name}}
                     </option>
-                  </select>
+                </select>
             </div>
 
             <div>
@@ -47,9 +47,9 @@
                 <input type="text" name="server" id="server" [(ngModel)]="userGameInfo.serverName">
             </div>
             <button class="submit" type="submit">Envoyer !</button>
-            
+
         </form>
-         
+
     </div>
-    
+
 </div>
