@@ -10,19 +10,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-card.component.scss'],
 })
 export class UserCardComponent implements OnInit {
-  @Input() userCardChild: AppUser = new AppUser(
-    '',
-    '',
-    '',
-    '',
-    '',
-    new UserBehavior(true, true, true, true, ''),
-    new PlayerHabit(2, 3, false, true, true, true, true),
-    [],
-    []
-  );
 
   tokenId = localStorage.getItem('tokenId');
+  @Input() userCardChild: AppUser = new AppUser('', '', '', '',
+  new UserBehavior(true, true, true, true, ''),
+  new PlayerHabit(2, 3, false, true, true, true, true),
+  [],
+  [], ''
+);
 
   constructor(private router: Router) {}
 

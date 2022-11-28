@@ -1,9 +1,8 @@
-
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UserGameInfo } from 'src/models/userGameInfo.model';
 import { UserGameInfoService } from 'src/app/shared/user-game-info.service';
 import { Game } from 'src/models/game.model';
-
+import { HotToastService } from '@ngneat/hot-toast';
 
 @Component({
   selector: 'app-game-detail',
@@ -17,17 +16,27 @@ export class GameDetailComponent implements OnInit {
 
   @Input() gameInfoChild: UserGameInfo  = new UserGameInfo (new Game ('', '', '', [], [], 0), '', '', 0, '', '', '',0)
 
-  constructor(private httpUserGameInfoS : UserGameInfoService) { }
+  constructor(private httpUserGameInfoS : UserGameInfoService, private toast: HotToastService) { }
 
   ngOnInit(): void {
   }
 
   delete(): void {
-    if (confirm("Êtes-vous sûr de vouloir ce jeu ? ")) {
+    if (confirm("Êtes-vous sûr de vouloir supprimer ce jeu ? ")) {
       this.httpUserGameInfoS.deleteUserGameInfoById(this.gameInfoChild.id)
       .subscribe(() => {this.sendGameInfoChild.emit(this.gameInfoChild.id)})
-      
     }
+  }
+
+  deleteGameToast() {
+    this.toast.success('Jeu supprimé de ton profil !', {
+      position: 'bottom-right',
+      style: {
+        border: '1px solid #8738BB',
+        color: '#FFFFFF',
+        background: "#8738BB"
+      }
+    });
   }
 
 }
