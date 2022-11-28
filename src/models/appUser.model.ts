@@ -8,7 +8,6 @@ export class AppUser{
     constructor(
         
         public username: string,
-        public password: string,
         public linkAvatar: string,
         public country: string,
         public biography: string,
@@ -16,6 +15,7 @@ export class AppUser{
         public playerHabits: PlayerHabit,
         public gameList: Game[],
         public userGameInfoList : UserGameInfo[],
+        public password?: string,
         public roleList? : Roles[],
         public id?: number
     ){}

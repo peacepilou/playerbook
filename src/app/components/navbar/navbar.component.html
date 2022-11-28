@@ -15,6 +15,9 @@
       <li *ngIf="isAdmin">
         <a class="menu__item" [routerLink]="['/admin']">Administration</a>
       </li>
+      <li *ngIf="userLogged">
+        <app-logout-purple-button></app-logout-purple-button>
+      </li>
     </ul>
   </div>
   <div class="block-intro">
@@ -66,5 +69,9 @@
       </div>
       Administration
     </a>
+    <div *ngIf="userLogged">
+      <app-logout-button></app-logout-button>
+    </div>
+    
   </div>
 </div>

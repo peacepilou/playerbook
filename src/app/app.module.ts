@@ -47,6 +47,8 @@ import { GameManagementButtonComponent } from './components/admin/game-managemen
 import { ConnexionFormComponent } from './components/connexion-form/connexion-form.component';
 import { AuthInterceptor } from './core/auth.interceptor';
 import { Error401PageComponent } from './pages/error401-page/error401-page.component';
+import { LogoutButtonComponent } from './utils/logout-button/logout-button.component';
+import { LogoutPurpleButtonComponent } from './utils/logout-purple-button/logout-purple-button.component';
 
 
 @NgModule({
@@ -91,7 +93,9 @@ import { Error401PageComponent } from './pages/error401-page/error401-page.compo
     GameManagementComponent,
     GameManagementButtonComponent,
     ConnexionFormComponent,
-    Error401PageComponent
+    Error401PageComponent,
+    LogoutButtonComponent,
+    LogoutPurpleButtonComponent
   ],
   imports: [
     BrowserModule,
