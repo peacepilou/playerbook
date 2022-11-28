@@ -1,6 +1,5 @@
 
 .footer-contnair{
-    padding: 1em 0;
     margin-top: 1em;
     width: 100%;
     bottom: 0%;
@@ -11,8 +10,11 @@
 .footer{
     color: whitesmoke;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    padding-top: 1em;
+    padding-bottom: .5em;
+    border-bottom: 1px solid whitesmoke;
+    font-size: larger;
 }
 
 .footer-faq{
@@ -22,11 +24,17 @@
 .copyright{
     text-align: center;
     color: whitesmoke;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: larger;
+}
+
+.copyright-contnair{
+    padding-bottom: 1em;
 }
 
 .list-powered{
     list-style: none;
-    font-size: 1.5em;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -38,11 +46,11 @@
     color: whitesmoke;
     display: flex;
     justify-content: space-around;
-    margin: .3em 0 .3em 0;
 }
 
-.github{
-    font-size: .6em;
+.logo-github{
+    width: 30px;
+    height: auto;
 }
 
 .name-github-link{
@@ -50,7 +58,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    width: 33%;
 }
 
 .github-link{
@@ -63,45 +71,34 @@ a{
 }
 
 .footer-powered{
-    width: 50%;
     text-align: center;
     display: flex;
     flex-direction: column;
 }
 
-.footer-powered h2{
-    font-size: .8em;
+.list:hover{
+    text-decoration: underline;
 }
 
 @media screen and (min-width : 768px) {
-    .footer{
-        flex-direction: column;
-        justify-content: center;        
-    }
+
     .footer-faq .footer-powered{
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .footer-powered{
-        width: 70%;
-    }
-    .footer-faq{
-        width: 30%;
-    }
+
     .list-powered{
         flex-direction: row;
         justify-content: space-around;
     }
-    .footer-powered h2{
-        font-size: .7em;
-    }
-    .list-faq p{
-        font-size: 1.2em;
-    }    
+ 
     .name-github-link{
         justify-content: center;
         width: auto;
+        p {
+            font-size: larger;
+        }
     }
 
     .github-link{
