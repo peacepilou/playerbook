@@ -41,11 +41,7 @@ export class GlobalFormComponent implements OnInit {
 
   formStep: number = 1;
 
-<<<<<<< HEAD
   constructor(private userHttpS: UserHttpService, private route: Router, private router: ActivatedRoute, private toast: HotToastService) {}
-=======
-  constructor(private userHttpS: UserHttpService, private route: Router, private router: ActivatedRoute) { }
->>>>>>> 89c70841e15f1d209a719b11e329fb2336dd7e79
 
   ngOnInit(): void {
     this.router.paramMap.subscribe((param: ParamMap) => {
@@ -57,10 +53,7 @@ export class GlobalFormComponent implements OnInit {
         );
         delete this.firstFormResults.password;
       }
-      // return this.userId
     });
-    // this.userHttpS.getUserById(this.userId).subscribe(data => this.firstFormResults = data);
-
   }
 
   receiveFirstForm(event: AppUser): void {
