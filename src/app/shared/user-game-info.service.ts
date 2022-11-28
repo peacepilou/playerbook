@@ -16,6 +16,8 @@ export class UserGameInfoService {
   constructor(private usergameinfoHttp: HttpClient) {}
 
   postNewUserGameInfo(body: UserGameInfo): Observable<UserGameInfo> {
+    console.log(JSON.stringify(body, null, "\t"));
+    
     return this.usergameinfoHttp.post<UserGameInfo>(`${this.baseUrl}${this.usergameinfoRoad}/add`, body);
   }
 
