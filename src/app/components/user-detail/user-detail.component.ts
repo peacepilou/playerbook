@@ -1,11 +1,12 @@
 import jwt_decode from "jwt-decode";
-
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserHttpService } from 'src/app/shared/user-http.service';
 import { PlayerHabit } from 'src/models/playerHabit.model';
 import { AppUser } from 'src/models/appUser.model';
 import { UserBehavior } from 'src/models/userBehavior.model';
+import { HotToastService } from '@ngneat/hot-toast';
+
 
 @Component({
   selector: 'app-user-detail',
@@ -26,7 +27,7 @@ export class UserDetailComponent implements OnInit {
   isOwner : boolean = false;
 
 
-  constructor(private userApi: UserHttpService, private router: Router) { }
+  constructor(private userApi: UserHttpService, private router: Router, private toast: HotToastService) { }
 
   ngOnChanges(){
     this.checkUser();
@@ -52,7 +53,22 @@ export class UserDetailComponent implements OnInit {
   delete(): void {
     if (confirm("Êtes-vous sûr de vouloir supprimer votre profil ? ")) {
       this.userApi.deleteUserById(this.userFoundToChild?.id)
-        .subscribe(() => { this.router.navigateByUrl("/home"); })
+        .subscribe(() => { 
+          this.router.navigateByUrl("/home");
+          this.deleteProfileToast();
+          localStorage.clear() 
+        })
     }
+  }
+
+  deleteProfileToast() {
+    this.toast.success('Ton profil a été supprimé, tu vas être déconnecté !', {
+      position: 'bottom-right',
+      style: {
+        border: '1px solid #8738BB',
+        color: '#FFFFFF',
+        background: "#8738BB"
+      }
+    });
   }
 }

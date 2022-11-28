@@ -49,6 +49,7 @@ import { AuthInterceptor } from './core/auth.interceptor';
 import { Error401PageComponent } from './pages/error401-page/error401-page.component';
 import { LogoutButtonComponent } from './utils/logout-button/logout-button.component';
 import { LogoutPurpleButtonComponent } from './utils/logout-purple-button/logout-purple-button.component';
+import { HotToastModule } from '@ngneat/hot-toast';
 
 
 @NgModule({
@@ -101,7 +102,8 @@ import { LogoutPurpleButtonComponent } from './utils/logout-purple-button/logout
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    HotToastModule.forRoot()
   ],
   providers: [
     {

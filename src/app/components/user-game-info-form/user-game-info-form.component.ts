@@ -3,7 +3,7 @@ import { GameListService } from 'src/app/shared/game-list.service';
 import { UserGameInfoService } from 'src/app/shared/user-game-info.service';
 import { Game } from 'src/models/game.model';
 import { UserGameInfo } from 'src/models/userGameInfo.model';
-
+import { HotToastService } from '@ngneat/hot-toast';
 
 @Component({
   selector: 'app-user-game-info-form',
@@ -25,10 +25,9 @@ export class UserGameInfoFormComponent implements OnInit, OnChanges {
   
   isAddGameFormVisible: boolean = true;
 
-  constructor(
-    private httpGameS : GameListService, 
-    private httpUserGameInfoS : UserGameInfoService
-  ) {}
+  constructor(private httpGameS : GameListService, 
+              private httpUserGameInfoS : UserGameInfoService, 
+              private toast: HotToastService) {}
 
   ngOnInit(): void {
     this.httpGameS.getGameList().subscribe((data) => {
@@ -50,6 +49,7 @@ export class UserGameInfoFormComponent implements OnInit, OnChanges {
     this.userGameInfoList.push({...this.userGameInfo});
   }
 
+<<<<<<< HEAD
   sendUserGameInfo() : void {
     if(this.userGameInfo.id){
       // Fully working!
@@ -64,10 +64,18 @@ export class UserGameInfoFormComponent implements OnInit, OnChanges {
   update(): void {
     const objectToUpdate: UserGameInfo = this.copyUserGameInfoObjectAndDeleteUselessKeys(this.userGameInfo);
     this.httpUserGameInfoS.putUserGameInfoById(this.userGameInfo.id as number, objectToUpdate).subscribe(() => {
+=======
+  postUserGameInfo() : void {
+    let gIcloned = {...this.userGameInfo};
+    delete gIcloned.id;
+    this.httpUserGameInfoS.postNewUserGameInfo(this.userGameInfo).subscribe(() => {
+>>>>>>> ec0655288b625e4a7d647526ad365e9108d2debb
       this.closeInfoForm();
+      this.addGameToast()
     })
   }
 
+<<<<<<< HEAD
   post(): void {
     // We will post the UserInfo object without the Game object. So in order to still do so, we get the id of the Game we want to bind to this UserInfo
     // We will pass this id as a URL paramter in our Backend. 
@@ -90,4 +98,16 @@ export class UserGameInfoFormComponent implements OnInit, OnChanges {
     return userGameInfoCopy; // Because we love functionnal approach
   }
 
+=======
+  addGameToast() {
+    this.toast.success('Nouveau jeu ajouté dans ton profil !', {
+      position: 'bottom-right',
+      style: {
+        border: '1px solid #8738BB',
+        color: '#FFFFFF',
+        background: "#8738BB"
+      }
+    });
+  }
+>>>>>>> ec0655288b625e4a7d647526ad365e9108d2debb
 }
