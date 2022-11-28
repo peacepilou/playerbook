@@ -1,7 +1,10 @@
 <div class="background">
     <div class="form-page">
         <div class="form-container">
-            <app-first-form [dataToChild]="firstFormResults" *ngIf="formStep === 1" (sendFirstForm)="receiveFirstForm($event)"></app-first-form>
+            <app-first-form 
+            [dataToChild]="firstFormResults" 
+            [userId]="userId" 
+            *ngIf="formStep === 1" (sendFirstForm)="receiveFirstForm($event)"></app-first-form>
             <app-second-form *ngIf="formStep === 2" [dataToChild]="firstFormResults.userBehavior" (sendsecondForm)="receiveSecondForm($event)"></app-second-form>
             <app-third-form *ngIf="formStep === 3" [dataToChild]="firstFormResults.playerHabits" (sendthirdForm)="receiveThirdForm($event)"></app-third-form>
         </div>

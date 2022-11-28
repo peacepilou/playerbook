@@ -13,17 +13,17 @@ import { Game } from 'src/models/game.model';
 })
 export class GameListComponent implements OnInit {
   @Input()
-  userGameListToChild: AppUser = new AppUser('','', '', '', '',
+  userGameListToChild: AppUser = new AppUser('', '', '', '',
     new UserBehavior(true, true, true, true, ''),
     new PlayerHabit(2, 3, false, true, true, true, true),
     [],
-    []
+    [], ''
   );
 
 
   isAddGameFormVisible: boolean = false;
 
-  userGameInfoResult: UserGameInfo = new UserGameInfo(new Game ('', '', '', [], [], 0), '', '', 0, '', '', '', 0);
+  userGameInfoResult: UserGameInfo = new UserGameInfo(new Game('', '', '', [], [], 0), '', '', 0, '', '', '', 0);
 
   userGameInfoList: UserGameInfo[] = [];
 
@@ -46,14 +46,12 @@ export class GameListComponent implements OnInit {
 
   getUserGameInfoList(): void {
     this.httpUserGameInfoS.getUserGameInfoList().subscribe((data) => {
-      console.log(data);
-
       this.userGameInfoList = data;
     });
   }
 
   catchGameInfoContent(id: number): void {
-    this.userGameInfoList =this.userGameInfoList.filter(userGameInfo => userGameInfo.id !== id)
+    this.userGameInfoList = this.userGameInfoList.filter(userGameInfo => userGameInfo.id !== id)
   }
 
 
