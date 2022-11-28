@@ -1,43 +1,49 @@
 form{
-    margin-top: 7em;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2em 0;
 }
 
 p{
     text-align: center;
-    font-size: 18px;
+    // font-size: 18px;
     font-weight: bold;
 }
 
 input{
-    margin-bottom: 15px;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
     width: 80%;
-    padding:0.2em 0.2em 0.2em 0.4em;
+    height: 2.5em;
+    padding-left: 1em;
+    // padding:0.2em 0.2em 0.2em 0.4em;
 }
 
 label{
     text-align: center;
-    font-size: 18px;
+    font-size: larger;
     font-weight: bold;
 }
 
 button{
+    margin-top: .5em;
     width: 150px;
     font-size: 20px;
     padding : 0.5em;
-    border : 1px solid var(--superViolet);
-    background-color: whitesmoke;
-    color: var(--superViolet);
+    border : 1px solid whitesmoke;
+    background-color: var(--superViolet);
+    color: whitesmoke;
     font-weight: bold;
     cursor: pointer;
 }
 
 @media screen and (min-width : 768px) {
-
-    form{
-        margin : 0em;
+    input{
+        width: 60%;
     }
 
+    button{
+        margin-top: 1em;
+    }
 }

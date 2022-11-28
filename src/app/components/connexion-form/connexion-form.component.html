@@ -1,7 +1,7 @@
 
 <form #connexionForm="ngForm" (ngSubmit)="connexionForm.valid && submitPassword()" >
 
-    <label for="user">Utilisateur :</label>
+    <label for="user">Nom d'utilisateur :</label>
     <input type="text" id="user" name="user" 
     [(ngModel)]="user" #userError="ngModel" minlength="3" maxlength="50" required>
 
