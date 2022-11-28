@@ -15,12 +15,12 @@ import { HotToastService } from '@ngneat/hot-toast';
 })
 export class UserDetailComponent implements OnInit {
   @Input()
-  userFoundToChild: AppUser = new AppUser('', '', '', '', '',
-    new UserBehavior(true, true, true, true, ''),
-    new PlayerHabit(2, 3, false, true, true, true, true),
-    [],
-    []
-  );
+  userFoundToChild: AppUser = new AppUser('', '', '', '',
+  new UserBehavior(true, true, true, true, ''),
+  new PlayerHabit(2, 3, false, true, true, true, true),
+  [],
+  [], ''
+);
 
   jwtTokenDecoded :string  | null= ""
 
