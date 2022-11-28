@@ -5,6 +5,7 @@ import { PlayerHabit } from 'src/models/playerHabit.model';
 import { UserBehavior } from 'src/models/userBehavior.model';
 
 import { AppUser } from 'src/models/appUser.model';
+import { UserGameInfo } from 'src/models/userGameInfo.model';
 
 @Component({
   selector: 'app-user-list',
@@ -39,7 +40,9 @@ export class UserListComponent implements OnInit {
   constructor(private userApi: UserHttpService) { }
 
   ngOnChanges(): void {
-    this.filterBySearchbar();
+    if (this.userList.length > 0) {
+      this.filterBySearchbar();
+    }
   }
 
   ngOnInit(): void {
@@ -81,22 +84,25 @@ export class UserListComponent implements OnInit {
     } else {
       this.isSearchbarTruthy = true;
     }
-    
+
     this.userListFilteredBySearchbar = this.userList.filter(
       (user) => {
         return user.username
           .toLowerCase()
-          .includes(this.searchedContentChild.toLowerCase()) ||
-          user.country
+          .includes(this.searchedContentChild.toLowerCase())
+          || user.country
             .toLowerCase()
             .includes(this.searchedContentChild.toLowerCase())
-        //   || user.userGameInfoList.filter(userGameInfo => 
-        //    userGameInfo.userPseudo.toLowerCase()
-        //   .includes(this.searchedContentChild.toLowerCase())
-        // )
-      }
-    );
+          || this.filterByUserPseudo(user);
+      });
     this.mergeFilteredLists();
+  }
+
+  filterByUserPseudo(user : AppUser) : boolean {
+    let gameInfoListFiltered = user.userGameInfoList
+            .filter(data => data.userPseudo.toLowerCase()
+            .includes(this.searchedContentChild.toLowerCase()));
+            return gameInfoListFiltered.length > 0 ? true : false;         
   }
 
   filterArr(checkbox: Checkbox, updatedArr: AppUser[]): AppUser[] {
