@@ -1,15 +1,38 @@
-button.button-back-home{
+.btn {
+    width: 9em;
+    height: 3em;
+    margin: 0.5em;
+    background: var(--superViolet);
+    color: white;
+    border-color: white;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
-    margin: 1em;
-    padding: 1em 2em 1em 2em;
-    font-size: 0.9em;
-    border-radius: 9px;
-    border: 2px solid #8738BB;
-    box-shadow: 0px 1px 10px #202020;
-    transform: translateY(-0.2em);
-    transition: transform 0.1s ease;
-}
-
-button.button-back-home:hover {
-    transform: translateY(-0.33em);
-}
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+   }
+   
+   button:hover {
+    color: var(--superViolet);
+   }
+   
+   button:after {
+    content: "";
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+   }
+   
+   button:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+   }
