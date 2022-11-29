@@ -69,14 +69,6 @@ export class GameDetailComponent implements OnInit {
     this.jwtTokenDecoded = jwt_decode(token);    
   }
 
-  // checkUser(){
-  //   if(this.jwtTokenDecoded){
-  //     this.userGameDetailToChild.username.toString() === 
-  //     this.jwtTokenDecoded?.sub.toString() ? 
-  //     this.isOwner = true : false;
-  //   }
-  // }
-
   checkUser(){
     if(this.jwtTokenDecoded){
       if( this.userGameDetailToChild.username.toString() === this.jwtTokenDecoded?.sub.toString()){
