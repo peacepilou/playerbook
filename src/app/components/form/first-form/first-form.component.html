@@ -1,66 +1,67 @@
 <form #firstForm="ngForm" class="form" (ngSubmit)="firstForm.valid && onSubmit()">
+    <p class="intro-form">Faisons connaissance : </p>
+
     <div>
         <div>
-            <label for="name">Nom :</label>
+            <label for="name">Nom</label>
             <input id="name" name="name" [(ngModel)]="dataToChild.username" #nameCheck="ngModel" minlength="1" required>
         </div>
 
         <div *ngIf="firstForm.submitted && nameCheck.errors">
-            <small *ngIf="nameCheck.errors['minlength']">Votre nom devrait comporter au moins un caractère</small>
-            <small *ngIf="nameCheck.errors['required']">Votre nom est requis</small>
+            <small *ngIf="nameCheck.errors['minlength']">Ton nom doit comporter au moins un caractère. </small>
+            <small *ngIf="nameCheck.errors['required']">Ton nom est requis. </small>
         </div>
 
         <div *ngIf="userId === 0" >
             <div>
-                <label for="password">Mot de passe :</label>
+                <label for="password">Mot de passe</label>
                 <input type="password" id="password" name="password" [(ngModel)]="dataToChild.password"
                     #passwordCheck="ngModel" minlength="1" required>
             </div>
 
             <div *ngIf="firstForm.submitted && passwordCheck.errors">
-                <small *ngIf="passwordCheck.errors['minlength']">Votre mot de passe devrait comporter au moins un
-                    caractère</small>
-                <small *ngIf="passwordCheck.errors['required']">Votre confirmation de mot de passe est requise</small>
+                <small *ngIf="passwordCheck.errors['minlength']">Ton mot de passe doit comporter au moins un
+                    caractère. </small>
+                <small *ngIf="passwordCheck.errors['required']">La confirmation du mot de passe est requise. </small>
             </div>
 
             <div>
-                <label for="passwordConfirmation">Confirmez votre mot de passe :</label>
+                <label for="passwordConfirmation">Confirme ton mot de passe :</label>
                 <input type="password" id="passwordConfirmation" name="passwordConfirmation"
                     [(ngModel)]="passwordConfirmation" #passwordConfirmationCheck="ngModel" minlength="1" required>
             </div>
 
             <div *ngIf="firstForm.submitted && passwordConfirmationCheck.errors">
-                <small *ngIf="passwordConfirmationCheck.errors['minlength']">Votre mot de passe devrait comporter au
-                    moins un caractère</small>
-                <small *ngIf="passwordConfirmationCheck.errors['required']">Votre mot de passe est requis</small>
-                <small *ngIf="passwordConfirmation !== dataToChild.password">Veuillez saisir deux mots de passe
-                    identiques</small>
-
+                <small *ngIf="passwordConfirmationCheck.errors['minlength']">Ton mot de passe doit comporter au
+                    moins un caractère. </small>
+                <small *ngIf="passwordConfirmationCheck.errors['required']">Ton mot de passe est requis. </small>
+                <small *ngIf="passwordConfirmation !== dataToChild.password">Tu dois saisir deux mots de passe
+                    identiques. </small>
             </div>
         </div>
 
         <div>
-            <label for="linkAvatar">Lien vers l'avatar :</label>
+            <label for="linkAvatar">Lien vers l'avatar</label>
             <input id="linkAvatar" name="linkAvatar" [(ngModel)]="dataToChild.linkAvatar" #linkAvatarCheck="ngModel"
                 minlength="3" required>
         </div>
 
         <div *ngIf="firstForm.submitted && linkAvatarCheck.errors">
-            <small *ngIf="linkAvatarCheck.errors['minlength']">Le lien vers votre avatar doit contenir au moins 3
-                caractères</small>
-            <small *ngIf="linkAvatarCheck.errors['required']">Un lien vers votre avatar est requis</small>
+            <small *ngIf="linkAvatarCheck.errors['minlength']">Le lien vers ton avatar doit contenir au moins 3
+                caractères. </small>
+            <small *ngIf="linkAvatarCheck.errors['required']">Un lien vers ton avatar est requis. </small>
         </div>
 
         <div>
-            <label for="country">Pays :</label>
+            <label for="country">Pays</label>
             <input id="country" name="country" [(ngModel)]="dataToChild.country" #countryCheck="ngModel" minlength="3"
                 required>
         </div>
 
         <div *ngIf="firstForm.submitted && countryCheck.errors">
-            <small *ngIf="countryCheck.errors['minlength']">Le nom de votre pays doit contenir au moins un
-                caractère</small>
-            <small *ngIf="countryCheck.errors['required']">Veuillez spécifier votre pays de résidence steuplé</small>
+            <small *ngIf="countryCheck.errors['minlength']">Le nom de ton pays doit contenir au moins un
+                caractère. </small>
+            <small *ngIf="countryCheck.errors['required']">Tu dois spécifier ton pays de résidence. </small>
         </div>
 
         <div>
@@ -71,7 +72,7 @@
     </div>
 
 
-    <button type="submit" [ngStyle]="{backgroundColor: 
+    <button class="btn" type="submit" [ngStyle]="{backgroundColor: 
             !nameCheck.valid || 
             !linkAvatarCheck.valid || 
             !countryCheck.valid ? 

@@ -25,18 +25,17 @@
   <div class="block-intro">
     <img
       [routerLink]="['/']"
-      src="../../assets/pictures/logo-home-gamepad.png"
+      src="../../../assets/pictures/playerBook_white.png"
       alt="gamepad"
       class="logo-gamepad"
     />
-    <h2 class="title-app">Playerbook</h2>
   </div>
   <div class="list-navigation">
     <a class="hover-introduction" [routerLink]="['/home']">
       <div class="hover-suricat-introduction">
         <img
-          src="../../assets/pictures/PlayerBook-Logo-mini.png"
-          class="img-hover"
+        src="../../../assets/pictures/gamepad-white.png"
+        class="img-hover"
         />
       </div>
       Accueil
@@ -45,8 +44,8 @@
     <a *ngIf="!userLogged" class="hover-accueil" [routerLink]="['/inscription']">
       <div class="hover-suricat-accueil">
         <img
-          src="../../assets/pictures/PlayerBook-Logo-mini.png"
-          class="img-hover"
+        src="../../../assets/pictures/gamepad-white.png"
+        class="img-hover"
         />
       </div>
       Inscription
@@ -55,8 +54,8 @@
     <a *ngIf="!userLogged" class="hover-inscription" [routerLink]="['/']">
       <div class="hover-suricat-inscription">
         <img
-          src="../../assets/pictures/PlayerBook-Logo-mini.png"
-          class="img-hover"
+        src="../../../assets/pictures/gamepad-white.png"
+        class="img-hover"
         />
       </div>
       Connexion
@@ -65,8 +64,8 @@
     <a *ngIf="isAdmin" class="hover-inscription" [routerLink]="['/admin']">
       <div class="hover-suricat-inscription">
         <img
-          src="../../assets/pictures/PlayerBook-Logo-mini.png"
-          class="img-hover"
+        src="../../../assets/pictures/gamepad-white.png"
+        class="img-hover"
         />
       </div>
       Administration

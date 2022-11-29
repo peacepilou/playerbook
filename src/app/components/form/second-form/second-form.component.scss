@@ -3,26 +3,65 @@ form {
   flex-direction: column;
   align-items: center;
   min-width: 100%;
+  p {
+    font-size: larger;
+  }
 }
 
-button {
+.intro-form {
+  margin-bottom: 1.5em;
+}
+
+.btn {
+  width: 6.5em;
+  height: 2.3em;
+  margin: 0.5em;
+  background: white;
+  color: var(--superViolet);
+  border-color: var(--superViolet);
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
   cursor: pointer;
-  padding: 1em 2em 1em 2em;
-  font-size: 0.9em;
-  border-radius: 2em;
-  border: 3px solid #8738bb;
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 2px 5px #ab85c5;
-  }
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+button:hover {
+  color: white;
+}
+
+button:after {
+  content: "";
+  background: var(--superViolet);
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 input {
   width: 100%;
-  border-radius: 1em;
-  border: 1px solid hsla(276, 36%, 65%, 0.4);
-  padding: 0.2em;
+  height: 2em;
+  border-radius: 9px;
+  border: 2px solid hsla(276, 36%, 65%, 0.7);
+  padding-left: 1em;
+  background-color: whitesmoke;
+  &:focus {
+    background-color: white;
+    box-shadow: 2px 2px 5px #202020;
+  }
 }
 
 .inputs {
@@ -104,10 +143,4 @@ div {
       var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)
     )
   );
-}
-
-@media screen and (min-width: 768px) {
-  button {
-    width: fit-content;
-  }
 }
