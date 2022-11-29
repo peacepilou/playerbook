@@ -7,18 +7,18 @@
       <span></span>
     </label>
     <ul class="menu__box">
-      <li><a class="menu__item" [routerLink]="['/home']">Accueil</a></li>
+      <li><a class="menu__item" [routerLink]="['/home']">ACCUEIL</a></li>
       <li>
-        <a class="menu__item" [routerLink]="['/inscription']">Inscription</a>
+        <a class="menu__item" [routerLink]="['/inscription']">INSCRIPTION</a>
       </li>
       <li>
-        <a class="menu__item" [routerLink]="['/']">Connexion</a>
+        <a class="menu__item" [routerLink]="['/']">CONNEXION</a>
       </li>
       <li *ngIf="isAdmin">
-        <a class="menu__item" [routerLink]="['/admin']">Administration</a>
+        <a class="menu__item" [routerLink]="['/admin']">ADMINISTRATION</a>
       </li>
-      <li *ngIf="userLogged">
-        <app-logout-purple-button></app-logout-purple-button>
+      <li class="logo-logout" *ngIf="userLogged">
+        <app-logout-button></app-logout-button>
       </li>
     </ul>
   </div>
@@ -38,7 +38,7 @@
         class="img-hover"
         />
       </div>
-      Accueil
+      ACCUEIL
     </a>
 
     <a *ngIf="!userLogged" class="hover-accueil" [routerLink]="['/inscription']">
@@ -48,7 +48,7 @@
         class="img-hover"
         />
       </div>
-      Inscription
+      INSCRIPTION
     </a>
 
     <a *ngIf="!userLogged" class="hover-inscription" [routerLink]="['/']">
@@ -58,7 +58,7 @@
         class="img-hover"
         />
       </div>
-      Connexion
+      CONNEXION
     </a>
 
     <a *ngIf="isAdmin" class="hover-inscription" [routerLink]="['/admin']">
@@ -68,10 +68,11 @@
         class="img-hover"
         />
       </div>
-      Administration
+      ADMINISTRATION
     </a>
-    <div *ngIf="userLogged">
+    <div class="logout-container" *ngIf="userLogged">
       <app-logout-button></app-logout-button>
+      DÉCONNEXION
     </div>
   </div>
 </div>
