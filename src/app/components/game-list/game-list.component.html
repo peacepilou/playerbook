@@ -2,11 +2,12 @@
 
   <h4>Jeux enregistrés</h4>
       
-  <img (click)="addGame()" class="button-add-game" src="../../../../assets/pictures/icons8-plus-2-mathématique-48.png">
+  <img *ngIf="isOwner" (click)="addGame()" class="button-add-game" src="../../../../assets/pictures/icons8-plus-2-mathématique-48.png">
 
   <div class="game-list">
     <app-game-detail 
     *ngFor="let userGameInfo of userGameInfoList" 
+    [userGameDetailToChild]="userGameListToChild"
     [gameInfoChild]="userGameInfo" 
     (sendGameInfoChild)="catchGameInfoContent($event)"
     (sendGameToUpdate)="catchGameToUpdate($event)">
@@ -17,5 +18,6 @@
 <app-user-game-info-form 
 *ngIf="isAddGameFormVisible" 
 [gameToUpdateChild]="gameToUpdate"
+[userId]="userId"
 (sendUserGameInfoForm)="receiveUserGameInfoForm($event)">
 </app-user-game-info-form>

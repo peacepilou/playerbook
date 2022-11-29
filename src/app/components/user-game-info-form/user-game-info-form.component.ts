@@ -12,13 +12,14 @@ import { HotToastService } from '@ngneat/hot-toast';
 })
 export class UserGameInfoFormComponent implements OnInit, OnChanges {
 
-  userId: number = 0;
+  @Input()
+  userId : number | undefined;
 
   @Output() sendUserGameInfoForm : EventEmitter<UserGameInfo> = new EventEmitter;
 
-  @Input() gameToUpdateChild: UserGameInfo = new UserGameInfo('', '', 0, '', '', '', 0, new Game('', '', '', [], [], 0));
+  @Input() gameToUpdateChild: UserGameInfo = new UserGameInfo(0,'', '', 0, '', '', '', 0, new Game('', '', '', [], [], 0));
 
-  userGameInfo: UserGameInfo = new UserGameInfo('', '', 0, '', '', '', 0, new Game('', '', '', [], [], 0));
+  userGameInfo: UserGameInfo = new UserGameInfo(0,'', '', 0, '', '', '', 0, new Game('', '', '', [], [], 0));
   userGameInfoList : UserGameInfo[] = [];
 
   gameList: Game[] = []
@@ -32,12 +33,11 @@ export class UserGameInfoFormComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.httpGameS.getGameList().subscribe((data) => {
       this.gameList = data;
-      console.log(this.gameList);
      });
   }
 
   ngOnChanges(): void {
-    this.userGameInfo = this.gameToUpdateChild;
+    this.userGameInfo = this.gameToUpdateChild;    
   }
 
   closeInfoForm(): void {
@@ -77,8 +77,13 @@ export class UserGameInfoFormComponent implements OnInit, OnChanges {
     // It's currently changed and working in the backend to match with the frontend
     // I also had to slightly change the UserGameInfo model in order to bind the Game object as a optionnal parameter.
     const gameIdToFindInDB = this.userGameInfo.game ? this.userGameInfo.game.id : 0; 
+    // userGameInfoCopy.ownerId = this.userId
+    const appUserIdToFindInDB = this.userId
+
     const objectToPost: UserGameInfo = this.copyUserGameInfoObjectAndDeleteUselessKeys(this.userGameInfo);
-    this.httpUserGameInfoS.postNewUserGameInfo(objectToPost, gameIdToFindInDB as number).subscribe((d) => {
+    console.log(objectToPost);
+    
+    this.httpUserGameInfoS.postNewUserGameInfo(objectToPost, gameIdToFindInDB as number, appUserIdToFindInDB as number).subscribe((d) => {
       this.closeInfoForm();
     })
   }
@@ -99,5 +104,12 @@ export class UserGameInfoFormComponent implements OnInit, OnChanges {
         background: "#8738BB"
       }
     });
+  }
+
+  
+
+  test(){
+    console.log(this.userId);
+    
   }
 }

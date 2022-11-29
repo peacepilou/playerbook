@@ -1,6 +1,7 @@
 .user-detail-container {
   display: flex;
   flex-direction: column;
+  
 }
 .intro-user-detail-profil {
   margin: 1.5em 1em 0.5em 1em;
@@ -12,9 +13,12 @@
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.14);
 }
 .user-avatar-profile {
-  max-width: 25em;
+   
+  width: 15em;
+  height: 15em;
   margin-right: 1em;
   position: relative;
+  object-fit: cover;
   bottom: 1em;
   left: 1.5em;
   border-radius: 2em 4em;
@@ -139,15 +143,16 @@ button:hover:after {
   margin: 1em;
 }
 
+
+
 @media screen and (min-width: 768px) {
+  .user-detail-container {
+    padding: 0 15% 0 15% ;
+  }
+
   .intro-user-detail-profil {
     display: flex;
     flex-direction: row;
-  }
-
-  .user-avatar-profile {
-    max-width: 25em;
-    min-width: 25em;
   }
 
   .container-data-user {
