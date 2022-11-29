@@ -15,8 +15,8 @@ export class UserGameInfoService {
 
   constructor(private userGameInfoHttp: HttpClient) {}
 
-  postNewUserGameInfo(body: UserGameInfo, id: number): Observable<UserGameInfo> {
-    return this.userGameInfoHttp.post<UserGameInfo>(`${this.baseUrl}${this.userGameInfoUrl}/add/${id}`, body);
+  postNewUserGameInfo(body: UserGameInfo, gameId: number, userId: number): Observable<UserGameInfo> {
+    return this.userGameInfoHttp.post<UserGameInfo>(`${this.baseUrl}${this.userGameInfoUrl}/add/${gameId}/${userId}`, body);
   }
 
   getUserGameInfoList(): Observable<UserGameInfo[]> {

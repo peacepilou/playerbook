@@ -77,17 +77,19 @@ export class UserGameInfoFormComponent implements OnInit, OnChanges {
     // It's currently changed and working in the backend to match with the frontend
     // I also had to slightly change the UserGameInfo model in order to bind the Game object as a optionnal parameter.
     const gameIdToFindInDB = this.userGameInfo.game ? this.userGameInfo.game.id : 0; 
+    // userGameInfoCopy.ownerId = this.userId
+    const appUserIdToFindInDB = this.userId
+
     const objectToPost: UserGameInfo = this.copyUserGameInfoObjectAndDeleteUselessKeys(this.userGameInfo);
     console.log(objectToPost);
     
-    this.httpUserGameInfoS.postNewUserGameInfo(objectToPost, gameIdToFindInDB as number).subscribe((d) => {
+    this.httpUserGameInfoS.postNewUserGameInfo(objectToPost, gameIdToFindInDB as number, appUserIdToFindInDB as number).subscribe((d) => {
       this.closeInfoForm();
     })
   }
   
   copyUserGameInfoObjectAndDeleteUselessKeys(userGameInfo: UserGameInfo): UserGameInfo {
     const userGameInfoCopy = {...userGameInfo}; // Not alterate the main object currently displayed in the form
-    userGameInfoCopy.ownerId = this.userId
     delete userGameInfoCopy.game; // Because it's the root of the problem
     delete userGameInfoCopy.id; // Because it's self handled by the backend
     return userGameInfoCopy; // Because we love functionnal approach
