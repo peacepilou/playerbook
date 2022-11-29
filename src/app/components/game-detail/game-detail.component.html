@@ -10,9 +10,9 @@
       <p>Ton serveur : {{gameInfoChild.serverName}}</p>
    </div>
 
-   <div class="update-delete">
-      <button (click)="put()" class="button-update"> Modifier le jeu</button>
-      <button (click)="delete()" class="button-delete">Supprimer le jeu</button>
+   <div  *ngIf="isOwner" class="update-delete">
+      <button  (click)="put()" class="button-update"> Modifier le jeu</button>
+      <button  (click)="delete()" class="button-delete">Supprimer le jeu</button>
    </div>
 
 </div>
