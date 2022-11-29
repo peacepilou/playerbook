@@ -4,6 +4,7 @@ import { Game } from "./game.model";
 export class UserGameInfo{
     constructor(
         
+        public ownerId : number | undefined,
         public userPseudo : string,
         public guild?: string,
         public level?: number,

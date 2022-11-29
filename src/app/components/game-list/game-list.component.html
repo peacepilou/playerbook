@@ -17,5 +17,6 @@
 <app-user-game-info-form 
 *ngIf="isAddGameFormVisible" 
 [gameToUpdateChild]="gameToUpdate"
+[userId]="userId"
 (sendUserGameInfoForm)="receiveUserGameInfoForm($event)">
 </app-user-game-info-form>

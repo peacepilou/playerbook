@@ -16,7 +16,7 @@ export class GameDetailComponent implements OnInit {
   @Output() 
   sendGameToUpdate: EventEmitter<UserGameInfo> = new EventEmitter();
 
-  @Input() gameInfoChild: UserGameInfo  = new UserGameInfo('', '', 0, '', '', '', 0, new Game('', '', '', [], [], 0));
+  @Input() gameInfoChild: UserGameInfo  = new UserGameInfo(0,'', '', 0, '', '', '', 0, new Game('', '', '', [], [], 0));
 
   constructor(private httpUserGameInfoS : UserGameInfoService, private toast: HotToastService) { }
 

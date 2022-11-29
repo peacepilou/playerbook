@@ -20,15 +20,21 @@ export class GameListComponent implements OnInit {
     [], ''
   );
 
+  userId : number = 0;
+
   isAddGameFormVisible: boolean = false;
 
-  userGameInfoResult: UserGameInfo = new UserGameInfo('', '', 0, '', '', '', 0, new Game('', '', '', [], [], 0));
+  userGameInfoResult: UserGameInfo = new UserGameInfo(0,'', '', 0, '', '', '', 0, new Game('', '', '', [], [], 0));
 
   userGameInfoList: UserGameInfo[] = [];
 
-  gameToUpdate: UserGameInfo = new UserGameInfo('', '', 0, '', '', '', 0, new Game('', '', '', [], [], 0));
+  gameToUpdate: UserGameInfo = new UserGameInfo(0,'', '', 0, '', '', '', 0, new Game('', '', '', [], [], 0));
 
   constructor(private httpUserGameInfoS: UserGameInfoService) { }
+
+  ngOnChanges() : void{
+    this.userId = this.userGameListToChild.id as number;
+  }
 
   ngOnInit(): void {
     this.getUserGameInfoList()
