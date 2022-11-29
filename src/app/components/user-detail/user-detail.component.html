@@ -26,12 +26,12 @@
 
   <div class="div-button">
     <div *ngIf="isOwner" class="button-update-delete">
-      <button class="button-update">
+      <button (click)="delete()" class="button-delete">Supprimer le profil</button>
+      <button class="btn">
         <a [routerLink]="['/update-profile/', userFoundToChild.id ]">
           Modifier le profil
         </a>
       </button>
-      <button (click)="delete()" class="button-delete">Supprimer le profil</button>
     </div>
     <app-back-home-button></app-back-home-button>
   </div>

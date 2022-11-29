@@ -1,121 +1,111 @@
-body{
-    min-height: 100%;
+body {
+  min-height: 100%;
 }
 
-.inscription-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 2em;
-    p{
-        padding: 1em 0;
-    }
+.inscription-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2em;
+  p {
+    padding: 1em 0;
+  }
 }
 
-p{
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
+p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.margin-bottom{
-    height: 100px;
+.margin-bottom {
+  height: 100px;
 }
 
-// button{
-//     width: 150px;
-//     font-size: 20px;
-//     padding : 0.5em;
-//     border : 1px solid var(--superViolet);
-//     background-color: whitesmoke;
-//     color: var(--superViolet);
-//     font-weight: bold;
-//     cursor: pointer;
-// }
-
-.register-auth-container{
-    img{
-        width: 6em;
-    }
+.register-auth-container {
+  img {
+    width: 6em;
+  }
 }
 
-@media screen and (min-width : 768px) {
-    div.global-page{
+.btn {
+  width: 6.5em;
+  height: 2.3em;
+  margin: 0.5em;
+  background: white;
+  color: var(--superViolet);
+  border-color: var(--superViolet);
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+button:hover {
+  color: white;
+}
+
+button:after {
+  content: "";
+  background: var(--superViolet);
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+@media screen and (min-width: 768px) {
+  div.global-page {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     height: 100vh;
-    }
-    
-    div.logo{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 50%;
-    }
+  }
 
-    div.info-text{
-        color: whitesmoke;
-        margin: 1em;
-    }
+  div.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+  }
 
-    div.landing-path-button{
-        display: flex;
-        flex-direction: column;
-        align-items: space-around;
-        justify-content: center;
-        color: black;
-        width: 50vw;
-        min-height: 40%;
-        align-items: center;
-    }
+  div.info-text {
+    color: whitesmoke;
+    margin: 1em;
+  }
 
-    .intro, .register-auth-container{
-        width: 50vw;
-    }
+  div.landing-path-button {
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    justify-content: center;
+    color: black;
+    width: 50vw;
+    min-height: 40%;
+    align-items: center;
+  }
 
-    .register-auth-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-    }
+  .intro,
+  .register-auth-container {
+    width: 50vw;
+  }
+
+  .register-auth-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
 }
-
-.btn {
-    width: 6.5em;
-    height: 2.3em;
-    margin: 0.5em;
-    background: white;
-    color: var(--superViolet);;
-    border-color: var(--superViolet);
-    border-radius: 0.625em;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-   }
-   
-   button:hover {
-    color: white;
-   }
-   
-   button:after {
-    content: "";
-    background: var(--superViolet);
-    position: absolute;
-    z-index: -1;
-    left: -20%;
-    right: -20%;
-    top: 0;
-    bottom: 0;
-    transform: skewX(-45deg) scale(0, 1);
-    transition: all 0.5s;
-   }
-   
-   button:hover:after {
-    transform: skewX(-45deg) scale(1, 1);
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-   }

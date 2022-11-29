@@ -1,122 +1,201 @@
-.newGameFormContainer{
+.newGameFormContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 55vh;
+}
+
+.newGameForm {
+  position: absolute;
+  top: 12%;
+  width: 90%;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 2px 2px 20px #202020;
+  padding-bottom: 1em;
+}
+
+.crossFlex {
+  display: flex;
+  justify-content: right;
+  margin: 10px;
+}
+
+.closeFormWindow {
+  cursor: pointer;
+  width: 25x;
+  height: 25px;
+  margin-top: 0.5em;
+  margin-right: 0.5em;
+}
+
+//button reset
+
+.reset-button {
+  width: 6.5em;
+  height: 2.3em;
+  margin: 0.5em;
+  background: white;
+  color: var(--superViolet);
+  border-color: var(--superViolet);
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.reset-button:hover {
+  color: white;
+}
+
+.reset-button:after {
+  content: "";
+  background: var(--superViolet);
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+.reset-button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+// button send
+
+.btn {
+  width: 6.5em;
+  height: 2.3em;
+  margin: 0.5em;
+  background: var(--superViolet);
+  color: white;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn:hover {
+  color: var(--superViolet);
+}
+
+.btn:after {
+  content: "";
+  background: white;
+  border-color: var(--superViolet);
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+.btn:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.addGenreButton {
+  max-height: 2em;
+  border-radius: 0.325em;
+  margin-left: 1em;
+}
+
+.addGenreButton:hover {
+  cursor: pointer;
+}
+
+.addedGenre {
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+h3 {
+  font-size: 1.3em;
+  margin-bottom: 1em;
+}
+
+form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  width: 70%;
+  height: 2.5em;
+  padding-left: 1em;
+  border-radius: 9px;
+  border: 1px solid var(--superViolet);
+  background-color: whitesmoke;
+  &:focus {
+    background-color: white;
+    box-shadow: 2px 2px 5px #202020;
+  }
+}
+
+label {
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+.genreForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  input {
     width: 100%;
-    display: flex;
-    justify-content: center;
+    margin: 0px;
+  }
 }
 
-.newGameForm{
-    position: absolute;
-    top: 12%;
-    width: 90%;
-    background-color: white;
-    border-radius: 3px;
-    box-shadow: 0 1px 10px grey;
+.duplicateError {
+  width: 75%;
+  display: flex;
+  justify-content: center;
 }
 
-.crossFlex{
-    display: flex;
-    justify-content: right;
-    margin: 10px;
+.genre-list {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.closeFormWindow{
-    width: 20px;
-    height: 20px;
-}
+@media screen and (min-width: 768px) {
+  .newGameFormContainer {
+    min-height: 51vh;
+  }
 
-.addGenreButton{
-    border: 1px solid black;
-    height: 100%;
-    width: auto;
-    border : none;
-}
+  .newGameForm {
+    width: 40%;
+  }
 
-.addGenreButton:hover{
-    cursor: pointer;
-}
+  input{
+    height: 2em;
+  }
 
-.addedGenre{
-    margin-right: 10px;
-    font-weight: bold;
-    font-size: 0.9em;
-}
-
-h3{
-    font-size: 1.3em;
-    margin-bottom: 1.2em;
-}
-
-form{
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-input{
-    width: 80%;
-    padding:0.2em 0.2em 0.2em 0.4em;
-    border: 1px solid var(--superViolet);
-}
-
-label{
-    margin-top: 1em;
-    text-align: left;
-    font-weight: bold;
-}
-
-button{
-    margin-bottom: 1em;
-    cursor: pointer;
-    font-weight: bold;
-    border : none;
-}
-
-.submit-button{
-    width: 50%;
-    font-size: 1em;
-    padding: 0.8em;
-    color: whitesmoke;
-    background-color: var(--superViolet);
-}
-
-.reset-button{
-    width: 50%;
-    font-size: 0.7em;
-    padding: 0.6em;
-    background-color: white;
-    border: 2px solid var(--superViolet);
-    margin-bottom: 50px;
-}
-
-.genreForm{
-    width: 83%;
-    height: 24px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    input{
-        width: 100%;
-        margin: 0px;
-    }
-}
-
-.duplicateError{
-    width: 75%;
-    display : flex;
-    justify-content: center;
-}
-
-@media screen and (min-width : 768px) {
-    .newGameForm{
-        width: 25%;
-}
-
-}
-
-.genre-list{
-    margin: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  select{
+    height: 2em;
+  }
 }
