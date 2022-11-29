@@ -3,21 +3,19 @@ div{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2em 1em;
 }
 
 .p-description{
-    width: 75%;
     text-align: justify;
-    margin: 1em 0 1em 0;
     color: whitesmoke;
-    font-size: 18px;
+    font-size: larger;
 }
 
 .h2-description{
     text-align: center;
-    color: black;
+    color: whitesmoke;
     width: 100%;
-    margin-bottom: -3em;
 }
 
 @media screen and (min-width : 768px) {
@@ -26,13 +24,61 @@ div{
         display: contents;
         margin: 0%;
     }
+    
     div{
         display: flex;
         align-items: center;
         min-height: 100%;
         justify-content: center;
+        border-radius: 9px;  
     }
+
     .p-description{
         font-size: 22px;
+        margin-inline: 1em;
+        color: whitesmoke;
+        text-align: center;
+    }
+
+    button{
+        margin-top: 1em;
     }
 }
+
+.btn {
+    width: 6.5em;
+    height: 2.3em;
+    background: var(--superViolet);
+    color: white;
+    border-color: white;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+   }
+   
+   button:hover {
+    color: var(--superViolet);
+   }
+   
+   button:after {
+    content: "";
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+   }
+   
+   button:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+   }

@@ -1,4 +1,5 @@
 <form #secondForm="ngForm" (ngSubmit)="secondForm.valid && onSubmit()">
+    <p class="intro-form">Quel joueur es-tu ? </p>
 
     <div>
         <label class="switch">
@@ -20,7 +21,7 @@
 
     <div>
         <label class="switch">
-            <label for="isExtravert">Extraverti ? </label>
+            <label for="isExtravert">Plutôt extraverti ? </label>
             <input type="checkbox" name="isExtravert" class="checkbox" id="isExtravert"
             [(ngModel)]="dataToChild.extravert">
             <span class="slider"></span>
@@ -29,7 +30,7 @@
 
     <div>
         <label class="switch">
-            <label for="isPro">Joueur pro ? </label>
+            <label for="isPro">Tu es un joueur pro ? </label>
             <input type="checkbox" name="isPro" class="checkbox" id="isPro"
             [(ngModel)]="dataToChild.pro">
             <span class="slider"></span>
@@ -41,6 +42,6 @@
         <input id="employer" name="employer" [(ngModel)]="dataToChild.employeer" #employerCheck="ngModel">
     </div>
 
-    <button type="submit">Suivant</button>
+    <button class="btn" type="submit">Suivant</button>
 
 </form>

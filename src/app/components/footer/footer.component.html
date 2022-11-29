@@ -1,43 +1,66 @@
 <div class="footer-contnair">
-    <div class="footer">
-        <div class="footer-powered">
-            <p>powered by:</p>
-            <ul class="list-powered">
-                <li class="name-github-link">
-                    <a class="github-link" href="https://github.com/ClemDSC" target="_blank">
-                    <div><h2>Clémence</h2></div>
-                    
-                    <div class="github">Github ▶</div></a>
-                </li>
-                <li class="name-github-link">
-                    <a class="github-link" href="https://github.com/Necrobeh" target="_blank">
-                    <div><h2>Mickaël</h2></div>
-                    
-                    <div class="github">Github ▶</div></a>                   
-                </li>
-                <li class="name-github-link">
-                    <a class="github-link" href="https://github.com/Caldera37" target="_blank">
-                    <div><h2>Raphaël</h2></div>
-                    
-                    <div class="github">Github ▶</div></a>                   
-                </li>
-                <li class="name-github-link">
-                    <a class="github-link" href="https://github.com/guillotANTOINE" target="_blank">
-                    <div><h2>Antoine</h2></div>
-                    
-                    <div class="github">Github ▶</div></a>                    
-                </li>
-            </ul>
-        </div>
-        <div  class="footer-faq">
-            <ul class="list-faq">
-                <li><a [routerLink]="['/faq']"><p>FAQ 💬</p></a></li>
-                <li><a [routerLink]="['/contact']"><p>Contact 📧</p></a></li>
-                <li><a [routerLink]="['/cgu']"><p>CGU 📢</p></a></li>
-            </ul>
-        </div>
+  <div class="footer">
+    <div class="footer-faq">
+      <ul class="list-faq">
+        <li>
+          <a [routerLink]="['/faq']"><p class="list">💬  F.A.Q</p></a>
+        </li>
+        <li>
+          <a [routerLink]="['/contact']"><p class="list">📧  Contact</p></a>
+        </li>
+        <li>
+          <a [routerLink]="['/cgu']"><p class="list">📢  C.G.U</p></a>
+        </li>
+      </ul>
     </div>
-    <div class="copyright-contnair">
-        <p class="copyright">© Copyright 2022 et jusqu'à la fin des temps</p>
+  </div>
+  <div class="copyright-contnair">
+    <p class="copyright">© Copyright 2022 - Développé avec ♥️ par :</p>
+    <div class="footer-powered">
+      <ul class="list-powered">
+        <li class="name-github-link">
+          <a
+            class="github-link"
+            href="https://github.com/ClemDSC"
+            target="_blank"
+          >
+          <img
+            class="logo-github"
+              src="../../../assets/pictures/github-logo.png"
+              alt="logo github"
+            />
+            <p class="list">Clémence</p>
+          </a>
+        </li>
+        <li class="name-github-link">
+          <a
+            class="github-link"
+            href="https://github.com/Necrobeh"
+            target="_blank"
+          >
+            <img
+            class="logo-github"
+              src="../../../assets/pictures/github-logo.png"
+              alt="logo github"
+          />
+          <p class="list">Mickaël</p>
+        </a>
+        </li>
+        <li class="name-github-link">
+          <a
+            class="github-link"
+            href="https://github.com/Caldera37"
+            target="_blank"
+          >
+            <img
+            class="logo-github"
+              src="../../../assets/pictures/github-logo.png"
+              alt="logo github"
+          />
+          <p class="list">Raphaël</p>
+        </a>
+        </li>
+      </ul>
     </div>
+  </div>
 </div>
