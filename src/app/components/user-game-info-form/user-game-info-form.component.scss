@@ -1,7 +1,7 @@
 .form {
   display: block;
   position: fixed;
-  z-index: 5;
+  z-index: 20;
   left: 0;
   top: 0;
   width: 100%;
@@ -39,6 +39,7 @@ div {
 select {
   height: 2.5em;
   width: 70%;
+  margin-bottom: 1em;
 }
 
 input {
@@ -51,6 +52,8 @@ input {
 
 label{
     padding-left: 1em;
+    margin-top: 1em;
+    margin-bottom: .5em;
 }
 
 .submit {
@@ -72,7 +75,7 @@ form {
 .btn {
     width: 6.5em;
     height: 2.3em;
-    margin: 0.5em;
+    margin: 1.5em 0 1em 0;
     background: white;
     color: var(--superViolet);;
     border-color: var(--superViolet);

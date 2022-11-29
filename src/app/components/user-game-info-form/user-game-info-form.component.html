@@ -8,44 +8,31 @@
 
         <form #userGameInfoForm="ngForm" (ngSubmit)="sendUserGameInfo()">
 
-            <div>
                 <select name="game-name" [(ngModel)]="userGameInfo.game">
                     <option>Choisis un jeu</option>
                     <option *ngFor="let game of gameList" [ngValue]="game">
                         {{game.name}}
                     </option>
                 </select>
-            </div>
 
-            <div>
                 <label for="pseudo">C'est quoi ton blaze ?</label>
                 <input type="text" name="pseudo" id="pseudo" [(ngModel)]="userGameInfo.userPseudo">
-            </div>
 
-            <div>
                 <label for="guild">T'es dans une guilde ?</label>
                 <input type="text" name="guild" id="guild" [(ngModel)]="userGameInfo.guild">
-            </div>
 
-            <div>
                 <label for="level">Quel niveau ?</label>
                 <input type="number" name="level" id="level" [(ngModel)]="userGameInfo.level">
-            </div>
 
-            <div>
                 <label for="rank">Quel rang ?</label>
                 <input type="text" name="rank" id="rank" [(ngModel)]="userGameInfo.pilouRank">
-            </div>
 
-            <div>
                 <label for="difficulty">Quelle difficulté ?</label>
                 <input type="text" name="difficulty" id="difficulty" [(ngModel)]="userGameInfo.difficulty">
-            </div>
 
-            <div>
                 <label for="server">Quel serveur ?</label>
                 <input type="text" name="server" id="server" [(ngModel)]="userGameInfo.serverName">
-            </div>
+                
             <button class="btn" type="submit">Envoyer !</button>
 
         </form>
