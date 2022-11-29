@@ -93,7 +93,8 @@ export class UserListComponent implements OnInit {
           || user.country
             .toLowerCase()
             .includes(this.searchedContentChild.toLowerCase())
-          || this.filterByUserPseudo(user);
+          || this.filterByUserPseudo(user)
+          // || this.filterByGame(user);
       });
     this.mergeFilteredLists();
   }
@@ -101,6 +102,13 @@ export class UserListComponent implements OnInit {
   filterByUserPseudo(user : AppUser) : boolean {
     let gameInfoListFiltered = user.userGameInfoList
             .filter(data => data.userPseudo.toLowerCase()
+            .includes(this.searchedContentChild.toLowerCase()));
+            return gameInfoListFiltered.length > 0 ? true : false;         
+  }
+
+  filterByGame(user : AppUser) : boolean {
+    let gameInfoListFiltered = user.userGameInfoList
+            .filter(data => data.game.name.toLowerCase()
             .includes(this.searchedContentChild.toLowerCase()));
             return gameInfoListFiltered.length > 0 ? true : false;         
   }
