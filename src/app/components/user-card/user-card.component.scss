@@ -38,13 +38,16 @@
     height: 200px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    box-shadow: rgb(0 0 0 / 7%) 0px 1px 1px, rgb(0 0 0 / 7%) 0px 2px 2px, rgb(0 0 0 / 7%) 0px 4px 4px, rgb(0 0 0 / 7%) 0px 8px 8px, rgb(0 0 0 / 7%) 0px 16px 16px;
   }
   &--title {
     position: absolute;
     bottom: 30px;
     left: 10px;
     h4 {
-      text-shadow: 2px 2px 2px black;
+      padding: .1em;
+      border-radius: .2em;
+      background-color: #8738BB;
       color: #fff;
       white-space: nowrap;
       max-width: 230px;
