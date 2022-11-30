@@ -5,6 +5,7 @@ import { PlayerHabit } from 'src/models/playerHabit.model';
 import { UserBehavior } from 'src/models/userBehavior.model';
 
 import { AppUser } from 'src/models/appUser.model';
+import { UserGameInfo } from 'src/models/userGameInfo.model';
 
 @Component({
   selector: 'app-user-list',
@@ -16,26 +17,32 @@ export class UserListComponent implements OnInit {
   searchedContentChild: string = '';
 
   userList: AppUser[] = [];
-  userListFiltered: AppUser[] = [];
-  isOneElementTruthy: boolean = false;
+  userListFilteredBySearchbar: AppUser[] = [];
+  userListFilteredByCheckbox: AppUser[] = [];
+  mergedLists: AppUser[] = [];
+
+  isOneCheckboxTruthy: boolean = false;
+  isSearchbarTruthy: boolean = false;
 
   checkboxList: Checkbox[] = [
-    new Checkbox('Joueur professionnel', 'isPro', false, 'UserBehavior'),
-    new Checkbox('Joueur régulier', 'isCasual', false, 'UserBehavior'),
-    new Checkbox("Leader d'équipe", 'isLeader', false, 'PlayerHabit'),
-    new Checkbox('PVP friendly', 'pvpFriendly', false, 'PlayerHabit'),
-    new Checkbox('PVE friendly', 'pveFriendly', false, 'PlayerHabit'),
-    new Checkbox('Oiseau de nuit', 'isNocturnal', false, 'PlayerHabit'),
-    new Checkbox('Joueur pro-actif', 'isProactive', false, 'UserBehavior'),
-    new Checkbox('Joueur extraverti', 'isExtravert', false, 'UserBehavior'),
+    new Checkbox('Joueur professionnel', 'pro', false, 'UserBehavior'),
+    new Checkbox('Joueur occasionnel', 'casual', false, 'UserBehavior'),
+    new Checkbox("Leader d'équipe", 'leader', false, 'PlayerHabit'),
+    new Checkbox('PVP friendly', 'pvp', false, 'PlayerHabit'),
+    new Checkbox('PVE friendly', 'pve', false, 'PlayerHabit'),
+    new Checkbox('Oiseau de nuit', 'nocturnal', false, 'PlayerHabit'),
+    new Checkbox('Joueur pro-actif', 'proactive', false, 'UserBehavior'),
+    new Checkbox('Joueur extraverti', 'extravert', false, 'UserBehavior'),
   ];
 
   change: boolean = false;
 
-  constructor(private userApi: UserHttpService) {}
+  constructor(private userApi: UserHttpService) { }
 
   ngOnChanges(): void {
-    this.filterBySearchbar();
+    if (this.userList.length > 0) {
+      this.filterBySearchbar();
+    }
   }
 
   ngOnInit(): void {
@@ -44,67 +51,91 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  // Output listenner
   catchCheckboxChange(checkbox: Checkbox): void {
     this.updateMatchingCheckbox(checkbox);
-    // Track the changes : when no checkbox is checked (at the beginning or after multiple combinations). Linked to HTML line 19
-    this.isOneElementTruthy = !this.checkboxList.every((c) => !c.isActive);
   }
 
   updateMatchingCheckbox(checkbox: Checkbox): void {
-    const checkboxFound = this.checkboxList.find(
-      (c) => c.description === checkbox.description
-    );
-    if (checkboxFound) {
-      checkboxFound.isActive = checkbox.isActive;
-      this.filterByCheckbox();
-    }
+    this.checkboxList.map(checkboxInList => {
+      if (checkbox.description === checkboxInList.description) {
+        checkboxInList.isActive = checkbox.isActive;
+      }
+      this.checkboxList.find((c) => c.isActive) ?
+        this.isOneCheckboxTruthy = true :
+        this.isOneCheckboxTruthy = false;
+    })
+    this.filterByCheckbox();
   }
 
   filterByCheckbox(): void {
-    // By default, the array we want to filter is full by the user list.
     let updatedArr: AppUser[] = [...this.userList];
-    // Create an array containing only active checkboxes.
     const checkboxArrToCheck = this.checkboxList.filter((c) => c.isActive);
-    // Iterate through this array in order to keep and track users who are matching with activated checkboxes.
+
     checkboxArrToCheck.forEach((checkbox) => {
       updatedArr = [...this.filterArr(checkbox, updatedArr)];
     });
-    // Update the array we loop on in the template part.
-    this.userListFiltered = updatedArr;
+    this.userListFilteredByCheckbox = updatedArr;
+    this.mergeFilteredLists();
   }
 
   filterBySearchbar(): void {
     if (this.searchedContentChild === '') {
-      this.isOneElementTruthy = false;
+      this.isSearchbarTruthy = false;
     } else {
-      this.isOneElementTruthy = true;
+      this.isSearchbarTruthy = true;
     }
 
-    this.userListFiltered = this.userList.filter(
-      (user) =>
-        user.username
+    this.userListFilteredBySearchbar = this.userList.filter(
+      (user) => {
+        return user.username
           .toLowerCase()
-          .includes(this.searchedContentChild.toLowerCase()) ||
-        user.country
-          .toLowerCase()
-          .includes(this.searchedContentChild.toLowerCase()) ||
-        user.userGameInfoList
-          .map((info: { userPseudo: string }) => info.userPseudo)
           .includes(this.searchedContentChild.toLowerCase())
-    );
+          || user.country
+            .toLowerCase()
+            .includes(this.searchedContentChild.toLowerCase())
+          || this.filterByUserPseudo(user)
+      });
+    this.mergeFilteredLists();
+  }
+
+  filterByUserPseudo(user : AppUser) : boolean {
+    let gameInfoListFiltered = user.userGameInfoList
+            .filter(data => data.userPseudo.toLowerCase()
+            .includes(this.searchedContentChild.toLowerCase()));
+            return gameInfoListFiltered.length > 0 ? true : false;         
+  }
+
+  filterByGame(user : AppUser) : boolean {
+    let gameInfoListFiltered = user.userGameInfoList
+            .filter(data => data.game.name.toLowerCase()
+            .includes(this.searchedContentChild.toLowerCase()));
+            return gameInfoListFiltered.length > 0 ? true : false;         
   }
 
   filterArr(checkbox: Checkbox, updatedArr: AppUser[]): AppUser[] {
-    // Check the property we need to find in each user object. Depends on the checkbox.
     const propreyToFind = checkbox.userProperty;
 
     return updatedArr.filter((user) =>
       checkbox.category === 'PlayerHabit'
         ? user.playerHabits[propreyToFind as keyof PlayerHabit] ===
-          checkbox.isActive
+        checkbox.isActive
         : user.userBehavior[propreyToFind as keyof UserBehavior] ===
-          checkbox.isActive
+        checkbox.isActive
     );
+  }
+
+  mergeFilteredLists() {
+    if (this.isOneCheckboxTruthy && this.isSearchbarTruthy) {
+      this.mergedLists = [];
+      for (let i = 0; i < this.userListFilteredByCheckbox.length; i++) {
+        const matchFound: AppUser | undefined =
+          this.userListFilteredBySearchbar.find(data => {
+            return this.userListFilteredByCheckbox[i].username === data.username;
+          })
+        if (matchFound) {
+          this.mergedLists.push(matchFound);
+        }
+      }
+    }
   }
 }

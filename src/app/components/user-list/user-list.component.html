@@ -10,7 +10,11 @@
 
 <div class="list-users-container">
   <app-user-card
-    *ngFor="let userCard of isOneElementTruthy ? userListFiltered : userList"
+    *ngFor="let userCard of 
+    isOneCheckboxTruthy && isSearchbarTruthy ? mergedLists : 
+    isOneCheckboxTruthy && !isSearchbarTruthy ? userListFilteredByCheckbox : 
+    !isOneCheckboxTruthy && isSearchbarTruthy ? userListFilteredBySearchbar : 
+    userList"
     [userCardChild]="userCard"
   ></app-user-card>
 </div>
