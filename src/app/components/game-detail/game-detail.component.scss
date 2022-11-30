@@ -1,6 +1,7 @@
 .game-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
 }
 
@@ -22,4 +23,22 @@
 .game-detail-card:hover {
   transform: scale(1.1);
   transition: transform .1s;    
+}
+
+.thumbnail {
+  width: 10em;
+}
+
+.update-delete {
+  display: flex;
+  justify-content: center;
+}
+
+.button-update {
+  margin: 1px;
+}
+
+.button-delete {
+  margin: 1px;
+  cursor: pointer;
 }

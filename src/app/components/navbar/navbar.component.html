@@ -7,71 +7,72 @@
       <span></span>
     </label>
     <ul class="menu__box">
-      <li><a class="menu__item" [routerLink]="['/']">Introduction</a></li>
-      <li><a class="menu__item" [routerLink]="['/home']">Accueil</a></li>
+      <li><a class="menu__item" [routerLink]="['/home']">ACCUEIL</a></li>
       <li>
-        <a class="menu__item" [routerLink]="['/inscription']">Inscription</a>
+        <a class="menu__item" [routerLink]="['/inscription']">INSCRIPTION</a>
+      </li>
+      <li>
+        <a class="menu__item" [routerLink]="['/']">CONNEXION</a>
       </li>
       <li *ngIf="isAdmin">
-        <a class="menu__item" [routerLink]="['/admin']">Administration</a>
+        <a class="menu__item" [routerLink]="['/admin']">ADMINISTRATION</a>
       </li>
-      <li *ngIf="userLogged">
-        <app-logout-purple-button></app-logout-purple-button>
+      <li class="logo-logout" *ngIf="userLogged">
+        <app-logout-button></app-logout-button>
       </li>
     </ul>
   </div>
   <div class="block-intro">
     <img
-      [routerLink]="['/home']"
-      src="../../assets/pictures/logo-home-gamepad.png"
+      [routerLink]="['/']"
+      src="../../../assets/pictures/playerBook_white.png"
       alt="gamepad"
       class="logo-gamepad"
     />
-    <h2 class="title-app">Playerbook</h2>
   </div>
   <div class="list-navigation">
-    <a class="hover-introduction" [routerLink]="['/']">
+    <a class="hover-introduction" [routerLink]="['/home']">
       <div class="hover-suricat-introduction">
         <img
-          src="../../assets/pictures/PlayerBook-Logo-mini.png"
-          class="img-hover"
+        src="../../../assets/pictures/gamepad-white.png"
+        class="img-hover"
         />
       </div>
-      Introduction
+      ACCUEIL
     </a>
 
-    <a class="hover-accueil" [routerLink]="['/home']">
+    <a *ngIf="!userLogged" class="hover-accueil" [routerLink]="['/inscription']">
       <div class="hover-suricat-accueil">
         <img
-          src="../../assets/pictures/PlayerBook-Logo-mini.png"
-          class="img-hover"
+        src="../../../assets/pictures/gamepad-white.png"
+        class="img-hover"
         />
       </div>
-      Accueil
+      INSCRIPTION
     </a>
 
-    <a class="hover-inscription" [routerLink]="['/inscription']">
+    <a *ngIf="!userLogged" class="hover-inscription" [routerLink]="['/']">
       <div class="hover-suricat-inscription">
         <img
-          src="../../assets/pictures/PlayerBook-Logo-mini.png"
-          class="img-hover"
+        src="../../../assets/pictures/gamepad-white.png"
+        class="img-hover"
         />
       </div>
-      Inscription
+      CONNEXION
     </a>
 
     <a *ngIf="isAdmin" class="hover-inscription" [routerLink]="['/admin']">
       <div class="hover-suricat-inscription">
         <img
-          src="../../assets/pictures/PlayerBook-Logo-mini.png"
-          class="img-hover"
+        src="../../../assets/pictures/gamepad-white.png"
+        class="img-hover"
         />
       </div>
-      Administration
+      ADMINISTRATION
     </a>
-    <div *ngIf="userLogged">
+    <div class="logout-container" *ngIf="userLogged">
       <app-logout-button></app-logout-button>
+      DÉCONNEXION
     </div>
-    
   </div>
 </div>

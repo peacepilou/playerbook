@@ -22,7 +22,7 @@ export class AuthInterceptor implements HttpInterceptor {
       const cloned = request.clone({
         headers: request.headers.set('Authorization', 'Bearer ' + tokenId),
       });
-
+      
       return next.handle(cloned).pipe(
         catchError((err: HttpErrorResponse) => {
           if (err.status === 401) {

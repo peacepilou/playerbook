@@ -12,27 +12,34 @@ export class FirstFormComponent implements OnInit {
 
 
   @Output()
-  sendFirstForm : EventEmitter<AppUser> = new EventEmitter;
+  sendFirstForm: EventEmitter<AppUser> = new EventEmitter;
 
   @Input()
-  dataToChild : AppUser = new AppUser('', '', '', '', '',
-  new UserBehavior(true, true, true, true, ''),
-  new PlayerHabit(2, 3, false, true, true, true, true),
-  [],
-  []
-);
+  dataToChild: AppUser = new AppUser('', '', '', '',
+    new UserBehavior(true, true, true, true, ''),
+    new PlayerHabit(2, 3, false, true, true, true, true),
+    [],
+    [], ''
+  );
 
-passwordConfirmation : string = '';
+  @Input()
+  userId: number = 0;
+
+  passwordConfirmation: string = '';
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  
-  onSubmit(){
-      
-    this.sendFirstForm.emit(this.dataToChild);
-    
+
+  onSubmit() {
+    if (this.userId === 0) {
+      if (this.passwordConfirmation === this.dataToChild.password) {
+        this.sendFirstForm.emit(this.dataToChild);
+      }
+    }else{
+      this.sendFirstForm.emit(this.dataToChild);
+    }
   }
 
 }

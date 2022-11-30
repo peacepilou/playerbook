@@ -1,6 +1,7 @@
 .user-detail-container {
   display: flex;
   flex-direction: column;
+  
 }
 .intro-user-detail-profil {
   margin: 1.5em 1em 0.5em 1em;
@@ -12,12 +13,15 @@
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.14);
 }
 .user-avatar-profile {
-  max-width: 25em;
+   
+  width: 15em;
+  height: 15em;
   margin-right: 1em;
   position: relative;
+  object-fit: cover;
   bottom: 1em;
   left: 1.5em;
-  border-radius: 2em  4em;
+  border-radius: 2em 4em;
   border: 3px solid black;
 }
 .container-data-user {
@@ -50,61 +54,106 @@
 
 .button-update-delete {
   display: flex;
-  flex-direction: row;
 }
 
-button.button-update {
-  width: 10em;
-  height: 4em;
-  margin-right: 0.5em;
-  border-radius: 2em;
-  background-color: #8738bb;
+// button update
+
+.btn {
+  width: 7.5em;
+  height: 3em;
+  margin: 0.5em;
+  background: var(--superViolet);
   color: white;
+  border-color: #8738bb;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
   cursor: pointer;
-}
-.button-update a{
-  text-decoration: none;
-  color: white;
-}
-
-button.button-update:hover {
-  transform: scale(1.1);
-  transition: transform .1s;    
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
 
-button.button-delete {
-  width: 10em;
-  height: 4em;
-  margin-left: 0.5em;
-  border-radius: 2em;
-  background-color: #8738bb;
-  color: white;
+button:hover {
+  color: var(--superViolet);
+  border-color: #8738bb;
+}
+
+button:after {
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+// button delete
+
+.button-delete {
+  width: 7.5em;
+  height: 3em;
+  margin: 0.5em;
+  background: white;
+  color: var(--superViolet);
+  border-color: var(--superViolet);
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
 
-button.button-delete:hover {
-  transform: scale(1.1);
-  transition: transform .1s;    
+.button-delete:hover {
+  color: white;
 }
 
+.button-delete:after {
+  content: "";
+  background: var(--superViolet);
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
 
-button.button-back-home {
+.button-delete:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.button-back-home {
   margin: 1em;
 }
 
 
+
 @media screen and (min-width: 768px) {
+  .user-detail-container {
+    padding: 0 15% 0 15% ;
+  }
+
   .intro-user-detail-profil {
     display: flex;
     flex-direction: row;
-
   }
-
-  .user-avatar-profile {
-    max-width: 25em;
-    min-width: 25em;
-
-  }  
 
   .container-data-user {
     margin: 1em;
@@ -116,12 +165,10 @@ button.button-back-home {
   }
 
   app-player-habit {
-  width: 50%;
+    width: 50%;
   }
 
   app-user-behavior {
     width: 50%;
   }
-
-
 }

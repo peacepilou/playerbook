@@ -16,7 +16,6 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { CheckboxFilterUsersComponent } from './components/checkbox-filter-users/checkbox-filter-users.component';
 
 import { LandingLogoComponent } from './components/landing-page/landing-logo/landing-logo.component';
-import { LandingPathButtonComponent } from './components/landing-page/landing-path-button/landing-path-button.component';
 import { SiteDescriptionComponent } from './components/landing-page/site-description/site-description.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { GlobalFormComponent } from './components/form/global-form/global-form.component';
@@ -49,6 +48,7 @@ import { AuthInterceptor } from './core/auth.interceptor';
 import { Error401PageComponent } from './pages/error401-page/error401-page.component';
 import { LogoutButtonComponent } from './utils/logout-button/logout-button.component';
 import { LogoutPurpleButtonComponent } from './utils/logout-purple-button/logout-purple-button.component';
+import { HotToastModule } from '@ngneat/hot-toast';
 
 
 @NgModule({
@@ -64,7 +64,6 @@ import { LogoutPurpleButtonComponent } from './utils/logout-purple-button/logout
     UserCardComponent,
     SearchbarComponent,
     LandingLogoComponent,
-    LandingPathButtonComponent,
     SiteDescriptionComponent,
     NavbarComponent,
     GlobalFormComponent,
@@ -101,7 +100,8 @@ import { LogoutPurpleButtonComponent } from './utils/logout-purple-button/logout
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    HotToastModule.forRoot()
   ],
   providers: [
     {
