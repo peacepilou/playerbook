@@ -2,12 +2,12 @@
 
    <div class="game-info">
       <img *ngIf="gameInfoChild.game" class="thumbnail" [src]="gameInfoChild.game.photoUrl" />
-      <p>{{gameInfoChild.userPseudo}}</p>
-      <p>Ta guilde : {{gameInfoChild.guild}}</p>
-      <p>Ton niveau : {{gameInfoChild.level}}</p>
-      <p>Ton rang : {{gameInfoChild.pilouRank}}</p>
-      <p>Difficulté : {{gameInfoChild.difficulty}}</p>
-      <p>Ton serveur : {{gameInfoChild.serverName}}</p>
+      <p class="userpseudo">{{gameInfoChild.userPseudo}}</p>
+      <p><span>Ta guilde :</span> {{gameInfoChild.guild}}</p>
+      <p><span>Ton niveau :</span> {{gameInfoChild.level}}</p>
+      <p><span>Ton rang :</span> {{gameInfoChild.pilouRank}}</p>
+      <p><span>Difficulté :</span> {{gameInfoChild.difficulty}}</p>
+      <p><span>Ton serveur :</span> {{gameInfoChild.serverName}}</p>
    </div>
 
    <div  *ngIf="isOwner" class="update-delete">
