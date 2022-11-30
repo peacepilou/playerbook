@@ -53,10 +53,13 @@ export class UserGameInfoFormComponent implements OnInit, OnChanges {
     if(this.userGameInfo.id){
       // Fully working!
       this.update();
+      this.closeInfoForm();
+      this.updateGameToast()
     } else {
       // Working BUT you can't create TWO userGameInfo objects with the SAME Game object id. 
       // I don't know why yet but it's friday night and I've just succeed in debuging the current PUT request 😈😈😈
       this.post();
+      this.addGameToast();
     }
   }
 
@@ -64,7 +67,6 @@ export class UserGameInfoFormComponent implements OnInit, OnChanges {
     const objectToUpdate: UserGameInfo = this.copyUserGameInfoObjectAndDeleteUselessKeys(this.userGameInfo);
     this.httpUserGameInfoS.putUserGameInfoById(this.userGameInfo.id as number, objectToUpdate).subscribe(() => {
       this.closeInfoForm();
-      this.addGameToast()
     })
   }
 
@@ -106,10 +108,14 @@ export class UserGameInfoFormComponent implements OnInit, OnChanges {
     });
   }
 
-  
-
-  test(){
-    console.log(this.userId);
-    
+  updateGameToast() {
+    this.toast.success('Informations ont été modifiées avec succès !', {
+      position: 'bottom-right',
+      style: {
+        border: '1px solid #8738BB',
+        color: '#FFFFFF',
+        background: "#8738BB"
+      }
+    });
   }
 }
