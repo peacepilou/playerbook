@@ -71,8 +71,6 @@ export class GameListComponent implements OnInit {
 
   getUserGameInfoList(): void {
     this.httpUserGameInfoS.getUserGameInfoList().subscribe((data) => {
-      console.log(data);
-      
       this.userGameInfoList = data;
     });
   }
