@@ -1,5 +1,6 @@
 <div class="background">
     <div class="form-page">
+        <img src="../../../../assets/pictures/playerBook_right_guy_white.png" alt="">
         <div class="form-container">
             <app-first-form 
             [dataToChild]="firstFormResults" 
@@ -8,6 +9,7 @@
             <app-second-form *ngIf="formStep === 2" [dataToChild]="firstFormResults.userBehavior" (sendsecondForm)="receiveSecondForm($event)"></app-second-form>
             <app-third-form *ngIf="formStep === 3" [dataToChild]="firstFormResults.playerHabits" (sendthirdForm)="receiveThirdForm($event)"></app-third-form>
         </div>
+        <img src="../../../../assets/pictures/playerBook_left_guys_white.png" alt="">
     </div>
     <div class="buttons-container">
         <div class="back-buttons">

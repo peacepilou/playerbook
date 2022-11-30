@@ -2,7 +2,6 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  min-height: 55vh;
 }
 
 .newGameForm {
@@ -183,10 +182,6 @@ label {
 }
 
 @media screen and (min-width: 768px) {
-  .newGameFormContainer {
-    min-height: 51vh;
-  }
-
   .newGameForm {
     width: 40%;
   }

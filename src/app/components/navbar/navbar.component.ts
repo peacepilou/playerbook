@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
 import jwt_decode from 'jwt-decode';
 
 import { Token } from 'src/models/token.model';
@@ -15,7 +17,7 @@ export class NavbarComponent implements OnInit {
 
   userLogged: boolean = false;
 
-  constructor() {}
+  constructor(private router: Router, private toast: HotToastService) {}
 
   ngOnInit(): void {
     this.readToken();
@@ -46,5 +48,18 @@ export class NavbarComponent implements OnInit {
         this.isAdmin = true;
       }
     } 
+  }
+
+  logout(): void {
+    this.router.navigateByUrl('/');
+    localStorage.clear();
+    this.toast.success('Déconnexion réussie.', {
+      position: 'bottom-right',
+      style: {
+        border: '1px solid #8738BB',
+        color: '#FFFFFF',
+        background: "#8738BB"
+      }
+    });
   }
 }

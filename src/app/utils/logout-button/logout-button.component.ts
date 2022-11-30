@@ -20,7 +20,7 @@ export class LogoutButtonComponent implements OnInit {
   logout(): void {
     this.router.navigateByUrl('/');
     localStorage.clear();
-    this.toast.success('Vous êtes déconnecté.', {
+    this.toast.success('Déconnexion réussie.', {
       position: 'bottom-right',
       style: {
         border: '1px solid #8738BB',
