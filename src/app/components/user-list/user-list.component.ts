@@ -94,8 +94,6 @@ export class UserListComponent implements OnInit {
             .toLowerCase()
             .includes(this.searchedContentChild.toLowerCase())
           || this.filterByUserPseudo(user)
-          //waiting for the fix of the userGameInfoForm
-          // || this.filterByGame(user);
       });
     this.mergeFilteredLists();
   }
