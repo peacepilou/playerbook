@@ -37,9 +37,12 @@ export class GameDetailComponent implements OnInit {
 
   constructor(private httpUserGameInfoS : UserGameInfoService, private toast: HotToastService) { }
 
+  ngOnChanges(): void {
+    this.checkUser();
+  }
+
   ngOnInit(): void {
     this.readToken();
-    this.checkUser();
   }
 
   delete(): void {

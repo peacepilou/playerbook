@@ -93,8 +93,7 @@ export class GlobalFormComponent implements OnInit {
     } else {
       this.userHttpS.postNewUser(globalFormResults).subscribe(() => {
         this.registerToast();
-        this.route.navigateByUrl('/home');
-
+        this.route.navigateByUrl('/');
       });
     }
   }
